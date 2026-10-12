@@ -281,7 +281,7 @@ The same routine tags the **enemy hero**: it stores `5,000,000 / number of the c
 ### How the computer chooses
 
 - If both offers are the same kind (two new skills, or two upgrades), it takes the one with the higher value from `0x524690`; a tie goes to the first.
-- If one is an upgrade and the other is new, a separate test (`0x524dd0`, not read) decides whether the new skill is taken.
+- If one is an upgrade and the other is new, the new skill has to earn its slot (`0x524dd0`). The routine ranks, by the same value, every skill the hero does not have and its class can learn, together with the one on offer. The hero has `8 − skills known` free slots; the new skill is taken only if it ranks within that many places from the top. Otherwise the hero takes the upgrade. So a hero with many free slots accepts almost any new skill, and one with a single slot left holds out for the best skill its class can still get.
 
 `0x524690` returns 0 for a skill already at Expert, and for a new skill when the hero already has eight. Otherwise, with `T = 1000 + AI Value of the hero's army` and `S = 500 + AI Value of its shooters`:
 
@@ -302,7 +302,7 @@ The same routine tags the **enemy hero**: it stores `5,000,000 / number of the c
 | Estates | a per-level table value |
 | Skills not listed (Scouting, Learning and others) | `T / 20` |
 
-Ballistics and Logistics come out on top for a hero with a real army, and army-scaled skills in general beat magic skills unless the hero already has Wisdom and Spell Power. **[code; Intelligence, Sorcery, Resistance and First Aid were not read]**
+Ballistics and Logistics come out on top for a hero with a real army, and army-scaled skills in general beat magic skills unless the hero already has Wisdom and Spell Power. The same ranking test is used when a hero is offered a skill at a Witch Hut or the Magic University. **[code; Intelligence, Sorcery, Resistance and First Aid were not read]**
 
 ## Obelisks and the Grail
 

@@ -49,9 +49,9 @@ Building numbers, costs and prerequisites are in [Factions and towns](../towns/)
 |---|---|---|
 | Town Hall line (10–13) | Extra weekly gold × gold weight: Village Hall 3500, Town Hall 3500, City Hall 7000, Capitol 14000 | `0x42b8b0` |
 | Dwellings (30–36) | Only when the town is not marked as threatened. `AI Value × weekly growth` of the creature. From day 5 of the week the growth is doubled and what is already waiting is added. The cost of then buying those creatures is added to the cost side | `0x42b520` |
-| Upgraded dwellings (37–43) | Own routine, same idea | `0x42b5b0` |
+| Upgraded dwellings (37–43) | `(AI Value upgraded − AI Value base) × number of base creatures on hand` (from day 5, with the coming growth). The price difference for upgrading that many is added to the cost side | `0x42b5b0` |
 | Citadel, Castle (8, 9) | From day 5: sum of the AI Values of the town's creatures that will grow, with their purchase cost on the cost side | `0x42b670` |
-| Horde buildings (18, 19, 24, 25) | Own routines | `0x42b790`, `0x42b800` |
+| Horde buildings (18, 19, 24, 25) | `AI Value × the extra weekly growth` the building gives, with the price of those extra creatures on the cost side. The upgraded-creature horde is skipped when its building is already in place | `0x42b790`, `0x42b800` |
 | Resource Silo (15) | Seven days of its output at the resource weights; not when the town is marked as threatened | |
 | Rampart Treasury (22) | Only on day 7; proportional to the gold the player holds | |
 | Tower: special 21 | 100 | |
@@ -179,7 +179,6 @@ drop the gift if it is less than 5 × what the ally already has
 
 ## Not decoded yet
 
-- Upgraded dwelling and horde values in detail.
 - The general split of armies between a town garrison and heroes; only the victory-town case above was read.
 - Artifact Merchants in towns (the Black Market object is covered under [object values](../ai-adventure/#object-values-that-are-readable)), and the order in which spare resources are sold at the Marketplace.
 - The threat mark is described under [how a town gets its threat mark](../ai-adventure/#how-a-town-gets-its-threat-mark); the same pass buys emergency garrison troops before any building is chosen.
