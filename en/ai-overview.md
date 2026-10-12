@@ -52,7 +52,8 @@ What the computer player decides, and where it is described. "Partly" means the 
 | Hero: returning to defend a town | partly; how the threat mark is set **not read** | [AI: adventure map](../ai-adventure/#its-own-towns) |
 | Hero: merging armies with another hero | partly | [AI: adventure map](../ai-adventure/#enemy-heroes) |
 | Hero: adventure spells, boats, digging for the Grail | **not read** | |
-| Hero: level-up skill choice, artifact equipping | **not read** | |
+| Hero: level-up skill choice | covered for most skills; the new-versus-upgrade test **not read** | [AI: adventure map](../ai-adventure/#level-up-choices) |
+| Hero: artifact equipping | **not read** | |
 | Player: hiring heroes | covered for limits; which hero is picked **not read** | [AI: adventure map](../ai-adventure/#hiring-heroes) |
 | Town: what to build | covered; upgraded dwelling and horde values only listed | [AI: towns](../ai-towns/) |
 | Town: recruiting, garrison versus hero split | partly; purchase order **not read** | [AI: towns](../ai-towns/#when-a-hero-visits-its-own-town) |

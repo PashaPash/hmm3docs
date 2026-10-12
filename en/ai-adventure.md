@@ -206,6 +206,43 @@ A town carries a **threat mark** (a byte in the town record, **[inferred]** from
 | Hero of the same player, above Easy | The hero with the lower primary skill total hands its army to the stronger one; the value is the gain from merging (`0x42c4a0`), halved when the evaluating hero is the stronger of the two and the other is not within reach this turn |
 | Hill Fort (35) | `Σ (AI Value upgraded − AI Value now) × count` over the stacks the player can afford to upgrade |
 
+## Level-up choices
+
+`0x4da720` handles a level-up for every hero; `0x52bbd0` makes the choice for a computer hero.
+
+### What is offered
+
+- The primary skill is rolled first: `rand(1,100)` walked through the class's four chances from [the hero class table](../heroes/) (the first set below level 10, the second from level 10).
+- Two secondary skills are then offered: one **upgrade of a skill the hero has** and one **new skill**, each falling back to the other kind when none is available (`0x4dad00`).
+- The hero record stores the level at which Wisdom and a magic school were last offered, which is how the engine keeps track of when they are next due.
+- The random generator is re-seeded just before the roll, so a given level-up is not re-rolled by reloading. **[inferred: the seeding call is the same `0x50c5f0` as elsewhere]**
+
+### How the computer chooses
+
+- If both offers are the same kind (two new skills, or two upgrades), it takes the one with the higher value from `0x524690`; a tie goes to the first.
+- If one is an upgrade and the other is new, a separate test (`0x524dd0`, not read) decides whether the new skill is taken.
+
+`0x524690` returns 0 for a skill already at Expert, and for a new skill when the hero already has eight. Otherwise, with `T = 1000 + AI Value of the hero's army` and `S = 500 + AI Value of its shooters`:
+
+| Skill | Value |
+|---|---|
+| Ballistics | `T / 8` |
+| Logistics | `T / 10` |
+| Offence, Armorer | `T × 7 / 100` |
+| Leadership, Luck, Tactics | `T / 50` |
+| Diplomacy | `T / 100` |
+| Archery | `S ×` a per-level table value `/ 100` |
+| Artillery | `10 × Attack`, and only if the hero has a Ballista |
+| Wisdom | `Spell Power × the hero's value of a Spell Power point / 2` |
+| Mysticism | a tenth of the hero's value of a Knowledge point |
+| Eagle Eye, Scholar | 0 without Wisdom; otherwise small, from Spell Power |
+| Fire, Air, Water, Earth Magic | from the hero's spells (`0x524d20`); without Wisdom the simple values are 0, 25, 3 and 30 |
+| Pathfinding, Navigation | scaled by the map: the share of land tiles that cost extra to cross, and the share of water tiles, counted once per map by `0x52b9c0` |
+| Estates | a per-level table value |
+| Skills not listed (Scouting, Learning and others) | `T / 20` |
+
+Ballistics and Logistics come out on top for a hero with a real army, and army-scaled skills in general beat magic skills unless the hero already has Wisdom and Spell Power. **[code; Intelligence, Sorcery, Resistance and First Aid were not read]**
+
 ## Hiring heroes
 
 `0x431360`. A computer player does not hire when any of these holds:
