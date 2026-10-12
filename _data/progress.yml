@@ -21,7 +21,8 @@ chapters:
      note_en: "difficulty value, starting resources, the two value columns", note_ru: "значение сложности, стартовые ресурсы, два столбца ценности"}
   - {n: 9, state: todo, en: "AI: valuation of armies, heroes, objects", ru: "ИИ: оценка армий, героев, объектов", note_en: "", note_ru: ""}
   - {n: 10, state: todo, en: "AI: town building and recruitment", ru: "ИИ: строительство и найм", note_en: "", note_ru: ""}
-  - {n: 11, state: todo, en: "AI: adventure map decisions", ru: "ИИ: решения на карте", note_en: "", note_ru: ""}
+  - {n: 11, file: ai-adventure, state: wip, en: "AI: adventure map decisions", ru: "ИИ: решения на карте",
+     note_en: "target choice rule, fight valuation and difficulty multipliers, hero hiring limits; most object values still open", note_ru: "правило выбора цели, оценка боя и множители сложности, лимиты найма героев; большинство ценностей объектов ещё открыто"}
   - {n: 12, file: ai-battle, state: done, en: "AI: battle", ru: "ИИ: бой",
      note_en: "stack valuation, melee and shooter target choice, creature casters, retreat, difficulty switches; hero spell selection (candidates, scoring, timing, main evaluators)", note_ru: "оценка отрядов, выбор цели в ближнем бою и у стрелков, существа-заклинатели, бегство, переключатели сложности; выбор заклинаний героя (кандидаты, оценка, момент, основные оценщики)"}
   - {n: 13, file: ai-neutral, state: done, en: "AI: neutral monsters (armies without a hero)", ru: "ИИ: нейтральные монстры (армии без героя)",

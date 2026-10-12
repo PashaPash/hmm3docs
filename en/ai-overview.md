@@ -23,6 +23,10 @@ Two tables in the executable are indexed by difficulty, seven resources each. **
 | Expert | 10 | 4 | 10000 | 15 | 7 | 10000 |
 | Impossible | 0 | 0 | 0 | 15 | 7 | 10000 |
 
+### Adventure map
+
+Difficulty sets how many heroes a computer player hires (2 / 3 / 4 / 5 / 6 per player) and how strong it assumes a human army to be (×0.5 on Easy and Normal, ×1.0 on Hard, ×1.25 above). See [AI: adventure map](../ai-adventure/).
+
 ### Battle behaviour
 
 Difficulty switches parts of the battle logic on and off for every non-human side, including neutral monsters. See [AI: battle](../ai-battle/#what-difficulty-changes).

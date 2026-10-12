@@ -25,9 +25,13 @@ Things referenced in the chapters but not decoded or not confirmed yet.
 - Creature banks: where the guard stacks stand on the battlefield; how the computer player decides whether a bank is worth attacking (`0x52bd10`).
 - Bounds of random stack sizes at map start and in a creature month.
 
+## Adventure map AI
+
+See the list at the end of [AI: adventure map](../ai-adventure/#not-decoded-yet). The main obstacle is floating-point arithmetic that the decompiler drops; those functions need to be read as assembly.
+
 ## Everything else
 
-Chapters 2, 5, 7, 9, 10, 11 and 14 are not started. See the progress table on the [home page]({{ '/' | relative_url }}).
+Chapters 2, 5, 7, 9, 10 and 14 are not started. See the progress table on the [home page]({{ '/' | relative_url }}).
 
 ## Build note
 
