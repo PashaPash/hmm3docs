@@ -57,11 +57,12 @@ What the computer player decides, and where it is described. "Partly" means the 
 | Hero: artifact equipping | **not read** | |
 | Player: hiring heroes | covered: limits and which tavern hero; where the hire happens **not read** | [AI: adventure map](../ai-adventure/#hiring-heroes) |
 | Town: what to build | covered; upgraded dwelling and horde values only listed | [AI: towns](../ai-towns/) |
-| Town: recruiting | purchase order covered; the army-gain function and the garrison versus hero split **not read** | [AI: towns](../ai-towns/#which-creatures-are-bought-first) |
+| Town: recruiting | purchase order and army gain covered; the garrison versus hero split **not read** | [AI: towns](../ai-towns/#which-creatures-are-bought-first) |
 | Economy: resource valuation | covered | [AI: adventure map](../ai-adventure/#what-resources-are-worth) |
 | Economy: Marketplace trades | covered except the selling order | [AI: towns](../ai-towns/#trading-at-the-marketplace) |
 | Economy: gifts to allies | covered | [AI: towns](../ai-towns/#gifts-to-allies) |
-| Economy: Artifact Merchants, war machines, Mage Guild | **not read** | |
+| Economy: war machines | covered | [AI: towns](../ai-towns/#when-a-hero-visits-its-own-town) |
+| Economy: Artifact Merchants, Mage Guild | **not read** | |
 
 ## Two value columns
 

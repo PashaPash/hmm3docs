@@ -87,7 +87,23 @@ A cheap building that unlocks several valuable ones collects all their scores, w
 4. When the purchase is charged against the player's plans, subtract the cost at the [resource weights](../ai-adventure/#what-resources-are-worth), but never more than three quarters of the gain.
 5. Buy the option with the largest result, then start again from step 2 until nothing has a positive result.
 
-So the order is not "highest level first": it is whichever purchase adds the most army value for its weighted cost at that moment, bought to the limit of the purse, then re-evaluated. A resource the player is short of makes creatures that need it less attractive, but can never cancel more than 75% of their value. **[code; the gain function itself was not read]**
+So the order is not "highest level first": it is whichever purchase adds the most army value for its weighted cost at that moment, bought to the limit of the purse, then re-evaluated. A resource the player is short of makes creatures that need it less attractive, but can never cancel more than 75% of their value. **[code]**
+
+### The gain of adding a stack
+
+`0x42c830`, the value used in step 3.
+
+```
+gain = AI Value × number bought
+```
+
+adjusted as follows:
+
+- **Map speed.** If the creature is slower than the slowest stack already in the army, a term taken from the [land movement table](../adventure/#on-land) and scaled by `army AI Value + 500` is applied, so a slow recruit that would cut the hero's daily movement is worth less. **[the term is read; that it lowers the gain is inferred]**
+- **Already in the army.** If the army has a stack of that creature, the new units join it and the gain stands.
+- **Free slot.** Otherwise a free slot is used, provided the army has fewer than six stacks in use (or the caller allows a seventh).
+- **Mixing rule.** A creature of a different alignment that would cost the army morale is refused a free slot when it is small: when ten times its value is no more than the value of the army it would join.
+- **No free slot.** The routine picks a stack to push out (`0x42c690`) and the gain is reduced by that stack's `AI Value × count`. If no stack can be pushed out, the gain is 0.
 
 ## Trading at the Marketplace
 
@@ -140,11 +156,12 @@ drop the gift if it is less than 5 × what the ally already has
   | Fortress | special 17 (+1 Defence) | the same |
   | Conflux | special 21 (Magic University) | a skill-value routine |
 
-- Above Easy, further routines run for the garrison and visiting hero (`0x433fe0`, `0x525ca0`); not detailed yet.
+- Above Easy, the hero buys the town's **war machine** if it does not have one (`0x525ca0`): the machine sold by that town's Blacksmith, and in a Stronghold also the Ballista from the Ballista Yard. The machine must be usable by the hero and affordable in full. If the Blacksmith itself is missing and can be built today, the routine builds it first and then buys.
+- Above Easy, a further routine runs for the garrison and visiting hero (`0x433fe0`); not detailed yet.
 
 ## Not decoded yet
 
 - Upgraded dwelling and horde values in detail.
-- The army-gain function `0x42c830`, and how armies are split between the town garrison and heroes.
-- War machines, Mage Guild use, Artifact Merchants, and the order in which spare resources are sold at the Marketplace.
+- How armies are split between the town garrison and heroes, and which stack is pushed out of a full army (`0x42c690`).
+- Mage Guild use, Artifact Merchants, and the order in which spare resources are sold at the Marketplace.
 - The threat mark is described under [how a town gets its threat mark](../ai-adventure/#how-a-town-gets-its-threat-mark); the same pass buys emergency garrison troops before any building is chosen.
