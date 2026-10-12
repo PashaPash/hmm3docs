@@ -107,7 +107,7 @@ The edge costs **300 movement points, or 200 at Expert**, matching what the spel
 
 ### Fly and Water Walk
 
-The pathfinder lets a hero cross water or obstacles when the effect is available: artifact 72 (Angel Wings) or 90 (Boots of Levitation), an already active spell, or, for Water Walk, knowing the spell. Step costs are the ones in [cost of a step](../adventure/#cost-of-a-step). Whether and when the computer casts Fly or Dimension Door by itself was not found in this routine and is **not read**.
+The pathfinder lets a hero cross water or obstacles when the effect is available: artifact 72 (Angel Wings) or 90 (Boots of Levitation), an already active spell, or, for Water Walk, knowing the spell. Step costs are the ones in [cost of a step](../adventure/#cost-of-a-step). **Fly and Dimension Door are probably never cast by the computer.** The pathfinder tests "knows Water Walk" and "knows Town Portal" by reading fixed fields of the hero record. A search of the whole decompiled executable finds no such test for the Fly field at all, and none for the Dimension Door field in any hero or pathfinding routine. **[unverified: this is the absence of a match in a search, and a spell reached through a computed index would not show up]**
 
 **[code]**
 
@@ -303,5 +303,5 @@ Ballistics and Logistics come out on top for a hero with a real army, and army-s
 - Most object values, and the numeric weights inside the ones listed (experience, resources, spells).
 - The fight simulator `0x426bc0` itself.
 - Hero roles (main hero, scouts, gatherers), army transfers between heroes and towns, when a hero returns to defend a town.
-- Casting Fly and Dimension Door, and boats.
+- Boats and digging for the Grail.
 - Danger flags on paths.
