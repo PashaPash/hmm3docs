@@ -1,0 +1,1478 @@
+[
+ {
+  "id": 21,
+  "bank": "Beholders' Sanctuary",
+  "level": 1,
+  "chance": 30,
+  "precise": 0,
+  "guards": [
+   {
+    "count": 50,
+    "creature": "Beholder"
+   }
+  ],
+  "upgrade_chance": 50,
+  "resources": {
+   "gold": 3000
+  },
+  "artifacts": {
+   "treasure": 0,
+   "minor": 1,
+   "major": 0,
+   "relic": 0
+  },
+  "creatures": null
+ },
+ {
+  "id": 21,
+  "bank": "Beholders' Sanctuary",
+  "level": 2,
+  "chance": 30,
+  "precise": 0,
+  "guards": [
+   {
+    "count": 75,
+    "creature": "Beholder"
+   }
+  ],
+  "upgrade_chance": 50,
+  "resources": {
+   "gold": 5000
+  },
+  "artifacts": {
+   "treasure": 0,
+   "minor": 1,
+   "major": 0,
+   "relic": 0
+  },
+  "creatures": null
+ },
+ {
+  "id": 21,
+  "bank": "Beholders' Sanctuary",
+  "level": 3,
+  "chance": 30,
+  "precise": 0,
+  "guards": [
+   {
+    "count": 100,
+    "creature": "Beholder"
+   }
+  ],
+  "upgrade_chance": 50,
+  "resources": {
+   "gold": 6000
+  },
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 1,
+   "relic": 0
+  },
+  "creatures": null
+ },
+ {
+  "id": 21,
+  "bank": "Beholders' Sanctuary",
+  "level": 4,
+  "chance": 10,
+  "precise": 0,
+  "guards": [
+   {
+    "count": 150,
+    "creature": "Beholder"
+   }
+  ],
+  "upgrade_chance": 50,
+  "resources": {
+   "gold": 9000
+  },
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 1,
+   "relic": 0
+  },
+  "creatures": null
+ },
+ {
+  "id": 22,
+  "bank": "Temple of the Sea",
+  "level": 1,
+  "chance": 30,
+  "precise": 0,
+  "guards": [
+   {
+    "count": 8,
+    "creature": "Hydra"
+   },
+   {
+    "count": 6,
+    "creature": "Sea Serpent"
+   },
+   {
+    "count": 3,
+    "creature": "Chaos Hydra"
+   },
+   {
+    "count": 2,
+    "creature": "Haspid"
+   }
+  ],
+  "upgrade_chance": 0,
+  "resources": {
+   "gold": 10000
+  },
+  "artifacts": {
+   "treasure": 2,
+   "minor": 1,
+   "major": 0,
+   "relic": 1
+  },
+  "creatures": null
+ },
+ {
+  "id": 22,
+  "bank": "Temple of the Sea",
+  "level": 2,
+  "chance": 30,
+  "precise": 0,
+  "guards": [
+   {
+    "count": 8,
+    "creature": "Hydra"
+   },
+   {
+    "count": 7,
+    "creature": "Sea Serpent"
+   },
+   {
+    "count": 4,
+    "creature": "Chaos Hydra"
+   },
+   {
+    "count": 3,
+    "creature": "Haspid"
+   }
+  ],
+  "upgrade_chance": 0,
+  "resources": {
+   "gold": 15000
+  },
+  "artifacts": {
+   "treasure": 1,
+   "minor": 1,
+   "major": 1,
+   "relic": 1
+  },
+  "creatures": null
+ },
+ {
+  "id": 22,
+  "bank": "Temple of the Sea",
+  "level": 3,
+  "chance": 30,
+  "precise": 0,
+  "guards": [
+   {
+    "count": 8,
+    "creature": "Hydra"
+   },
+   {
+    "count": 7,
+    "creature": "Sea Serpent"
+   },
+   {
+    "count": 5,
+    "creature": "Chaos Hydra"
+   },
+   {
+    "count": 4,
+    "creature": "Haspid"
+   }
+  ],
+  "upgrade_chance": 0,
+  "resources": {
+   "gold": 20000
+  },
+  "artifacts": {
+   "treasure": 0,
+   "minor": 1,
+   "major": 2,
+   "relic": 1
+  },
+  "creatures": null
+ },
+ {
+  "id": 22,
+  "bank": "Temple of the Sea",
+  "level": 4,
+  "chance": 10,
+  "precise": 0,
+  "guards": [
+   {
+    "count": 10,
+    "creature": "Hydra"
+   },
+   {
+    "count": 9,
+    "creature": "Sea Serpent"
+   },
+   {
+    "count": 6,
+    "creature": "Chaos Hydra"
+   },
+   {
+    "count": 5,
+    "creature": "Haspid"
+   }
+  ],
+  "upgrade_chance": 0,
+  "resources": {
+   "gold": 30000
+  },
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 2,
+   "relic": 2
+  },
+  "creatures": null
+ },
+ {
+  "id": 23,
+  "bank": "Pirate Cavern",
+  "level": 1,
+  "chance": 30,
+  "precise": 0,
+  "guards": [
+   {
+    "count": 10,
+    "creature": "Pirate"
+   },
+   {
+    "count": 10,
+    "creature": "Corsair"
+   },
+   {
+    "count": 10,
+    "creature": "Corsair"
+   },
+   {
+    "count": 10,
+    "creature": "Pirate"
+   }
+  ],
+  "upgrade_chance": 50,
+  "resources": {},
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "creatures": {
+   "count": 1,
+   "creature": "Sea Serpent"
+  }
+ },
+ {
+  "id": 23,
+  "bank": "Pirate Cavern",
+  "level": 2,
+  "chance": 30,
+  "precise": 0,
+  "guards": [
+   {
+    "count": 20,
+    "creature": "Pirate"
+   },
+   {
+    "count": 20,
+    "creature": "Corsair"
+   },
+   {
+    "count": 20,
+    "creature": "Corsair"
+   },
+   {
+    "count": 20,
+    "creature": "Pirate"
+   }
+  ],
+  "upgrade_chance": 50,
+  "resources": {},
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "creatures": {
+   "count": 2,
+   "creature": "Sea Serpent"
+  }
+ },
+ {
+  "id": 23,
+  "bank": "Pirate Cavern",
+  "level": 3,
+  "chance": 30,
+  "precise": 0,
+  "guards": [
+   {
+    "count": 30,
+    "creature": "Pirate"
+   },
+   {
+    "count": 30,
+    "creature": "Corsair"
+   },
+   {
+    "count": 30,
+    "creature": "Corsair"
+   },
+   {
+    "count": 30,
+    "creature": "Pirate"
+   }
+  ],
+  "upgrade_chance": 50,
+  "resources": {},
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "creatures": {
+   "count": 3,
+   "creature": "Sea Serpent"
+  }
+ },
+ {
+  "id": 23,
+  "bank": "Pirate Cavern",
+  "level": 4,
+  "chance": 10,
+  "precise": 0,
+  "guards": [
+   {
+    "count": 40,
+    "creature": "Pirate"
+   },
+   {
+    "count": 40,
+    "creature": "Corsair"
+   },
+   {
+    "count": 40,
+    "creature": "Corsair"
+   },
+   {
+    "count": 40,
+    "creature": "Pirate"
+   }
+  ],
+  "upgrade_chance": 50,
+  "resources": {},
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "creatures": {
+   "count": 4,
+   "creature": "Sea Serpent"
+  }
+ },
+ {
+  "id": 24,
+  "bank": "Mansion",
+  "level": 1,
+  "chance": 30,
+  "precise": 0,
+  "guards": [
+   {
+    "count": 40,
+    "creature": "Vampire Lord"
+   }
+  ],
+  "upgrade_chance": 0,
+  "resources": {
+   "mercury": 2,
+   "sulfur": 2,
+   "crystal": 2,
+   "gems": 2,
+   "gold": 2500
+  },
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 1,
+   "relic": 0
+  },
+  "creatures": null
+ },
+ {
+  "id": 24,
+  "bank": "Mansion",
+  "level": 2,
+  "chance": 30,
+  "precise": 0,
+  "guards": [
+   {
+    "count": 60,
+    "creature": "Vampire Lord"
+   }
+  ],
+  "upgrade_chance": 0,
+  "resources": {
+   "mercury": 3,
+   "sulfur": 3,
+   "crystal": 3,
+   "gems": 3,
+   "gold": 5000
+  },
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 1,
+   "relic": 0
+  },
+  "creatures": null
+ },
+ {
+  "id": 24,
+  "bank": "Mansion",
+  "level": 3,
+  "chance": 30,
+  "precise": 0,
+  "guards": [
+   {
+    "count": 80,
+    "creature": "Vampire Lord"
+   }
+  ],
+  "upgrade_chance": 0,
+  "resources": {
+   "mercury": 4,
+   "sulfur": 4,
+   "crystal": 4,
+   "gems": 4,
+   "gold": 7500
+  },
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 1,
+   "relic": 0
+  },
+  "creatures": null
+ },
+ {
+  "id": 24,
+  "bank": "Mansion",
+  "level": 4,
+  "chance": 10,
+  "precise": 0,
+  "guards": [
+   {
+    "count": 100,
+    "creature": "Vampire Lord"
+   }
+  ],
+  "upgrade_chance": 0,
+  "resources": {
+   "mercury": 5,
+   "sulfur": 5,
+   "crystal": 5,
+   "gems": 5,
+   "gold": 10000
+  },
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 1,
+   "relic": 0
+  },
+  "creatures": null
+ },
+ {
+  "id": 25,
+  "bank": "Spit",
+  "level": 1,
+  "chance": 30,
+  "precise": 0,
+  "guards": [
+   {
+    "count": 4,
+    "creature": "Basilisk"
+   },
+   {
+    "count": 4,
+    "creature": "Basilisk"
+   },
+   {
+    "count": 4,
+    "creature": "Basilisk"
+   },
+   {
+    "count": 4,
+    "creature": "Basilisk"
+   }
+  ],
+  "upgrade_chance": 0,
+  "resources": {
+   "gold": 3000
+  },
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "creatures": null
+ },
+ {
+  "id": 25,
+  "bank": "Spit",
+  "level": 2,
+  "chance": 30,
+  "precise": 0,
+  "guards": [
+   {
+    "count": 6,
+    "creature": "Basilisk"
+   },
+   {
+    "count": 6,
+    "creature": "Basilisk"
+   },
+   {
+    "count": 6,
+    "creature": "Basilisk"
+   },
+   {
+    "count": 6,
+    "creature": "Basilisk"
+   }
+  ],
+  "upgrade_chance": 0,
+  "resources": {
+   "gold": 4500
+  },
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "creatures": null
+ },
+ {
+  "id": 25,
+  "bank": "Spit",
+  "level": 3,
+  "chance": 30,
+  "precise": 0,
+  "guards": [
+   {
+    "count": 8,
+    "creature": "Basilisk"
+   },
+   {
+    "count": 8,
+    "creature": "Basilisk"
+   },
+   {
+    "count": 8,
+    "creature": "Basilisk"
+   },
+   {
+    "count": 8,
+    "creature": "Basilisk"
+   }
+  ],
+  "upgrade_chance": 0,
+  "resources": {
+   "gold": 6000
+  },
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "creatures": null
+ },
+ {
+  "id": 25,
+  "bank": "Spit",
+  "level": 4,
+  "chance": 10,
+  "precise": 0,
+  "guards": [
+   {
+    "count": 12,
+    "creature": "Basilisk"
+   },
+   {
+    "count": 12,
+    "creature": "Basilisk"
+   },
+   {
+    "count": 12,
+    "creature": "Basilisk"
+   },
+   {
+    "count": 12,
+    "creature": "Basilisk"
+   }
+  ],
+  "upgrade_chance": 0,
+  "resources": {
+   "gold": 9000
+  },
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "creatures": null
+ },
+ {
+  "id": 26,
+  "bank": "Red Tower",
+  "level": 1,
+  "chance": 30,
+  "precise": 0,
+  "guards": [
+   {
+    "count": 35,
+    "creature": "Fire Elemental"
+   }
+  ],
+  "upgrade_chance": 50,
+  "resources": {},
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "creatures": {
+   "count": 1,
+   "creature": "Firebird"
+  }
+ },
+ {
+  "id": 26,
+  "bank": "Red Tower",
+  "level": 2,
+  "chance": 30,
+  "precise": 0,
+  "guards": [
+   {
+    "count": 70,
+    "creature": "Fire Elemental"
+   }
+  ],
+  "upgrade_chance": 50,
+  "resources": {},
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "creatures": {
+   "count": 2,
+   "creature": "Firebird"
+  }
+ },
+ {
+  "id": 26,
+  "bank": "Red Tower",
+  "level": 3,
+  "chance": 30,
+  "precise": 0,
+  "guards": [
+   {
+    "count": 105,
+    "creature": "Fire Elemental"
+   }
+  ],
+  "upgrade_chance": 50,
+  "resources": {},
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "creatures": {
+   "count": 3,
+   "creature": "Firebird"
+  }
+ },
+ {
+  "id": 26,
+  "bank": "Red Tower",
+  "level": 4,
+  "chance": 10,
+  "precise": 0,
+  "guards": [
+   {
+    "count": 140,
+    "creature": "Fire Elemental"
+   }
+  ],
+  "upgrade_chance": 50,
+  "resources": {},
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "creatures": {
+   "count": 4,
+   "creature": "Firebird"
+  }
+ },
+ {
+  "id": 27,
+  "bank": "Black Tower",
+  "level": 1,
+  "chance": 30,
+  "precise": 0,
+  "guards": [
+   {
+    "count": 1,
+    "creature": "Green Dragon"
+   }
+  ],
+  "upgrade_chance": 0,
+  "resources": {
+   "gold": 2000
+  },
+  "artifacts": {
+   "treasure": 0,
+   "minor": 1,
+   "major": 0,
+   "relic": 0
+  },
+  "creatures": null
+ },
+ {
+  "id": 27,
+  "bank": "Black Tower",
+  "level": 2,
+  "chance": 30,
+  "precise": 0,
+  "guards": [
+   {
+    "count": 1,
+    "creature": "Red Dragon"
+   }
+  ],
+  "upgrade_chance": 0,
+  "resources": {
+   "gold": 2250
+  },
+  "artifacts": {
+   "treasure": 0,
+   "minor": 1,
+   "major": 0,
+   "relic": 0
+  },
+  "creatures": null
+ },
+ {
+  "id": 27,
+  "bank": "Black Tower",
+  "level": 3,
+  "chance": 30,
+  "precise": 0,
+  "guards": [
+   {
+    "count": 1,
+    "creature": "Gold Dragon"
+   }
+  ],
+  "upgrade_chance": 0,
+  "resources": {
+   "gold": 3500
+  },
+  "artifacts": {
+   "treasure": 0,
+   "minor": 1,
+   "major": 0,
+   "relic": 0
+  },
+  "creatures": null
+ },
+ {
+  "id": 27,
+  "bank": "Black Tower",
+  "level": 4,
+  "chance": 10,
+  "precise": 0,
+  "guards": [
+   {
+    "count": 1,
+    "creature": "Black Dragon"
+   }
+  ],
+  "upgrade_chance": 0,
+  "resources": {
+   "gold": 3750
+  },
+  "artifacts": {
+   "treasure": 0,
+   "minor": 1,
+   "major": 0,
+   "relic": 0
+  },
+  "creatures": null
+ },
+ {
+  "id": 28,
+  "bank": "Ivory Tower",
+  "level": 1,
+  "chance": 30,
+  "precise": 0,
+  "guards": [
+   {
+    "count": 35,
+    "creature": "Arch Mage"
+   }
+  ],
+  "upgrade_chance": 0,
+  "resources": {},
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "creatures": {
+   "count": 3,
+   "creature": "Enchanter"
+  }
+ },
+ {
+  "id": 28,
+  "bank": "Ivory Tower",
+  "level": 2,
+  "chance": 30,
+  "precise": 0,
+  "guards": [
+   {
+    "count": 50,
+    "creature": "Arch Mage"
+   }
+  ],
+  "upgrade_chance": 0,
+  "resources": {},
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "creatures": {
+   "count": 6,
+   "creature": "Enchanter"
+  }
+ },
+ {
+  "id": 28,
+  "bank": "Ivory Tower",
+  "level": 3,
+  "chance": 30,
+  "precise": 0,
+  "guards": [
+   {
+    "count": 65,
+    "creature": "Arch Mage"
+   }
+  ],
+  "upgrade_chance": 0,
+  "resources": {},
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "creatures": {
+   "count": 9,
+   "creature": "Enchanter"
+  }
+ },
+ {
+  "id": 28,
+  "bank": "Ivory Tower",
+  "level": 4,
+  "chance": 10,
+  "precise": 0,
+  "guards": [
+   {
+    "count": 80,
+    "creature": "Arch Mage"
+   }
+  ],
+  "upgrade_chance": 0,
+  "resources": {},
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "creatures": {
+   "count": 12,
+   "creature": "Enchanter"
+  }
+ },
+ {
+  "id": 29,
+  "bank": "Churchyard",
+  "level": 1,
+  "chance": 100,
+  "precise": 0,
+  "guards": [
+   {
+    "count": 15,
+    "creature": "Zombie"
+   },
+   {
+    "count": 15,
+    "creature": "Zombie"
+   },
+   {
+    "count": 15,
+    "creature": "Zombie"
+   },
+   {
+    "count": 15,
+    "creature": "Zombie"
+   },
+   {
+    "count": 15,
+    "creature": "Zombie"
+   },
+   {
+    "count": 15,
+    "creature": "Zombie"
+   }
+  ],
+  "upgrade_chance": 0,
+  "resources": {
+   "gold": 2500
+  },
+  "artifacts": {
+   "treasure": 0,
+   "minor": 1,
+   "major": 0,
+   "relic": 0
+  },
+  "creatures": null
+ },
+ {
+  "id": 29,
+  "bank": "Churchyard",
+  "level": 2,
+  "chance": 0,
+  "precise": 0,
+  "guards": [
+   {
+    "count": 15,
+    "creature": "Zombie"
+   },
+   {
+    "count": 15,
+    "creature": "Zombie"
+   },
+   {
+    "count": 15,
+    "creature": "Zombie"
+   },
+   {
+    "count": 15,
+    "creature": "Zombie"
+   },
+   {
+    "count": 15,
+    "creature": "Zombie"
+   },
+   {
+    "count": 15,
+    "creature": "Zombie"
+   }
+  ],
+  "upgrade_chance": 0,
+  "resources": {
+   "gold": 2500
+  },
+  "artifacts": {
+   "treasure": 0,
+   "minor": 1,
+   "major": 0,
+   "relic": 0
+  },
+  "creatures": null
+ },
+ {
+  "id": 29,
+  "bank": "Churchyard",
+  "level": 3,
+  "chance": 0,
+  "precise": 0,
+  "guards": [
+   {
+    "count": 15,
+    "creature": "Zombie"
+   },
+   {
+    "count": 15,
+    "creature": "Zombie"
+   },
+   {
+    "count": 15,
+    "creature": "Zombie"
+   },
+   {
+    "count": 15,
+    "creature": "Zombie"
+   },
+   {
+    "count": 15,
+    "creature": "Zombie"
+   },
+   {
+    "count": 15,
+    "creature": "Zombie"
+   }
+  ],
+  "upgrade_chance": 0,
+  "resources": {
+   "gold": 2500
+  },
+  "artifacts": {
+   "treasure": 0,
+   "minor": 1,
+   "major": 0,
+   "relic": 0
+  },
+  "creatures": null
+ },
+ {
+  "id": 29,
+  "bank": "Churchyard",
+  "level": 4,
+  "chance": 0,
+  "precise": 0,
+  "guards": [
+   {
+    "count": 15,
+    "creature": "Zombie"
+   },
+   {
+    "count": 15,
+    "creature": "Zombie"
+   },
+   {
+    "count": 15,
+    "creature": "Zombie"
+   },
+   {
+    "count": 15,
+    "creature": "Zombie"
+   },
+   {
+    "count": 15,
+    "creature": "Zombie"
+   },
+   {
+    "count": 15,
+    "creature": "Zombie"
+   }
+  ],
+  "upgrade_chance": 0,
+  "resources": {
+   "gold": 2500
+  },
+  "artifacts": {
+   "treasure": 0,
+   "minor": 1,
+   "major": 0,
+   "relic": 0
+  },
+  "creatures": null
+ },
+ {
+  "id": 30,
+  "bank": "Experimental Shop",
+  "level": 1,
+  "chance": 30,
+  "precise": 0,
+  "guards": [
+   {
+    "count": 20,
+    "creature": "Steel Golem"
+   }
+  ],
+  "upgrade_chance": 0,
+  "resources": {},
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "creatures": {
+   "count": 1,
+   "creature": "Giant"
+  }
+ },
+ {
+  "id": 30,
+  "bank": "Experimental Shop",
+  "level": 2,
+  "chance": 30,
+  "precise": 0,
+  "guards": [
+   {
+    "count": 40,
+    "creature": "Steel Golem"
+   }
+  ],
+  "upgrade_chance": 0,
+  "resources": {},
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "creatures": {
+   "count": 2,
+   "creature": "Giant"
+  }
+ },
+ {
+  "id": 30,
+  "bank": "Experimental Shop",
+  "level": 3,
+  "chance": 30,
+  "precise": 0,
+  "guards": [
+   {
+    "count": 60,
+    "creature": "Steel Golem"
+   }
+  ],
+  "upgrade_chance": 0,
+  "resources": {},
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "creatures": {
+   "count": 3,
+   "creature": "Giant"
+  }
+ },
+ {
+  "id": 30,
+  "bank": "Experimental Shop",
+  "level": 4,
+  "chance": 10,
+  "precise": 0,
+  "guards": [
+   {
+    "count": 80,
+    "creature": "Steel Golem"
+   }
+  ],
+  "upgrade_chance": 0,
+  "resources": {},
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "creatures": {
+   "count": 4,
+   "creature": "Giant"
+  }
+ },
+ {
+  "id": 31,
+  "bank": "Wolf Raider Picket",
+  "level": 1,
+  "chance": 30,
+  "precise": 0,
+  "guards": [
+   {
+    "count": 50,
+    "creature": "Wolf Raider"
+   }
+  ],
+  "upgrade_chance": 0,
+  "resources": {},
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "creatures": {
+   "count": 4,
+   "creature": "Cyclops"
+  }
+ },
+ {
+  "id": 31,
+  "bank": "Wolf Raider Picket",
+  "level": 2,
+  "chance": 30,
+  "precise": 0,
+  "guards": [
+   {
+    "count": 75,
+    "creature": "Wolf Raider"
+   }
+  ],
+  "upgrade_chance": 0,
+  "resources": {},
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "creatures": {
+   "count": 6,
+   "creature": "Cyclops"
+  }
+ },
+ {
+  "id": 31,
+  "bank": "Wolf Raider Picket",
+  "level": 3,
+  "chance": 30,
+  "precise": 0,
+  "guards": [
+   {
+    "count": 100,
+    "creature": "Wolf Raider"
+   }
+  ],
+  "upgrade_chance": 0,
+  "resources": {},
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "creatures": {
+   "count": 8,
+   "creature": "Cyclops"
+  }
+ },
+ {
+  "id": 31,
+  "bank": "Wolf Raider Picket",
+  "level": 4,
+  "chance": 10,
+  "precise": 0,
+  "guards": [
+   {
+    "count": 150,
+    "creature": "Wolf Raider"
+   }
+  ],
+  "upgrade_chance": 0,
+  "resources": {},
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "creatures": {
+   "count": 12,
+   "creature": "Cyclops"
+  }
+ },
+ {
+  "id": 32,
+  "bank": "Ruins",
+  "level": 1,
+  "chance": 30,
+  "precise": 1,
+  "guards": [
+   {
+    "count": 20,
+    "creature": "Skeleton"
+   },
+   {
+    "count": 3,
+    "creature": "Wight"
+   },
+   {
+    "count": 3,
+    "creature": "Wraith"
+   },
+   {
+    "count": 10,
+    "creature": "Skeleton Warrior"
+   },
+   {
+    "count": 1,
+    "creature": "Power Lich"
+   }
+  ],
+  "upgrade_chance": 0,
+  "resources": {
+   "gold": 1000
+  },
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "creatures": null
+ },
+ {
+  "id": 32,
+  "bank": "Ruins",
+  "level": 2,
+  "chance": 30,
+  "precise": 1,
+  "guards": [
+   {
+    "count": 30,
+    "creature": "Skeleton"
+   },
+   {
+    "count": 5,
+    "creature": "Wight"
+   },
+   {
+    "count": 5,
+    "creature": "Wraith"
+   },
+   {
+    "count": 10,
+    "creature": "Skeleton Warrior"
+   },
+   {
+    "count": 1,
+    "creature": "Power Lich"
+   }
+  ],
+  "upgrade_chance": 0,
+  "resources": {
+   "gold": 2000
+  },
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "creatures": null
+ },
+ {
+  "id": 32,
+  "bank": "Ruins",
+  "level": 3,
+  "chance": 30,
+  "precise": 1,
+  "guards": [
+   {
+    "count": 40,
+    "creature": "Skeleton"
+   },
+   {
+    "count": 7,
+    "creature": "Wight"
+   },
+   {
+    "count": 7,
+    "creature": "Wraith"
+   },
+   {
+    "count": 20,
+    "creature": "Skeleton Warrior"
+   },
+   {
+    "count": 2,
+    "creature": "Power Lich"
+   }
+  ],
+  "upgrade_chance": 0,
+  "resources": {
+   "gold": 3000
+  },
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "creatures": null
+ },
+ {
+  "id": 32,
+  "bank": "Ruins",
+  "level": 4,
+  "chance": 10,
+  "precise": 1,
+  "guards": [
+   {
+    "count": 50,
+    "creature": "Skeleton"
+   },
+   {
+    "count": 9,
+    "creature": "Wight"
+   },
+   {
+    "count": 9,
+    "creature": "Wraith"
+   },
+   {
+    "count": 20,
+    "creature": "Skeleton Warrior"
+   },
+   {
+    "count": 3,
+    "creature": "Power Lich"
+   }
+  ],
+  "upgrade_chance": 0,
+  "resources": {
+   "gold": 4000
+  },
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "creatures": null
+ }
+]

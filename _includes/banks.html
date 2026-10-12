@@ -2,7 +2,8 @@
 <div class="table-wrapper"><table>
 <thead><tr><th>{% if ru %}Банк{% else %}Bank{% endif %}</th><th>{% if ru %}Ур.{% else %}Lv{% endif %}</th><th>{% if ru %}Шанс{% else %}Chance{% endif %}</th><th>{% if ru %}Охрана{% else %}Guards{% endif %}</th><th>{% if ru %}Шанс улучшения{% else %}Upgrade chance{% endif %}</th><th>{% if ru %}Ресурсы{% else %}Resources{% endif %}</th><th>{% if ru %}Существа{% else %}Creatures{% endif %}</th><th>{% if ru %}Артефакты (сокр./малый/вел./реликт){% else %}Artifacts (treasure/minor/major/relic){% endif %}</th></tr></thead>
 <tbody>
-{% for b in site.data.creature_banks %}
+{% assign rows = include.rows | default: site.data.creature_banks %}
+{% for b in rows %}
 <tr><td>{{ b.bank }}</td><td>{{ b.level }}</td><td>{{ b.chance }}%</td><td>{% for g in b.guards %}{{ g.count }} {{ g.creature }}{% unless forloop.last %}, {% endunless %}{% endfor %}</td><td>{{ b.upgrade_chance }}%</td><td>{% for r in b.resources %}{{ r[1] }} {{ r[0] }}{% unless forloop.last %}, {% endunless %}{% endfor %}</td><td>{% if b.creatures %}{{ b.creatures.count }} {{ b.creatures.creature }}{% endif %}</td><td>{{ b.artifacts.treasure }} / {{ b.artifacts.minor }} / {{ b.artifacts.major }} / {{ b.artifacts.relic }}</td></tr>
 {% endfor %}
 </tbody></table></div>

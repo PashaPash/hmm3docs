@@ -17,7 +17,7 @@ Only differences that could be confirmed from files. Everything else on this sit
 
 - **Compared:** the text tables in `HotA_lng.lod` against the same tables in `H3ab_bmp.lod`. That archive is a normal LOD and reads with `tools/lod.py`; the numbers below are a mechanical diff of the two sets. **[data]**
 - **Not compared:** code. HotA runs its own executable (`h3hota.exe`, a different build from the GOG `Heroes3.exe` analysed here, so addresses on this site do not carry over) and patches it in memory from `HotA.dll`. None of the AI, combat or map rules on the other pages has been checked against HotA.
-- **Read in part:** `HotA.dat`. Its creature records give the stats of the 50 new creatures, see [New creatures](#new-creatures). Its other record types (heroes, objects, banks, classes) are not decoded.
+- **Read in part:** `HotA.dat`. Its creature records give the stats of the 50 new creatures, see [New creatures](#new-creatures). Its bank records give the twelve new creature banks, see [New creature banks](#new-creature-banks). Its other record types (heroes, objects, classes) are not decoded.
 - **Not read:** `HotA.lod`, whose directory is obfuscated.
 - Whether `HotA.dll` overrides any of these table values at run time is **[unverified]**. The values match changes HotA is known for, which suggests the tables are the ones in use.
 
@@ -76,7 +76,20 @@ The 18 original classes are unchanged: starting skills, primary skill chances, s
 | Naga Bank, all levels | the resource part of the reward is gems instead of sulfur, same amounts |
 | Dragon Fly Hive, all levels | upgrade chance for a guard stack 50% → 0% |
 
-Guards, level chances and the other rewards of the 11 original banks are the same. New HotA banks are not in this table.
+Guards, level chances and the other rewards of the 11 original banks are the same.
+
+## New creature banks
+
+Also from `HotA.dat` (`tools/hota_banks.py`) **[data]**. The twelve records `crbank21` to `crbank32` each hold a small plain-text block with the same fields as a row of `CRBANKS.TXT`: four levels with a chance, guard types and counts, an upgrade chance, and the reward.
+
+Two things differ from the SoD table format:
+
+- Guards are listed **stack by stack** (up to seven types and counts), so several banks name the same creature more than once. Whether HotA still applies the [SoD splitting rule](../ai-neutral/#creature-banks) to these lists is **[unverified]**.
+- Each record starts with a "precise guard stack setup" flag. It is 1 only for Ruins; its effect is code in `HotA.dll` and was not read.
+
+Churchyard has a single state (chance 100%, the other three 0%).
+
+{% include banks.html lang="en" rows=site.data.hota_banks %}
 
 ## How this interacts with the rest of the site
 
