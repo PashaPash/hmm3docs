@@ -21,6 +21,8 @@ lang: en
 
 ## The economy phase of a turn
 
+Building numbers, costs and prerequisites are in [Factions and towns](../towns/). HotA's three new towns are not covered ([what is known](../hota/)).
+
 `0x428dd0`, once per computer player per turn:
 
 1. Repeat `0x42ae00` until it finds nothing to buy. Each call builds one building.

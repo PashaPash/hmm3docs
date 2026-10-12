@@ -13,6 +13,10 @@ Building costs and prerequisites for the nine town types. Creatures of each town
 1. TOC
 {:toc}
 
+> **HotA 1.8.1:** adds three towns (Cove, Factory, Bulwark) whose building lists are not read; only their [creatures](../hota/#new-creatures) are. Phoenix and Firebird growth and several prices differ, see [HotA differences](../hota/#creatures).
+
+Related: [what the computer builds and in what order](../ai-towns/), [Arrow Towers by fortification level](../combat/#arrow-towers-and-war-machines), [moat damage by town](../combat/#siege-partial).
+
 ## Where the data comes from
 
 - **Costs** are from `BUILDING.TXT` **[data]**.

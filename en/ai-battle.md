@@ -47,7 +47,7 @@ attack factor  = 1 + 0.05 × (attack  − creature's base attack  − baseline)
 defence factor = 1 + 0.05 × (defence − creature's base defence − baseline)
 ```
 
-- `Fight Value` is the column from [the creature table](../creatures/).
+- `Fight Value` is the column from [the creature table](../creatures/). HotA changes it for seven creatures ([list](../hota/#creatures)).
 - "attack" and "defence" are the stack's current values in this battle, so they include the hero's primary skills and active spells.
 - The **baseline** is the smallest such bonus found among all stacks on the field (`0x435ec0`). The side with the better hero therefore has every unit valued higher.
 - Modifiers to the attack factor: ×0.5 for a shooter that cannot shoot at the moment; ×2 for a creature with the double-shot flag when it shoots; Bless and Curse scale it by maximum or minimum damage relative to average damage; a Ballista is multiplied by 1 / 1.5 / 1.5 / 2 for the hero's Artillery level (none / basic / advanced / expert) and doubled again from Advanced. **[code; table at `0x63b7f0`]**
@@ -69,7 +69,7 @@ When the AI's side is worth less than half of the enemy (`own total × 2 < enemy
 attack value = value(damage A deals to T) − value(damage T's retaliation deals to A)
 ```
 
-Damage and retaliation come from a simulated exchange (`0x4359b0`) using the normal damage routine. Within one planning pass, damage already assigned to a target by other stacks is subtracted first, so the AI does not count the same kill twice.
+Damage and retaliation come from a simulated exchange (`0x4359b0`) using the normal [damage formula](../combat/#damage) and [retaliation rules](../combat/#retaliation). Within one planning pass, damage already assigned to a target by other stacks is subtracted first, so the AI does not count the same kill twice.
 
 ## Melee stacks
 
@@ -186,6 +186,8 @@ The check also compares the player's gold with a surrender-style cost plus 2500;
 Entry `0x422da0`, chooser `0x43c800`. The AI hero casts at most one spell per round, before the active stack's action is chosen.
 
 ### Preconditions
+
+Spell numbers are in the [spell table](../spells/); HotA changes a few of them ([list](../hota/#spells)).
 
 The hero has not cast this round, it is not the tactics phase, magic is not blocked on this battlefield, the hero has a spell book, and neither hero wears artifact 126 (Orb of Inhibition). **[code `0x422da0`]**
 

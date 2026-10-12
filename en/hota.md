@@ -23,6 +23,8 @@ Only differences that could be confirmed from files. Everything else on this sit
 
 ## Creatures
 
+The SoD values are in the [creature table](../creatures/).
+
 Only values that differ. SoD → HotA.
 
 | Creature | Change |
@@ -56,6 +58,8 @@ Read from `HotA.dat` with `tools/hota_dat.py` **[data]**. The file is a list of 
 
 ## Spells
 
+The SoD values are in the [spell table](../spells/).
+
 | Spell | Change |
 |---|---|
 | Fire Wall | damage per Spell Power 10 → 15 |
@@ -67,9 +71,13 @@ No change in mana costs, spell levels or per-spell AI values for the 70 hero spe
 
 ## Hero classes
 
+See [Heroes](../heroes/) for the 18 original classes.
+
 The 18 original classes are unchanged: starting skills, primary skill chances, secondary skill weights and `Aggression` are identical. The table has six more rows: Captain, Navigator, Mercenary, Artificer, Chieftain, Elder.
 
 ## Creature banks
+
+The SoD table and the generation rule are under [creature banks](../ai-neutral/#creature-banks).
 
 | Bank | Change |
 |---|---|

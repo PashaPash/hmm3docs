@@ -100,6 +100,8 @@ The stronger the visiting army, the fewer and larger the neutral stacks. A weak 
 
 ## In battle
 
+The combat rules these stacks fight under are in [Combat rules](../combat/); note that a hero-less side gets [no lucky strikes](../combat/#luck) and escapes a quarter of its [bad-morale freezes](../combat/#morale). Battles in which no human takes part are not fought on the field at all, see [battles without a battlefield](../ai-battle/#battles-without-a-battlefield).
+
 A hero-less side runs exactly the same stack routines as an AI hero's army, described in [AI: battle](../ai-battle/). What differs follows from the missing hero:
 
 | Topic | Hero-less side | Code |
@@ -156,6 +158,8 @@ A visited bank is marked per player (bits 5–12 of its data word) and marked em
 
 From `CRBANKS.TXT` **[data]**.
 
+> **HotA 1.8.1:** Naga Bank pays gems instead of sulfur and Dragon Fly Hive guards are never upgraded ([details](../hota/#creature-banks)); twelve banks are added, with guards listed stack by stack ([new creature banks](../hota/#new-creature-banks)). How the computer values a bank as a target is under [object values](../ai-adventure/#object-values-that-are-readable).
+
 {% include banks.html lang="en" %}
 
 ## Growth and new stacks
@@ -177,6 +181,8 @@ count = v / 16,  fraction = v mod 16
 ### Size of a random stack
 
 When the map is set up, a wandering stack whose count is 0 gets a random count (`0x4c0cc0`). The bounds are passed in registers and were not read; they are **[inferred]** to be the "Adv. Map Low/High" columns of `CRTRAITS.TXT`, shown as "Map stack" in the [creature table](../creatures/).
+
+> **HotA 1.8.1:** the size ranges of random stacks differ for about a dozen creatures, and AI Value differs for some, which shifts the join/flee ratio and the stack split; see [HotA differences: creatures](../hota/#creatures).
 
 ### New month
 

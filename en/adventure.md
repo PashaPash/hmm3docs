@@ -15,6 +15,8 @@ Hero movement so far. Map objects, economy and week events are not written here 
 
 ## Movement points per day
 
+The computer's use of these numbers: a target counts as "near" within 21% of the daily total ([AI: adventure map](../ai-adventure/#step-4-choose)), and an enemy hero threatens a town within its daily movement plus 800 ([threat mark](../ai-adventure/#how-a-town-gets-its-threat-mark)).
+
 `0x4e4990`.
 
 ### On land

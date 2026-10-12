@@ -15,6 +15,8 @@ Damage, morale, luck, turn order and retaliation. Siege rules are partly covered
 
 ## Damage
 
+Creature stats are in the [creature table](../creatures/) (HotA changes: [list](../hota/#creatures)). How the computer uses this formula to pick targets is in [AI: battle](../ai-battle/#value-of-an-attack).
+
 `0x443f40` computes the damage of one attack. `base` is the stack's rolled damage (per-creature roll times count; Bless and Curse replace the roll with the maximum or minimum).
 
 ```

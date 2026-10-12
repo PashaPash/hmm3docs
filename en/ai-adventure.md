@@ -23,6 +23,8 @@ How a computer player's hero picks where to go. First version: the structure and
 
 ## Step 1: list the targets
 
+Path costs below are in the movement points described in [Adventure map](../adventure/). Fights that the hero takes are settled by the rules in [battles without a battlefield](../ai-battle/#battles-without-a-battlefield) unless a human is involved.
+
 `0x42edd0` walks the hero's pathfinding result and asks `0x528040` for the value of each tile that holds an object.
 
 - A value of zero or less drops the target.
