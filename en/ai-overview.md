@@ -35,6 +35,32 @@ On Easy and Normal a computer player's town builds at most once every two days; 
 
 Difficulty switches parts of the battle logic on and off for every non-human side, including neutral monsters. See [AI: battle](../ai-battle/#what-difficulty-changes).
 
+## Coverage of AI decisions
+
+What the computer player decides, and where it is described. "Partly" means the structure is described but some values or branches were not read.
+
+| Decision | Status | Where |
+|---|---|---|
+| Battle: action of each stack, melee and ranged | covered | [AI: battle](../ai-battle/) |
+| Battle: hero spell | covered for candidates, scoring and timing; about half of the per-spell evaluators only listed | [AI: battle](../ai-battle/#hero-spells) |
+| Battle: creature spells, retreat, surrender | covered | [AI: battle](../ai-battle/) |
+| Battle: tactics-phase placement | partly (shooters only) | [AI: battle](../ai-battle/#shooters) |
+| Battle: quick combat (no battlefield) | **not read** | |
+| Neutral stacks: join, flee, fight, split, growth | covered | [AI: neutral monsters](../ai-neutral/) |
+| Hero: where to go | covered for the choice rule; object values partly | [AI: adventure map](../ai-adventure/) |
+| Hero: whether a fight is worth it | covered for multipliers and outcome use; the simulator itself **not read** | [AI: adventure map](../ai-adventure/#valuing-a-fight) |
+| Hero: returning to defend a town | partly; how the threat mark is set **not read** | [AI: adventure map](../ai-adventure/#its-own-towns) |
+| Hero: merging armies with another hero | partly | [AI: adventure map](../ai-adventure/#enemy-heroes) |
+| Hero: adventure spells, boats, digging for the Grail | **not read** | |
+| Hero: level-up skill choice, artifact equipping | **not read** | |
+| Player: hiring heroes | covered for limits; which hero is picked **not read** | [AI: adventure map](../ai-adventure/#hiring-heroes) |
+| Town: what to build | covered; upgraded dwelling and horde values only listed | [AI: towns](../ai-towns/) |
+| Town: recruiting, garrison versus hero split | partly; purchase order **not read** | [AI: towns](../ai-towns/#when-a-hero-visits-its-own-town) |
+| Economy: resource valuation | covered | [AI: adventure map](../ai-adventure/#what-resources-are-worth) |
+| Economy: Marketplace trades | covered except the selling order | [AI: towns](../ai-towns/#trading-at-the-marketplace) |
+| Economy: gifts to allies | covered | [AI: towns](../ai-towns/#gifts-to-allies) |
+| Economy: Artifact Merchants, war machines, Mage Guild | **not read** | |
+
 ## Two value columns
 
 `CRTRAITS.TXT` gives each creature two numbers ([table](../creatures/)):

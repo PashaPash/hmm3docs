@@ -20,11 +20,11 @@ chapters:
   - {n: 7, file: adventure, state: wip, en: "Adventure map", ru: "Карта приключений",
      note_en: "hero movement points and step costs; objects and economy not written", note_ru: "очки движения героя и стоимость шага; объекты и экономика не написаны"}
   - {n: 8, file: ai-overview, state: wip, en: "AI: overview", ru: "ИИ: обзор",
-     note_en: "difficulty value, starting resources, the two value columns", note_ru: "значение сложности, стартовые ресурсы, два столбца ценности"}
+     note_en: "difficulty effects, starting resources, coverage checklist of all AI decisions", note_ru: "влияние сложности, стартовые ресурсы, перечень всех решений ИИ с состоянием"}
   - {n: 9, file: ai-adventure, state: wip, en: "AI: valuation of armies, heroes, objects", ru: "ИИ: оценка армий, героев, объектов",
      note_en: "kept inside chapter 11: resource weights, fight valuation, readable object values", note_ru: "находится в главе 11: веса ресурсов, оценка боя, прочитанные ценности объектов"}
   - {n: 10, file: ai-towns, state: wip, en: "AI: town building and recruitment", ru: "ИИ: строительство и найм",
-     note_en: "building values, prerequisite-chain scoring, build cooldown by difficulty, hero visits; recruitment order open", note_ru: "ценности построек, оценка по цепочкам предпосылок, пауза между постройками по сложности, визит героя; порядок найма открыт"}
+     note_en: "building values, prerequisite-chain scoring, build cooldown by difficulty, Marketplace trades, gifts to allies, hero visits; recruitment order open", note_ru: "ценности построек, оценка по цепочкам предпосылок, пауза между постройками по сложности, обмен на Рынке, подарки союзникам, визит героя; порядок найма открыт"}
   - {n: 11, file: ai-adventure, state: wip, en: "AI: adventure map decisions", ru: "ИИ: решения на карте",
      note_en: "target choice rule, resource weights, owner factor by difficulty, fight valuation, hero hiring limits, towns and heroes as targets, a dozen object values; dwellings and most minor objects still open", note_ru: "правило выбора цели, веса ресурсов, коэффициент владельца по сложности, оценка боя, лимиты найма героев, города и герои как цели, дюжина ценностей объектов; жилища и большинство мелких объектов ещё открыты"}
   - {n: 12, file: ai-battle, state: done, en: "AI: battle", ru: "ИИ: бой",

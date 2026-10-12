@@ -26,7 +26,7 @@ lang: en
 1. Repeat `0x42ae00` until it finds nothing to buy. Each call builds one building.
 2. Decide whether to hire a hero (`0x431360`, see [hiring heroes](../ai-adventure/#hiring-heroes)).
 3. Recompute the resource weights (`0x428740`).
-4. If the player has a town with the right building, pass resources to allied computer players (`0x429110`, not detailed yet).
+4. If the player has a town with a Marketplace, send surplus resources to allies (`0x429110`, see [gifts](#gifts-to-allies)).
 
 ## One build per town per day, or per two days
 
@@ -75,6 +75,38 @@ Then, over all the player's towns that may still build today, the buildable buil
 
 A cheap building that unlocks several valuable ones collects all their scores, which is how Mage Guild level 1, Blacksmith or Marketplace get built despite having no value of their own.
 
+## Trading at the Marketplace
+
+The computer player does not trade to make a profit or to balance its stock. It trades only **to complete a specific purchase**, from inside the scoring routine `0x42a150`.
+
+1. **Trigger.** While pricing a building chain, a resource counts as blocking when the stock is below the cost and the player has **no income** of that resource. With income, the AI simply waits.
+2. **What can be sold** (`0x42a2b0`). For every other resource: `spare = stock − cost of the planned purchase − cushion`, where the cushion is the amount already reserved for other planned purchases, at least 20. The spare is further limited to the surplus from the [resource weights](../ai-adventure/#what-resources-are-worth) (`have − need`). A resource with no positive spare is not sold.
+3. **Where** (`0x42a580`). The player needs at least one Marketplace. The number of Marketplaces, up to 10, sets the exchange rate as it does for a human. A Marketplace the player could build today also counts if it has gold income.
+4. If there is something short and something spare, the routine sells spare resources to cover the shortage. If the shortage cannot be covered, the purchase goal is dropped for this turn.
+
+The order in which spare resources are sold was not read. **[code]**
+
+## Gifts to allies
+
+`0x429110`, called at the end of the economy phase for every player on the same team, computer allies first and human allies after. It runs only if the giver has a town with a **Marketplace**.
+
+For each resource:
+
+```
+surplus = have − need                      the same figures as in the resource weights
+gift    = min(surplus, (my stock − ally's stock) / 2)
+keep at least 10000 gold, or 20 of any other resource
+subtract what is reserved for my own planned purchases
+drop the gift if it is under 1000 gold, or under 5 of another resource
+drop the gift if it is less than 5 × what the ally already has
+```
+
+- The last line means gifts go only to an ally who is nearly out of that resource: the amount must be at least five times the ally's current stock.
+- To an allied **computer** player the gift is also capped at what that ally is short of (`need − have`, recomputed for the ally first).
+- To an allied **human** player the amount is sent as computed and a message is shown.
+
+**[code; the `min` in the second line is read from a garbled decompilation and is inferred]**
+
 ## When a hero visits its own town
 
 `0x5253d0` runs when an AI hero enters a town of its own player:
@@ -100,5 +132,5 @@ A cheap building that unlocks several valuable ones collects all their scores, w
 
 - Upgraded dwelling and horde values in detail.
 - Which creatures are bought first when money is short, and how armies are split between the town garrison and heroes.
-- War machines, Mage Guild use, Artifact Merchants, the Marketplace trade logic.
+- War machines, Mage Guild use, Artifact Merchants, and the order in which spare resources are sold at the Marketplace.
 - How and when a town's threat mark is set. The mark is **[inferred]** from its uses: it adds a large value for the owner's heroes to return (see [towns as targets](../ai-adventure/#its-own-towns)), switches off dwelling, horde and silo values, and switches on the defensive specials.
