@@ -88,6 +88,8 @@ The factor is used when valuing mines, in the fight valuation when the opponent 
 - On **Easy** taking something from a human is worth less than taking the same thing unowned, and computer players prefer each other's property.
 - As difficulty rises the preference turns around. On **Expert** another computer player's ownership adds nothing; on **Impossible** it subtracts, so computer players leave each other alone and concentrate on humans.
 
+**Where the hero is hired** (`0x431800`). The new hero's immediate worth is the value of its artifacts plus its starting army priced at the resource weights. If that is below a threshold tied to the 2500 gold price and the player does not hold at least `2500 × its number of heroes`, nothing is hired. Otherwise every town of the player with no visiting hero is tried: a town needs a Tavern, or one that can be built that day, in which case the Tavern's cost at the resource weights is subtracted. To this is added what the new hero could reach from that town (`0x431bd0`, the same target evaluation as for any hero). The town with the best total gets the hero. **[code; the exact threshold expression was not read]**
+
 ## Adventure spells in path planning
 
 The computer does not decide "now I cast Town Portal" as a separate step. The spell is an extra **edge in the hero's pathfinding graph** (`0x56b050`, called from the pathfinder `0x56b440`), so a destination reached through a portal is scored like any other, by value over path cost.

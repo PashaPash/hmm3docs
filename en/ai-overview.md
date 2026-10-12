@@ -54,10 +54,10 @@ What the computer player decides, and where it is described. "Partly" means the 
 | Hero: Town Portal, Water Walk in path planning | covered | [AI: adventure map](../ai-adventure/#adventure-spells-in-path-planning) |
 | Hero: casting Fly and Dimension Door, boats, digging for the Grail | **not read** | |
 | Hero: level-up skill choice | covered for most skills; the new-versus-upgrade test **not read** | [AI: adventure map](../ai-adventure/#level-up-choices) |
-| Hero: artifact equipping | **not read** | |
-| Player: hiring heroes | covered: limits and which tavern hero; where the hire happens **not read** | [AI: adventure map](../ai-adventure/#hiring-heroes) |
+| Hero: artifact exchange between two heroes in a town | covered; equipping from the backpack on pickup **not read** | [AI: towns](../ai-towns/#when-a-hero-visits-its-own-town) |
+| Player: hiring heroes | covered: limits, which tavern hero, which town | [AI: adventure map](../ai-adventure/#hiring-heroes) |
 | Town: what to build | covered; upgraded dwelling and horde values only listed | [AI: towns](../ai-towns/) |
-| Town: recruiting | purchase order and army gain covered; the garrison versus hero split **not read** | [AI: towns](../ai-towns/#which-creatures-are-bought-first) |
+| Town: recruiting | purchase order, army gain and displaced stack covered; the garrison versus hero split **not read** | [AI: towns](../ai-towns/#which-creatures-are-bought-first) |
 | Economy: resource valuation | covered | [AI: adventure map](../ai-adventure/#what-resources-are-worth) |
 | Economy: Marketplace trades | covered except the selling order | [AI: towns](../ai-towns/#trading-at-the-marketplace) |
 | Economy: gifts to allies | covered | [AI: towns](../ai-towns/#gifts-to-allies) |

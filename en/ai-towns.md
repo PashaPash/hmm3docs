@@ -105,6 +105,15 @@ adjusted as follows:
 - **Mixing rule.** A creature of a different alignment that would cost the army morale is refused a free slot when it is small: when ten times its value is no more than the value of the army it would join.
 - **No free slot.** The routine picks a stack to push out (`0x42c690`) and the gain is reduced by that stack's `AI Value × count`. If no stack can be pushed out, the gain is 0.
 
+### Which stack is pushed out
+
+`0x42c690`. Among the stacks already in the army, the one with the **lowest total `AI Value × count`** is replaced, with two protections for shooters:
+
+- if the army has exactly one stack of shooters, that stack is never the one pushed out;
+- when the caller asks to keep ranged strength and the army has four or more shooter stacks, only a shooter stack may be pushed out.
+
+When the purchase would break the mixing rule above, only stacks of the odd alignment are candidates.
+
 ## Trading at the Marketplace
 
 The computer player does not trade to make a profit or to balance its stock. It trades only **to complete a specific purchase**, from inside the scoring routine `0x42a150`.
@@ -157,11 +166,11 @@ drop the gift if it is less than 5 × what the ally already has
   | Conflux | special 21 (Magic University) | a skill-value routine |
 
 - Above Easy, the hero buys the town's **war machine** if it does not have one (`0x525ca0`): the machine sold by that town's Blacksmith, and in a Stronghold also the Ballista from the Ballista Yard. The machine must be usable by the hero and affordable in full. If the Blacksmith itself is missing and can be built today, the routine builds it first and then buys.
-- Above Easy, a further routine runs for the garrison and visiting hero (`0x433fe0`); not detailed yet.
+- Above Easy, the garrison hero and the visiting hero **exchange artifacts** (`0x433fe0`, run once in each direction). For each equipped artifact the routine takes it off, checks whether the other hero's total artifact value would rise by more than this hero's falls (`0x433e20`, `0x433bb0`), and either hands it over or puts it back. Backpack artifacts are passed on when the other hero can make use of them.
 
 ## Not decoded yet
 
 - Upgraded dwelling and horde values in detail.
-- How armies are split between the town garrison and heroes, and which stack is pushed out of a full army (`0x42c690`).
+- How armies are split between the town garrison and heroes.
 - Mage Guild use, Artifact Merchants, and the order in which spare resources are sold at the Marketplace.
 - The threat mark is described under [how a town gets its threat mark](../ai-adventure/#how-a-town-gets-its-threat-mark); the same pass buys emergency garrison troops before any building is chosen.

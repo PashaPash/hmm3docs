@@ -158,7 +158,7 @@ Never considered when:
 - difficulty is Easy; on Normal the check is skipped half of the time (`rand(1,100) < 51`);
 - either hero wears artifact 125 (Shackles of War);
 - the hero is the one named in a "lose this hero" condition;
-- the player has no suitable town left to return to **[inferred from a building-mask test on the player's towns]**.
+- the player has no town with a **Tavern** to rehire the hero in (the test uses the Tavern's building mask, the same one the [hiring routine](../ai-adventure/#hiring-heroes) checks).
 
 Immediate retreat: the AI is attacking a castle-level fortification, has no flyers, no shooters, the walls are intact and every defender is behind them (`0x41e440`).
 
