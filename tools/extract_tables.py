@@ -73,7 +73,8 @@ def hero_classes(src):
             continue
         n = [num(c) for c in x[2:51]]
         out.append({
-            "id": len(out), "name": x[0].strip(), "town": TOWNS[len(out) // 2],
+            "id": len(out), "name": x[0].strip(),
+            "town": TOWNS[len(out) // 2] if len(out) // 2 < len(TOWNS) else None,
             "aggression": num(x[1]),
             "start": n[0:4], "gain_low": n[4:8], "gain_high": n[8:12],
             "skill_weights": dict(zip(skills, n[12:40])),
