@@ -7,7 +7,7 @@ lang: en
 
 # Heroes III mechanics, read from the binary
 
-Every statement here comes from `Heroes3.exe` (GOG Heroes III Complete, Shadow of Death 3.2 engine) or from the data tables that executable loads. See [Method and evidence](method/) for how to read the tags and addresses.
+Every statement here comes from `Heroes3.exe` (GOG Heroes III Complete, Shadow of Death code base) or from the data tables that executable loads. See [Method and evidence](method/) for how to read the tags and addresses.
 
 ## Chapters
 

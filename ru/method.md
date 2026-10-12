@@ -11,7 +11,7 @@ lang: ru
 
 | Файл | Роль | SHA-256 |
 |---|---|---|
-| `Heroes3.exe` | Исполняемый файл игры, GOG Heroes III Complete (движок Shadow of Death 3.2). База образа `0x400000`, около 13 300 функций. | `057c9d88e7206f6669a4615de2c6e02ab6c4e2d570a9e2badf07fe0bd6247274` |
+| `Heroes3.exe` | Исполняемый файл игры, GOG Heroes III Complete (кодовая база Shadow of Death). База образа `0x400000`, около 13 300 функций. | `057c9d88e7206f6669a4615de2c6e02ab6c4e2d570a9e2badf07fe0bd6247274` |
 | `H3bitmap.lod`, `H3ab_bmp.lod` | Архивы с текстовыми таблицами, которые движок читает при запуске (`CRTRAITS.TXT`, `HCTRAITS.TXT`, `SPTRAITS.TXT`, `CRBANKS.TXT`, …) | |
 | `HotA.dll`, `HotA.dat` | Horn of the Abyss 1.8.1, используется только в главе об отличиях HotA | |
 

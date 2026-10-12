@@ -17,12 +17,14 @@ chapters:
   - {n: 6, file: spells, state: data, en: "Magic", ru: "Магия",
      note_en: "numbers from SPTRAITS, including per-spell AI values", note_ru: "числа из SPTRAITS, включая ценность заклинаний для ИИ"}
   - {n: 7, state: todo, en: "Adventure map", ru: "Карта приключений", note_en: "", note_ru: ""}
-  - {n: 8, state: todo, en: "AI: overview", ru: "ИИ: обзор", note_en: "", note_ru: ""}
+  - {n: 8, file: ai-overview, state: wip, en: "AI: overview", ru: "ИИ: обзор",
+     note_en: "difficulty value, starting resources, the two value columns", note_ru: "значение сложности, стартовые ресурсы, два столбца ценности"}
   - {n: 9, state: todo, en: "AI: valuation of armies, heroes, objects", ru: "ИИ: оценка армий, героев, объектов", note_en: "", note_ru: ""}
   - {n: 10, state: todo, en: "AI: town building and recruitment", ru: "ИИ: строительство и найм", note_en: "", note_ru: ""}
   - {n: 11, state: todo, en: "AI: adventure map decisions", ru: "ИИ: решения на карте", note_en: "", note_ru: ""}
-  - {n: 12, state: wip, en: "AI: battle", ru: "ИИ: бой", note_en: "being reverse engineered first", note_ru: "разбирается в первую очередь"}
-  - {n: 13, state: wip, en: "AI: neutral monsters (armies without a hero)", ru: "ИИ: нейтральные монстры (армии без героя)",
-     note_en: "being reverse engineered first", note_ru: "разбирается в первую очередь"}
+  - {n: 12, file: ai-battle, state: done, en: "AI: battle", ru: "ИИ: бой",
+     note_en: "stack valuation, melee and shooter target choice, creature casters, retreat, difficulty switches; hero spell choice still open", note_ru: "оценка отрядов, выбор цели в ближнем бою и у стрелков, существа-заклинатели, бегство, переключатели сложности; выбор заклинаний героя ещё открыт"}
+  - {n: 13, file: ai-neutral, state: wip, en: "AI: neutral monsters (armies without a hero)", ru: "ИИ: нейтральные монстры (армии без героя)",
+     note_en: "join / flee / fight formula and in-battle behaviour done; stack splitting, banks, growth open", note_ru: "формула «присоединиться / сбежать / драться» и поведение в бою готовы; деление отрядов, банки, прирост открыты"}
   - {n: 14, state: todo, en: "HotA 1.8.1 differences", ru: "Отличия HotA 1.8.1", note_en: "", note_ru: ""}
-  - {n: 15, state: todo, en: "Open questions", ru: "Открытые вопросы", note_en: "", note_ru: ""}
+  - {n: 15, file: open-questions, state: wip, en: "Open questions", ru: "Открытые вопросы", note_en: "kept up to date with the chapters", note_ru: "обновляется вместе с главами"}

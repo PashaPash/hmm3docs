@@ -1,6 +1,6 @@
 # hmm3docs
 
-Heroes of Might and Magic III mechanics and AI behaviour, reverse engineered from `Heroes3.exe` (GOG Complete, SoD 3.2). English and Russian.
+Heroes of Might and Magic III mechanics and AI behaviour, reverse engineered from `Heroes3.exe` (GOG Complete). English and Russian.
 
 Site: https://pashapash.github.io/hmm3docs/ (progress table on the home page)
 

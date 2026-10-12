@@ -12,7 +12,7 @@ How Heroes of Might and Magic III actually works, taken from the game's own code
 
 [English]({{ '/en/' | relative_url }}){: .btn .btn-primary } [Русский]({{ '/ru/' | relative_url }}){: .btn .btn-primary }
 
-Baseline: `Heroes3.exe` from GOG Heroes III Complete (Shadow of Death 3.2 engine, SHA-256 `057c9d88…7274`). Horn of the Abyss 1.8.1 differences are added only where confirmed.
+Baseline: `Heroes3.exe` from GOG Heroes III Complete (Shadow of Death code base, SHA-256 `057c9d88…7274`). Horn of the Abyss 1.8.1 differences are added only where confirmed.
 
 ## Progress
 

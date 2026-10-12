@@ -11,7 +11,7 @@ lang: en
 
 | File | Role | SHA-256 |
 |---|---|---|
-| `Heroes3.exe` | Game executable, GOG Heroes III Complete (Shadow of Death 3.2 engine). Image base `0x400000`, about 13,300 functions. | `057c9d88e7206f6669a4615de2c6e02ab6c4e2d570a9e2badf07fe0bd6247274` |
+| `Heroes3.exe` | Game executable, GOG Heroes III Complete (Shadow of Death code base). Image base `0x400000`, about 13,300 functions. | `057c9d88e7206f6669a4615de2c6e02ab6c4e2d570a9e2badf07fe0bd6247274` |
 | `H3bitmap.lod`, `H3ab_bmp.lod` | Archives holding the text tables the engine reads at start-up (`CRTRAITS.TXT`, `HCTRAITS.TXT`, `SPTRAITS.TXT`, `CRBANKS.TXT`, …) | |
 | `HotA.dll`, `HotA.dat` | Horn of the Abyss 1.8.1, used only for the chapter on HotA differences | |
 
