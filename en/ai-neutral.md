@@ -67,7 +67,7 @@ if nobody joined:
 ```
 
 - Price for a paid join: `creature gold cost × stack size`. **[code `0x4a7250`]**
-- Without Diplomacy and without sympathy (`C = D = 0`), a free join needs `A ≤ 1`. Army strength does not help to recruit, it only decides between fight and flee.
+- Without Diplomacy and without sympathy (`C = D = 0`), a free join needs `A ≤ 1`. Army strength does not widen what can be recruited; it only has to be enough to pass the first line, `total >= A` (see [what this means in practice](#what-this-means-in-practice)).
 - Each Diplomacy level raises the free-join limit by 1 and the paid-join limit by 2.
 - If the player declines an offer, the stack then flees or fights by the same last rule.
 
@@ -90,13 +90,14 @@ The weekly growth routine keeps these bits untouched, so a stack has the same `A
 
 Putting the table together with the decision rule above:
 
-- **Joining does not depend on strength at all.** The free-join test is `C + D + 1 >= A` and the paid one is `A <= C + 2×D + 1`. A weak stack is no more willing to join than a strong one. Strength (`P`) only decides between fighting and fleeing.
+- **Strength cannot make a stack join, but too little of it prevents a join.** Two things must both hold. First the gate `P + C + D >= A`, otherwise the stack fights and no offer is made. Then the join test itself, which has no `P` in it: `C + D + 1 >= A` for free, or `A <= C + 2×D + 1` for gold. So a bigger army can turn "fight" into "join" only for a stack that already passes the join test; for any other stack it turns "fight" into "flee".
+- **How strong you need to be for the gate.** At the edge of the free test (`A = C + D + 1`) the gate needs `P >= 1`, which is an army at least 1.5 times the stack's strength. One step inside the edge (`A = C + D`) needs `P >= 0`, equal strength. At the edge of the paid test (`A = C + 2×D + 1`) it needs `P >= D + 1`: with Expert Diplomacy that is `P >= 4`, three times the stack's strength.
 - **Compliant stacks always offer to join for free.** With `A = −4`, both `total >= A` and `C + D + 1 >= A` hold for any hero, even a far weaker one.
-- **Without Diplomacy and without matching creatures** (`C = D = 0`), a stack joins for free only if `A <= 1`. That is one Friendly stack in seven and one Aggressive stack in ten; Hostile and Savage never.
+- **Without Diplomacy and without matching creatures** (`C = D = 0`), a stack joins for free only if `A <= 1`, and then only for an army at least 1.5 times its strength. That is one Friendly stack in seven and one Aggressive stack in ten; Hostile and Savage never.
 - **Savage stacks never join.** The best possible hero has `C = 2`, `D = 3`, giving 6 for the free test and 9 for the paid one, both below 10.
 - **The ceiling for anything else:** free join up to `A = 6`, paid join up to `A = 9`, both needing Expert Diplomacy and an army that is more than half the same creature.
 - **A stack that will not join flees or fights by strength.** It fights when `P + C + D < A`. Overwhelming strength gives `P = 11`, above any `A`, so a hopelessly outmatched stack that is not flagged "never flees" runs away rather than fights; it still does not join unless the tests above pass.
-- **Reloading or coming back later does not re-roll it.** The roll happened at map start. Coming back with more matching creatures or a higher Diplomacy level can change the answer; coming back with a bigger army cannot.
+- **Reloading or coming back later does not re-roll it.** The roll happened at map start. Coming back with more matching creatures or a higher Diplomacy level can make a stack willing to join. Coming back with a bigger army raises `P`, which can get you past the gate: a stack that fought you before will now join if it passes the join test, and flee if it does not.
 
 **[code]**
 
