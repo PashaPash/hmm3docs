@@ -1,4 +1,4 @@
-{% assign ru = include.lang == 'ru' %}
+{% assign ru = false %}{% if include.lang == 'ru' %}{% assign ru = true %}{% endif %}
 <div class="table-wrapper"><table>
 <thead><tr><th>ID</th><th>{% if ru %}Заклинание{% else %}Spell{% endif %}</th><th>Lv</th><th>{% if ru %}Школы{% else %}Schools{% endif %}</th><th>{% if ru %}Мана (нет/баз/прод/эксп){% else %}Mana (none/basic/adv/expert){% endif %}</th><th>{% if ru %}× Сила{% else %}× Power{% endif %}</th><th>{% if ru %}Эффект по уровню школы{% else %}Effect by school level{% endif %}</th><th>{% if ru %}Ценность для ИИ{% else %}AI value{% endif %}</th></tr></thead>
 <tbody>

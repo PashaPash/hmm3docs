@@ -1,4 +1,4 @@
-{% assign ru = include.lang == 'ru' %}
+{% assign ru = false %}{% if include.lang == 'ru' %}{% assign ru = true %}{% endif %}
 {% assign towns = "castle,rampart,tower,inferno,necropolis,dungeon,stronghold,fortress,conflux,neutral" | split: "," %}
 {% for t in towns %}
 <h3>{% if t == "neutral" %}{% if ru %}Нейтральные и боевые машины{% else %}Neutral and war machines{% endif %}{% else %}{{ t | capitalize }}{% endif %}</h3>

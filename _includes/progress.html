@@ -1,4 +1,4 @@
-{% assign ru = include.lang == 'ru' %}
+{% assign ru = false %}{% if include.lang == 'ru' %}{% assign ru = true %}{% endif %}
 <table>
 <thead><tr><th>#</th><th>{% if ru %}Глава{% else %}Chapter{% endif %}</th><th>{% if ru %}Состояние{% else %}Status{% endif %}</th><th>{% if ru %}Что сделано{% else %}Notes{% endif %}</th></tr></thead>
 <tbody>

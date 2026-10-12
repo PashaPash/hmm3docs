@@ -1,4 +1,4 @@
-{% assign ru = include.lang == 'ru' %}
+{% assign ru = false %}{% if include.lang == 'ru' %}{% assign ru = true %}{% endif %}
 <div class="table-wrapper"><table>
 <thead><tr><th>ID</th><th>{% if ru %}Класс{% else %}Class{% endif %}</th><th>Aggression</th><th>{% if ru %}Старт A/D/SP/K{% else %}Start A/D/SP/K{% endif %}</th><th>{% if ru %}Шанс A/D/SP/K, ур. 2–9{% else %}Gain % A/D/SP/K, levels 2–9{% endif %}</th><th>{% if ru %}Шанс A/D/SP/K, ур. 10+{% else %}Gain % A/D/SP/K, levels 10+{% endif %}</th></tr></thead>
 <tbody>
