@@ -1,0 +1,16 @@
+{% assign ru = include.lang == 'ru' %}
+<div class="table-wrapper"><table>
+<thead><tr><th>ID</th><th>{% if ru %}Класс{% else %}Class{% endif %}</th><th>Aggression</th><th>{% if ru %}Старт A/D/SP/K{% else %}Start A/D/SP/K{% endif %}</th><th>{% if ru %}Шанс A/D/SP/K, ур. 2–9{% else %}Gain % A/D/SP/K, levels 2–9{% endif %}</th><th>{% if ru %}Шанс A/D/SP/K, ур. 10+{% else %}Gain % A/D/SP/K, levels 10+{% endif %}</th></tr></thead>
+<tbody>
+{% for h in site.data.hero_classes %}
+<tr><td>{{ h.id }}</td><td>{{ h.name }}</td><td>{{ h.aggression }}</td><td>{{ h.start | join: " / " }}</td><td>{{ h.gain_low | join: " / " }}</td><td>{{ h.gain_high | join: " / " }}</td></tr>
+{% endfor %}
+</tbody></table></div>
+<h3>{% if ru %}Веса вторичных навыков (из 112){% else %}Secondary skill weights (out of 112){% endif %}</h3>
+<div class="table-wrapper"><table>
+<thead><tr><th>{% if ru %}Навык{% else %}Skill{% endif %}</th>{% for h in site.data.hero_classes %}<th>{{ h.name | slice: 0, 4 }}</th>{% endfor %}</tr></thead>
+<tbody>
+{% for s in site.data.hero_classes[0].skill_weights %}
+<tr><td>{{ s[0] }}</td>{% for h in site.data.hero_classes %}<td>{{ h.skill_weights[s[0]] }}</td>{% endfor %}</tr>
+{% endfor %}
+</tbody></table></div>

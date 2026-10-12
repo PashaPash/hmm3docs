@@ -1,0 +1,3439 @@
+[
+ {
+  "id": 0,
+  "name": "Summon Boat",
+  "kind": "adventure",
+  "level": 1,
+  "schools": [
+   "water"
+  ],
+  "cost": [
+   8,
+   7,
+   7,
+   7
+  ],
+  "power": 0,
+  "effect": [
+   50,
+   50,
+   75,
+   100
+  ],
+  "town_chance": {
+   "castle": 3,
+   "rampart": 5,
+   "tower": 5,
+   "inferno": 5,
+   "necropolis": 3,
+   "dungeon": 5,
+   "stronghold": 5,
+   "fortress": 3,
+   "conflux": 3
+  },
+  "ai_value": [
+   10,
+   10,
+   20,
+   20
+  ],
+  "flags": [
+   "ADV_SPELL"
+  ]
+ },
+ {
+  "id": 1,
+  "name": "Scuttle Boat",
+  "kind": "adventure",
+  "level": 2,
+  "schools": [
+   "water"
+  ],
+  "cost": [
+   8,
+   6,
+   6,
+   6
+  ],
+  "power": 0,
+  "effect": [
+   50,
+   50,
+   75,
+   100
+  ],
+  "town_chance": {
+   "castle": 6,
+   "rampart": 4,
+   "tower": 4,
+   "inferno": 4,
+   "necropolis": 4,
+   "dungeon": 4,
+   "stronghold": 4,
+   "fortress": 4,
+   "conflux": 4
+  },
+  "ai_value": [
+   1,
+   1,
+   1,
+   1
+  ],
+  "flags": [
+   "ADV_SPELL"
+  ]
+ },
+ {
+  "id": 2,
+  "name": "Visions",
+  "kind": "adventure",
+  "level": 2,
+  "schools": [
+   "earth",
+   "water",
+   "fire",
+   "air"
+  ],
+  "cost": [
+   4,
+   2,
+   2,
+   2
+  ],
+  "power": 0,
+  "effect": [
+   1,
+   1,
+   2,
+   3
+  ],
+  "town_chance": {
+   "castle": 2,
+   "rampart": 2,
+   "tower": 2,
+   "inferno": 4,
+   "necropolis": 2,
+   "dungeon": 2,
+   "stronghold": 2,
+   "fortress": 2,
+   "conflux": 2
+  },
+  "ai_value": [
+   1,
+   1,
+   1,
+   1
+  ],
+  "flags": [
+   "ADV_SPELL"
+  ]
+ },
+ {
+  "id": 3,
+  "name": "View Earth",
+  "kind": "adventure",
+  "level": 1,
+  "schools": [
+   "earth"
+  ],
+  "cost": [
+   2,
+   1,
+   1,
+   1
+  ],
+  "power": 0,
+  "effect": [
+   0,
+   0,
+   0,
+   0
+  ],
+  "town_chance": {
+   "castle": 3,
+   "rampart": 3,
+   "tower": 3,
+   "inferno": 3,
+   "necropolis": 3,
+   "dungeon": 3,
+   "stronghold": 3,
+   "fortress": 3,
+   "conflux": 3
+  },
+  "ai_value": [
+   1,
+   1,
+   1,
+   1
+  ],
+  "flags": [
+   "ADV_SPELL"
+  ]
+ },
+ {
+  "id": 4,
+  "name": "Disguise",
+  "kind": "adventure",
+  "level": 2,
+  "schools": [
+   "air"
+  ],
+  "cost": [
+   4,
+   2,
+   2,
+   2
+  ],
+  "power": 0,
+  "effect": [
+   0,
+   0,
+   0,
+   0
+  ],
+  "town_chance": {
+   "castle": 2,
+   "rampart": 2,
+   "tower": 2,
+   "inferno": 4,
+   "necropolis": 2,
+   "dungeon": 2,
+   "stronghold": 2,
+   "fortress": 0,
+   "conflux": 2
+  },
+  "ai_value": [
+   1,
+   1,
+   1,
+   1
+  ],
+  "flags": [
+   "ADV_SPELL"
+  ]
+ },
+ {
+  "id": 5,
+  "name": "View Air",
+  "kind": "adventure",
+  "level": 1,
+  "schools": [
+   "air"
+  ],
+  "cost": [
+   2,
+   1,
+   1,
+   1
+  ],
+  "power": 0,
+  "effect": [
+   0,
+   0,
+   0,
+   0
+  ],
+  "town_chance": {
+   "castle": 3,
+   "rampart": 3,
+   "tower": 3,
+   "inferno": 3,
+   "necropolis": 3,
+   "dungeon": 3,
+   "stronghold": 3,
+   "fortress": 3,
+   "conflux": 3
+  },
+  "ai_value": [
+   1,
+   1,
+   1,
+   1
+  ],
+  "flags": [
+   "ADV_SPELL"
+  ]
+ },
+ {
+  "id": 6,
+  "name": "Fly",
+  "kind": "adventure",
+  "level": 5,
+  "schools": [
+   "air"
+  ],
+  "cost": [
+   20,
+   15,
+   15,
+   15
+  ],
+  "power": 0,
+  "effect": [
+   60,
+   60,
+   80,
+   100
+  ],
+  "town_chance": {
+   "castle": 0,
+   "rampart": 16,
+   "tower": 16,
+   "inferno": 16,
+   "necropolis": 16,
+   "dungeon": 12,
+   "stronghold": 0,
+   "fortress": 0,
+   "conflux": 13
+  },
+  "ai_value": [
+   30,
+   30,
+   40,
+   50
+  ],
+  "flags": [
+   "ADV_SPELL"
+  ]
+ },
+ {
+  "id": 7,
+  "name": "Water Walk",
+  "kind": "adventure",
+  "level": 4,
+  "schools": [
+   "water"
+  ],
+  "cost": [
+   12,
+   8,
+   8,
+   8
+  ],
+  "power": 0,
+  "effect": [
+   60,
+   60,
+   80,
+   100
+  ],
+  "town_chance": {
+   "castle": 10,
+   "rampart": 10,
+   "tower": 10,
+   "inferno": 10,
+   "necropolis": 10,
+   "dungeon": 10,
+   "stronghold": 0,
+   "fortress": 0,
+   "conflux": 10
+  },
+  "ai_value": [
+   15,
+   15,
+   20,
+   25
+  ],
+  "flags": [
+   "ADV_SPELL"
+  ]
+ },
+ {
+  "id": 8,
+  "name": "Dimension Door",
+  "kind": "adventure",
+  "level": 5,
+  "schools": [
+   "air"
+  ],
+  "cost": [
+   25,
+   20,
+   20,
+   20
+  ],
+  "power": 0,
+  "effect": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "town_chance": {
+   "castle": 0,
+   "rampart": 20,
+   "tower": 14,
+   "inferno": 16,
+   "necropolis": 16,
+   "dungeon": 16,
+   "stronghold": 0,
+   "fortress": 0,
+   "conflux": 13
+  },
+  "ai_value": [
+   30,
+   30,
+   40,
+   50
+  ],
+  "flags": [
+   "ADV_SPELL"
+  ]
+ },
+ {
+  "id": 9,
+  "name": "Town Portal",
+  "kind": "adventure",
+  "level": 4,
+  "schools": [
+   "earth"
+  ],
+  "cost": [
+   16,
+   12,
+   12,
+   12
+  ],
+  "power": 0,
+  "effect": [
+   0,
+   0,
+   0,
+   0
+  ],
+  "town_chance": {
+   "castle": 10,
+   "rampart": 10,
+   "tower": 10,
+   "inferno": 10,
+   "necropolis": 10,
+   "dungeon": 10,
+   "stronghold": 0,
+   "fortress": 0,
+   "conflux": 10
+  },
+  "ai_value": [
+   5,
+   5,
+   70,
+   70
+  ],
+  "flags": [
+   "ADV_SPELL"
+  ]
+ },
+ {
+  "id": 10,
+  "name": "Quicksand",
+  "kind": "combat",
+  "level": 2,
+  "schools": [
+   "earth"
+  ],
+  "cost": [
+   8,
+   6,
+   6,
+   6
+  ],
+  "power": 0,
+  "effect": [
+   0,
+   0,
+   0,
+   0
+  ],
+  "town_chance": {
+   "castle": 4,
+   "rampart": 4,
+   "tower": 6,
+   "inferno": 4,
+   "necropolis": 4,
+   "dungeon": 4,
+   "stronghold": 6,
+   "fortress": 6,
+   "conflux": 4
+  },
+  "ai_value": [
+   1,
+   1,
+   1,
+   1
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "LOCATION_TARGET"
+  ]
+ },
+ {
+  "id": 11,
+  "name": "Land Mine",
+  "kind": "combat",
+  "level": 3,
+  "schools": [
+   "fire"
+  ],
+  "cost": [
+   18,
+   15,
+   15,
+   15
+  ],
+  "power": 10,
+  "effect": [
+   25,
+   25,
+   50,
+   100
+  ],
+  "town_chance": {
+   "castle": 8,
+   "rampart": 8,
+   "tower": 8,
+   "inferno": 6,
+   "necropolis": 8,
+   "dungeon": 12,
+   "stronghold": 8,
+   "fortress": 2,
+   "conflux": 4
+  },
+  "ai_value": [
+   1,
+   1,
+   1,
+   1
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "LOCATION_TARGET"
+  ]
+ },
+ {
+  "id": 12,
+  "name": "Force Field",
+  "kind": "combat",
+  "level": 3,
+  "schools": [
+   "earth"
+  ],
+  "cost": [
+   12,
+   9,
+   9,
+   9
+  ],
+  "power": 0,
+  "effect": [
+   0,
+   0,
+   0,
+   0
+  ],
+  "town_chance": {
+   "castle": 4,
+   "rampart": 4,
+   "tower": 8,
+   "inferno": 2,
+   "necropolis": 8,
+   "dungeon": 8,
+   "stronghold": 4,
+   "fortress": 4,
+   "conflux": 8
+  },
+  "ai_value": [
+   1,
+   1,
+   1,
+   1
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "LOCATION_TARGET"
+  ]
+ },
+ {
+  "id": 13,
+  "name": "Fire Wall",
+  "kind": "combat",
+  "level": 2,
+  "schools": [
+   "fire"
+  ],
+  "cost": [
+   8,
+   6,
+   6,
+   6
+  ],
+  "power": 10,
+  "effect": [
+   10,
+   10,
+   20,
+   50
+  ],
+  "town_chance": {
+   "castle": 4,
+   "rampart": 4,
+   "tower": 4,
+   "inferno": 12,
+   "necropolis": 4,
+   "dungeon": 4,
+   "stronghold": 4,
+   "fortress": 4,
+   "conflux": 8
+  },
+  "ai_value": [
+   1,
+   1,
+   1,
+   1
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "LOCATION_TARGET"
+  ]
+ },
+ {
+  "id": 14,
+  "name": "Earthquake",
+  "kind": "combat",
+  "level": 3,
+  "schools": [
+   "earth"
+  ],
+  "cost": [
+   20,
+   17,
+   17,
+   17
+  ],
+  "power": 1,
+  "effect": [
+   2,
+   2,
+   3,
+   4
+  ],
+  "town_chance": {
+   "castle": 4,
+   "rampart": 8,
+   "tower": 4,
+   "inferno": 6,
+   "necropolis": 4,
+   "dungeon": 4,
+   "stronghold": 4,
+   "fortress": 50,
+   "conflux": 4
+  },
+  "ai_value": [
+   1,
+   1,
+   1,
+   1
+  ],
+  "flags": [
+   "COMBAT_SPELL"
+  ]
+ },
+ {
+  "id": 15,
+  "name": "Magic Arrow",
+  "kind": "combat",
+  "level": 1,
+  "schools": [
+   "earth",
+   "water",
+   "fire",
+   "air"
+  ],
+  "cost": [
+   5,
+   4,
+   4,
+   4
+  ],
+  "power": 10,
+  "effect": [
+   10,
+   10,
+   20,
+   30
+  ],
+  "town_chance": {
+   "castle": 30,
+   "rampart": 30,
+   "tower": 30,
+   "inferno": 30,
+   "necropolis": 30,
+   "dungeon": 30,
+   "stronghold": 30,
+   "fortress": 30,
+   "conflux": 30
+  },
+  "ai_value": [
+   10,
+   10,
+   10,
+   10
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "CREATURE_TARGET"
+  ]
+ },
+ {
+  "id": 16,
+  "name": "Ice Bolt",
+  "kind": "combat",
+  "level": 2,
+  "schools": [
+   "water"
+  ],
+  "cost": [
+   8,
+   6,
+   6,
+   6
+  ],
+  "power": 20,
+  "effect": [
+   10,
+   10,
+   20,
+   50
+  ],
+  "town_chance": {
+   "castle": 50,
+   "rampart": 50,
+   "tower": 6,
+   "inferno": 0,
+   "necropolis": 6,
+   "dungeon": 6,
+   "stronghold": 4,
+   "fortress": 50,
+   "conflux": 25
+  },
+  "ai_value": [
+   20,
+   20,
+   20,
+   20
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "CREATURE_TARGET"
+  ]
+ },
+ {
+  "id": 17,
+  "name": "Lightning Bolt",
+  "kind": "combat",
+  "level": 2,
+  "schools": [
+   "air"
+  ],
+  "cost": [
+   10,
+   8,
+   8,
+   8
+  ],
+  "power": 25,
+  "effect": [
+   10,
+   10,
+   20,
+   50
+  ],
+  "town_chance": {
+   "castle": 4,
+   "rampart": 4,
+   "tower": 50,
+   "inferno": 20,
+   "necropolis": 6,
+   "dungeon": 50,
+   "stronghold": 50,
+   "fortress": 4,
+   "conflux": 25
+  },
+  "ai_value": [
+   25,
+   25,
+   25,
+   25
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "CREATURE_TARGET"
+  ]
+ },
+ {
+  "id": 18,
+  "name": "Implosion",
+  "kind": "combat",
+  "level": 5,
+  "schools": [
+   "earth"
+  ],
+  "cost": [
+   30,
+   25,
+   25,
+   25
+  ],
+  "power": 75,
+  "effect": [
+   100,
+   100,
+   200,
+   300
+  ],
+  "town_chance": {
+   "castle": 0,
+   "rampart": 16,
+   "tower": 14,
+   "inferno": 16,
+   "necropolis": 20,
+   "dungeon": 12,
+   "stronghold": 0,
+   "fortress": 0,
+   "conflux": 13
+  },
+  "ai_value": [
+   75,
+   75,
+   75,
+   75
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "CREATURE_TARGET"
+  ]
+ },
+ {
+  "id": 19,
+  "name": "Chain Lightning",
+  "kind": "combat",
+  "level": 4,
+  "schools": [
+   "air"
+  ],
+  "cost": [
+   24,
+   20,
+   20,
+   20
+  ],
+  "power": 40,
+  "effect": [
+   25,
+   25,
+   50,
+   100
+  ],
+  "town_chance": {
+   "castle": 10,
+   "rampart": 10,
+   "tower": 10,
+   "inferno": 10,
+   "necropolis": 10,
+   "dungeon": 10,
+   "stronghold": 0,
+   "fortress": 0,
+   "conflux": 10
+  },
+  "ai_value": [
+   75,
+   75,
+   75,
+   75
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "CREATURE_TARGET"
+  ]
+ },
+ {
+  "id": 20,
+  "name": "Frost Ring",
+  "kind": "combat",
+  "level": 3,
+  "schools": [
+   "water"
+  ],
+  "cost": [
+   12,
+   9,
+   9,
+   9
+  ],
+  "power": 10,
+  "effect": [
+   15,
+   15,
+   30,
+   60
+  ],
+  "town_chance": {
+   "castle": 16,
+   "rampart": 16,
+   "tower": 16,
+   "inferno": 0,
+   "necropolis": 12,
+   "dungeon": 12,
+   "stronghold": 12,
+   "fortress": 4,
+   "conflux": 12
+  },
+  "ai_value": [
+   12,
+   12,
+   12,
+   12
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "LOCATION_TARGET"
+  ]
+ },
+ {
+  "id": 21,
+  "name": "Fireball",
+  "kind": "combat",
+  "level": 3,
+  "schools": [
+   "fire"
+  ],
+  "cost": [
+   15,
+   12,
+   12,
+   12
+  ],
+  "power": 10,
+  "effect": [
+   15,
+   15,
+   30,
+   60
+  ],
+  "town_chance": {
+   "castle": 8,
+   "rampart": 8,
+   "tower": 8,
+   "inferno": 50,
+   "necropolis": 12,
+   "dungeon": 16,
+   "stronghold": 12,
+   "fortress": 2,
+   "conflux": 12
+  },
+  "ai_value": [
+   15,
+   15,
+   15,
+   15
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "LOCATION_TARGET"
+  ]
+ },
+ {
+  "id": 22,
+  "name": "Inferno",
+  "kind": "combat",
+  "level": 4,
+  "schools": [
+   "fire"
+  ],
+  "cost": [
+   16,
+   12,
+   12,
+   12
+  ],
+  "power": 10,
+  "effect": [
+   20,
+   20,
+   40,
+   80
+  ],
+  "town_chance": {
+   "castle": 5,
+   "rampart": 5,
+   "tower": 5,
+   "inferno": 10,
+   "necropolis": 5,
+   "dungeon": 5,
+   "stronghold": 0,
+   "fortress": 0,
+   "conflux": 10
+  },
+  "ai_value": [
+   20,
+   20,
+   20,
+   20
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "LOCATION_TARGET"
+  ]
+ },
+ {
+  "id": 23,
+  "name": "Meteor Shower",
+  "kind": "combat",
+  "level": 4,
+  "schools": [
+   "earth"
+  ],
+  "cost": [
+   16,
+   12,
+   12,
+   12
+  ],
+  "power": 25,
+  "effect": [
+   25,
+   25,
+   50,
+   100
+  ],
+  "town_chance": {
+   "castle": 10,
+   "rampart": 10,
+   "tower": 10,
+   "inferno": 10,
+   "necropolis": 10,
+   "dungeon": 10,
+   "stronghold": 0,
+   "fortress": 0,
+   "conflux": 10
+  },
+  "ai_value": [
+   37,
+   37,
+   37,
+   37
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "LOCATION_TARGET"
+  ]
+ },
+ {
+  "id": 24,
+  "name": "Death Ripple",
+  "kind": "combat",
+  "level": 2,
+  "schools": [
+   "earth"
+  ],
+  "cost": [
+   10,
+   8,
+   8,
+   8
+  ],
+  "power": 5,
+  "effect": [
+   10,
+   10,
+   20,
+   30
+  ],
+  "town_chance": {
+   "castle": 0,
+   "rampart": 0,
+   "tower": 0,
+   "inferno": 0,
+   "necropolis": 50,
+   "dungeon": 0,
+   "stronghold": 0,
+   "fortress": 0,
+   "conflux": 0
+  },
+  "ai_value": [
+   20,
+   20,
+   20,
+   20
+  ],
+  "flags": [
+   "COMBAT_SPELL"
+  ]
+ },
+ {
+  "id": 25,
+  "name": "Destroy Undead",
+  "kind": "combat",
+  "level": 3,
+  "schools": [
+   "air"
+  ],
+  "cost": [
+   15,
+   12,
+   12,
+   12
+  ],
+  "power": 10,
+  "effect": [
+   10,
+   10,
+   20,
+   50
+  ],
+  "town_chance": {
+   "castle": 12,
+   "rampart": 8,
+   "tower": 8,
+   "inferno": 2,
+   "necropolis": 0,
+   "dungeon": 4,
+   "stronghold": 4,
+   "fortress": 2,
+   "conflux": 4
+  },
+  "ai_value": [
+   40,
+   40,
+   40,
+   40
+  ],
+  "flags": [
+   "COMBAT_SPELL"
+  ]
+ },
+ {
+  "id": 26,
+  "name": "Armageddon",
+  "kind": "combat",
+  "level": 4,
+  "schools": [
+   "fire"
+  ],
+  "cost": [
+   24,
+   20,
+   20,
+   20
+  ],
+  "power": 50,
+  "effect": [
+   30,
+   30,
+   60,
+   120
+  ],
+  "town_chance": {
+   "castle": 0,
+   "rampart": 0,
+   "tower": 0,
+   "inferno": 5,
+   "necropolis": 5,
+   "dungeon": 10,
+   "stronghold": 0,
+   "fortress": 0,
+   "conflux": 0
+  },
+  "ai_value": [
+   100,
+   100,
+   100,
+   100
+  ],
+  "flags": [
+   "COMBAT_SPELL"
+  ]
+ },
+ {
+  "id": 27,
+  "name": "Shield",
+  "kind": "combat",
+  "level": 1,
+  "schools": [
+   "earth"
+  ],
+  "cost": [
+   5,
+   4,
+   4,
+   4
+  ],
+  "power": 0,
+  "effect": [
+   85,
+   85,
+   70,
+   70
+  ],
+  "town_chance": {
+   "castle": 10,
+   "rampart": 3,
+   "tower": 5,
+   "inferno": 3,
+   "necropolis": 10,
+   "dungeon": 5,
+   "stronghold": 5,
+   "fortress": 5,
+   "conflux": 5
+  },
+  "ai_value": [
+   10,
+   10,
+   20,
+   20
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "CREATURE_TARGET_2"
+  ]
+ },
+ {
+  "id": 28,
+  "name": "Air Shield",
+  "kind": "combat",
+  "level": 3,
+  "schools": [
+   "air"
+  ],
+  "cost": [
+   12,
+   9,
+   9,
+   9
+  ],
+  "power": 0,
+  "effect": [
+   75,
+   75,
+   50,
+   50
+  ],
+  "town_chance": {
+   "castle": 4,
+   "rampart": 8,
+   "tower": 8,
+   "inferno": 2,
+   "necropolis": 4,
+   "dungeon": 4,
+   "stronghold": 8,
+   "fortress": 4,
+   "conflux": 4
+  },
+  "ai_value": [
+   20,
+   20,
+   50,
+   50
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "CREATURE_TARGET_2"
+  ]
+ },
+ {
+  "id": 29,
+  "name": "Fire Shield",
+  "kind": "combat",
+  "level": 4,
+  "schools": [
+   "fire"
+  ],
+  "cost": [
+   16,
+   12,
+   12,
+   12
+  ],
+  "power": 0,
+  "effect": [
+   20,
+   20,
+   25,
+   30
+  ],
+  "town_chance": {
+   "castle": 5,
+   "rampart": 5,
+   "tower": 5,
+   "inferno": 5,
+   "necropolis": 5,
+   "dungeon": 5,
+   "stronghold": 0,
+   "fortress": 0,
+   "conflux": 5
+  },
+  "ai_value": [
+   10,
+   10,
+   12,
+   15
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "CREATURE_TARGET"
+  ]
+ },
+ {
+  "id": 30,
+  "name": "Protection from Air",
+  "kind": "combat",
+  "level": 2,
+  "schools": [
+   "air"
+  ],
+  "cost": [
+   7,
+   5,
+   5,
+   5
+  ],
+  "power": 0,
+  "effect": [
+   70,
+   70,
+   50,
+   50
+  ],
+  "town_chance": {
+   "castle": 2,
+   "rampart": 2,
+   "tower": 2,
+   "inferno": 4,
+   "necropolis": 2,
+   "dungeon": 2,
+   "stronghold": 2,
+   "fortress": 2,
+   "conflux": 2
+  },
+  "ai_value": [
+   2,
+   2,
+   4,
+   4
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "CREATURE_TARGET_2"
+  ]
+ },
+ {
+  "id": 31,
+  "name": "Protection from Fire",
+  "kind": "combat",
+  "level": 1,
+  "schools": [
+   "fire"
+  ],
+  "cost": [
+   5,
+   4,
+   4,
+   4
+  ],
+  "power": 0,
+  "effect": [
+   70,
+   70,
+   50,
+   50
+  ],
+  "town_chance": {
+   "castle": 3,
+   "rampart": 3,
+   "tower": 3,
+   "inferno": 3,
+   "necropolis": 3,
+   "dungeon": 3,
+   "stronghold": 3,
+   "fortress": 3,
+   "conflux": 3
+  },
+  "ai_value": [
+   2,
+   2,
+   4,
+   4
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "CREATURE_TARGET_2"
+  ]
+ },
+ {
+  "id": 32,
+  "name": "Prot. from Water",
+  "kind": "combat",
+  "level": 1,
+  "schools": [
+   "water"
+  ],
+  "cost": [
+   5,
+   4,
+   4,
+   4
+  ],
+  "power": 0,
+  "effect": [
+   70,
+   70,
+   50,
+   50
+  ],
+  "town_chance": {
+   "castle": 3,
+   "rampart": 3,
+   "tower": 3,
+   "inferno": 3,
+   "necropolis": 3,
+   "dungeon": 3,
+   "stronghold": 3,
+   "fortress": 3,
+   "conflux": 3
+  },
+  "ai_value": [
+   2,
+   2,
+   4,
+   4
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "CREATURE_TARGET_2"
+  ]
+ },
+ {
+  "id": 33,
+  "name": "Prot. from Earth",
+  "kind": "combat",
+  "level": 3,
+  "schools": [
+   "earth"
+  ],
+  "cost": [
+   12,
+   9,
+   9,
+   9
+  ],
+  "power": 0,
+  "effect": [
+   70,
+   70,
+   50,
+   50
+  ],
+  "town_chance": {
+   "castle": 4,
+   "rampart": 4,
+   "tower": 4,
+   "inferno": 2,
+   "necropolis": 4,
+   "dungeon": 4,
+   "stronghold": 4,
+   "fortress": 0,
+   "conflux": 4
+  },
+  "ai_value": [
+   2,
+   2,
+   4,
+   4
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "CREATURE_TARGET_2"
+  ]
+ },
+ {
+  "id": 34,
+  "name": "Anti-Magic",
+  "kind": "combat",
+  "level": 3,
+  "schools": [
+   "earth"
+  ],
+  "cost": [
+   15,
+   12,
+   12,
+   12
+  ],
+  "power": 0,
+  "effect": [
+   4,
+   4,
+   5,
+   6
+  ],
+  "town_chance": {
+   "castle": 12,
+   "rampart": 8,
+   "tower": 8,
+   "inferno": 4,
+   "necropolis": 8,
+   "dungeon": 8,
+   "stronghold": 12,
+   "fortress": 10,
+   "conflux": 12
+  },
+  "ai_value": [
+   10,
+   10,
+   15,
+   20
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "CREATURE_TARGET"
+  ]
+ },
+ {
+  "id": 35,
+  "name": "Dispel",
+  "kind": "combat",
+  "level": 1,
+  "schools": [
+   "water"
+  ],
+  "cost": [
+   5,
+   4,
+   4,
+   4
+  ],
+  "power": 0,
+  "effect": [
+   0,
+   0,
+   0,
+   0
+  ],
+  "town_chance": {
+   "castle": 10,
+   "rampart": 10,
+   "tower": 10,
+   "inferno": 10,
+   "necropolis": 10,
+   "dungeon": 10,
+   "stronghold": 10,
+   "fortress": 10,
+   "conflux": 10
+  },
+  "ai_value": [
+   3,
+   3,
+   3,
+   3
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "CREATURE_TARGET_1"
+  ]
+ },
+ {
+  "id": 36,
+  "name": "Magic Mirror",
+  "kind": "combat",
+  "level": 5,
+  "schools": [
+   "air"
+  ],
+  "cost": [
+   25,
+   20,
+   20,
+   20
+  ],
+  "power": 0,
+  "effect": [
+   20,
+   20,
+   30,
+   40
+  ],
+  "town_chance": {
+   "castle": 0,
+   "rampart": 16,
+   "tower": 14,
+   "inferno": 0,
+   "necropolis": 0,
+   "dungeon": 12,
+   "stronghold": 0,
+   "fortress": 0,
+   "conflux": 13
+  },
+  "ai_value": [
+   12,
+   12,
+   18,
+   24
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "CREATURE_TARGET"
+  ]
+ },
+ {
+  "id": 37,
+  "name": "Cure",
+  "kind": "combat",
+  "level": 1,
+  "schools": [
+   "water"
+  ],
+  "cost": [
+   6,
+   5,
+   5,
+   5
+  ],
+  "power": 5,
+  "effect": [
+   10,
+   10,
+   20,
+   30
+  ],
+  "town_chance": {
+   "castle": 10,
+   "rampart": 10,
+   "tower": 5,
+   "inferno": 5,
+   "necropolis": 0,
+   "dungeon": 5,
+   "stronghold": 5,
+   "fortress": 10,
+   "conflux": 5
+  },
+  "ai_value": [
+   4,
+   4,
+   4,
+   4
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "CREATURE_TARGET_1"
+  ]
+ },
+ {
+  "id": 38,
+  "name": "Resurrection",
+  "kind": "combat",
+  "level": 4,
+  "schools": [
+   "earth"
+  ],
+  "cost": [
+   20,
+   16,
+   16,
+   16
+  ],
+  "power": 50,
+  "effect": [
+   40,
+   40,
+   80,
+   160
+  ],
+  "town_chance": {
+   "castle": 10,
+   "rampart": 10,
+   "tower": 10,
+   "inferno": 10,
+   "necropolis": 10,
+   "dungeon": 10,
+   "stronghold": 0,
+   "fortress": 0,
+   "conflux": 5
+  },
+  "ai_value": [
+   50,
+   50,
+   60,
+   120
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "CREATURE_TARGET"
+  ]
+ },
+ {
+  "id": 39,
+  "name": "Animate Dead",
+  "kind": "combat",
+  "level": 3,
+  "schools": [
+   "earth"
+  ],
+  "cost": [
+   15,
+   12,
+   12,
+   12
+  ],
+  "power": 50,
+  "effect": [
+   30,
+   30,
+   60,
+   160
+  ],
+  "town_chance": {
+   "castle": 0,
+   "rampart": 0,
+   "tower": 0,
+   "inferno": 0,
+   "necropolis": 16,
+   "dungeon": 0,
+   "stronghold": 0,
+   "fortress": 0,
+   "conflux": 0
+  },
+  "ai_value": [
+   60,
+   60,
+   60,
+   120
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "CREATURE_TARGET"
+  ]
+ },
+ {
+  "id": 40,
+  "name": "Sacrifice",
+  "kind": "combat",
+  "level": 5,
+  "schools": [
+   "fire"
+  ],
+  "cost": [
+   25,
+   20,
+   20,
+   20
+  ],
+  "power": 1,
+  "effect": [
+   3,
+   3,
+   6,
+   10
+  ],
+  "town_chance": {
+   "castle": 0,
+   "rampart": 0,
+   "tower": 0,
+   "inferno": 20,
+   "necropolis": 16,
+   "dungeon": 12,
+   "stronghold": 0,
+   "fortress": 0,
+   "conflux": 0
+  },
+  "ai_value": [
+   1,
+   1,
+   1,
+   1
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "CREATURE_TARGET"
+  ]
+ },
+ {
+  "id": 41,
+  "name": "Bless",
+  "kind": "combat",
+  "level": 1,
+  "schools": [
+   "water"
+  ],
+  "cost": [
+   5,
+   4,
+   4,
+   4
+  ],
+  "power": 0,
+  "effect": [
+   0,
+   0,
+   1,
+   1
+  ],
+  "town_chance": {
+   "castle": 10,
+   "rampart": 5,
+   "tower": 5,
+   "inferno": 0,
+   "necropolis": 0,
+   "dungeon": 3,
+   "stronghold": 3,
+   "fortress": 5,
+   "conflux": 5
+  },
+  "ai_value": [
+   10,
+   10,
+   11,
+   11
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "CREATURE_TARGET_2"
+  ]
+ },
+ {
+  "id": 42,
+  "name": "Curse",
+  "kind": "combat",
+  "level": 1,
+  "schools": [
+   "fire"
+  ],
+  "cost": [
+   6,
+   5,
+   5,
+   5
+  ],
+  "power": 0,
+  "effect": [
+   0,
+   0,
+   1,
+   1
+  ],
+  "town_chance": {
+   "castle": 0,
+   "rampart": 0,
+   "tower": 3,
+   "inferno": 5,
+   "necropolis": 10,
+   "dungeon": 5,
+   "stronghold": 0,
+   "fortress": 0,
+   "conflux": 0
+  },
+  "ai_value": [
+   10,
+   10,
+   11,
+   11
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "CREATURE_TARGET_2"
+  ]
+ },
+ {
+  "id": 43,
+  "name": "Bloodlust",
+  "kind": "combat",
+  "level": 1,
+  "schools": [
+   "fire"
+  ],
+  "cost": [
+   5,
+   4,
+   4,
+   4
+  ],
+  "power": 0,
+  "effect": [
+   3,
+   3,
+   6,
+   6
+  ],
+  "town_chance": {
+   "castle": 0,
+   "rampart": 0,
+   "tower": 0,
+   "inferno": 10,
+   "necropolis": 5,
+   "dungeon": 5,
+   "stronghold": 10,
+   "fortress": 5,
+   "conflux": 5
+  },
+  "ai_value": [
+   7,
+   7,
+   15,
+   15
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "CREATURE_TARGET_2"
+  ]
+ },
+ {
+  "id": 44,
+  "name": "Precision",
+  "kind": "combat",
+  "level": 2,
+  "schools": [
+   "air"
+  ],
+  "cost": [
+   8,
+   6,
+   6,
+   6
+  ],
+  "power": 0,
+  "effect": [
+   3,
+   3,
+   6,
+   6
+  ],
+  "town_chance": {
+   "castle": 6,
+   "rampart": 6,
+   "tower": 4,
+   "inferno": 8,
+   "necropolis": 2,
+   "dungeon": 6,
+   "stronghold": 4,
+   "fortress": 4,
+   "conflux": 2
+  },
+  "ai_value": [
+   7,
+   7,
+   15,
+   15
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "CREATURE_TARGET_2"
+  ]
+ },
+ {
+  "id": 45,
+  "name": "Weakness",
+  "kind": "combat",
+  "level": 2,
+  "schools": [
+   "water"
+  ],
+  "cost": [
+   8,
+   6,
+   6,
+   6
+  ],
+  "power": 0,
+  "effect": [
+   3,
+   3,
+   6,
+   6
+  ],
+  "town_chance": {
+   "castle": 2,
+   "rampart": 2,
+   "tower": 2,
+   "inferno": 8,
+   "necropolis": 4,
+   "dungeon": 4,
+   "stronghold": 4,
+   "fortress": 4,
+   "conflux": 4
+  },
+  "ai_value": [
+   7,
+   7,
+   15,
+   15
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "CREATURE_TARGET_2"
+  ]
+ },
+ {
+  "id": 46,
+  "name": "Stone Skin",
+  "kind": "combat",
+  "level": 1,
+  "schools": [
+   "earth"
+  ],
+  "cost": [
+   5,
+   4,
+   4,
+   4
+  ],
+  "power": 0,
+  "effect": [
+   3,
+   3,
+   6,
+   6
+  ],
+  "town_chance": {
+   "castle": 5,
+   "rampart": 5,
+   "tower": 10,
+   "inferno": 5,
+   "necropolis": 10,
+   "dungeon": 5,
+   "stronghold": 10,
+   "fortress": 5,
+   "conflux": 5
+  },
+  "ai_value": [
+   7,
+   7,
+   15,
+   15
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "CREATURE_TARGET_2"
+  ]
+ },
+ {
+  "id": 47,
+  "name": "Disrupting Ray",
+  "kind": "combat",
+  "level": 2,
+  "schools": [
+   "air"
+  ],
+  "cost": [
+   10,
+   8,
+   8,
+   8
+  ],
+  "power": 0,
+  "effect": [
+   3,
+   3,
+   4,
+   5
+  ],
+  "town_chance": {
+   "castle": 6,
+   "rampart": 4,
+   "tower": 6,
+   "inferno": 12,
+   "necropolis": 4,
+   "dungeon": 6,
+   "stronghold": 6,
+   "fortress": 6,
+   "conflux": 8
+  },
+  "ai_value": [
+   7,
+   7,
+   15,
+   15
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "CREATURE_TARGET_2"
+  ]
+ },
+ {
+  "id": 48,
+  "name": "Prayer",
+  "kind": "combat",
+  "level": 4,
+  "schools": [
+   "water"
+  ],
+  "cost": [
+   16,
+   12,
+   12,
+   12
+  ],
+  "power": 0,
+  "effect": [
+   2,
+   2,
+   4,
+   4
+  ],
+  "town_chance": {
+   "castle": 10,
+   "rampart": 5,
+   "tower": 5,
+   "inferno": 0,
+   "necropolis": 0,
+   "dungeon": 0,
+   "stronghold": 0,
+   "fortress": 0,
+   "conflux": 5
+  },
+  "ai_value": [
+   8,
+   8,
+   16,
+   16
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "CREATURE_TARGET_2"
+  ]
+ },
+ {
+  "id": 49,
+  "name": "Mirth",
+  "kind": "combat",
+  "level": 3,
+  "schools": [
+   "water"
+  ],
+  "cost": [
+   12,
+   9,
+   9,
+   9
+  ],
+  "power": 0,
+  "effect": [
+   1,
+   1,
+   2,
+   2
+  ],
+  "town_chance": {
+   "castle": 4,
+   "rampart": 4,
+   "tower": 4,
+   "inferno": 2,
+   "necropolis": 4,
+   "dungeon": 4,
+   "stronghold": 12,
+   "fortress": 2,
+   "conflux": 4
+  },
+  "ai_value": [
+   1,
+   1,
+   2,
+   2
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "CREATURE_TARGET_2",
+   "MIND_SPELL"
+  ]
+ },
+ {
+  "id": 50,
+  "name": "Sorrow",
+  "kind": "combat",
+  "level": 4,
+  "schools": [
+   "earth"
+  ],
+  "cost": [
+   16,
+   12,
+   12,
+   12
+  ],
+  "power": 0,
+  "effect": [
+   1,
+   1,
+   2,
+   2
+  ],
+  "town_chance": {
+   "castle": 5,
+   "rampart": 5,
+   "tower": 5,
+   "inferno": 5,
+   "necropolis": 5,
+   "dungeon": 5,
+   "stronghold": 0,
+   "fortress": 0,
+   "conflux": 5
+  },
+  "ai_value": [
+   1,
+   1,
+   2,
+   2
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "CREATURE_TARGET_2",
+   "MIND_SPELL"
+  ]
+ },
+ {
+  "id": 51,
+  "name": "Fortune",
+  "kind": "combat",
+  "level": 2,
+  "schools": [
+   "air"
+  ],
+  "cost": [
+   7,
+   5,
+   5,
+   5
+  ],
+  "power": 0,
+  "effect": [
+   1,
+   1,
+   2,
+   2
+  ],
+  "town_chance": {
+   "castle": 4,
+   "rampart": 6,
+   "tower": 4,
+   "inferno": 4,
+   "necropolis": 2,
+   "dungeon": 2,
+   "stronghold": 4,
+   "fortress": 4,
+   "conflux": 2
+  },
+  "ai_value": [
+   1,
+   1,
+   2,
+   2
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "CREATURE_TARGET_2"
+  ]
+ },
+ {
+  "id": 52,
+  "name": "Misfortune",
+  "kind": "combat",
+  "level": 3,
+  "schools": [
+   "fire"
+  ],
+  "cost": [
+   12,
+   9,
+   9,
+   9
+  ],
+  "power": 0,
+  "effect": [
+   1,
+   1,
+   2,
+   2
+  ],
+  "town_chance": {
+   "castle": 4,
+   "rampart": 4,
+   "tower": 4,
+   "inferno": 6,
+   "necropolis": 8,
+   "dungeon": 4,
+   "stronghold": 4,
+   "fortress": 2,
+   "conflux": 4
+  },
+  "ai_value": [
+   1,
+   1,
+   2,
+   2
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "CREATURE_TARGET_2"
+  ]
+ },
+ {
+  "id": 53,
+  "name": "Haste",
+  "kind": "combat",
+  "level": 1,
+  "schools": [
+   "air"
+  ],
+  "cost": [
+   6,
+   5,
+   5,
+   5
+  ],
+  "power": 0,
+  "effect": [
+   3,
+   3,
+   5,
+   5
+  ],
+  "town_chance": {
+   "castle": 5,
+   "rampart": 10,
+   "tower": 5,
+   "inferno": 5,
+   "necropolis": 5,
+   "dungeon": 10,
+   "stronghold": 5,
+   "fortress": 10,
+   "conflux": 10
+  },
+  "ai_value": [
+   5,
+   5,
+   10,
+   10
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "CREATURE_TARGET_2"
+  ]
+ },
+ {
+  "id": 54,
+  "name": "Slow",
+  "kind": "combat",
+  "level": 1,
+  "schools": [
+   "earth"
+  ],
+  "cost": [
+   6,
+   5,
+   5,
+   5
+  ],
+  "power": 0,
+  "effect": [
+   75,
+   75,
+   50,
+   50
+  ],
+  "town_chance": {
+   "castle": 5,
+   "rampart": 10,
+   "tower": 10,
+   "inferno": 10,
+   "necropolis": 5,
+   "dungeon": 5,
+   "stronghold": 5,
+   "fortress": 5,
+   "conflux": 10
+  },
+  "ai_value": [
+   5,
+   5,
+   15,
+   15
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "CREATURE_TARGET_2"
+  ]
+ },
+ {
+  "id": 55,
+  "name": "Slayer",
+  "kind": "combat",
+  "level": 4,
+  "schools": [
+   "fire"
+  ],
+  "cost": [
+   16,
+   12,
+   12,
+   12
+  ],
+  "power": 0,
+  "effect": [
+   8,
+   8,
+   8,
+   8
+  ],
+  "town_chance": {
+   "castle": 5,
+   "rampart": 5,
+   "tower": 5,
+   "inferno": 5,
+   "necropolis": 5,
+   "dungeon": 5,
+   "stronghold": 0,
+   "fortress": 0,
+   "conflux": 5
+  },
+  "ai_value": [
+   1,
+   1,
+   1,
+   1
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "CREATURE_TARGET"
+  ]
+ },
+ {
+  "id": 56,
+  "name": "Frenzy",
+  "kind": "combat",
+  "level": 4,
+  "schools": [
+   "fire"
+  ],
+  "cost": [
+   16,
+   12,
+   12,
+   12
+  ],
+  "power": 0,
+  "effect": [
+   100,
+   100,
+   150,
+   200
+  ],
+  "town_chance": {
+   "castle": 5,
+   "rampart": 5,
+   "tower": 5,
+   "inferno": 5,
+   "necropolis": 5,
+   "dungeon": 5,
+   "stronghold": 0,
+   "fortress": 0,
+   "conflux": 5
+  },
+  "ai_value": [
+   10,
+   10,
+   20,
+   30
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "CREATURE_TARGET",
+   "MIND_SPELL"
+  ]
+ },
+ {
+  "id": 57,
+  "name": "Fear ( disabled )",
+  "kind": "combat",
+  "level": 4,
+  "schools": [],
+  "cost": [
+   16,
+   8,
+   8,
+   8
+  ],
+  "power": 0,
+  "effect": [
+   75,
+   75,
+   50,
+   25
+  ],
+  "town_chance": {
+   "castle": 0,
+   "rampart": 0,
+   "tower": 0,
+   "inferno": 0,
+   "necropolis": 0,
+   "dungeon": 0,
+   "stronghold": 0,
+   "fortress": 0,
+   "conflux": 0
+  },
+  "ai_value": [
+   50,
+   50,
+   50,
+   50
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "CREATURE_TARGET",
+   "MIND_SPELL"
+  ]
+ },
+ {
+  "id": 58,
+  "name": "Counterstrike",
+  "kind": "combat",
+  "level": 4,
+  "schools": [
+   "air"
+  ],
+  "cost": [
+   24,
+   20,
+   20,
+   20
+  ],
+  "power": 0,
+  "effect": [
+   1,
+   1,
+   2,
+   2
+  ],
+  "town_chance": {
+   "castle": 5,
+   "rampart": 10,
+   "tower": 5,
+   "inferno": 5,
+   "necropolis": 5,
+   "dungeon": 5,
+   "stronghold": 0,
+   "fortress": 0,
+   "conflux": 5
+  },
+  "ai_value": [
+   20,
+   20,
+   30,
+   30
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "CREATURE_TARGET_2"
+  ]
+ },
+ {
+  "id": 59,
+  "name": "Berserk",
+  "kind": "combat",
+  "level": 4,
+  "schools": [
+   "fire"
+  ],
+  "cost": [
+   20,
+   16,
+   16,
+   16
+  ],
+  "power": 0,
+  "effect": [
+   0,
+   0,
+   1,
+   2
+  ],
+  "town_chance": {
+   "castle": 5,
+   "rampart": 5,
+   "tower": 5,
+   "inferno": 5,
+   "necropolis": 10,
+   "dungeon": 5,
+   "stronghold": 0,
+   "fortress": 0,
+   "conflux": 5
+  },
+  "ai_value": [
+   60,
+   60,
+   60,
+   60
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "CREATURE_TARGET",
+   "MIND_SPELL"
+  ]
+ },
+ {
+  "id": 60,
+  "name": "Hypnotize",
+  "kind": "combat",
+  "level": 3,
+  "schools": [
+   "air"
+  ],
+  "cost": [
+   18,
+   15,
+   15,
+   15
+  ],
+  "power": 25,
+  "effect": [
+   10,
+   10,
+   20,
+   50
+  ],
+  "town_chance": {
+   "castle": 4,
+   "rampart": 4,
+   "tower": 8,
+   "inferno": 6,
+   "necropolis": 0,
+   "dungeon": 8,
+   "stronghold": 4,
+   "fortress": 4,
+   "conflux": 12
+  },
+  "ai_value": [
+   25,
+   25,
+   50,
+   100
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "CREATURE_TARGET",
+   "MIND_SPELL"
+  ]
+ },
+ {
+  "id": 61,
+  "name": "Forgetfulness",
+  "kind": "combat",
+  "level": 3,
+  "schools": [
+   "water"
+  ],
+  "cost": [
+   12,
+   9,
+   9,
+   9
+  ],
+  "power": 0,
+  "effect": [
+   0,
+   0,
+   0,
+   0
+  ],
+  "town_chance": {
+   "castle": 8,
+   "rampart": 8,
+   "tower": 4,
+   "inferno": 4,
+   "necropolis": 4,
+   "dungeon": 4,
+   "stronghold": 4,
+   "fortress": 4,
+   "conflux": 8
+  },
+  "ai_value": [
+   1,
+   1,
+   1,
+   1
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "CREATURE_TARGET",
+   "MIND_SPELL"
+  ]
+ },
+ {
+  "id": 62,
+  "name": "Blind",
+  "kind": "combat",
+  "level": 2,
+  "schools": [
+   "fire"
+  ],
+  "cost": [
+   10,
+   8,
+   8,
+   8
+  ],
+  "power": 0,
+  "effect": [
+   50,
+   50,
+   25,
+   0
+  ],
+  "town_chance": {
+   "castle": 4,
+   "rampart": 6,
+   "tower": 2,
+   "inferno": 12,
+   "necropolis": 4,
+   "dungeon": 4,
+   "stronghold": 4,
+   "fortress": 6,
+   "conflux": 8
+  },
+  "ai_value": [
+   50,
+   50,
+   50,
+   50
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "CREATURE_TARGET"
+  ]
+ },
+ {
+  "id": 63,
+  "name": "Teleport",
+  "kind": "combat",
+  "level": 3,
+  "schools": [
+   "water"
+  ],
+  "cost": [
+   15,
+   12,
+   6,
+   3
+  ],
+  "power": 0,
+  "effect": [
+   0,
+   0,
+   0,
+   0
+  ],
+  "town_chance": {
+   "castle": 8,
+   "rampart": 8,
+   "tower": 8,
+   "inferno": 8,
+   "necropolis": 8,
+   "dungeon": 8,
+   "stronghold": 8,
+   "fortress": 10,
+   "conflux": 8
+  },
+  "ai_value": [
+   20,
+   20,
+   20,
+   20
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "CREATURE_TARGET"
+  ]
+ },
+ {
+  "id": 64,
+  "name": "Remove Obstacle",
+  "kind": "combat",
+  "level": 2,
+  "schools": [
+   "water"
+  ],
+  "cost": [
+   7,
+   5,
+   5,
+   5
+  ],
+  "power": 0,
+  "effect": [
+   0,
+   0,
+   0,
+   0
+  ],
+  "town_chance": {
+   "castle": 4,
+   "rampart": 4,
+   "tower": 6,
+   "inferno": 4,
+   "necropolis": 4,
+   "dungeon": 4,
+   "stronghold": 4,
+   "fortress": 4,
+   "conflux": 4
+  },
+  "ai_value": [
+   1,
+   1,
+   1,
+   1
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "OBSTACLE_TARGET"
+  ]
+ },
+ {
+  "id": 65,
+  "name": "Clone",
+  "kind": "combat",
+  "level": 4,
+  "schools": [
+   "water"
+  ],
+  "cost": [
+   24,
+   20,
+   20,
+   20
+  ],
+  "power": 0,
+  "effect": [
+   5,
+   5,
+   6,
+   7
+  ],
+  "town_chance": {
+   "castle": 5,
+   "rampart": 5,
+   "tower": 10,
+   "inferno": 5,
+   "necropolis": 5,
+   "dungeon": 5,
+   "stronghold": 0,
+   "fortress": 0,
+   "conflux": 10
+  },
+  "ai_value": [
+   20,
+   20,
+   40,
+   50
+  ],
+  "flags": [
+   "COMBAT_SPELL",
+   "CREATURE_TARGET"
+  ]
+ },
+ {
+  "id": 66,
+  "name": "Fire Elemental",
+  "kind": "combat",
+  "level": 5,
+  "schools": [
+   "fire"
+  ],
+  "cost": [
+   25,
+   20,
+   20,
+   20
+  ],
+  "power": 0,
+  "effect": [
+   2,
+   2,
+   3,
+   4
+  ],
+  "town_chance": {
+   "castle": 0,
+   "rampart": 0,
+   "tower": 0,
+   "inferno": 16,
+   "necropolis": 0,
+   "dungeon": 12,
+   "stronghold": 0,
+   "fortress": 0,
+   "conflux": 12
+  },
+  "ai_value": [
+   50,
+   50,
+   100,
+   150
+  ],
+  "flags": [
+   "COMBAT_SPELL"
+  ]
+ },
+ {
+  "id": 67,
+  "name": "Earth Elemental",
+  "kind": "combat",
+  "level": 5,
+  "schools": [
+   "earth"
+  ],
+  "cost": [
+   25,
+   20,
+   20,
+   20
+  ],
+  "power": 0,
+  "effect": [
+   2,
+   2,
+   3,
+   4
+  ],
+  "town_chance": {
+   "castle": 0,
+   "rampart": 16,
+   "tower": 14,
+   "inferno": 16,
+   "necropolis": 16,
+   "dungeon": 12,
+   "stronghold": 0,
+   "fortress": 0,
+   "conflux": 12
+  },
+  "ai_value": [
+   50,
+   50,
+   100,
+   150
+  ],
+  "flags": [
+   "COMBAT_SPELL"
+  ]
+ },
+ {
+  "id": 68,
+  "name": "Water Elemental",
+  "kind": "combat",
+  "level": 5,
+  "schools": [
+   "water"
+  ],
+  "cost": [
+   25,
+   20,
+   20,
+   20
+  ],
+  "power": 0,
+  "effect": [
+   2,
+   2,
+   3,
+   4
+  ],
+  "town_chance": {
+   "castle": 0,
+   "rampart": 16,
+   "tower": 14,
+   "inferno": 0,
+   "necropolis": 0,
+   "dungeon": 12,
+   "stronghold": 0,
+   "fortress": 0,
+   "conflux": 12
+  },
+  "ai_value": [
+   50,
+   50,
+   100,
+   150
+  ],
+  "flags": [
+   "COMBAT_SPELL"
+  ]
+ },
+ {
+  "id": 69,
+  "name": "Air Elemental",
+  "kind": "combat",
+  "level": 5,
+  "schools": [
+   "air"
+  ],
+  "cost": [
+   25,
+   20,
+   20,
+   20
+  ],
+  "power": 0,
+  "effect": [
+   2,
+   2,
+   3,
+   4
+  ],
+  "town_chance": {
+   "castle": 0,
+   "rampart": 0,
+   "tower": 14,
+   "inferno": 0,
+   "necropolis": 16,
+   "dungeon": 0,
+   "stronghold": 0,
+   "fortress": 0,
+   "conflux": 12
+  },
+  "ai_value": [
+   50,
+   50,
+   100,
+   150
+  ],
+  "flags": [
+   "COMBAT_SPELL"
+  ]
+ },
+ {
+  "id": 70,
+  "name": "Stone Gaze",
+  "kind": "creature",
+  "level": 3,
+  "schools": [],
+  "cost": [
+   0,
+   0,
+   0,
+   0
+  ],
+  "power": 0,
+  "effect": [
+   0,
+   0,
+   0,
+   0
+  ],
+  "town_chance": {
+   "castle": 12,
+   "rampart": 13,
+   "tower": 12,
+   "inferno": 13,
+   "necropolis": 12,
+   "dungeon": 13,
+   "stronghold": 12,
+   "fortress": 13,
+   "conflux": 13
+  },
+  "ai_value": [
+   1,
+   1,
+   1,
+   1
+  ],
+  "flags": [
+   "CREATURE_SPELL"
+  ]
+ },
+ {
+  "id": 71,
+  "name": "Poison",
+  "kind": "creature",
+  "level": 0,
+  "schools": [],
+  "cost": [
+   0,
+   0,
+   0,
+   0
+  ],
+  "power": 0,
+  "effect": [
+   0,
+   0,
+   0,
+   0
+  ],
+  "town_chance": {
+   "castle": 12,
+   "rampart": 13,
+   "tower": 12,
+   "inferno": 13,
+   "necropolis": 12,
+   "dungeon": 13,
+   "stronghold": 12,
+   "fortress": 13,
+   "conflux": 13
+  },
+  "ai_value": [
+   1,
+   1,
+   1,
+   1
+  ],
+  "flags": [
+   "CREATURE_SPELL"
+  ]
+ },
+ {
+  "id": 72,
+  "name": "Bind",
+  "kind": "creature",
+  "level": 0,
+  "schools": [],
+  "cost": [
+   0,
+   0,
+   0,
+   0
+  ],
+  "power": 0,
+  "effect": [
+   0,
+   0,
+   0,
+   0
+  ],
+  "town_chance": {
+   "castle": 12,
+   "rampart": 13,
+   "tower": 12,
+   "inferno": 13,
+   "necropolis": 12,
+   "dungeon": 13,
+   "stronghold": 12,
+   "fortress": 13,
+   "conflux": 13
+  },
+  "ai_value": [
+   1,
+   1,
+   1,
+   1
+  ],
+  "flags": [
+   "CREATURE_SPELL"
+  ]
+ },
+ {
+  "id": 73,
+  "name": "Disease",
+  "kind": "creature",
+  "level": 2,
+  "schools": [],
+  "cost": [
+   0,
+   0,
+   0,
+   0
+  ],
+  "power": 0,
+  "effect": [
+   0,
+   0,
+   0,
+   0
+  ],
+  "town_chance": {
+   "castle": 12,
+   "rampart": 13,
+   "tower": 12,
+   "inferno": 13,
+   "necropolis": 12,
+   "dungeon": 13,
+   "stronghold": 12,
+   "fortress": 13,
+   "conflux": 13
+  },
+  "ai_value": [
+   1,
+   1,
+   1,
+   1
+  ],
+  "flags": [
+   "CREATURE_SPELL"
+  ]
+ },
+ {
+  "id": 74,
+  "name": "Paralyze",
+  "kind": "creature",
+  "level": 4,
+  "schools": [],
+  "cost": [
+   0,
+   0,
+   0,
+   0
+  ],
+  "power": 0,
+  "effect": [
+   0,
+   0,
+   0,
+   0
+  ],
+  "town_chance": {
+   "castle": 12,
+   "rampart": 13,
+   "tower": 12,
+   "inferno": 13,
+   "necropolis": 12,
+   "dungeon": 13,
+   "stronghold": 12,
+   "fortress": 13,
+   "conflux": 13
+  },
+  "ai_value": [
+   1,
+   1,
+   1,
+   1
+  ],
+  "flags": [
+   "CREATURE_SPELL"
+  ]
+ },
+ {
+  "id": 75,
+  "name": "Age",
+  "kind": "creature",
+  "level": 5,
+  "schools": [],
+  "cost": [
+   0,
+   0,
+   0,
+   0
+  ],
+  "power": 0,
+  "effect": [
+   0,
+   0,
+   0,
+   0
+  ],
+  "town_chance": {
+   "castle": 12,
+   "rampart": 13,
+   "tower": 12,
+   "inferno": 13,
+   "necropolis": 12,
+   "dungeon": 13,
+   "stronghold": 12,
+   "fortress": 13,
+   "conflux": 13
+  },
+  "ai_value": [
+   1,
+   1,
+   1,
+   1
+  ],
+  "flags": [
+   "CREATURE_SPELL"
+  ]
+ },
+ {
+  "id": 76,
+  "name": "Death Cloud",
+  "kind": "creature",
+  "level": 0,
+  "schools": [],
+  "cost": [
+   0,
+   0,
+   0,
+   0
+  ],
+  "power": 0,
+  "effect": [
+   0,
+   0,
+   0,
+   0
+  ],
+  "town_chance": {
+   "castle": 12,
+   "rampart": 13,
+   "tower": 12,
+   "inferno": 13,
+   "necropolis": 12,
+   "dungeon": 13,
+   "stronghold": 12,
+   "fortress": 13,
+   "conflux": 13
+  },
+  "ai_value": [
+   1,
+   1,
+   1,
+   1
+  ],
+  "flags": [
+   "CREATURE_SPELL"
+  ]
+ },
+ {
+  "id": 77,
+  "name": "Thunderbolt",
+  "kind": "creature",
+  "level": 0,
+  "schools": [],
+  "cost": [
+   0,
+   0,
+   0,
+   0
+  ],
+  "power": 0,
+  "effect": [
+   0,
+   0,
+   0,
+   0
+  ],
+  "town_chance": {
+   "castle": 12,
+   "rampart": 13,
+   "tower": 12,
+   "inferno": 13,
+   "necropolis": 12,
+   "dungeon": 13,
+   "stronghold": 12,
+   "fortress": 13,
+   "conflux": 13
+  },
+  "ai_value": [
+   1,
+   1,
+   1,
+   1
+  ],
+  "flags": [
+   "CREATURE_SPELL"
+  ]
+ },
+ {
+  "id": 78,
+  "name": "Dispel Helpful Spells",
+  "kind": "creature",
+  "level": 0,
+  "schools": [],
+  "cost": [
+   0,
+   0,
+   0,
+   0
+  ],
+  "power": 0,
+  "effect": [
+   0,
+   0,
+   0,
+   0
+  ],
+  "town_chance": {
+   "castle": 1,
+   "rampart": 1,
+   "tower": 1,
+   "inferno": 1,
+   "necropolis": 1,
+   "dungeon": 1,
+   "stronghold": 1,
+   "fortress": 1,
+   "conflux": 1
+  },
+  "ai_value": [
+   1,
+   1,
+   1,
+   1
+  ],
+  "flags": []
+ },
+ {
+  "id": 79,
+  "name": "Death Stare",
+  "kind": "creature",
+  "level": 0,
+  "schools": [],
+  "cost": [
+   0,
+   0,
+   0,
+   0
+  ],
+  "power": 0,
+  "effect": [
+   0,
+   0,
+   0,
+   0
+  ],
+  "town_chance": {
+   "castle": 1,
+   "rampart": 1,
+   "tower": 1,
+   "inferno": 1,
+   "necropolis": 1,
+   "dungeon": 1,
+   "stronghold": 1,
+   "fortress": 1,
+   "conflux": 1
+  },
+  "ai_value": [
+   1,
+   1,
+   1,
+   1
+  ],
+  "flags": []
+ },
+ {
+  "id": 80,
+  "name": "Acid breath",
+  "kind": "creature",
+  "level": 0,
+  "schools": [],
+  "cost": [
+   0,
+   0,
+   0,
+   0
+  ],
+  "power": 0,
+  "effect": [
+   0,
+   0,
+   0,
+   0
+  ],
+  "town_chance": {
+   "castle": 1,
+   "rampart": 1,
+   "tower": 1,
+   "inferno": 1,
+   "necropolis": 1,
+   "dungeon": 1,
+   "stronghold": 1,
+   "fortress": 1,
+   "conflux": 1
+  },
+  "ai_value": [
+   1,
+   1,
+   1,
+   1
+  ],
+  "flags": []
+ }
+]

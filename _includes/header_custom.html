@@ -1,0 +1,6 @@
+{% assign parts = page.url | split: '/' %}
+{% if parts[1] == 'en' %}
+<a class="site-button" href="{{ page.url | replace_first: '/en/', '/ru/' | relative_url }}">Русский</a>
+{% elsif parts[1] == 'ru' %}
+<a class="site-button" href="{{ page.url | replace_first: '/ru/', '/en/' | relative_url }}">English</a>
+{% endif %}

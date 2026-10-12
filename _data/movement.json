@@ -1,0 +1,39 @@
+{
+ "land_by_slowest_speed": [
+  1300,
+  1360,
+  1430,
+  1500,
+  1560,
+  1630,
+  1700,
+  1760,
+  1830,
+  1900,
+  1960,
+  2000,
+  2000,
+  2000,
+  2000,
+  2000,
+  2000,
+  2000,
+  2000,
+  2000,
+  2000
+ ],
+ "sea_by_navigation": [
+  1500,
+  2250,
+  3000,
+  3750
+ ],
+ "bonuses": {
+  "Equestrian Gloves": 300,
+  "Ring of the Wayfarer": 600,
+  "Necklace of Ocean Guidance": 1000,
+  "Angel Wings": 600,
+  "Stables": 400,
+  "Lighthouse": 500
+ }
+}

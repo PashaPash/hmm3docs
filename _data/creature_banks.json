@@ -1,0 +1,1186 @@
+[
+ {
+  "bank": "Cyclops Stockpile",
+  "level": 1,
+  "chance": 30,
+  "guards": [
+   {
+    "count": 20,
+    "creature": "Cyclopes"
+   }
+  ],
+  "upgrade_chance": 50,
+  "combat_value": 506,
+  "resources": {
+   "wood": 4,
+   "mercury": 4,
+   "ore": 4,
+   "sulfur": 4,
+   "crystal": 4,
+   "gems": 4
+  },
+  "creatures": null,
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "value": 10000
+ },
+ {
+  "bank": "Cyclops Stockpile",
+  "level": 2,
+  "chance": 30,
+  "guards": [
+   {
+    "count": 30,
+    "creature": "Cyclopes"
+   }
+  ],
+  "upgrade_chance": 50,
+  "combat_value": 760,
+  "resources": {
+   "wood": 6,
+   "mercury": 6,
+   "ore": 6,
+   "sulfur": 6,
+   "crystal": 6,
+   "gems": 6
+  },
+  "creatures": null,
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "value": 15000
+ },
+ {
+  "bank": "Cyclops Stockpile",
+  "level": 3,
+  "chance": 30,
+  "guards": [
+   {
+    "count": 40,
+    "creature": "Cyclopes"
+   }
+  ],
+  "upgrade_chance": 50,
+  "combat_value": 1013,
+  "resources": {
+   "wood": 8,
+   "mercury": 8,
+   "ore": 8,
+   "sulfur": 8,
+   "crystal": 8,
+   "gems": 8
+  },
+  "creatures": null,
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "value": 20000
+ },
+ {
+  "bank": "Cyclops Stockpile",
+  "level": 4,
+  "chance": 10,
+  "guards": [
+   {
+    "count": 50,
+    "creature": "Cyclopes"
+   }
+  ],
+  "upgrade_chance": 50,
+  "combat_value": 1266,
+  "resources": {
+   "wood": 10,
+   "mercury": 10,
+   "ore": 10,
+   "sulfur": 10,
+   "crystal": 10,
+   "gems": 10
+  },
+  "creatures": null,
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "value": 25000
+ },
+ {
+  "bank": "Dwarven Treasury",
+  "level": 1,
+  "chance": 30,
+  "guards": [
+   {
+    "count": 50,
+    "creature": "Dwarves"
+   }
+  ],
+  "upgrade_chance": 50,
+  "combat_value": 194,
+  "resources": {
+   "crystal": 2,
+   "gold": 2500
+  },
+  "creatures": null,
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "value": 3500
+ },
+ {
+  "bank": "Dwarven Treasury",
+  "level": 2,
+  "chance": 30,
+  "guards": [
+   {
+    "count": 75,
+    "creature": "Dwarves"
+   }
+  ],
+  "upgrade_chance": 50,
+  "combat_value": 291,
+  "resources": {
+   "crystal": 3,
+   "gold": 4000
+  },
+  "creatures": null,
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "value": 5500
+ },
+ {
+  "bank": "Dwarven Treasury",
+  "level": 3,
+  "chance": 30,
+  "guards": [
+   {
+    "count": 100,
+    "creature": "Dwarves"
+   }
+  ],
+  "upgrade_chance": 50,
+  "combat_value": 388,
+  "resources": {
+   "crystal": 5,
+   "gold": 5000
+  },
+  "creatures": null,
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "value": 7500
+ },
+ {
+  "bank": "Dwarven Treasury",
+  "level": 4,
+  "chance": 10,
+  "guards": [
+   {
+    "count": 150,
+    "creature": "Dwarves"
+   }
+  ],
+  "upgrade_chance": 50,
+  "combat_value": 582,
+  "resources": {
+   "crystal": 10,
+   "gold": 7500
+  },
+  "creatures": null,
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "value": 12500
+ },
+ {
+  "bank": "Griffin Conservatory",
+  "level": 1,
+  "chance": 30,
+  "guards": [
+   {
+    "count": 50,
+    "creature": "Griffins"
+   }
+  ],
+  "upgrade_chance": 50,
+  "combat_value": 351,
+  "resources": {},
+  "creatures": {
+   "count": 1,
+   "creature": "Angels"
+  },
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "value": 3000
+ },
+ {
+  "bank": "Griffin Conservatory",
+  "level": 2,
+  "chance": 30,
+  "guards": [
+   {
+    "count": 100,
+    "creature": "Griffins"
+   }
+  ],
+  "upgrade_chance": 50,
+  "combat_value": 702,
+  "resources": {},
+  "creatures": {
+   "count": 2,
+   "creature": "Angels"
+  },
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "value": 6000
+ },
+ {
+  "bank": "Griffin Conservatory",
+  "level": 3,
+  "chance": 30,
+  "guards": [
+   {
+    "count": 150,
+    "creature": "Griffins"
+   }
+  ],
+  "upgrade_chance": 50,
+  "combat_value": 1053,
+  "resources": {},
+  "creatures": {
+   "count": 3,
+   "creature": "Angels"
+  },
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "value": 9000
+ },
+ {
+  "bank": "Griffin Conservatory",
+  "level": 4,
+  "chance": 10,
+  "guards": [
+   {
+    "count": 200,
+    "creature": "Griffins"
+   }
+  ],
+  "upgrade_chance": 50,
+  "combat_value": 1404,
+  "resources": {},
+  "creatures": {
+   "count": 4,
+   "creature": "Angels"
+  },
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "value": 12000
+ },
+ {
+  "bank": "Imp Cache",
+  "level": 1,
+  "chance": 30,
+  "guards": [
+   {
+    "count": 100,
+    "creature": "Imps"
+   }
+  ],
+  "upgrade_chance": 50,
+  "combat_value": 100,
+  "resources": {
+   "mercury": 2,
+   "gold": 1000
+  },
+  "creatures": null,
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "value": 2000
+ },
+ {
+  "bank": "Imp Cache",
+  "level": 2,
+  "chance": 30,
+  "guards": [
+   {
+    "count": 150,
+    "creature": "Imps"
+   }
+  ],
+  "upgrade_chance": 50,
+  "combat_value": 150,
+  "resources": {
+   "mercury": 3,
+   "gold": 1500
+  },
+  "creatures": null,
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "value": 3000
+ },
+ {
+  "bank": "Imp Cache",
+  "level": 3,
+  "chance": 30,
+  "guards": [
+   {
+    "count": 200,
+    "creature": "Imps"
+   }
+  ],
+  "upgrade_chance": 50,
+  "combat_value": 200,
+  "resources": {
+   "mercury": 4,
+   "gold": 2000
+  },
+  "creatures": null,
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "value": 4000
+ },
+ {
+  "bank": "Imp Cache",
+  "level": 4,
+  "chance": 10,
+  "guards": [
+   {
+    "count": 300,
+    "creature": "Imps"
+   }
+  ],
+  "upgrade_chance": 50,
+  "combat_value": 300,
+  "resources": {
+   "mercury": 6,
+   "gold": 3000
+  },
+  "creatures": null,
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "value": 6000
+ },
+ {
+  "bank": "Medusa Stores",
+  "level": 1,
+  "chance": 30,
+  "guards": [
+   {
+    "count": 20,
+    "creature": "Medusae"
+   }
+  ],
+  "upgrade_chance": 50,
+  "combat_value": 207,
+  "resources": {
+   "sulfur": 5,
+   "gold": 2000
+  },
+  "creatures": null,
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "value": 4500
+ },
+ {
+  "bank": "Medusa Stores",
+  "level": 2,
+  "chance": 30,
+  "guards": [
+   {
+    "count": 30,
+    "creature": "Medusae"
+   }
+  ],
+  "upgrade_chance": 50,
+  "combat_value": 310,
+  "resources": {
+   "sulfur": 6,
+   "gold": 3000
+  },
+  "creatures": null,
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "value": 6000
+ },
+ {
+  "bank": "Medusa Stores",
+  "level": 3,
+  "chance": 30,
+  "guards": [
+   {
+    "count": 40,
+    "creature": "Medusae"
+   }
+  ],
+  "upgrade_chance": 50,
+  "combat_value": 414,
+  "resources": {
+   "sulfur": 8,
+   "gold": 4000
+  },
+  "creatures": null,
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "value": 8000
+ },
+ {
+  "bank": "Medusa Stores",
+  "level": 4,
+  "chance": 10,
+  "guards": [
+   {
+    "count": 50,
+    "creature": "Medusae"
+   }
+  ],
+  "upgrade_chance": 50,
+  "combat_value": 517,
+  "resources": {
+   "sulfur": 10,
+   "gold": 5000
+  },
+  "creatures": null,
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "value": 10000
+ },
+ {
+  "bank": "Naga Bank",
+  "level": 1,
+  "chance": 30,
+  "guards": [
+   {
+    "count": 10,
+    "creature": "Nagas"
+   }
+  ],
+  "upgrade_chance": 50,
+  "combat_value": 403,
+  "resources": {
+   "sulfur": 8,
+   "gold": 4000
+  },
+  "creatures": null,
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "value": 8000
+ },
+ {
+  "bank": "Naga Bank",
+  "level": 2,
+  "chance": 30,
+  "guards": [
+   {
+    "count": 15,
+    "creature": "Nagas"
+   }
+  ],
+  "upgrade_chance": 50,
+  "combat_value": 605,
+  "resources": {
+   "sulfur": 12,
+   "gold": 6000
+  },
+  "creatures": null,
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "value": 12000
+ },
+ {
+  "bank": "Naga Bank",
+  "level": 3,
+  "chance": 30,
+  "guards": [
+   {
+    "count": 20,
+    "creature": "Nagas"
+   }
+  ],
+  "upgrade_chance": 50,
+  "combat_value": 806,
+  "resources": {
+   "sulfur": 16,
+   "gold": 8000
+  },
+  "creatures": null,
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "value": 16000
+ },
+ {
+  "bank": "Naga Bank",
+  "level": 4,
+  "chance": 10,
+  "guards": [
+   {
+    "count": 30,
+    "creature": "Nagas"
+   }
+  ],
+  "upgrade_chance": 50,
+  "combat_value": 1210,
+  "resources": {
+   "sulfur": 24,
+   "gold": 12000
+  },
+  "creatures": null,
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "value": 24000
+ },
+ {
+  "bank": "Dragon Fly Hive",
+  "level": 1,
+  "chance": 30,
+  "guards": [
+   {
+    "count": 30,
+    "creature": "Dragonflies"
+   }
+  ],
+  "upgrade_chance": 50,
+  "combat_value": 154,
+  "resources": {},
+  "creatures": {
+   "count": 4,
+   "creature": "Wyverns"
+  },
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "value": 3200
+ },
+ {
+  "bank": "Dragon Fly Hive",
+  "level": 2,
+  "chance": 30,
+  "guards": [
+   {
+    "count": 45,
+    "creature": "Dragonflies"
+   }
+  ],
+  "upgrade_chance": 50,
+  "combat_value": 230,
+  "resources": {},
+  "creatures": {
+   "count": 6,
+   "creature": "Wyverns"
+  },
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "value": 4800
+ },
+ {
+  "bank": "Dragon Fly Hive",
+  "level": 3,
+  "chance": 30,
+  "guards": [
+   {
+    "count": 60,
+    "creature": "Dragonflies"
+   }
+  ],
+  "upgrade_chance": 50,
+  "combat_value": 307,
+  "resources": {},
+  "creatures": {
+   "count": 8,
+   "creature": "Wyverns"
+  },
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "value": 6400
+ },
+ {
+  "bank": "Dragon Fly Hive",
+  "level": 4,
+  "chance": 10,
+  "guards": [
+   {
+    "count": 90,
+    "creature": "Dragonflies"
+   }
+  ],
+  "upgrade_chance": 50,
+  "combat_value": 461,
+  "resources": {},
+  "creatures": {
+   "count": 12,
+   "creature": "Wyverns"
+  },
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "value": 9600
+ },
+ {
+  "bank": "Shipwreck",
+  "level": 1,
+  "chance": 30,
+  "guards": [
+   {
+    "count": 10,
+    "creature": "Wights"
+   }
+  ],
+  "upgrade_chance": 0,
+  "combat_value": 31,
+  "resources": {
+   "gold": 2000
+  },
+  "creatures": null,
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "value": 2000
+ },
+ {
+  "bank": "Shipwreck",
+  "level": 2,
+  "chance": 30,
+  "guards": [
+   {
+    "count": 15,
+    "creature": "Wights"
+   }
+  ],
+  "upgrade_chance": 0,
+  "combat_value": 46,
+  "resources": {
+   "gold": 3000
+  },
+  "creatures": null,
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "value": 3000
+ },
+ {
+  "bank": "Shipwreck",
+  "level": 3,
+  "chance": 30,
+  "guards": [
+   {
+    "count": 25,
+    "creature": "Wights"
+   }
+  ],
+  "upgrade_chance": 0,
+  "combat_value": 77,
+  "resources": {
+   "gold": 4000
+  },
+  "creatures": null,
+  "artifacts": {
+   "treasure": 1,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "value": 5000
+ },
+ {
+  "bank": "Shipwreck",
+  "level": 4,
+  "chance": 10,
+  "guards": [
+   {
+    "count": 50,
+    "creature": "Wights"
+   }
+  ],
+  "upgrade_chance": 0,
+  "combat_value": 154,
+  "resources": {
+   "gold": 5000
+  },
+  "creatures": null,
+  "artifacts": {
+   "treasure": 0,
+   "minor": 1,
+   "major": 0,
+   "relic": 0
+  },
+  "value": 7000
+ },
+ {
+  "bank": "Derelict Ship",
+  "level": 1,
+  "chance": 30,
+  "guards": [
+   {
+    "count": 20,
+    "creature": "Water Elementals"
+   }
+  ],
+  "upgrade_chance": 0,
+  "combat_value": 138,
+  "resources": {
+   "gold": 3000
+  },
+  "creatures": null,
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "value": 3000
+ },
+ {
+  "bank": "Derelict Ship",
+  "level": 2,
+  "chance": 30,
+  "guards": [
+   {
+    "count": 30,
+    "creature": "Water Elementals"
+   }
+  ],
+  "upgrade_chance": 0,
+  "combat_value": 207,
+  "resources": {
+   "gold": 3000
+  },
+  "creatures": null,
+  "artifacts": {
+   "treasure": 1,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "value": 4000
+ },
+ {
+  "bank": "Derelict Ship",
+  "level": 3,
+  "chance": 30,
+  "guards": [
+   {
+    "count": 40,
+    "creature": "Water Elementals"
+   }
+  ],
+  "upgrade_chance": 0,
+  "combat_value": 276,
+  "resources": {
+   "gold": 4000
+  },
+  "creatures": null,
+  "artifacts": {
+   "treasure": 1,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "value": 5000
+ },
+ {
+  "bank": "Derelict Ship",
+  "level": 4,
+  "chance": 10,
+  "guards": [
+   {
+    "count": 60,
+    "creature": "Water Elementals"
+   }
+  ],
+  "upgrade_chance": 0,
+  "combat_value": 414,
+  "resources": {
+   "gold": 6000
+  },
+  "creatures": null,
+  "artifacts": {
+   "treasure": 0,
+   "minor": 1,
+   "major": 0,
+   "relic": 0
+  },
+  "value": 8000
+ },
+ {
+  "bank": "Crypt",
+  "level": 1,
+  "chance": 30,
+  "guards": [
+   {
+    "count": 30,
+    "creature": "Skeletons"
+   },
+   {
+    "count": 20,
+    "creature": "Zombies"
+   }
+  ],
+  "upgrade_chance": 0,
+  "combat_value": 75,
+  "resources": {
+   "gold": 1500
+  },
+  "creatures": null,
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "value": 1500
+ },
+ {
+  "bank": "Crypt",
+  "level": 2,
+  "chance": 30,
+  "guards": [
+   {
+    "count": 25,
+    "creature": "Skeletons"
+   },
+   {
+    "count": 20,
+    "creature": "Zombies"
+   },
+   {
+    "count": 5,
+    "creature": "Wights"
+   }
+  ],
+  "upgrade_chance": 0,
+  "combat_value": 94,
+  "resources": {
+   "gold": 2000
+  },
+  "creatures": null,
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "value": 2000
+ },
+ {
+  "bank": "Crypt",
+  "level": 3,
+  "chance": 30,
+  "guards": [
+   {
+    "count": 20,
+    "creature": "Skeletons"
+   },
+   {
+    "count": 20,
+    "creature": "Zombies"
+   },
+   {
+    "count": 10,
+    "creature": "Wights"
+   },
+   {
+    "count": 5,
+    "creature": "Vampires"
+   }
+  ],
+  "upgrade_chance": 0,
+  "combat_value": 169,
+  "resources": {
+   "gold": 2500
+  },
+  "creatures": null,
+  "artifacts": {
+   "treasure": 1,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "value": 3500
+ },
+ {
+  "bank": "Crypt",
+  "level": 4,
+  "chance": 10,
+  "guards": [
+   {
+    "count": 20,
+    "creature": "Skeletons"
+   },
+   {
+    "count": 20,
+    "creature": "Zombies"
+   },
+   {
+    "count": 10,
+    "creature": "Wights"
+   },
+   {
+    "count": 10,
+    "creature": "Vampires"
+   }
+  ],
+  "upgrade_chance": 0,
+  "combat_value": 225,
+  "resources": {
+   "gold": 5000
+  },
+  "creatures": null,
+  "artifacts": {
+   "treasure": 1,
+   "minor": 0,
+   "major": 0,
+   "relic": 0
+  },
+  "value": 6000
+ },
+ {
+  "bank": "Dragon Utopia",
+  "level": 1,
+  "chance": 30,
+  "guards": [
+   {
+    "count": 8,
+    "creature": "Green Dragons"
+   },
+   {
+    "count": 5,
+    "creature": "Red Dragons"
+   },
+   {
+    "count": 2,
+    "creature": "Gold Dragons"
+   },
+   {
+    "count": 1,
+    "creature": "Black Dragons"
+   }
+  ],
+  "upgrade_chance": 0,
+  "combat_value": 1769,
+  "resources": {
+   "gold": 20000
+  },
+  "creatures": null,
+  "artifacts": {
+   "treasure": 1,
+   "minor": 1,
+   "major": 1,
+   "relic": 1
+  },
+  "value": 38000
+ },
+ {
+  "bank": "Dragon Utopia",
+  "level": 2,
+  "chance": 30,
+  "guards": [
+   {
+    "count": 8,
+    "creature": "Green Dragons"
+   },
+   {
+    "count": 6,
+    "creature": "Red Dragons"
+   },
+   {
+    "count": 3,
+    "creature": "Gold Dragons"
+   },
+   {
+    "count": 2,
+    "creature": "Black Dragons"
+   }
+  ],
+  "upgrade_chance": 0,
+  "combat_value": 2209,
+  "resources": {
+   "gold": 30000
+  },
+  "creatures": null,
+  "artifacts": {
+   "treasure": 0,
+   "minor": 1,
+   "major": 1,
+   "relic": 2
+  },
+  "value": 57000
+ },
+ {
+  "bank": "Dragon Utopia",
+  "level": 3,
+  "chance": 30,
+  "guards": [
+   {
+    "count": 8,
+    "creature": "Green Dragons"
+   },
+   {
+    "count": 6,
+    "creature": "Red Dragons"
+   },
+   {
+    "count": 4,
+    "creature": "Gold Dragons"
+   },
+   {
+    "count": 3,
+    "creature": "Black Dragons"
+   }
+  ],
+  "upgrade_chance": 0,
+  "combat_value": 2556,
+  "resources": {
+   "gold": 40000
+  },
+  "creatures": null,
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 1,
+   "relic": 3
+  },
+  "value": 75000
+ },
+ {
+  "bank": "Dragon Utopia",
+  "level": 4,
+  "chance": 10,
+  "guards": [
+   {
+    "count": 8,
+    "creature": "Green Dragons"
+   },
+   {
+    "count": 7,
+    "creature": "Red Dragons"
+   },
+   {
+    "count": 6,
+    "creature": "Gold Dragons"
+   },
+   {
+    "count": 5,
+    "creature": "Black Dragons"
+   }
+  ],
+  "upgrade_chance": 0,
+  "combat_value": 3343,
+  "resources": {
+   "gold": 50000
+  },
+  "creatures": null,
+  "artifacts": {
+   "treasure": 0,
+   "minor": 0,
+   "major": 0,
+   "relic": 4
+  },
+  "value": 90000
+ }
+]

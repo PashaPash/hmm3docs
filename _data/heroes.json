@@ -1,0 +1,3278 @@
+[
+ {
+  "id": 0,
+  "name": "Orrin",
+  "army": [
+   {
+    "creature": "Pikeman",
+    "min": 10,
+    "max": 20
+   },
+   {
+    "creature": "LightCrossbowman",
+    "min": 4,
+    "max": 7
+   },
+   {
+    "creature": "Griffin",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 1,
+  "name": "Valeska",
+  "army": [
+   {
+    "creature": "LightCrossbowman",
+    "min": 4,
+    "max": 7
+   },
+   {
+    "creature": "LightCrossbowman",
+    "min": 4,
+    "max": 7
+   },
+   {
+    "creature": "LightCrossbowman",
+    "min": 4,
+    "max": 7
+   }
+  ]
+ },
+ {
+  "id": 2,
+  "name": "Edric",
+  "army": [
+   {
+    "creature": "Pikeman",
+    "min": 10,
+    "max": 20
+   },
+   {
+    "creature": "Griffin",
+    "min": 2,
+    "max": 3
+   },
+   {
+    "creature": "Griffin",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 3,
+  "name": "Sylvia",
+  "army": [
+   {
+    "creature": "Pikeman",
+    "min": 10,
+    "max": 20
+   },
+   {
+    "creature": "LightCrossbowman",
+    "min": 4,
+    "max": 7
+   },
+   {
+    "creature": "Griffin",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 4,
+  "name": "Lord Haart",
+  "army": [
+   {
+    "creature": "Pikeman",
+    "min": 10,
+    "max": 20
+   },
+   {
+    "creature": "LightCrossbowman",
+    "min": 4,
+    "max": 7
+   },
+   {
+    "creature": "Griffin",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 5,
+  "name": "Sorsha",
+  "army": [
+   {
+    "creature": "Pikeman",
+    "min": 10,
+    "max": 20
+   },
+   {
+    "creature": "LightCrossbowman",
+    "min": 4,
+    "max": 7
+   },
+   {
+    "creature": "Griffin",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 6,
+  "name": "Christian",
+  "army": [
+   {
+    "creature": "Pikeman",
+    "min": 10,
+    "max": 20
+   },
+   {
+    "creature": "Ballista",
+    "min": 1,
+    "max": 1
+   },
+   {
+    "creature": "Griffin",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 7,
+  "name": "Tyris",
+  "army": [
+   {
+    "creature": "Pikeman",
+    "min": 10,
+    "max": 20
+   },
+   {
+    "creature": "LightCrossbowman",
+    "min": 4,
+    "max": 7
+   },
+   {
+    "creature": "Griffin",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 8,
+  "name": "Rion",
+  "army": [
+   {
+    "creature": "Pikeman",
+    "min": 10,
+    "max": 20
+   },
+   {
+    "creature": "FirstAidTent",
+    "min": 1,
+    "max": 1
+   },
+   {
+    "creature": "Griffin",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 9,
+  "name": "Adela",
+  "army": [
+   {
+    "creature": "Pikeman",
+    "min": 10,
+    "max": 20
+   },
+   {
+    "creature": "LightCrossbowman",
+    "min": 4,
+    "max": 7
+   },
+   {
+    "creature": "Griffin",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 10,
+  "name": "Cuthbert",
+  "army": [
+   {
+    "creature": "Pikeman",
+    "min": 10,
+    "max": 20
+   },
+   {
+    "creature": "LightCrossbowman",
+    "min": 4,
+    "max": 7
+   },
+   {
+    "creature": "Griffin",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 11,
+  "name": "Adelaide",
+  "army": [
+   {
+    "creature": "Pikeman",
+    "min": 10,
+    "max": 20
+   },
+   {
+    "creature": "LightCrossbowman",
+    "min": 4,
+    "max": 7
+   },
+   {
+    "creature": "Griffin",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 12,
+  "name": "Ingham",
+  "army": [
+   {
+    "creature": "Pikeman",
+    "min": 10,
+    "max": 20
+   },
+   {
+    "creature": "LightCrossbowman",
+    "min": 4,
+    "max": 7
+   },
+   {
+    "creature": "Griffin",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 13,
+  "name": "Sanya",
+  "army": [
+   {
+    "creature": "Pikeman",
+    "min": 10,
+    "max": 20
+   },
+   {
+    "creature": "LightCrossbowman",
+    "min": 4,
+    "max": 7
+   },
+   {
+    "creature": "Griffin",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 14,
+  "name": "Loynis",
+  "army": [
+   {
+    "creature": "Pikeman",
+    "min": 10,
+    "max": 20
+   },
+   {
+    "creature": "LightCrossbowman",
+    "min": 4,
+    "max": 7
+   },
+   {
+    "creature": "Griffin",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 15,
+  "name": "Caitlin",
+  "army": [
+   {
+    "creature": "Pikeman",
+    "min": 10,
+    "max": 20
+   },
+   {
+    "creature": "LightCrossbowman",
+    "min": 4,
+    "max": 7
+   },
+   {
+    "creature": "Griffin",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 16,
+  "name": "Mephala",
+  "army": [
+   {
+    "creature": "Centaur",
+    "min": 12,
+    "max": 24
+   },
+   {
+    "creature": "Dwarf",
+    "min": 3,
+    "max": 5
+   },
+   {
+    "creature": "WoodElf",
+    "min": 3,
+    "max": 6
+   }
+  ]
+ },
+ {
+  "id": 17,
+  "name": "Ufretin",
+  "army": [
+   {
+    "creature": "Dwarf",
+    "min": 3,
+    "max": 5
+   },
+   {
+    "creature": "Dwarf",
+    "min": 3,
+    "max": 5
+   },
+   {
+    "creature": "Dwarf",
+    "min": 3,
+    "max": 5
+   }
+  ]
+ },
+ {
+  "id": 18,
+  "name": "Jenova",
+  "army": [
+   {
+    "creature": "Centaur",
+    "min": 12,
+    "max": 24
+   },
+   {
+    "creature": "Dwarf",
+    "min": 3,
+    "max": 5
+   },
+   {
+    "creature": "WoodElf",
+    "min": 3,
+    "max": 6
+   }
+  ]
+ },
+ {
+  "id": 19,
+  "name": "Ryland",
+  "army": [
+   {
+    "creature": "Centaur",
+    "min": 12,
+    "max": 24
+   },
+   {
+    "creature": "Dwarf",
+    "min": 3,
+    "max": 5
+   },
+   {
+    "creature": "WoodElf",
+    "min": 3,
+    "max": 6
+   }
+  ]
+ },
+ {
+  "id": 20,
+  "name": "Thorgrim",
+  "army": [
+   {
+    "creature": "Centaur",
+    "min": 12,
+    "max": 24
+   },
+   {
+    "creature": "Dwarf",
+    "min": 3,
+    "max": 5
+   },
+   {
+    "creature": "WoodElf",
+    "min": 3,
+    "max": 6
+   }
+  ]
+ },
+ {
+  "id": 21,
+  "name": "Ivor",
+  "army": [
+   {
+    "creature": "Centaur",
+    "min": 12,
+    "max": 24
+   },
+   {
+    "creature": "WoodElf",
+    "min": 3,
+    "max": 6
+   },
+   {
+    "creature": "WoodElf",
+    "min": 3,
+    "max": 6
+   }
+  ]
+ },
+ {
+  "id": 22,
+  "name": "Clancy",
+  "army": [
+   {
+    "creature": "Centaur",
+    "min": 12,
+    "max": 24
+   },
+   {
+    "creature": "Dwarf",
+    "min": 3,
+    "max": 5
+   },
+   {
+    "creature": "WoodElf",
+    "min": 3,
+    "max": 6
+   }
+  ]
+ },
+ {
+  "id": 23,
+  "name": "Kyrre",
+  "army": [
+   {
+    "creature": "Centaur",
+    "min": 12,
+    "max": 24
+   },
+   {
+    "creature": "Dwarf",
+    "min": 3,
+    "max": 5
+   },
+   {
+    "creature": "WoodElf",
+    "min": 3,
+    "max": 6
+   }
+  ]
+ },
+ {
+  "id": 24,
+  "name": "Coronius",
+  "army": [
+   {
+    "creature": "Centaur",
+    "min": 12,
+    "max": 24
+   },
+   {
+    "creature": "Dwarf",
+    "min": 3,
+    "max": 5
+   },
+   {
+    "creature": "WoodElf",
+    "min": 3,
+    "max": 6
+   }
+  ]
+ },
+ {
+  "id": 25,
+  "name": "Uland",
+  "army": [
+   {
+    "creature": "Centaur",
+    "min": 12,
+    "max": 24
+   },
+   {
+    "creature": "Dwarf",
+    "min": 3,
+    "max": 5
+   },
+   {
+    "creature": "WoodElf",
+    "min": 3,
+    "max": 6
+   }
+  ]
+ },
+ {
+  "id": 26,
+  "name": "Elleshar",
+  "army": [
+   {
+    "creature": "Centaur",
+    "min": 12,
+    "max": 24
+   },
+   {
+    "creature": "Dwarf",
+    "min": 3,
+    "max": 5
+   },
+   {
+    "creature": "WoodElf",
+    "min": 3,
+    "max": 6
+   }
+  ]
+ },
+ {
+  "id": 27,
+  "name": "Gem",
+  "army": [
+   {
+    "creature": "Centaur",
+    "min": 12,
+    "max": 24
+   },
+   {
+    "creature": "FirstAidTent",
+    "min": 1,
+    "max": 1
+   },
+   {
+    "creature": "WoodElf",
+    "min": 3,
+    "max": 6
+   }
+  ]
+ },
+ {
+  "id": 28,
+  "name": "Malcom",
+  "army": [
+   {
+    "creature": "Centaur",
+    "min": 12,
+    "max": 24
+   },
+   {
+    "creature": "Dwarf",
+    "min": 3,
+    "max": 5
+   },
+   {
+    "creature": "WoodElf",
+    "min": 3,
+    "max": 6
+   }
+  ]
+ },
+ {
+  "id": 29,
+  "name": "Melodia",
+  "army": [
+   {
+    "creature": "Centaur",
+    "min": 12,
+    "max": 24
+   },
+   {
+    "creature": "Dwarf",
+    "min": 3,
+    "max": 5
+   },
+   {
+    "creature": "WoodElf",
+    "min": 3,
+    "max": 6
+   }
+  ]
+ },
+ {
+  "id": 30,
+  "name": "Alagar",
+  "army": [
+   {
+    "creature": "Centaur",
+    "min": 12,
+    "max": 24
+   },
+   {
+    "creature": "Dwarf",
+    "min": 3,
+    "max": 5
+   },
+   {
+    "creature": "WoodElf",
+    "min": 3,
+    "max": 6
+   }
+  ]
+ },
+ {
+  "id": 31,
+  "name": "Aeris",
+  "army": [
+   {
+    "creature": "Centaur",
+    "min": 12,
+    "max": 24
+   },
+   {
+    "creature": "Dwarf",
+    "min": 3,
+    "max": 5
+   },
+   {
+    "creature": "WoodElf",
+    "min": 3,
+    "max": 6
+   }
+  ]
+ },
+ {
+  "id": 32,
+  "name": "Piquedram",
+  "army": [
+   {
+    "creature": "StoneGargoyle",
+    "min": 3,
+    "max": 5
+   },
+   {
+    "creature": "StoneGargoyle",
+    "min": 3,
+    "max": 5
+   },
+   {
+    "creature": "StoneGargoyle",
+    "min": 3,
+    "max": 5
+   }
+  ]
+ },
+ {
+  "id": 33,
+  "name": "Thane",
+  "army": [
+   {
+    "creature": "ApprenticeGremlin",
+    "min": 30,
+    "max": 40
+   },
+   {
+    "creature": "StoneGargoyle",
+    "min": 3,
+    "max": 5
+   },
+   {
+    "creature": "IronGolem",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 34,
+  "name": "Josephine",
+  "army": [
+   {
+    "creature": "ApprenticeGremlin",
+    "min": 30,
+    "max": 40
+   },
+   {
+    "creature": "IronGolem",
+    "min": 2,
+    "max": 2
+   },
+   {
+    "creature": "IronGolem",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 35,
+  "name": "Neela",
+  "army": [
+   {
+    "creature": "ApprenticeGremlin",
+    "min": 30,
+    "max": 40
+   },
+   {
+    "creature": "StoneGargoyle",
+    "min": 4,
+    "max": 4
+   },
+   {
+    "creature": "IronGolem",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 36,
+  "name": "Torosar",
+  "army": [
+   {
+    "creature": "ApprenticeGremlin",
+    "min": 30,
+    "max": 40
+   },
+   {
+    "creature": "Ballista",
+    "min": 1,
+    "max": 1
+   },
+   {
+    "creature": "IronGolem",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 37,
+  "name": "Fafner",
+  "army": [
+   {
+    "creature": "ApprenticeGremlin",
+    "min": 30,
+    "max": 40
+   },
+   {
+    "creature": "StoneGargoyle",
+    "min": 3,
+    "max": 5
+   },
+   {
+    "creature": "IronGolem",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 38,
+  "name": "Rissa",
+  "army": [
+   {
+    "creature": "ApprenticeGremlin",
+    "min": 30,
+    "max": 40
+   },
+   {
+    "creature": "StoneGargoyle",
+    "min": 3,
+    "max": 5
+   },
+   {
+    "creature": "IronGolem",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 39,
+  "name": "Iona",
+  "army": [
+   {
+    "creature": "ApprenticeGremlin",
+    "min": 30,
+    "max": 40
+   },
+   {
+    "creature": "StoneGargoyle",
+    "min": 3,
+    "max": 5
+   },
+   {
+    "creature": "IronGolem",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 40,
+  "name": "Astral",
+  "army": [
+   {
+    "creature": "ApprenticeGremlin",
+    "min": 30,
+    "max": 40
+   },
+   {
+    "creature": "StoneGargoyle",
+    "min": 3,
+    "max": 5
+   },
+   {
+    "creature": "IronGolem",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 41,
+  "name": "Halon",
+  "army": [
+   {
+    "creature": "ApprenticeGremlin",
+    "min": 30,
+    "max": 40
+   },
+   {
+    "creature": "StoneGargoyle",
+    "min": 3,
+    "max": 5
+   },
+   {
+    "creature": "IronGolem",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 42,
+  "name": "Serena",
+  "army": [
+   {
+    "creature": "ApprenticeGremlin",
+    "min": 30,
+    "max": 40
+   },
+   {
+    "creature": "StoneGargoyle",
+    "min": 3,
+    "max": 5
+   },
+   {
+    "creature": "IronGolem",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 43,
+  "name": "Daremyth",
+  "army": [
+   {
+    "creature": "ApprenticeGremlin",
+    "min": 30,
+    "max": 40
+   },
+   {
+    "creature": "StoneGargoyle",
+    "min": 3,
+    "max": 5
+   },
+   {
+    "creature": "IronGolem",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 44,
+  "name": "Theodorus",
+  "army": [
+   {
+    "creature": "ApprenticeGremlin",
+    "min": 30,
+    "max": 40
+   },
+   {
+    "creature": "StoneGargoyle",
+    "min": 3,
+    "max": 5
+   },
+   {
+    "creature": "IronGolem",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 45,
+  "name": "Solmyr",
+  "army": [
+   {
+    "creature": "ApprenticeGremlin",
+    "min": 30,
+    "max": 40
+   },
+   {
+    "creature": "StoneGargoyle",
+    "min": 3,
+    "max": 5
+   },
+   {
+    "creature": "IronGolem",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 46,
+  "name": "Cyra",
+  "army": [
+   {
+    "creature": "ApprenticeGremlin",
+    "min": 30,
+    "max": 40
+   },
+   {
+    "creature": "StoneGargoyle",
+    "min": 3,
+    "max": 5
+   },
+   {
+    "creature": "IronGolem",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 47,
+  "name": "Aine",
+  "army": [
+   {
+    "creature": "ApprenticeGremlin",
+    "min": 30,
+    "max": 40
+   },
+   {
+    "creature": "StoneGargoyle",
+    "min": 3,
+    "max": 5
+   },
+   {
+    "creature": "IronGolem",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 48,
+  "name": "Fiona",
+  "army": [
+   {
+    "creature": "Imp",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "HellHound",
+    "min": 3,
+    "max": 4
+   },
+   {
+    "creature": "HellHound",
+    "min": 3,
+    "max": 4
+   }
+  ]
+ },
+ {
+  "id": 49,
+  "name": "Rashka",
+  "army": [
+   {
+    "creature": "Imp",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "Gog",
+    "min": 4,
+    "max": 7
+   },
+   {
+    "creature": "HellHound",
+    "min": 3,
+    "max": 4
+   }
+  ]
+ },
+ {
+  "id": 50,
+  "name": "Marius",
+  "army": [
+   {
+    "creature": "Imp",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "Gog",
+    "min": 4,
+    "max": 7
+   },
+   {
+    "creature": "HellHound",
+    "min": 3,
+    "max": 4
+   }
+  ]
+ },
+ {
+  "id": 51,
+  "name": "Ignatius",
+  "army": [
+   {
+    "creature": "Imp",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "Imp",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "Imp",
+    "min": 15,
+    "max": 25
+   }
+  ]
+ },
+ {
+  "id": 52,
+  "name": "Octavia",
+  "army": [
+   {
+    "creature": "Imp",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "Gog",
+    "min": 4,
+    "max": 7
+   },
+   {
+    "creature": "HellHound",
+    "min": 3,
+    "max": 4
+   }
+  ]
+ },
+ {
+  "id": 53,
+  "name": "Calh",
+  "army": [
+   {
+    "creature": "Gog",
+    "min": 4,
+    "max": 7
+   },
+   {
+    "creature": "Gog",
+    "min": 4,
+    "max": 7
+   },
+   {
+    "creature": "Gog",
+    "min": 4,
+    "max": 7
+   }
+  ]
+ },
+ {
+  "id": 54,
+  "name": "Pyre",
+  "army": [
+   {
+    "creature": "Imp",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "Ballista",
+    "min": 1,
+    "max": 1
+   },
+   {
+    "creature": "HellHound",
+    "min": 3,
+    "max": 4
+   }
+  ]
+ },
+ {
+  "id": 55,
+  "name": "Nymus",
+  "army": [
+   {
+    "creature": "Imp",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "Gog",
+    "min": 4,
+    "max": 7
+   },
+   {
+    "creature": "HellHound",
+    "min": 3,
+    "max": 4
+   }
+  ]
+ },
+ {
+  "id": 56,
+  "name": "Ayden",
+  "army": [
+   {
+    "creature": "Imp",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "Gog",
+    "min": 4,
+    "max": 7
+   },
+   {
+    "creature": "HellHound",
+    "min": 3,
+    "max": 4
+   }
+  ]
+ },
+ {
+  "id": 57,
+  "name": "Xyron",
+  "army": [
+   {
+    "creature": "Imp",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "Gog",
+    "min": 4,
+    "max": 7
+   },
+   {
+    "creature": "HellHound",
+    "min": 3,
+    "max": 4
+   }
+  ]
+ },
+ {
+  "id": 58,
+  "name": "Axsis",
+  "army": [
+   {
+    "creature": "Imp",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "Gog",
+    "min": 4,
+    "max": 7
+   },
+   {
+    "creature": "HellHound",
+    "min": 3,
+    "max": 4
+   }
+  ]
+ },
+ {
+  "id": 59,
+  "name": "Olema",
+  "army": [
+   {
+    "creature": "Imp",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "Gog",
+    "min": 4,
+    "max": 7
+   },
+   {
+    "creature": "HellHound",
+    "min": 3,
+    "max": 4
+   }
+  ]
+ },
+ {
+  "id": 60,
+  "name": "Calid",
+  "army": [
+   {
+    "creature": "Imp",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "Gog",
+    "min": 4,
+    "max": 7
+   },
+   {
+    "creature": "HellHound",
+    "min": 3,
+    "max": 4
+   }
+  ]
+ },
+ {
+  "id": 61,
+  "name": "Ash",
+  "army": [
+   {
+    "creature": "Imp",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "Gog",
+    "min": 4,
+    "max": 7
+   },
+   {
+    "creature": "HellHound",
+    "min": 3,
+    "max": 4
+   }
+  ]
+ },
+ {
+  "id": 62,
+  "name": "Zydar",
+  "army": [
+   {
+    "creature": "Imp",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "Gog",
+    "min": 4,
+    "max": 7
+   },
+   {
+    "creature": "HellHound",
+    "min": 3,
+    "max": 4
+   }
+  ]
+ },
+ {
+  "id": 63,
+  "name": "Xarfax",
+  "army": [
+   {
+    "creature": "Imp",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "Gog",
+    "min": 4,
+    "max": 7
+   },
+   {
+    "creature": "HellHound",
+    "min": 3,
+    "max": 4
+   }
+  ]
+ },
+ {
+  "id": 64,
+  "name": "Straker",
+  "army": [
+   {
+    "creature": "Zombie",
+    "min": 4,
+    "max": 6
+   },
+   {
+    "creature": "Zombie",
+    "min": 4,
+    "max": 6
+   },
+   {
+    "creature": "Zombie",
+    "min": 4,
+    "max": 6
+   }
+  ]
+ },
+ {
+  "id": 65,
+  "name": "Vokial",
+  "army": [
+   {
+    "creature": "Skeleton",
+    "min": 20,
+    "max": 30
+   },
+   {
+    "creature": "Zombie",
+    "min": 4,
+    "max": 6
+   },
+   {
+    "creature": "Wight",
+    "min": 4,
+    "max": 6
+   }
+  ]
+ },
+ {
+  "id": 66,
+  "name": "Moandor",
+  "army": [
+   {
+    "creature": "Skeleton",
+    "min": 20,
+    "max": 30
+   },
+   {
+    "creature": "Zombie",
+    "min": 4,
+    "max": 6
+   },
+   {
+    "creature": "Wight",
+    "min": 4,
+    "max": 6
+   }
+  ]
+ },
+ {
+  "id": 67,
+  "name": "Charna",
+  "army": [
+   {
+    "creature": "Skeleton",
+    "min": 20,
+    "max": 30
+   },
+   {
+    "creature": "Wight",
+    "min": 4,
+    "max": 6
+   },
+   {
+    "creature": "Wight",
+    "min": 4,
+    "max": 6
+   }
+  ]
+ },
+ {
+  "id": 68,
+  "name": "Tamika",
+  "army": [
+   {
+    "creature": "Skeleton",
+    "min": 20,
+    "max": 30
+   },
+   {
+    "creature": "Zombie",
+    "min": 4,
+    "max": 6
+   },
+   {
+    "creature": "Wight",
+    "min": 4,
+    "max": 6
+   }
+  ]
+ },
+ {
+  "id": 69,
+  "name": "Isra",
+  "army": [
+   {
+    "creature": "Skeleton",
+    "min": 20,
+    "max": 30
+   },
+   {
+    "creature": "Zombie",
+    "min": 4,
+    "max": 6
+   },
+   {
+    "creature": "Wight",
+    "min": 4,
+    "max": 6
+   }
+  ]
+ },
+ {
+  "id": 70,
+  "name": "Clavius",
+  "army": [
+   {
+    "creature": "Skeleton",
+    "min": 20,
+    "max": 30
+   },
+   {
+    "creature": "Zombie",
+    "min": 4,
+    "max": 6
+   },
+   {
+    "creature": "Wight",
+    "min": 4,
+    "max": 6
+   }
+  ]
+ },
+ {
+  "id": 71,
+  "name": "Galthran",
+  "army": [
+   {
+    "creature": "Skeleton",
+    "min": 20,
+    "max": 30
+   },
+   {
+    "creature": "Skeleton",
+    "min": 20,
+    "max": 30
+   },
+   {
+    "creature": "Skeleton",
+    "min": 20,
+    "max": 30
+   }
+  ]
+ },
+ {
+  "id": 72,
+  "name": "Septienna",
+  "army": [
+   {
+    "creature": "Skeleton",
+    "min": 20,
+    "max": 30
+   },
+   {
+    "creature": "Zombie",
+    "min": 4,
+    "max": 6
+   },
+   {
+    "creature": "Wight",
+    "min": 4,
+    "max": 6
+   }
+  ]
+ },
+ {
+  "id": 73,
+  "name": "Aislinn",
+  "army": [
+   {
+    "creature": "Skeleton",
+    "min": 20,
+    "max": 30
+   },
+   {
+    "creature": "Zombie",
+    "min": 4,
+    "max": 6
+   },
+   {
+    "creature": "Wight",
+    "min": 4,
+    "max": 6
+   }
+  ]
+ },
+ {
+  "id": 74,
+  "name": "Sandro",
+  "army": [
+   {
+    "creature": "Skeleton",
+    "min": 20,
+    "max": 30
+   },
+   {
+    "creature": "Zombie",
+    "min": 4,
+    "max": 6
+   },
+   {
+    "creature": "Wight",
+    "min": 4,
+    "max": 6
+   }
+  ]
+ },
+ {
+  "id": 75,
+  "name": "Nimbus",
+  "army": [
+   {
+    "creature": "Skeleton",
+    "min": 20,
+    "max": 30
+   },
+   {
+    "creature": "Zombie",
+    "min": 4,
+    "max": 6
+   },
+   {
+    "creature": "Wight",
+    "min": 4,
+    "max": 6
+   }
+  ]
+ },
+ {
+  "id": 76,
+  "name": "Thant",
+  "army": [
+   {
+    "creature": "Skeleton",
+    "min": 20,
+    "max": 30
+   },
+   {
+    "creature": "Zombie",
+    "min": 4,
+    "max": 6
+   },
+   {
+    "creature": "Wight",
+    "min": 4,
+    "max": 6
+   }
+  ]
+ },
+ {
+  "id": 77,
+  "name": "Xsi",
+  "army": [
+   {
+    "creature": "Skeleton",
+    "min": 20,
+    "max": 30
+   },
+   {
+    "creature": "Zombie",
+    "min": 4,
+    "max": 6
+   },
+   {
+    "creature": "Wight",
+    "min": 4,
+    "max": 6
+   }
+  ]
+ },
+ {
+  "id": 78,
+  "name": "Vidomina",
+  "army": [
+   {
+    "creature": "Skeleton",
+    "min": 20,
+    "max": 30
+   },
+   {
+    "creature": "Zombie",
+    "min": 4,
+    "max": 6
+   },
+   {
+    "creature": "Wight",
+    "min": 4,
+    "max": 6
+   }
+  ]
+ },
+ {
+  "id": 79,
+  "name": "Nagash",
+  "army": [
+   {
+    "creature": "Skeleton",
+    "min": 20,
+    "max": 30
+   },
+   {
+    "creature": "Zombie",
+    "min": 4,
+    "max": 6
+   },
+   {
+    "creature": "Wight",
+    "min": 4,
+    "max": 6
+   }
+  ]
+ },
+ {
+  "id": 80,
+  "name": "Lorelei",
+  "army": [
+   {
+    "creature": "Harpy",
+    "min": 4,
+    "max": 6
+   },
+   {
+    "creature": "Harpy",
+    "min": 4,
+    "max": 6
+   },
+   {
+    "creature": "Harpy",
+    "min": 4,
+    "max": 6
+   }
+  ]
+ },
+ {
+  "id": 81,
+  "name": "Arlach",
+  "army": [
+   {
+    "creature": "Troglodyte",
+    "min": 30,
+    "max": 40
+   },
+   {
+    "creature": "Ballista",
+    "min": 1,
+    "max": 1
+   },
+   {
+    "creature": "Beholder",
+    "min": 3,
+    "max": 4
+   }
+  ]
+ },
+ {
+  "id": 82,
+  "name": "Dace",
+  "army": [
+   {
+    "creature": "Troglodyte",
+    "min": 30,
+    "max": 40
+   },
+   {
+    "creature": "Harpy",
+    "min": 4,
+    "max": 6
+   },
+   {
+    "creature": "Beholder",
+    "min": 3,
+    "max": 4
+   }
+  ]
+ },
+ {
+  "id": 83,
+  "name": "Ajit",
+  "army": [
+   {
+    "creature": "Troglodyte",
+    "min": 30,
+    "max": 40
+   },
+   {
+    "creature": "Beholder",
+    "min": 3,
+    "max": 4
+   },
+   {
+    "creature": "Beholder",
+    "min": 3,
+    "max": 4
+   }
+  ]
+ },
+ {
+  "id": 84,
+  "name": "Damacon",
+  "army": [
+   {
+    "creature": "Troglodyte",
+    "min": 30,
+    "max": 40
+   },
+   {
+    "creature": "Harpy",
+    "min": 4,
+    "max": 6
+   },
+   {
+    "creature": "Beholder",
+    "min": 3,
+    "max": 4
+   }
+  ]
+ },
+ {
+  "id": 85,
+  "name": "Gunnar",
+  "army": [
+   {
+    "creature": "Troglodyte",
+    "min": 30,
+    "max": 40
+   },
+   {
+    "creature": "Harpy",
+    "min": 4,
+    "max": 6
+   },
+   {
+    "creature": "Beholder",
+    "min": 3,
+    "max": 4
+   }
+  ]
+ },
+ {
+  "id": 86,
+  "name": "Synca",
+  "army": [
+   {
+    "creature": "Troglodyte",
+    "min": 30,
+    "max": 40
+   },
+   {
+    "creature": "Harpy",
+    "min": 4,
+    "max": 6
+   },
+   {
+    "creature": "Beholder",
+    "min": 3,
+    "max": 4
+   }
+  ]
+ },
+ {
+  "id": 87,
+  "name": "Shakti",
+  "army": [
+   {
+    "creature": "Troglodyte",
+    "min": 30,
+    "max": 40
+   },
+   {
+    "creature": "Troglodyte",
+    "min": 30,
+    "max": 40
+   },
+   {
+    "creature": "Troglodyte",
+    "min": 30,
+    "max": 40
+   }
+  ]
+ },
+ {
+  "id": 88,
+  "name": "Alamar",
+  "army": [
+   {
+    "creature": "Troglodyte",
+    "min": 30,
+    "max": 40
+   },
+   {
+    "creature": "Harpy",
+    "min": 4,
+    "max": 6
+   },
+   {
+    "creature": "Beholder",
+    "min": 3,
+    "max": 4
+   }
+  ]
+ },
+ {
+  "id": 89,
+  "name": "Jaegar",
+  "army": [
+   {
+    "creature": "Troglodyte",
+    "min": 30,
+    "max": 40
+   },
+   {
+    "creature": "Harpy",
+    "min": 4,
+    "max": 6
+   },
+   {
+    "creature": "Beholder",
+    "min": 3,
+    "max": 4
+   }
+  ]
+ },
+ {
+  "id": 90,
+  "name": "Malekith",
+  "army": [
+   {
+    "creature": "Troglodyte",
+    "min": 30,
+    "max": 40
+   },
+   {
+    "creature": "Harpy",
+    "min": 4,
+    "max": 6
+   },
+   {
+    "creature": "Beholder",
+    "min": 3,
+    "max": 4
+   }
+  ]
+ },
+ {
+  "id": 91,
+  "name": "Jeddite",
+  "army": [
+   {
+    "creature": "Troglodyte",
+    "min": 30,
+    "max": 40
+   },
+   {
+    "creature": "Harpy",
+    "min": 4,
+    "max": 6
+   },
+   {
+    "creature": "Beholder",
+    "min": 3,
+    "max": 4
+   }
+  ]
+ },
+ {
+  "id": 92,
+  "name": "Geon",
+  "army": [
+   {
+    "creature": "Troglodyte",
+    "min": 30,
+    "max": 40
+   },
+   {
+    "creature": "Harpy",
+    "min": 4,
+    "max": 6
+   },
+   {
+    "creature": "Beholder",
+    "min": 3,
+    "max": 4
+   }
+  ]
+ },
+ {
+  "id": 93,
+  "name": "Deemer",
+  "army": [
+   {
+    "creature": "Troglodyte",
+    "min": 30,
+    "max": 40
+   },
+   {
+    "creature": "Harpy",
+    "min": 4,
+    "max": 6
+   },
+   {
+    "creature": "Beholder",
+    "min": 3,
+    "max": 4
+   }
+  ]
+ },
+ {
+  "id": 94,
+  "name": "Sephinroth",
+  "army": [
+   {
+    "creature": "Troglodyte",
+    "min": 30,
+    "max": 40
+   },
+   {
+    "creature": "Harpy",
+    "min": 4,
+    "max": 6
+   },
+   {
+    "creature": "Beholder",
+    "min": 3,
+    "max": 4
+   }
+  ]
+ },
+ {
+  "id": 95,
+  "name": "Darkstorn",
+  "army": [
+   {
+    "creature": "Troglodyte",
+    "min": 30,
+    "max": 40
+   },
+   {
+    "creature": "Harpy",
+    "min": 4,
+    "max": 6
+   },
+   {
+    "creature": "Beholder",
+    "min": 3,
+    "max": 4
+   }
+  ]
+ },
+ {
+  "id": 96,
+  "name": "Yog",
+  "army": [
+   {
+    "creature": "Goblin",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "GoblinWolfRider",
+    "min": 5,
+    "max": 7
+   },
+   {
+    "creature": "Orc",
+    "min": 4,
+    "max": 6
+   }
+  ]
+ },
+ {
+  "id": 97,
+  "name": "Gurnisson",
+  "army": [
+   {
+    "creature": "Goblin",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "Ballista",
+    "min": 1,
+    "max": 1
+   },
+   {
+    "creature": "Orc",
+    "min": 4,
+    "max": 6
+   }
+  ]
+ },
+ {
+  "id": 98,
+  "name": "Jabarkas",
+  "army": [
+   {
+    "creature": "Goblin",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "Orc",
+    "min": 4,
+    "max": 6
+   },
+   {
+    "creature": "Orc",
+    "min": 4,
+    "max": 6
+   }
+  ]
+ },
+ {
+  "id": 99,
+  "name": "Shiva",
+  "army": [
+   {
+    "creature": "Goblin",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "GoblinWolfRider",
+    "min": 5,
+    "max": 7
+   },
+   {
+    "creature": "Orc",
+    "min": 4,
+    "max": 6
+   }
+  ]
+ },
+ {
+  "id": 100,
+  "name": "Gretchin",
+  "army": [
+   {
+    "creature": "Goblin",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "Goblin",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "Goblin",
+    "min": 15,
+    "max": 25
+   }
+  ]
+ },
+ {
+  "id": 101,
+  "name": "Krellion",
+  "army": [
+   {
+    "creature": "Goblin",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "GoblinWolfRider",
+    "min": 5,
+    "max": 7
+   },
+   {
+    "creature": "Orc",
+    "min": 4,
+    "max": 6
+   }
+  ]
+ },
+ {
+  "id": 102,
+  "name": "Crag Hack",
+  "army": [
+   {
+    "creature": "Goblin",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "GoblinWolfRider",
+    "min": 5,
+    "max": 7
+   },
+   {
+    "creature": "Orc",
+    "min": 4,
+    "max": 6
+   }
+  ]
+ },
+ {
+  "id": 103,
+  "name": "Tyraxor",
+  "army": [
+   {
+    "creature": "GoblinWolfRider",
+    "min": 5,
+    "max": 7
+   },
+   {
+    "creature": "GoblinWolfRider",
+    "min": 5,
+    "max": 7
+   },
+   {
+    "creature": "GoblinWolfRider",
+    "min": 5,
+    "max": 7
+   }
+  ]
+ },
+ {
+  "id": 104,
+  "name": "Gird",
+  "army": [
+   {
+    "creature": "Goblin",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "GoblinWolfRider",
+    "min": 5,
+    "max": 7
+   },
+   {
+    "creature": "Orc",
+    "min": 4,
+    "max": 6
+   }
+  ]
+ },
+ {
+  "id": 105,
+  "name": "Vey",
+  "army": [
+   {
+    "creature": "Goblin",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "GoblinWolfRider",
+    "min": 5,
+    "max": 7
+   },
+   {
+    "creature": "Orc",
+    "min": 4,
+    "max": 6
+   }
+  ]
+ },
+ {
+  "id": 106,
+  "name": "Dessa",
+  "army": [
+   {
+    "creature": "Goblin",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "GoblinWolfRider",
+    "min": 5,
+    "max": 7
+   },
+   {
+    "creature": "Orc",
+    "min": 4,
+    "max": 6
+   }
+  ]
+ },
+ {
+  "id": 107,
+  "name": "Terek",
+  "army": [
+   {
+    "creature": "Goblin",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "GoblinWolfRider",
+    "min": 5,
+    "max": 7
+   },
+   {
+    "creature": "Orc",
+    "min": 4,
+    "max": 6
+   }
+  ]
+ },
+ {
+  "id": 108,
+  "name": "Zubin",
+  "army": [
+   {
+    "creature": "Goblin",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "GoblinWolfRider",
+    "min": 5,
+    "max": 7
+   },
+   {
+    "creature": "Orc",
+    "min": 4,
+    "max": 6
+   }
+  ]
+ },
+ {
+  "id": 109,
+  "name": "Gundula",
+  "army": [
+   {
+    "creature": "Goblin",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "GoblinWolfRider",
+    "min": 5,
+    "max": 7
+   },
+   {
+    "creature": "Orc",
+    "min": 4,
+    "max": 6
+   }
+  ]
+ },
+ {
+  "id": 110,
+  "name": "Oris",
+  "army": [
+   {
+    "creature": "Goblin",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "GoblinWolfRider",
+    "min": 5,
+    "max": 7
+   },
+   {
+    "creature": "Orc",
+    "min": 4,
+    "max": 6
+   }
+  ]
+ },
+ {
+  "id": 111,
+  "name": "Saurug",
+  "army": [
+   {
+    "creature": "Goblin",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "GoblinWolfRider",
+    "min": 5,
+    "max": 7
+   },
+   {
+    "creature": "Orc",
+    "min": 4,
+    "max": 6
+   }
+  ]
+ },
+ {
+  "id": 112,
+  "name": "Bron",
+  "army": [
+   {
+    "creature": "Gnoll",
+    "min": 10,
+    "max": 20
+   },
+   {
+    "creature": "PrimitiveLizardman",
+    "min": 4,
+    "max": 7
+   },
+   {
+    "creature": "SerpentFly",
+    "min": 2,
+    "max": 4
+   }
+  ]
+ },
+ {
+  "id": 113,
+  "name": "Drakon",
+  "army": [
+   {
+    "creature": "Gnoll",
+    "min": 10,
+    "max": 20
+   },
+   {
+    "creature": "Gnoll",
+    "min": 10,
+    "max": 20
+   },
+   {
+    "creature": "Gnoll",
+    "min": 10,
+    "max": 20
+   }
+  ]
+ },
+ {
+  "id": 114,
+  "name": "Wystan",
+  "army": [
+   {
+    "creature": "PrimitiveLizardman",
+    "min": 4,
+    "max": 7
+   },
+   {
+    "creature": "PrimitiveLizardman",
+    "min": 4,
+    "max": 7
+   },
+   {
+    "creature": "PrimitiveLizardman",
+    "min": 4,
+    "max": 7
+   }
+  ]
+ },
+ {
+  "id": 115,
+  "name": "Tazar",
+  "army": [
+   {
+    "creature": "Gnoll",
+    "min": 10,
+    "max": 20
+   },
+   {
+    "creature": "PrimitiveLizardman",
+    "min": 4,
+    "max": 7
+   },
+   {
+    "creature": "SerpentFly",
+    "min": 2,
+    "max": 4
+   }
+  ]
+ },
+ {
+  "id": 116,
+  "name": "Alkin",
+  "army": [
+   {
+    "creature": "Gnoll",
+    "min": 10,
+    "max": 20
+   },
+   {
+    "creature": "PrimitiveLizardman",
+    "min": 4,
+    "max": 7
+   },
+   {
+    "creature": "SerpentFly",
+    "min": 2,
+    "max": 4
+   }
+  ]
+ },
+ {
+  "id": 117,
+  "name": "Korbac",
+  "army": [
+   {
+    "creature": "Gnoll",
+    "min": 10,
+    "max": 20
+   },
+   {
+    "creature": "SerpentFly",
+    "min": 2,
+    "max": 4
+   },
+   {
+    "creature": "DragonFly",
+    "min": 2,
+    "max": 4
+   }
+  ]
+ },
+ {
+  "id": 118,
+  "name": "Gerwulf",
+  "army": [
+   {
+    "creature": "Gnoll",
+    "min": 10,
+    "max": 20
+   },
+   {
+    "creature": "Ballista",
+    "min": 1,
+    "max": 1
+   },
+   {
+    "creature": "SerpentFly",
+    "min": 2,
+    "max": 4
+   }
+  ]
+ },
+ {
+  "id": 119,
+  "name": "Broghild",
+  "army": [
+   {
+    "creature": "Gnoll",
+    "min": 10,
+    "max": 20
+   },
+   {
+    "creature": "PrimitiveLizardman",
+    "min": 4,
+    "max": 7
+   },
+   {
+    "creature": "SerpentFly",
+    "min": 2,
+    "max": 4
+   }
+  ]
+ },
+ {
+  "id": 120,
+  "name": "Mirlanda",
+  "army": [
+   {
+    "creature": "Gnoll",
+    "min": 10,
+    "max": 20
+   },
+   {
+    "creature": "PrimitiveLizardman",
+    "min": 4,
+    "max": 7
+   },
+   {
+    "creature": "SerpentFly",
+    "min": 2,
+    "max": 4
+   }
+  ]
+ },
+ {
+  "id": 121,
+  "name": "Rosic",
+  "army": [
+   {
+    "creature": "Gnoll",
+    "min": 10,
+    "max": 20
+   },
+   {
+    "creature": "PrimitiveLizardman",
+    "min": 4,
+    "max": 7
+   },
+   {
+    "creature": "SerpentFly",
+    "min": 2,
+    "max": 4
+   }
+  ]
+ },
+ {
+  "id": 122,
+  "name": "Voy",
+  "army": [
+   {
+    "creature": "Gnoll",
+    "min": 10,
+    "max": 20
+   },
+   {
+    "creature": "PrimitiveLizardman",
+    "min": 4,
+    "max": 7
+   },
+   {
+    "creature": "SerpentFly",
+    "min": 2,
+    "max": 4
+   }
+  ]
+ },
+ {
+  "id": 123,
+  "name": "Verdish",
+  "army": [
+   {
+    "creature": "Gnoll",
+    "min": 10,
+    "max": 20
+   },
+   {
+    "creature": "FirstAidTent",
+    "min": 1,
+    "max": 1
+   },
+   {
+    "creature": "SerpentFly",
+    "min": 2,
+    "max": 4
+   }
+  ]
+ },
+ {
+  "id": 124,
+  "name": "Merist",
+  "army": [
+   {
+    "creature": "Gnoll",
+    "min": 10,
+    "max": 20
+   },
+   {
+    "creature": "PrimitiveLizardman",
+    "min": 4,
+    "max": 7
+   },
+   {
+    "creature": "SerpentFly",
+    "min": 2,
+    "max": 4
+   }
+  ]
+ },
+ {
+  "id": 125,
+  "name": "Styg",
+  "army": [
+   {
+    "creature": "Gnoll",
+    "min": 10,
+    "max": 20
+   },
+   {
+    "creature": "PrimitiveLizardman",
+    "min": 4,
+    "max": 7
+   },
+   {
+    "creature": "SerpentFly",
+    "min": 2,
+    "max": 4
+   }
+  ]
+ },
+ {
+  "id": 126,
+  "name": "Andra",
+  "army": [
+   {
+    "creature": "Gnoll",
+    "min": 10,
+    "max": 20
+   },
+   {
+    "creature": "PrimitiveLizardman",
+    "min": 4,
+    "max": 7
+   },
+   {
+    "creature": "SerpentFly",
+    "min": 2,
+    "max": 4
+   }
+  ]
+ },
+ {
+  "id": 127,
+  "name": "Tiva",
+  "army": [
+   {
+    "creature": "Gnoll",
+    "min": 10,
+    "max": 20
+   },
+   {
+    "creature": "PrimitiveLizardman",
+    "min": 4,
+    "max": 7
+   },
+   {
+    "creature": "SerpentFly",
+    "min": 2,
+    "max": 4
+   }
+  ]
+ },
+ {
+  "id": 128,
+  "name": "Pasis",
+  "army": [
+   {
+    "creature": "Pixies",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "Air Elementals",
+    "min": 3,
+    "max": 5
+   },
+   {
+    "creature": "Air Elementals",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 129,
+  "name": "Thunar",
+  "army": [
+   {
+    "creature": "Pixies",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "Air Elementals",
+    "min": 3,
+    "max": 5
+   },
+   {
+    "creature": "Water Elementals",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 130,
+  "name": "Ignissa",
+  "army": [
+   {
+    "creature": "Pixies",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "Air Elementals",
+    "min": 3,
+    "max": 5
+   },
+   {
+    "creature": "Water Elementals",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 131,
+  "name": "Lacus",
+  "army": [
+   {
+    "creature": "Pixies",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "Water Elementals",
+    "min": 3,
+    "max": 5
+   },
+   {
+    "creature": "Water Elementals",
+    "min": 1,
+    "max": 2
+   }
+  ]
+ },
+ {
+  "id": 132,
+  "name": "Monere",
+  "army": [
+   {
+    "creature": "Pixies",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "Air Elementals",
+    "min": 3,
+    "max": 5
+   },
+   {
+    "creature": "Air Elementals",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 133,
+  "name": "Erdamon",
+  "army": [
+   {
+    "creature": "Pixies",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "Air Elementals",
+    "min": 3,
+    "max": 5
+   },
+   {
+    "creature": "Water Elementals",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 134,
+  "name": "Fiur",
+  "army": [
+   {
+    "creature": "Pixies",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "Air Elementals",
+    "min": 3,
+    "max": 5
+   },
+   {
+    "creature": "Water Elementals",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 135,
+  "name": "Kalt",
+  "army": [
+   {
+    "creature": "Pixies",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "Water Elementals",
+    "min": 3,
+    "max": 5
+   },
+   {
+    "creature": "Water Elementals",
+    "min": 1,
+    "max": 2
+   }
+  ]
+ },
+ {
+  "id": 136,
+  "name": "Luna",
+  "army": [
+   {
+    "creature": "Pixies",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "Air Elementals",
+    "min": 3,
+    "max": 5
+   },
+   {
+    "creature": "Water Elementals",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 137,
+  "name": "Brissa",
+  "army": [
+   {
+    "creature": "Pixies",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "Air Elementals",
+    "min": 3,
+    "max": 5
+   },
+   {
+    "creature": "Water Elementals",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 138,
+  "name": "Ciele",
+  "army": [
+   {
+    "creature": "Pixies",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "Air Elementals",
+    "min": 3,
+    "max": 5
+   },
+   {
+    "creature": "Water Elementals",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 139,
+  "name": "Labetha",
+  "army": [
+   {
+    "creature": "Pixies",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "Air Elementals",
+    "min": 3,
+    "max": 5
+   },
+   {
+    "creature": "Water Elementals",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 140,
+  "name": "Inteus",
+  "army": [
+   {
+    "creature": "Pixies",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "Air Elementals",
+    "min": 3,
+    "max": 5
+   },
+   {
+    "creature": "Water Elementals",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 141,
+  "name": "Aenain",
+  "army": [
+   {
+    "creature": "Pixies",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "Air Elementals",
+    "min": 3,
+    "max": 5
+   },
+   {
+    "creature": "Water Elementals",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 142,
+  "name": "Gelare",
+  "army": [
+   {
+    "creature": "Pixies",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "Air Elementals",
+    "min": 3,
+    "max": 5
+   },
+   {
+    "creature": "Water Elementals",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 143,
+  "name": "Grindan",
+  "army": [
+   {
+    "creature": "Pixies",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "Air Elementals",
+    "min": 3,
+    "max": 5
+   },
+   {
+    "creature": "Water Elementals",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 144,
+  "name": "Sir Mullich",
+  "army": [
+   {
+    "creature": "Pikeman",
+    "min": 10,
+    "max": 20
+   },
+   {
+    "creature": "Archer",
+    "min": 4,
+    "max": 7
+   },
+   {
+    "creature": "Griffin",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 145,
+  "name": "Adrienne",
+  "army": [
+   {
+    "creature": "Gnoll",
+    "min": 10,
+    "max": 20
+   },
+   {
+    "creature": "Lizardman",
+    "min": 4,
+    "max": 7
+   },
+   {
+    "creature": "Serpent Fly",
+    "min": 2,
+    "max": 4
+   }
+  ]
+ },
+ {
+  "id": 146,
+  "name": "Catherine",
+  "army": [
+   {
+    "creature": "Pikeman",
+    "min": 10,
+    "max": 20
+   },
+   {
+    "creature": "Archer",
+    "min": 4,
+    "max": 7
+   },
+   {
+    "creature": "Griffin",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 147,
+  "name": "Dracon",
+  "army": [
+   {
+    "creature": "Enchanters",
+    "min": 6,
+    "max": 6
+   },
+   {
+    "creature": "Enchanters",
+    "min": 3,
+    "max": 3
+   },
+   {
+    "creature": "Enchanters",
+    "min": 1,
+    "max": 1
+   }
+  ]
+ },
+ {
+  "id": 148,
+  "name": "Gelu",
+  "army": [
+   {
+    "creature": "Sharpshooters",
+    "min": 6,
+    "max": 6
+   },
+   {
+    "creature": "Sharpshooters",
+    "min": 3,
+    "max": 3
+   },
+   {
+    "creature": "Sharpshooters",
+    "min": 1,
+    "max": 1
+   }
+  ]
+ },
+ {
+  "id": 149,
+  "name": "Kilgor",
+  "army": [
+   {
+    "creature": "Goblins",
+    "min": 15,
+    "max": 25
+   },
+   {
+    "creature": "Goblin Wolf Rider",
+    "min": 5,
+    "max": 7
+   },
+   {
+    "creature": "Orc",
+    "min": 4,
+    "max": 6
+   }
+  ]
+ },
+ {
+  "id": 150,
+  "name": "Lord Haart",
+  "army": [
+   {
+    "creature": "Skeleton",
+    "min": 20,
+    "max": 30
+   },
+   {
+    "creature": "Zombie",
+    "min": 4,
+    "max": 6
+   },
+   {
+    "creature": "Wight",
+    "min": 4,
+    "max": 6
+   }
+  ]
+ },
+ {
+  "id": 151,
+  "name": "Mutare",
+  "army": [
+   {
+    "creature": "Troglodyte",
+    "min": 30,
+    "max": 40
+   },
+   {
+    "creature": "Harpy",
+    "min": 4,
+    "max": 6
+   },
+   {
+    "creature": "Beholder",
+    "min": 3,
+    "max": 4
+   }
+  ]
+ },
+ {
+  "id": 152,
+  "name": "Roland",
+  "army": [
+   {
+    "creature": "Pikeman",
+    "min": 10,
+    "max": 20
+   },
+   {
+    "creature": "Archer",
+    "min": 4,
+    "max": 7
+   },
+   {
+    "creature": "Griffin",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 153,
+  "name": "Mutare Drake",
+  "army": [
+   {
+    "creature": "Pikeman",
+    "min": 10,
+    "max": 20
+   },
+   {
+    "creature": "Archer",
+    "min": 4,
+    "max": 7
+   },
+   {
+    "creature": "Griffin",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 154,
+  "name": "Boragus",
+  "army": [
+   {
+    "creature": "Pikeman",
+    "min": 10,
+    "max": 20
+   },
+   {
+    "creature": "Archer",
+    "min": 4,
+    "max": 7
+   },
+   {
+    "creature": "Griffin",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ },
+ {
+  "id": 155,
+  "name": "Xeron",
+  "army": [
+   {
+    "creature": "Pikeman",
+    "min": 10,
+    "max": 20
+   },
+   {
+    "creature": "Archer",
+    "min": 4,
+    "max": 7
+   },
+   {
+    "creature": "Griffin",
+    "min": 2,
+    "max": 3
+   }
+  ]
+ }
+]

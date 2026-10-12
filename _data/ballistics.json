@@ -1,0 +1,46 @@
+[
+ {
+  "keep": 5,
+  "tower": 10,
+  "gate": 25,
+  "wall": 50,
+  "shots": 1,
+  "dmg0": 10,
+  "dmg1": 60,
+  "dmg2": 30,
+  "level": "None"
+ },
+ {
+  "keep": 7,
+  "tower": 15,
+  "gate": 30,
+  "wall": 60,
+  "shots": 1,
+  "dmg0": 0,
+  "dmg1": 50,
+  "dmg2": 50,
+  "level": "Basic"
+ },
+ {
+  "keep": 7,
+  "tower": 15,
+  "gate": 30,
+  "wall": 60,
+  "shots": 2,
+  "dmg0": 0,
+  "dmg1": 50,
+  "dmg2": 50,
+  "level": "Advanced"
+ },
+ {
+  "keep": 10,
+  "tower": 20,
+  "gate": 40,
+  "wall": 75,
+  "shots": 2,
+  "dmg0": 0,
+  "dmg1": 0,
+  "dmg2": 100,
+  "level": "Expert"
+ }
+]

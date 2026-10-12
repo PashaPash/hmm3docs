@@ -1,0 +1,15 @@
+title: Heroes III mechanics from the binary
+description: Heroes of Might and Magic III rules and AI behaviour, read out of Heroes3.exe
+remote_theme: just-the-docs/just-the-docs@v0.10.1
+plugins:
+  - jekyll-remote-theme
+url: https://pashapash.github.io
+baseurl: /hmm3docs
+color_scheme: dark
+search_enabled: true
+heading_anchors: true
+aux_links:
+  GitHub: https://github.com/PashaPash/hmm3docs
+exclude:
+  - tools
+  - README.md

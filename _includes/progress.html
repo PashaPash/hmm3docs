@@ -1,0 +1,15 @@
+{% assign ru = include.lang == 'ru' %}
+<table>
+<thead><tr><th>#</th><th>{% if ru %}Глава{% else %}Chapter{% endif %}</th><th>{% if ru %}Состояние{% else %}Status{% endif %}</th><th>{% if ru %}Что сделано{% else %}Notes{% endif %}</th></tr></thead>
+<tbody>
+{% for c in site.data.progress.chapters %}
+<tr>
+<td>{{ c.n }}</td>
+<td>{% if c.file %}<a href="{{ '/' | append: include.lang | append: '/' | append: c.file | append: '/' | relative_url }}">{% if ru %}{{ c.ru }}{% else %}{{ c.en }}{% endif %}</a>{% else %}{% if ru %}{{ c.ru }}{% else %}{{ c.en }}{% endif %}{% endif %}</td>
+<td>{% assign s = site.data.progress.states[c.state] %}{% if ru %}{{ s.ru }}{% else %}{{ s.en }}{% endif %}</td>
+<td>{% if ru %}{{ c.note_ru }}{% else %}{{ c.note_en }}{% endif %}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+<p><small>{% if ru %}Обновлено{% else %}Updated{% endif %}: {{ site.data.progress.updated }}</small></p>

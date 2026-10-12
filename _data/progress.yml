@@ -1,0 +1,28 @@
+updated: 2026-10-12
+states:
+  todo: {en: "not started", ru: "не начато"}
+  data: {en: "tables only", ru: "только таблицы"}
+  wip: {en: "in progress", ru: "в работе"}
+  done: {en: "first version done", ru: "первая версия готова"}
+chapters:
+  - {n: 1, file: method, state: done, en: "Method and evidence", ru: "Метод и источники",
+     note_en: "", note_ru: ""}
+  - {n: 2, state: todo, en: "Factions and towns", ru: "Фракции и города",
+     note_en: "building costs extracted; prerequisites live in the exe", note_ru: "стоимости построек извлечены; зависимости лежат в exe"}
+  - {n: 3, file: heroes, state: data, en: "Heroes and hero classes", ru: "Герои и классы героев",
+     note_en: "class table from HCTRAITS", note_ru: "таблица классов из HCTRAITS"}
+  - {n: 4, file: creatures, state: data, en: "Creatures", ru: "Существа",
+     note_en: "stats, Fight Value, AI Value from CRTRAITS", note_ru: "параметры, Fight Value, AI Value из CRTRAITS"}
+  - {n: 5, state: todo, en: "Combat rules", ru: "Правила боя", note_en: "", note_ru: ""}
+  - {n: 6, file: spells, state: data, en: "Magic", ru: "Магия",
+     note_en: "numbers from SPTRAITS, including per-spell AI values", note_ru: "числа из SPTRAITS, включая ценность заклинаний для ИИ"}
+  - {n: 7, state: todo, en: "Adventure map", ru: "Карта приключений", note_en: "", note_ru: ""}
+  - {n: 8, state: todo, en: "AI: overview", ru: "ИИ: обзор", note_en: "", note_ru: ""}
+  - {n: 9, state: todo, en: "AI: valuation of armies, heroes, objects", ru: "ИИ: оценка армий, героев, объектов", note_en: "", note_ru: ""}
+  - {n: 10, state: todo, en: "AI: town building and recruitment", ru: "ИИ: строительство и найм", note_en: "", note_ru: ""}
+  - {n: 11, state: todo, en: "AI: adventure map decisions", ru: "ИИ: решения на карте", note_en: "", note_ru: ""}
+  - {n: 12, state: wip, en: "AI: battle", ru: "ИИ: бой", note_en: "being reverse engineered first", note_ru: "разбирается в первую очередь"}
+  - {n: 13, state: wip, en: "AI: neutral monsters (armies without a hero)", ru: "ИИ: нейтральные монстры (армии без героя)",
+     note_en: "being reverse engineered first", note_ru: "разбирается в первую очередь"}
+  - {n: 14, state: todo, en: "HotA 1.8.1 differences", ru: "Отличия HotA 1.8.1", note_en: "", note_ru: ""}
+  - {n: 15, state: todo, en: "Open questions", ru: "Открытые вопросы", note_en: "", note_ru: ""}

@@ -1,0 +1,1925 @@
+[
+ {
+  "section": "Special Buildings",
+  "town": "castle",
+  "name": "Lighthouse",
+  "cost": {
+   "ore": 10,
+   "gold": 2000
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "castle",
+  "name": "Griffin Horde",
+  "cost": {
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "castle",
+  "name": "Royal Griffin Horde",
+  "cost": {
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "castle",
+  "name": "Stables",
+  "cost": {
+   "wood": 10,
+   "gold": 2000
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "castle",
+  "name": "Tavern Upgrade",
+  "cost": {
+   "wood": 5,
+   "gold": 500
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "rampart",
+  "name": "Mystic Garden",
+  "cost": {
+   "wood": 2,
+   "mercury": 2,
+   "ore": 2,
+   "sulfur": 2,
+   "crystal": 2,
+   "gems": 2,
+   "gold": 2000
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "rampart",
+  "name": "Dwarf Horde",
+  "cost": {
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "rampart",
+  "name": "Battle Dwarf Horde",
+  "cost": {
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "rampart",
+  "name": "Rainbow",
+  "cost": {
+   "crystal": 10,
+   "gold": 1500
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "rampart",
+  "name": "Treasury",
+  "cost": {
+   "wood": 5,
+   "ore": 10,
+   "gold": 5000
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "rampart",
+  "name": "Treefolk Horde",
+  "cost": {
+   "gold": 2000
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "rampart",
+  "name": "Briar Treefolk Horde",
+  "cost": {
+   "gold": 2000
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "tower",
+  "name": "Artifact Merchants",
+  "cost": {
+   "gold": 10000
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "tower",
+  "name": "Stone Gargoyle Horde",
+  "cost": {
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "tower",
+  "name": "Obsidian Gargoyle Horde",
+  "cost": {
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "tower",
+  "name": "Watchtower",
+  "cost": {
+   "wood": 5,
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "tower",
+  "name": "Library",
+  "cost": {
+   "wood": 5,
+   "mercury": 5,
+   "ore": 5,
+   "sulfur": 5,
+   "crystal": 5,
+   "gems": 5,
+   "gold": 1500
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "tower",
+  "name": "Wall of Glyphic Knowledge",
+  "cost": {
+   "ore": 5,
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "inferno",
+  "name": "Imp Horde",
+  "cost": {
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "inferno",
+  "name": "Familiar Horde",
+  "cost": {
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "inferno",
+  "name": "Brimstone Stormclouds",
+  "cost": {
+   "sulfur": 5,
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "inferno",
+  "name": "Castle Gate",
+  "cost": {
+   "wood": 5,
+   "ore": 5,
+   "gold": 10000
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "inferno",
+  "name": "Order of Fire",
+  "cost": {
+   "wood": 5,
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "inferno",
+  "name": "Hell Hound Horde",
+  "cost": {
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "inferno",
+  "name": "Cerberus Horde",
+  "cost": {
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "necropolis",
+  "name": "Cover of Darkness",
+  "cost": {
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "necropolis",
+  "name": "Skeleton Horde",
+  "cost": {
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "necropolis",
+  "name": "Skeleton Warrior Horde",
+  "cost": {
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "necropolis",
+  "name": "Necromancy Amplifier",
+  "cost": {
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "necropolis",
+  "name": "Skeleton Transformer",
+  "cost": {
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "dungeon",
+  "name": "Artifact Merchants",
+  "cost": {
+   "gold": 10000
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "dungeon",
+  "name": "Troglodyte Horde",
+  "cost": {
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "dungeon",
+  "name": "Infernal Troglodyte Horde",
+  "cost": {
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "dungeon",
+  "name": "Mana Vortex",
+  "cost": {
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "dungeon",
+  "name": "Portal of Summoning",
+  "cost": {
+   "ore": 5,
+   "gold": 2500
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "dungeon",
+  "name": "Academy of Battle Scholars",
+  "cost": {
+   "wood": 5,
+   "ore": 5,
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "stronghold",
+  "name": "Escape Tunnel",
+  "cost": {
+   "wood": 5,
+   "ore": 5,
+   "gold": 2000
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "stronghold",
+  "name": "Goblin Horde",
+  "cost": {
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "stronghold",
+  "name": "Hobgoblin Horde",
+  "cost": {
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "stronghold",
+  "name": "Freelancers Guild",
+  "cost": {
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "stronghold",
+  "name": "Ballista Works",
+  "cost": {
+   "wood": 5,
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "stronghold",
+  "name": "Hall of Valhalla",
+  "cost": {
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "fortress",
+  "name": "Defense Cage",
+  "cost": {
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "fortress",
+  "name": "Gnoll Horde",
+  "cost": {
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "fortress",
+  "name": "Gnoll Marauder Horde",
+  "cost": {
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "fortress",
+  "name": "Siege Defense",
+  "cost": {
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "fortress",
+  "name": "Siege Attack",
+  "cost": {
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "conflux",
+  "name": "Artifact Merchants",
+  "cost": {
+   "gold": 10000
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "conflux",
+  "name": "Pixie Horde",
+  "cost": {
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "conflux",
+  "name": "Sprite Horde",
+  "cost": {
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "conflux",
+  "name": "never used",
+  "cost": {}
+ },
+ {
+  "section": "Special Buildings",
+  "town": "conflux",
+  "name": "Magic University",
+  "cost": {
+   "wood": 10,
+   "ore": 10,
+   "gold": 5000
+  }
+ },
+ {
+  "section": "Special Buildings",
+  "town": "conflux",
+  "name": "unused",
+  "cost": {}
+ },
+ {
+  "section": "Special Buildings",
+  "town": "conflux",
+  "name": "unused",
+  "cost": {}
+ },
+ {
+  "section": "Special Buildings",
+  "town": "conflux",
+  "name": "unused",
+  "cost": {}
+ },
+ {
+  "section": "Special Buildings",
+  "town": "conflux",
+  "name": "unused",
+  "cost": {}
+ },
+ {
+  "section": "Neutral Buildings",
+  "town": null,
+  "name": "MAGE_GUILD_ID",
+  "cost": {
+   "wood": 5,
+   "ore": 5,
+   "gold": 2000
+  }
+ },
+ {
+  "section": "Neutral Buildings",
+  "town": null,
+  "name": "MAGE_GUILD2_ID",
+  "cost": {
+   "wood": 5,
+   "mercury": 4,
+   "ore": 5,
+   "sulfur": 4,
+   "crystal": 4,
+   "gems": 4,
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Neutral Buildings",
+  "town": null,
+  "name": "MAGE_GUILD3_ID",
+  "cost": {
+   "wood": 5,
+   "mercury": 6,
+   "ore": 5,
+   "sulfur": 6,
+   "crystal": 6,
+   "gems": 6,
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Neutral Buildings",
+  "town": null,
+  "name": "MAGE_GUILD4_ID",
+  "cost": {
+   "wood": 5,
+   "mercury": 8,
+   "ore": 5,
+   "sulfur": 8,
+   "crystal": 8,
+   "gems": 8,
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Neutral Buildings",
+  "town": null,
+  "name": "MAGE_GUILD5_ID",
+  "cost": {
+   "wood": 5,
+   "mercury": 10,
+   "ore": 5,
+   "sulfur": 10,
+   "crystal": 10,
+   "gems": 10,
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Neutral Buildings",
+  "town": null,
+  "name": "TAVERN_ID",
+  "cost": {
+   "wood": 5,
+   "gold": 500
+  }
+ },
+ {
+  "section": "Neutral Buildings",
+  "town": null,
+  "name": "DOCK_ID",
+  "cost": {
+   "wood": 20,
+   "gold": 2000
+  }
+ },
+ {
+  "section": "Neutral Buildings",
+  "town": null,
+  "name": "CASTLE_FORT_ID",
+  "cost": {
+   "wood": 20,
+   "ore": 20,
+   "gold": 5000
+  }
+ },
+ {
+  "section": "Neutral Buildings",
+  "town": null,
+  "name": "CASTLE_CITADEL_ID",
+  "cost": {
+   "ore": 5,
+   "gold": 2500
+  }
+ },
+ {
+  "section": "Neutral Buildings",
+  "town": null,
+  "name": "CASTLE_CASTLE_ID",
+  "cost": {
+   "wood": 10,
+   "ore": 10,
+   "gold": 5000
+  }
+ },
+ {
+  "section": "Neutral Buildings",
+  "town": null,
+  "name": "HALL_VILLAGE_ID",
+  "cost": {
+   "gold": 1
+  }
+ },
+ {
+  "section": "Neutral Buildings",
+  "town": null,
+  "name": "HALL_TOWN_ID",
+  "cost": {
+   "gold": 2500
+  }
+ },
+ {
+  "section": "Neutral Buildings",
+  "town": null,
+  "name": "HALL_CITY_ID",
+  "cost": {
+   "gold": 5000
+  }
+ },
+ {
+  "section": "Neutral Buildings",
+  "town": null,
+  "name": "HALL_CAPITOL_ID",
+  "cost": {
+   "gold": 10000
+  }
+ },
+ {
+  "section": "Neutral Buildings",
+  "town": null,
+  "name": "MARKETPLACE_ID",
+  "cost": {
+   "wood": 5,
+   "gold": 500
+  }
+ },
+ {
+  "section": "Neutral Buildings",
+  "town": null,
+  "name": "MARKETPLACE_SILO_ID",
+  "cost": {
+   "ore": 5,
+   "gold": 5000
+  }
+ },
+ {
+  "section": "Neutral Buildings",
+  "town": null,
+  "name": "BLACKSMITH_ID",
+  "cost": {
+   "wood": 5,
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "castle",
+  "name": "pikeman",
+  "cost": {
+   "ore": 10,
+   "gold": 500
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "castle",
+  "name": "archer",
+  "cost": {
+   "wood": 5,
+   "ore": 5,
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "castle",
+  "name": "griffin",
+  "cost": {
+   "ore": 5,
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "castle",
+  "name": "swordsman",
+  "cost": {
+   "ore": 5,
+   "gold": 2000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "castle",
+  "name": "monk",
+  "cost": {
+   "wood": 5,
+   "mercury": 2,
+   "ore": 5,
+   "sulfur": 2,
+   "crystal": 2,
+   "gems": 2,
+   "gold": 3000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "castle",
+  "name": "cavalier",
+  "cost": {
+   "wood": 20,
+   "gold": 5000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "castle",
+  "name": "angel",
+  "cost": {
+   "mercury": 10,
+   "sulfur": 10,
+   "crystal": 10,
+   "gems": 10,
+   "gold": 20000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "castle",
+  "name": "halberdier",
+  "cost": {
+   "ore": 5,
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "castle",
+  "name": "marksman",
+  "cost": {
+   "wood": 5,
+   "ore": 5,
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "castle",
+  "name": "royal griffin",
+  "cost": {
+   "ore": 5,
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "castle",
+  "name": "crusader",
+  "cost": {
+   "ore": 5,
+   "crystal": 5,
+   "gold": 2000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "castle",
+  "name": "zealot",
+  "cost": {
+   "wood": 2,
+   "mercury": 2,
+   "ore": 2,
+   "sulfur": 2,
+   "crystal": 2,
+   "gems": 2,
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "castle",
+  "name": "champion",
+  "cost": {
+   "wood": 10,
+   "gold": 3000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "castle",
+  "name": "arch angel",
+  "cost": {
+   "mercury": 10,
+   "sulfur": 10,
+   "crystal": 10,
+   "gems": 10,
+   "gold": 20000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "rampart",
+  "name": "Centaur",
+  "cost": {
+   "wood": 10,
+   "gold": 500
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "rampart",
+  "name": "Dwarf",
+  "cost": {
+   "wood": 5,
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "rampart",
+  "name": "Wood Elf",
+  "cost": {
+   "wood": 10,
+   "gold": 1500
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "rampart",
+  "name": "Pegasus",
+  "cost": {
+   "crystal": 10,
+   "gold": 2000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "rampart",
+  "name": "Dendroid Guard",
+  "cost": {
+   "gold": 2500
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "rampart",
+  "name": "Unicorn",
+  "cost": {
+   "wood": 5,
+   "ore": 5,
+   "gems": 10,
+   "gold": 4000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "rampart",
+  "name": "Green Dragon",
+  "cost": {
+   "ore": 30,
+   "crystal": 20,
+   "gold": 10000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "rampart",
+  "name": "Centaur Captain",
+  "cost": {
+   "wood": 5,
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "rampart",
+  "name": "Battle Dwarf",
+  "cost": {
+   "wood": 5,
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "rampart",
+  "name": "Grand Elf",
+  "cost": {
+   "wood": 10,
+   "gold": 1500
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "rampart",
+  "name": "Silver Pegasus",
+  "cost": {
+   "crystal": 5,
+   "gold": 2000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "rampart",
+  "name": "Dendroid Soldier",
+  "cost": {
+   "gold": 1500
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "rampart",
+  "name": "War Unicorn",
+  "cost": {
+   "gems": 5,
+   "gold": 3000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "rampart",
+  "name": "Gold Dragon",
+  "cost": {
+   "ore": 30,
+   "crystal": 20,
+   "gold": 20000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "tower",
+  "name": "Gremlin",
+  "cost": {
+   "wood": 5,
+   "ore": 5,
+   "gold": 300
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "tower",
+  "name": "Stone Gargoyle",
+  "cost": {
+   "ore": 10,
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "tower",
+  "name": "Stone Golem",
+  "cost": {
+   "wood": 5,
+   "ore": 5,
+   "gold": 2000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "tower",
+  "name": "Mage",
+  "cost": {
+   "wood": 5,
+   "mercury": 5,
+   "ore": 5,
+   "sulfur": 5,
+   "crystal": 5,
+   "gems": 5,
+   "gold": 2500
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "tower",
+  "name": "Genie",
+  "cost": {
+   "wood": 5,
+   "ore": 5,
+   "crystal": 6,
+   "gems": 6,
+   "gold": 3000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "tower",
+  "name": "Naga",
+  "cost": {
+   "wood": 5,
+   "mercury": 2,
+   "ore": 5,
+   "sulfur": 2,
+   "crystal": 2,
+   "gems": 2,
+   "gold": 4000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "tower",
+  "name": "Giant",
+  "cost": {
+   "wood": 10,
+   "ore": 10,
+   "gems": 10,
+   "gold": 5000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "tower",
+  "name": "Master Gremlin",
+  "cost": {
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "tower",
+  "name": "Obsidian Gargoyle",
+  "cost": {
+   "ore": 5,
+   "gold": 1500
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "tower",
+  "name": "Iron Golem",
+  "cost": {
+   "wood": 5,
+   "mercury": 5,
+   "ore": 5,
+   "gold": 2000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "tower",
+  "name": "Arch Mage",
+  "cost": {
+   "wood": 5,
+   "gold": 2000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "tower",
+  "name": "Master Genie",
+  "cost": {
+   "wood": 5,
+   "gold": 2000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "tower",
+  "name": "Naga Queen",
+  "cost": {
+   "mercury": 3,
+   "sulfur": 3,
+   "crystal": 3,
+   "gems": 3,
+   "gold": 3000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "tower",
+  "name": "Titan",
+  "cost": {
+   "wood": 5,
+   "ore": 5,
+   "gems": 30,
+   "gold": 25000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "inferno",
+  "name": "Imp",
+  "cost": {
+   "wood": 5,
+   "ore": 5,
+   "gold": 300
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "inferno",
+  "name": "Gog",
+  "cost": {
+   "ore": 5,
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "inferno",
+  "name": "Hell Hound",
+  "cost": {
+   "wood": 10,
+   "gold": 1500
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "inferno",
+  "name": "Demon",
+  "cost": {
+   "wood": 5,
+   "ore": 5,
+   "gold": 2000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "inferno",
+  "name": "Pit Fiend",
+  "cost": {
+   "gold": 3000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "inferno",
+  "name": "Efreet",
+  "cost": {
+   "mercury": 3,
+   "ore": 10,
+   "sulfur": 3,
+   "gems": 3,
+   "gold": 4000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "inferno",
+  "name": "Devil",
+  "cost": {
+   "wood": 10,
+   "mercury": 20,
+   "ore": 10,
+   "gold": 15000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "inferno",
+  "name": "Familiar",
+  "cost": {
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "inferno",
+  "name": "Magog",
+  "cost": {
+   "mercury": 5,
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "inferno",
+  "name": "Cerberus",
+  "cost": {
+   "sulfur": 5,
+   "gold": 1500
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "inferno",
+  "name": "Horned Demon",
+  "cost": {
+   "wood": 5,
+   "ore": 5,
+   "gold": 2000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "inferno",
+  "name": "Pit Lord",
+  "cost": {
+   "mercury": 5,
+   "sulfur": 5,
+   "gold": 3000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "inferno",
+  "name": "Efreet Sultan",
+  "cost": {
+   "mercury": 5,
+   "ore": 5,
+   "sulfur": 5,
+   "gems": 5,
+   "gold": 3000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "inferno",
+  "name": "Arch Devil",
+  "cost": {
+   "wood": 5,
+   "mercury": 20,
+   "ore": 5,
+   "gold": 20000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "necropolis",
+  "name": "Skeleton",
+  "cost": {
+   "wood": 5,
+   "ore": 5,
+   "gold": 400
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "necropolis",
+  "name": "Walking Dead",
+  "cost": {
+   "ore": 5,
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "necropolis",
+  "name": "Wight",
+  "cost": {
+   "wood": 5,
+   "ore": 5,
+   "gold": 1500
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "necropolis",
+  "name": "Vampire",
+  "cost": {
+   "wood": 5,
+   "ore": 5,
+   "gold": 2000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "necropolis",
+  "name": "Lich",
+  "cost": {
+   "ore": 10,
+   "sulfur": 10,
+   "gold": 2000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "necropolis",
+  "name": "Black Knight",
+  "cost": {
+   "wood": 10,
+   "ore": 10,
+   "gold": 6000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "necropolis",
+  "name": "Bone Dragon",
+  "cost": {
+   "wood": 5,
+   "mercury": 5,
+   "ore": 5,
+   "sulfur": 5,
+   "crystal": 5,
+   "gems": 5,
+   "gold": 10000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "necropolis",
+  "name": "Skeleton Warrior",
+  "cost": {
+   "wood": 5,
+   "ore": 5,
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "necropolis",
+  "name": "Zombie",
+  "cost": {
+   "wood": 5,
+   "ore": 5,
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "necropolis",
+  "name": "Wraith",
+  "cost": {
+   "mercury": 5,
+   "gold": 1500
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "necropolis",
+  "name": "Vampire Lord",
+  "cost": {
+   "wood": 5,
+   "crystal": 10,
+   "gems": 10,
+   "gold": 2000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "necropolis",
+  "name": "Power Lich",
+  "cost": {
+   "ore": 5,
+   "sulfur": 5,
+   "gold": 2000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "necropolis",
+  "name": "Black Lord",
+  "cost": {
+   "wood": 5,
+   "mercury": 2,
+   "ore": 5,
+   "sulfur": 2,
+   "crystal": 2,
+   "gems": 2,
+   "gold": 3000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "necropolis",
+  "name": "Ghost Dragon",
+  "cost": {
+   "wood": 5,
+   "mercury": 20,
+   "ore": 5,
+   "gold": 15000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "dungeon",
+  "name": "Troglodyte",
+  "cost": {
+   "wood": 10,
+   "gold": 400
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "dungeon",
+  "name": "Harpy",
+  "cost": {
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "dungeon",
+  "name": "Beholder",
+  "cost": {
+   "wood": 1,
+   "mercury": 1,
+   "ore": 1,
+   "sulfur": 1,
+   "crystal": 1,
+   "gems": 1,
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "dungeon",
+  "name": "Medusa",
+  "cost": {
+   "wood": 5,
+   "ore": 10,
+   "gold": 2000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "dungeon",
+  "name": "Minotaur",
+  "cost": {
+   "ore": 10,
+   "gems": 10,
+   "gold": 4000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "dungeon",
+  "name": "Manticore",
+  "cost": {
+   "wood": 5,
+   "mercury": 5,
+   "ore": 5,
+   "sulfur": 5,
+   "gold": 5000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "dungeon",
+  "name": "Red Dragon",
+  "cost": {
+   "wood": 15,
+   "ore": 15,
+   "sulfur": 20,
+   "gold": 15000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "dungeon",
+  "name": "Infernal Troglodyte",
+  "cost": {
+   "wood": 5,
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "dungeon",
+  "name": "Harpy Hag",
+  "cost": {
+   "sulfur": 2,
+   "crystal": 2,
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "dungeon",
+  "name": "Evil Eye",
+  "cost": {
+   "wood": 1,
+   "mercury": 1,
+   "ore": 1,
+   "sulfur": 1,
+   "crystal": 1,
+   "gems": 1,
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "dungeon",
+  "name": "Medusa Queen",
+  "cost": {
+   "wood": 5,
+   "gold": 1500
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "dungeon",
+  "name": "Minotaur King",
+  "cost": {
+   "ore": 5,
+   "gems": 5,
+   "gold": 3000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "dungeon",
+  "name": "Scorpicore",
+  "cost": {
+   "wood": 5,
+   "mercury": 5,
+   "ore": 5,
+   "sulfur": 5,
+   "gold": 3000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "dungeon",
+  "name": "Black Dragon",
+  "cost": {
+   "wood": 15,
+   "ore": 15,
+   "sulfur": 20,
+   "gold": 15000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "stronghold",
+  "name": "Goblin",
+  "cost": {
+   "wood": 5,
+   "ore": 5,
+   "gold": 200
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "stronghold",
+  "name": "Wolf Rider",
+  "cost": {
+   "wood": 10,
+   "ore": 5,
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "stronghold",
+  "name": "Orc",
+  "cost": {
+   "wood": 5,
+   "ore": 5,
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "stronghold",
+  "name": "Ogre",
+  "cost": {
+   "wood": 20,
+   "gold": 2000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "stronghold",
+  "name": "Roc",
+  "cost": {
+   "ore": 10,
+   "gold": 2500
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "stronghold",
+  "name": "Cyclops",
+  "cost": {
+   "ore": 20,
+   "crystal": 20,
+   "gold": 3500
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "stronghold",
+  "name": "Behemoth",
+  "cost": {
+   "wood": 10,
+   "ore": 10,
+   "crystal": 10,
+   "gold": 10000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "stronghold",
+  "name": "Hobgoblin",
+  "cost": {
+   "wood": 5,
+   "ore": 5,
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "stronghold",
+  "name": "Wolf Raider",
+  "cost": {
+   "wood": 5,
+   "ore": 5,
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "stronghold",
+  "name": "Orc Chieftain",
+  "cost": {
+   "wood": 2,
+   "ore": 2,
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "stronghold",
+  "name": "Ogre Mage",
+  "cost": {
+   "wood": 5,
+   "ore": 5,
+   "gems": 5,
+   "gold": 2000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "stronghold",
+  "name": "Thunderbird",
+  "cost": {
+   "wood": 5,
+   "ore": 5,
+   "gold": 2000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "stronghold",
+  "name": "Cyclops King",
+  "cost": {
+   "wood": 5,
+   "ore": 5,
+   "gold": 3000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "stronghold",
+  "name": "Ancient Behemoth",
+  "cost": {
+   "wood": 10,
+   "ore": 10,
+   "crystal": 20,
+   "gold": 15000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "fortress",
+  "name": "Gnoll",
+  "cost": {
+   "wood": 10,
+   "gold": 400
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "fortress",
+  "name": "Lizardman",
+  "cost": {
+   "wood": 5,
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "fortress",
+  "name": "Serpent Fly",
+  "cost": {
+   "wood": 5,
+   "mercury": 2,
+   "sulfur": 2,
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "fortress",
+  "name": "Basilisk",
+  "cost": {
+   "wood": 5,
+   "ore": 10,
+   "gold": 2000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "fortress",
+  "name": "Gorgon",
+  "cost": {
+   "wood": 10,
+   "mercury": 5,
+   "ore": 10,
+   "sulfur": 5,
+   "gold": 2500
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "fortress",
+  "name": "Wyvern",
+  "cost": {
+   "wood": 15,
+   "gold": 3500
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "fortress",
+  "name": "Hydra",
+  "cost": {
+   "wood": 10,
+   "ore": 10,
+   "sulfur": 10,
+   "gold": 10000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "fortress",
+  "name": "Gnoll Marauder",
+  "cost": {
+   "wood": 10,
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "fortress",
+  "name": "Lizard Warrior",
+  "cost": {
+   "wood": 5,
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "fortress",
+  "name": "Dragon Fly",
+  "cost": {
+   "mercury": 2,
+   "sulfur": 2,
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "fortress",
+  "name": "Greater Basilisk",
+  "cost": {
+   "wood": 5,
+   "ore": 5,
+   "gold": 2000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "fortress",
+  "name": "Mighty Gorgon",
+  "cost": {
+   "wood": 5,
+   "ore": 5,
+   "gold": 2000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "fortress",
+  "name": "Wyvern Monarch",
+  "cost": {
+   "wood": 10,
+   "mercury": 10,
+   "gold": 3000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "fortress",
+  "name": "Chaos Hydra",
+  "cost": {
+   "wood": 10,
+   "ore": 10,
+   "sulfur": 20,
+   "gold": 15000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "conflux",
+  "name": "Flower of Life - Pixies",
+  "cost": {
+   "wood": 5,
+   "ore": 5,
+   "gold": 300
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "conflux",
+  "name": "Altar of Air - Air Elementals",
+  "cost": {
+   "ore": 5,
+   "gold": 1500
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "conflux",
+  "name": "Altar of Water - Water Elementals",
+  "cost": {
+   "ore": 5,
+   "gold": 1500
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "conflux",
+  "name": "Altar of Fire - Fire Elementals",
+  "cost": {
+   "wood": 5,
+   "ore": 5,
+   "gold": 2000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "conflux",
+  "name": "Altar of Earth - Earth Elementals",
+  "cost": {
+   "ore": 10,
+   "gold": 2000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "conflux",
+  "name": "Altar of Thought - Psychic Elementals",
+  "cost": {
+   "wood": 5,
+   "mercury": 2,
+   "ore": 5,
+   "sulfur": 2,
+   "crystal": 2,
+   "gems": 2,
+   "gold": 3000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "conflux",
+  "name": "Pyre - Firebirds",
+  "cost": {
+   "wood": 10,
+   "mercury": 10,
+   "ore": 10,
+   "gold": 10000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "conflux",
+  "name": "Enchanted Flower - Sprites",
+  "cost": {
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "conflux",
+  "name": "Temple of Clouds - Storm Elementals",
+  "cost": {
+   "wood": 2,
+   "mercury": 2,
+   "gems": 2,
+   "gold": 1500
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "conflux",
+  "name": "Temple of Ice - Ice Elementals",
+  "cost": {
+   "mercury": 5,
+   "ore": 5,
+   "gold": 2000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "conflux",
+  "name": "Temple of Energy - Energy Elementals",
+  "cost": {
+   "mercury": 5,
+   "ore": 5,
+   "gold": 2000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "conflux",
+  "name": "Temple of Magma - Magma Elementals",
+  "cost": {
+   "sulfur": 5,
+   "gold": 1000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "conflux",
+  "name": "Temple of Magic - Magic Elementals",
+  "cost": {
+   "mercury": 3,
+   "sulfur": 3,
+   "crystal": 3,
+   "gems": 3,
+   "gold": 3000
+  }
+ },
+ {
+  "section": "Dwellings",
+  "town": "conflux",
+  "name": "Funeral Pyre - Phoenixes",
+  "cost": {
+   "wood": 10,
+   "mercury": 20,
+   "ore": 10,
+   "gold": 15000
+  }
+ }
+]

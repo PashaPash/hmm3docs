@@ -1,0 +1,1309 @@
+[
+ {
+  "id": 0,
+  "name": "Spell Book",
+  "cost": 0,
+  "slots": [
+   "Spell Book"
+  ],
+  "class": "S"
+ },
+ {
+  "id": 1,
+  "name": "Spell Scroll",
+  "cost": 2500,
+  "slots": [
+   "Misc 4",
+   "Misc 3",
+   "Misc 2",
+   "Misc 1"
+  ],
+  "class": "S"
+ },
+ {
+  "id": 2,
+  "name": "The Grail",
+  "cost": 0,
+  "slots": [],
+  "class": "S"
+ },
+ {
+  "id": 3,
+  "name": "Catapult",
+  "cost": 1000,
+  "slots": [
+   "War Machine 4"
+  ],
+  "class": "S"
+ },
+ {
+  "id": 4,
+  "name": "Ballista",
+  "cost": 2500,
+  "slots": [
+   "War Machine 1"
+  ],
+  "class": "S"
+ },
+ {
+  "id": 5,
+  "name": "Ammo Cart",
+  "cost": 1000,
+  "slots": [
+   "War Machine 2"
+  ],
+  "class": "S"
+ },
+ {
+  "id": 6,
+  "name": "First Aid Tent",
+  "cost": 750,
+  "slots": [
+   "War Machine 3"
+  ],
+  "class": "S"
+ },
+ {
+  "id": 7,
+  "name": "Centaurs Axe",
+  "cost": 2000,
+  "slots": [
+   "Right Hand"
+  ],
+  "class": "T"
+ },
+ {
+  "id": 8,
+  "name": "Blackshard of the Dead Knight",
+  "cost": 3000,
+  "slots": [
+   "Right Hand"
+  ],
+  "class": "N"
+ },
+ {
+  "id": 9,
+  "name": "Greater Gnoll's Flail",
+  "cost": 4000,
+  "slots": [
+   "Right Hand"
+  ],
+  "class": "N"
+ },
+ {
+  "id": 10,
+  "name": "Ogre's Club of Havoc",
+  "cost": 5000,
+  "slots": [
+   "Right Hand"
+  ],
+  "class": "J"
+ },
+ {
+  "id": 11,
+  "name": "Sword of Hellfire",
+  "cost": 6000,
+  "slots": [
+   "Right Hand"
+  ],
+  "class": "J"
+ },
+ {
+  "id": 12,
+  "name": "Titan's Gladius",
+  "cost": 10000,
+  "slots": [
+   "Right Hand"
+  ],
+  "class": "R"
+ },
+ {
+  "id": 13,
+  "name": "Shield of the Dwarven Lords",
+  "cost": 2000,
+  "slots": [
+   "Left Hand"
+  ],
+  "class": "T"
+ },
+ {
+  "id": 14,
+  "name": "Shield of the Yawning Dead",
+  "cost": 3000,
+  "slots": [
+   "Left Hand"
+  ],
+  "class": "N"
+ },
+ {
+  "id": 15,
+  "name": "Buckler of the Gnoll King",
+  "cost": 4000,
+  "slots": [
+   "Left Hand"
+  ],
+  "class": "N"
+ },
+ {
+  "id": 16,
+  "name": "Targ of the Rampaging Ogre",
+  "cost": 5000,
+  "slots": [
+   "Left Hand"
+  ],
+  "class": "J"
+ },
+ {
+  "id": 17,
+  "name": "Shield of the Damned",
+  "cost": 6000,
+  "slots": [
+   "Left Hand"
+  ],
+  "class": "J"
+ },
+ {
+  "id": 18,
+  "name": "Sentinel's Shield",
+  "cost": 10000,
+  "slots": [
+   "Left Hand"
+  ],
+  "class": "R"
+ },
+ {
+  "id": 19,
+  "name": "Helm of the Alabaster Unicorn",
+  "cost": 1000,
+  "slots": [
+   "Head"
+  ],
+  "class": "T"
+ },
+ {
+  "id": 20,
+  "name": "Skull Helmet",
+  "cost": 3000,
+  "slots": [
+   "Head"
+  ],
+  "class": "T"
+ },
+ {
+  "id": 21,
+  "name": "Helm of Chaos",
+  "cost": 4000,
+  "slots": [
+   "Head"
+  ],
+  "class": "N"
+ },
+ {
+  "id": 22,
+  "name": "Crown of the Supreme Magi",
+  "cost": 5000,
+  "slots": [
+   "Head"
+  ],
+  "class": "N"
+ },
+ {
+  "id": 23,
+  "name": "Hellstorm Helmet",
+  "cost": 6000,
+  "slots": [
+   "Head"
+  ],
+  "class": "J"
+ },
+ {
+  "id": 24,
+  "name": "Thunder Helmet",
+  "cost": 10000,
+  "slots": [
+   "Head"
+  ],
+  "class": "R"
+ },
+ {
+  "id": 25,
+  "name": "Breastplate of Petrified Wood",
+  "cost": 1000,
+  "slots": [
+   "Torso"
+  ],
+  "class": "T"
+ },
+ {
+  "id": 26,
+  "name": "Rib Cage",
+  "cost": 3000,
+  "slots": [
+   "Torso"
+  ],
+  "class": "N"
+ },
+ {
+  "id": 27,
+  "name": "Scales of the Greater Basilisk",
+  "cost": 4000,
+  "slots": [
+   "Torso"
+  ],
+  "class": "N"
+ },
+ {
+  "id": 28,
+  "name": "Tunic of the Cyclops King",
+  "cost": 5000,
+  "slots": [
+   "Torso"
+  ],
+  "class": "J"
+ },
+ {
+  "id": 29,
+  "name": "Breastplate of Brimstone",
+  "cost": 6000,
+  "slots": [
+   "Torso"
+  ],
+  "class": "J"
+ },
+ {
+  "id": 30,
+  "name": "Titan's Cuirass",
+  "cost": 10000,
+  "slots": [
+   "Torso"
+  ],
+  "class": "R"
+ },
+ {
+  "id": 31,
+  "name": "Armor of Wonder",
+  "cost": 4000,
+  "slots": [
+   "Torso"
+  ],
+  "class": "N"
+ },
+ {
+  "id": 32,
+  "name": "Sandals of the Saint",
+  "cost": 8000,
+  "slots": [
+   "Feet"
+  ],
+  "class": "R"
+ },
+ {
+  "id": 33,
+  "name": "Celestial Necklace of Bliss",
+  "cost": 12000,
+  "slots": [
+   "Neck"
+  ],
+  "class": "R"
+ },
+ {
+  "id": 34,
+  "name": "Lion's Shield of Courage",
+  "cost": 16000,
+  "slots": [
+   "Left Hand"
+  ],
+  "class": "R"
+ },
+ {
+  "id": 35,
+  "name": "Sword of Judgement",
+  "cost": 20000,
+  "slots": [
+   "Right Hand"
+  ],
+  "class": "R"
+ },
+ {
+  "id": 36,
+  "name": "Helm of Heavenly Enlightenment",
+  "cost": 24000,
+  "slots": [
+   "Head"
+  ],
+  "class": "R"
+ },
+ {
+  "id": 37,
+  "name": "Quiet Eye of the Dragon",
+  "cost": 2000,
+  "slots": [
+   "Left Ring",
+   "Right Ring"
+  ],
+  "class": "T"
+ },
+ {
+  "id": 38,
+  "name": "Red Dragon Flame Tongue",
+  "cost": 4000,
+  "slots": [
+   "Right Hand"
+  ],
+  "class": "N"
+ },
+ {
+  "id": 39,
+  "name": "Dragon Scale Shield",
+  "cost": 6000,
+  "slots": [
+   "Left Hand"
+  ],
+  "class": "J"
+ },
+ {
+  "id": 40,
+  "name": "Dragon Scale Armor",
+  "cost": 8000,
+  "slots": [
+   "Torso"
+  ],
+  "class": "R"
+ },
+ {
+  "id": 41,
+  "name": "Dragonbone Greaves",
+  "cost": 2000,
+  "slots": [
+   "Feet"
+  ],
+  "class": "T"
+ },
+ {
+  "id": 42,
+  "name": "Dragon Wing Tabard",
+  "cost": 4000,
+  "slots": [
+   "Shoulders"
+  ],
+  "class": "N"
+ },
+ {
+  "id": 43,
+  "name": "Necklace of Dragonteeth",
+  "cost": 6000,
+  "slots": [
+   "Neck"
+  ],
+  "class": "J"
+ },
+ {
+  "id": 44,
+  "name": "Crown of Dragontooth",
+  "cost": 8000,
+  "slots": [
+   "Head"
+  ],
+  "class": "R"
+ },
+ {
+  "id": 45,
+  "name": "Still Eye of the Dragon",
+  "cost": 2000,
+  "slots": [
+   "Left Ring",
+   "Right Ring"
+  ],
+  "class": "T"
+ },
+ {
+  "id": 46,
+  "name": "Clover of Fortune",
+  "cost": 1000,
+  "slots": [
+   "Misc 4",
+   "Misc 3",
+   "Misc 2",
+   "Misc 1"
+  ],
+  "class": "T"
+ },
+ {
+  "id": 47,
+  "name": "Cards of Prophecy",
+  "cost": 1000,
+  "slots": [
+   "Misc 4",
+   "Misc 3",
+   "Misc 2",
+   "Misc 1"
+  ],
+  "class": "T"
+ },
+ {
+  "id": 48,
+  "name": "Ladybird of Luck",
+  "cost": 1000,
+  "slots": [
+   "Misc 4",
+   "Misc 3",
+   "Misc 2",
+   "Misc 1"
+  ],
+  "class": "T"
+ },
+ {
+  "id": 49,
+  "name": "Badge of Courage",
+  "cost": 1000,
+  "slots": [
+   "Misc 4",
+   "Misc 3",
+   "Misc 2",
+   "Misc 1"
+  ],
+  "class": "T"
+ },
+ {
+  "id": 50,
+  "name": "Crest of Valor",
+  "cost": 1000,
+  "slots": [
+   "Misc 4",
+   "Misc 3",
+   "Misc 2",
+   "Misc 1"
+  ],
+  "class": "T"
+ },
+ {
+  "id": 51,
+  "name": "Glyph of Gallantry",
+  "cost": 1000,
+  "slots": [
+   "Misc 4",
+   "Misc 3",
+   "Misc 2",
+   "Misc 1"
+  ],
+  "class": "T"
+ },
+ {
+  "id": 52,
+  "name": "Speculum",
+  "cost": 1000,
+  "slots": [
+   "Misc 4",
+   "Misc 3",
+   "Misc 2",
+   "Misc 1"
+  ],
+  "class": "T"
+ },
+ {
+  "id": 53,
+  "name": "Spyglass",
+  "cost": 1000,
+  "slots": [
+   "Misc 4",
+   "Misc 3",
+   "Misc 2",
+   "Misc 1"
+  ],
+  "class": "T"
+ },
+ {
+  "id": 54,
+  "name": "Amulet of the Undertaker",
+  "cost": 2000,
+  "slots": [
+   "Neck"
+  ],
+  "class": "T"
+ },
+ {
+  "id": 55,
+  "name": "Vampire's Cowl",
+  "cost": 4000,
+  "slots": [
+   "Shoulders"
+  ],
+  "class": "N"
+ },
+ {
+  "id": 56,
+  "name": "Dead Man's Boots",
+  "cost": 6000,
+  "slots": [
+   "Feet"
+  ],
+  "class": "J"
+ },
+ {
+  "id": 57,
+  "name": "Garniture of Interference",
+  "cost": 2000,
+  "slots": [
+   "Neck"
+  ],
+  "class": "J"
+ },
+ {
+  "id": 58,
+  "name": "Surcoat of Counterpoise",
+  "cost": 4000,
+  "slots": [
+   "Shoulders"
+  ],
+  "class": "J"
+ },
+ {
+  "id": 59,
+  "name": "Boots of Polarity",
+  "cost": 6000,
+  "slots": [
+   "Feet"
+  ],
+  "class": "R"
+ },
+ {
+  "id": 60,
+  "name": "Bow of Elven Cherrywood",
+  "cost": 2000,
+  "slots": [
+   "Misc 4",
+   "Misc 3",
+   "Misc 2",
+   "Misc 1"
+  ],
+  "class": "T"
+ },
+ {
+  "id": 61,
+  "name": "Bowstring of the Unicorn's Mane",
+  "cost": 4000,
+  "slots": [
+   "Misc 4",
+   "Misc 3",
+   "Misc 2",
+   "Misc 1"
+  ],
+  "class": "N"
+ },
+ {
+  "id": 62,
+  "name": "Angel Feather Arrows",
+  "cost": 6000,
+  "slots": [
+   "Misc 4",
+   "Misc 3",
+   "Misc 2",
+   "Misc 1"
+  ],
+  "class": "J"
+ },
+ {
+  "id": 63,
+  "name": "Bird of Perception",
+  "cost": 1000,
+  "slots": [
+   "Misc 4",
+   "Misc 3",
+   "Misc 2",
+   "Misc 1"
+  ],
+  "class": "T"
+ },
+ {
+  "id": 64,
+  "name": "Stoic Watchman",
+  "cost": 2000,
+  "slots": [
+   "Misc 4",
+   "Misc 3",
+   "Misc 2",
+   "Misc 1"
+  ],
+  "class": "T"
+ },
+ {
+  "id": 65,
+  "name": "Emblem of Cognizance",
+  "cost": 3000,
+  "slots": [
+   "Misc 4",
+   "Misc 3",
+   "Misc 2",
+   "Misc 1"
+  ],
+  "class": "N"
+ },
+ {
+  "id": 66,
+  "name": "Statesman's Medal",
+  "cost": 5000,
+  "slots": [
+   "Neck"
+  ],
+  "class": "J"
+ },
+ {
+  "id": 67,
+  "name": "Diplomat's Ring",
+  "cost": 5000,
+  "slots": [
+   "Left Ring",
+   "Right Ring"
+  ],
+  "class": "J"
+ },
+ {
+  "id": 68,
+  "name": "Ambassador's Sash",
+  "cost": 5000,
+  "slots": [
+   "Shoulders"
+  ],
+  "class": "J"
+ },
+ {
+  "id": 69,
+  "name": "Ring of the Wayfarer",
+  "cost": 5000,
+  "slots": [
+   "Left Ring",
+   "Right Ring"
+  ],
+  "class": "J"
+ },
+ {
+  "id": 70,
+  "name": "Equestrian's Gloves",
+  "cost": 3000,
+  "slots": [
+   "Left Ring",
+   "Right Ring"
+  ],
+  "class": "N"
+ },
+ {
+  "id": 71,
+  "name": "Necklace of Ocean Guidance",
+  "cost": 10000,
+  "slots": [
+   "Neck"
+  ],
+  "class": "J"
+ },
+ {
+  "id": 72,
+  "name": "Angel Wings",
+  "cost": 20000,
+  "slots": [
+   "Shoulders"
+  ],
+  "class": "R"
+ },
+ {
+  "id": 73,
+  "name": "Charm of Mana",
+  "cost": 500,
+  "slots": [
+   "Misc 4",
+   "Misc 3",
+   "Misc 2",
+   "Misc 1"
+  ],
+  "class": "T"
+ },
+ {
+  "id": 74,
+  "name": "Talisman of Mana",
+  "cost": 1000,
+  "slots": [
+   "Misc 4",
+   "Misc 3",
+   "Misc 2",
+   "Misc 1"
+  ],
+  "class": "T"
+ },
+ {
+  "id": 75,
+  "name": "Mystic Orb of Mana",
+  "cost": 1500,
+  "slots": [
+   "Misc 4",
+   "Misc 3",
+   "Misc 2",
+   "Misc 1"
+  ],
+  "class": "T"
+ },
+ {
+  "id": 76,
+  "name": "Collar of Conjuring",
+  "cost": 500,
+  "slots": [
+   "Neck"
+  ],
+  "class": "T"
+ },
+ {
+  "id": 77,
+  "name": "Ring of Conjuring",
+  "cost": 1000,
+  "slots": [
+   "Left Ring",
+   "Right Ring"
+  ],
+  "class": "T"
+ },
+ {
+  "id": 78,
+  "name": "Cape of Conjuring",
+  "cost": 1500,
+  "slots": [
+   "Shoulders"
+  ],
+  "class": "T"
+ },
+ {
+  "id": 79,
+  "name": "Orb of the Firmament",
+  "cost": 6000,
+  "slots": [
+   "Misc 4",
+   "Misc 3",
+   "Misc 2",
+   "Misc 1"
+  ],
+  "class": "J"
+ },
+ {
+  "id": 80,
+  "name": "Orb of Silt",
+  "cost": 6000,
+  "slots": [
+   "Misc 4",
+   "Misc 3",
+   "Misc 2",
+   "Misc 1"
+  ],
+  "class": "J"
+ },
+ {
+  "id": 81,
+  "name": "Orb of Tempestuous Fire",
+  "cost": 6000,
+  "slots": [
+   "Misc 4",
+   "Misc 3",
+   "Misc 2",
+   "Misc 1"
+  ],
+  "class": "J"
+ },
+ {
+  "id": 82,
+  "name": "Orb of Driving Rain",
+  "cost": 6000,
+  "slots": [
+   "Misc 4",
+   "Misc 3",
+   "Misc 2",
+   "Misc 1"
+  ],
+  "class": "J"
+ },
+ {
+  "id": 83,
+  "name": "Recanter's Cloak",
+  "cost": 8000,
+  "slots": [
+   "Shoulders"
+  ],
+  "class": "J"
+ },
+ {
+  "id": 84,
+  "name": "Spirit of Oppression",
+  "cost": 2000,
+  "slots": [
+   "Misc 4",
+   "Misc 3",
+   "Misc 2",
+   "Misc 1"
+  ],
+  "class": "T"
+ },
+ {
+  "id": 85,
+  "name": "Hourglass of the Evil Hour",
+  "cost": 2000,
+  "slots": [
+   "Misc 4",
+   "Misc 3",
+   "Misc 2",
+   "Misc 1"
+  ],
+  "class": "T"
+ },
+ {
+  "id": 86,
+  "name": "Tome of Fire Magic",
+  "cost": 20000,
+  "slots": [
+   "Misc 4",
+   "Misc 3",
+   "Misc 2",
+   "Misc 1"
+  ],
+  "class": "R"
+ },
+ {
+  "id": 87,
+  "name": "Tome of Air Magic",
+  "cost": 20000,
+  "slots": [
+   "Misc 4",
+   "Misc 3",
+   "Misc 2",
+   "Misc 1"
+  ],
+  "class": "R"
+ },
+ {
+  "id": 88,
+  "name": "Tome of Water Magic",
+  "cost": 20000,
+  "slots": [
+   "Misc 4",
+   "Misc 3",
+   "Misc 2",
+   "Misc 1"
+  ],
+  "class": "R"
+ },
+ {
+  "id": 89,
+  "name": "Tome of Earth Magic",
+  "cost": 20000,
+  "slots": [
+   "Misc 4",
+   "Misc 3",
+   "Misc 2",
+   "Misc 1"
+  ],
+  "class": "R"
+ },
+ {
+  "id": 90,
+  "name": "Boots of Levitation",
+  "cost": 10000,
+  "slots": [
+   "Feet"
+  ],
+  "class": "R"
+ },
+ {
+  "id": 91,
+  "name": "Golden Bow",
+  "cost": 8000,
+  "slots": [
+   "Misc 4",
+   "Misc 3",
+   "Misc 2",
+   "Misc 1"
+  ],
+  "class": "J"
+ },
+ {
+  "id": 92,
+  "name": "Sphere of Permanence",
+  "cost": 7500,
+  "slots": [
+   "Misc 4",
+   "Misc 3",
+   "Misc 2",
+   "Misc 1"
+  ],
+  "class": "J"
+ },
+ {
+  "id": 93,
+  "name": "Orb of Vulnerability",
+  "cost": 25000,
+  "slots": [
+   "Misc 4",
+   "Misc 3",
+   "Misc 2",
+   "Misc 1"
+  ],
+  "class": "R"
+ },
+ {
+  "id": 94,
+  "name": "Ring of Vitality",
+  "cost": 5000,
+  "slots": [
+   "Left Ring",
+   "Right Ring"
+  ],
+  "class": "T"
+ },
+ {
+  "id": 95,
+  "name": "Ring of Life",
+  "cost": 5000,
+  "slots": [
+   "Left Ring",
+   "Right Ring"
+  ],
+  "class": "N"
+ },
+ {
+  "id": 96,
+  "name": "Vial of Lifeblood",
+  "cost": 10000,
+  "slots": [
+   "Misc 4",
+   "Misc 3",
+   "Misc 2",
+   "Misc 1"
+  ],
+  "class": "J"
+ },
+ {
+  "id": 97,
+  "name": "Necklace of Swiftness",
+  "cost": 5000,
+  "slots": [
+   "Neck"
+  ],
+  "class": "T"
+ },
+ {
+  "id": 98,
+  "name": "Boots of Speed",
+  "cost": 6000,
+  "slots": [
+   "Feet"
+  ],
+  "class": "N"
+ },
+ {
+  "id": 99,
+  "name": "Cape of Velocity",
+  "cost": 10000,
+  "slots": [
+   "Shoulders"
+  ],
+  "class": "J"
+ },
+ {
+  "id": 100,
+  "name": "Pendant of Dispassion",
+  "cost": 1000,
+  "slots": [
+   "Neck"
+  ],
+  "class": "T"
+ },
+ {
+  "id": 101,
+  "name": "Pendant of Second Sight",
+  "cost": 5000,
+  "slots": [
+   "Neck"
+  ],
+  "class": "J"
+ },
+ {
+  "id": 102,
+  "name": "Pendant of Holiness",
+  "cost": 1000,
+  "slots": [
+   "Neck"
+  ],
+  "class": "T"
+ },
+ {
+  "id": 103,
+  "name": "Pendant of Life",
+  "cost": 2500,
+  "slots": [
+   "Neck"
+  ],
+  "class": "T"
+ },
+ {
+  "id": 104,
+  "name": "Pendant of Death",
+  "cost": 2500,
+  "slots": [
+   "Neck"
+  ],
+  "class": "T"
+ },
+ {
+  "id": 105,
+  "name": "Pendant of Free Will",
+  "cost": 1000,
+  "slots": [
+   "Neck"
+  ],
+  "class": "T"
+ },
+ {
+  "id": 106,
+  "name": "Pendant of Negativity",
+  "cost": 5000,
+  "slots": [
+   "Neck"
+  ],
+  "class": "J"
+ },
+ {
+  "id": 107,
+  "name": "Pendant of Total Recall",
+  "cost": 3000,
+  "slots": [
+   "Neck"
+  ],
+  "class": "T"
+ },
+ {
+  "id": 108,
+  "name": "Pendant of Courage",
+  "cost": 7000,
+  "slots": [
+   "Neck"
+  ],
+  "class": "J"
+ },
+ {
+  "id": 109,
+  "name": "Everflowing Crystal Cloak",
+  "cost": 5000,
+  "slots": [
+   "Shoulders"
+  ],
+  "class": "J"
+ },
+ {
+  "id": 110,
+  "name": "Ring of Infinite Gems",
+  "cost": 5000,
+  "slots": [
+   "Left Ring",
+   "Right Ring"
+  ],
+  "class": "J"
+ },
+ {
+  "id": 111,
+  "name": "Everpouring Vial of Mercury",
+  "cost": 5000,
+  "slots": [
+   "Misc 4",
+   "Misc 3",
+   "Misc 2",
+   "Misc 1"
+  ],
+  "class": "J"
+ },
+ {
+  "id": 112,
+  "name": "Inexhaustible Cart of Ore",
+  "cost": 5000,
+  "slots": [
+   "Misc 4",
+   "Misc 3",
+   "Misc 2",
+   "Misc 1"
+  ],
+  "class": "N"
+ },
+ {
+  "id": 113,
+  "name": "Eversmoking Ring of Sulfur",
+  "cost": 5000,
+  "slots": [
+   "Left Ring",
+   "Right Ring"
+  ],
+  "class": "J"
+ },
+ {
+  "id": 114,
+  "name": "Inexhaustible Cart of Lumber",
+  "cost": 5000,
+  "slots": [
+   "Misc 4",
+   "Misc 3",
+   "Misc 2",
+   "Misc 1"
+  ],
+  "class": "N"
+ },
+ {
+  "id": 115,
+  "name": "Endless Sack of Gold",
+  "cost": 10000,
+  "slots": [
+   "Misc 4",
+   "Misc 3",
+   "Misc 2",
+   "Misc 1"
+  ],
+  "class": "R"
+ },
+ {
+  "id": 116,
+  "name": "Endless Bag of Gold",
+  "cost": 7500,
+  "slots": [
+   "Misc 4",
+   "Misc 3",
+   "Misc 2",
+   "Misc 1"
+  ],
+  "class": "J"
+ },
+ {
+  "id": 117,
+  "name": "Endless Purse of Gold",
+  "cost": 5000,
+  "slots": [
+   "Misc 4",
+   "Misc 3",
+   "Misc 2",
+   "Misc 1"
+  ],
+  "class": "J"
+ },
+ {
+  "id": 118,
+  "name": "Legs of Legion",
+  "cost": 5000,
+  "slots": [
+   "Misc 4",
+   "Misc 3",
+   "Misc 2",
+   "Misc 1"
+  ],
+  "class": "T"
+ },
+ {
+  "id": 119,
+  "name": "Loins of Legion",
+  "cost": 5000,
+  "slots": [
+   "Misc 4",
+   "Misc 3",
+   "Misc 2",
+   "Misc 1"
+  ],
+  "class": "N"
+ },
+ {
+  "id": 120,
+  "name": "Torso of Legion",
+  "cost": 5000,
+  "slots": [
+   "Misc 4",
+   "Misc 3",
+   "Misc 2",
+   "Misc 1"
+  ],
+  "class": "N"
+ },
+ {
+  "id": 121,
+  "name": "Arms of Legion",
+  "cost": 5000,
+  "slots": [
+   "Misc 4",
+   "Misc 3",
+   "Misc 2",
+   "Misc 1"
+  ],
+  "class": "J"
+ },
+ {
+  "id": 122,
+  "name": "Head of Legion",
+  "cost": 5000,
+  "slots": [
+   "Misc 4",
+   "Misc 3",
+   "Misc 2",
+   "Misc 1"
+  ],
+  "class": "J"
+ },
+ {
+  "id": 123,
+  "name": "Sea Captain's Hat",
+  "cost": 15000,
+  "slots": [
+   "Head"
+  ],
+  "class": "R"
+ },
+ {
+  "id": 124,
+  "name": "Spellbinder's Hat",
+  "cost": 30000,
+  "slots": [
+   "Head"
+  ],
+  "class": "R"
+ },
+ {
+  "id": 125,
+  "name": "Shackles of War",
+  "cost": 5000,
+  "slots": [
+   "Misc 4",
+   "Misc 3",
+   "Misc 2",
+   "Misc 1"
+  ],
+  "class": "J"
+ },
+ {
+  "id": 126,
+  "name": "Orb of Inhibition",
+  "cost": 20000,
+  "slots": [
+   "Misc 4",
+   "Misc 3",
+   "Misc 2",
+   "Misc 1"
+  ],
+  "class": "R"
+ },
+ {
+  "id": 127,
+  "name": "Vial of Dragon Blood",
+  "cost": 20000,
+  "slots": [
+   "Misc 4",
+   "Misc 3",
+   "Misc 2",
+   "Misc 1"
+  ],
+  "class": "R"
+ },
+ {
+  "id": 128,
+  "name": "Armageddon's Blade",
+  "cost": 50000,
+  "slots": [
+   "Right Hand"
+  ],
+  "class": "R"
+ }
+]

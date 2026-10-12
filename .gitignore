@@ -1,0 +1,7 @@
+_site/
+.jekyll-cache/
+.DS_Store
+*.exe
+*.dll
+*.lod
+*.TXT
