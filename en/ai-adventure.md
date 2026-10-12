@@ -195,13 +195,33 @@ Ordinary objects are worth hundreds or thousands, so a reachable, winnable town 
 
 `0x52ab80`. Visiting a town of its own is worth what the hero would gain there: recruits (`0x52b090`) and the visit itself (`0x52b1e0`), plus the Grail's value if the hero carries it and the town can take it.
 
-A town carries a **threat mark** (a byte in the town record, **[inferred]** from how it is used). When it is set, the town is worth an extra `5,000,000 / number of towns` to its owner's heroes, or the full 5,000,000 if holding it is a victory condition. This is what pulls heroes home to defend. Above Easy, and when the player has more than one hero, the same bonus is applied only to a hero that is not clearly weaker than the one already inside.
+A town carries a **threat mark**, a counter in the town record ([how it is set](#how-a-town-gets-its-threat-mark)). When it is above zero, the town is worth an extra `5,000,000 / number of towns` to its owner's heroes, or the full 5,000,000 if holding it is a victory condition. This is what pulls heroes home to defend. Above Easy, and when the player has more than one hero, the same bonus is applied only to a hero that is not clearly weaker than the one already inside.
+
+### How a town gets its threat mark
+
+`0x4280e0`, run twice at the start of each computer player's economy phase (`0x428dd0`), before anything is built.
+
+For every hero of every enemy player:
+
+1. Run that hero's pathfinding with a budget of **its daily movement plus 800 points**.
+2. For each of the computer player's towns inside that range, simulate the enemy army attacking the garrison (`0x428410`), with the attacker's strength at ×1.25 and the garrison's at ×0.75. If the attacker wins, the town counts as in danger.
+
+The two passes do different things with a town in danger:
+
+| Pass | Action |
+|---|---|
+| First | Buy the creatures available in that town straight into its garrison (`0x428580`) |
+| Second | Clear every town's mark, then add 1 to the mark of each town still in danger after those purchases (`0x428570`) |
+
+So the mark is a count of enemy heroes that can reach the town within about a day and a half and are expected to take it. A town whose garrison was saved by the emergency purchase is not marked.
+
+The same routine tags the **enemy hero**: it stores `5,000,000 / number of the computer player's towns` in that hero's record. This is the "term for the hero itself" below, so a hero threatening a town becomes a very valuable target as well. **[code]**
 
 ### Enemy heroes
 
 | Situation | Value |
 |---|---|
-| Enemy hero | The fight value. If it can be reached this turn, a term for the hero itself is added, scaled by the owner factor |
+| Enemy hero | The fight value. If it can be reached this turn, `(threat value stored on that hero + 10000) ×` the owner factor is added. The stored value is `5,000,000 / number of the AI's towns` for a hero that threatens a town, otherwise 0 |
 | Enemy hero standing in a town | The above plus the capture value of the town. With no town of its own, the AI still considers an unwinnable fight, at −1,250,000 |
 | Hero of the same player, above Easy | The hero with the lower primary skill total hands its army to the stronger one; the value is the gain from merging (`0x42c4a0`), halved when the evaluating hero is the stronger of the two and the other is not within reach this turn |
 | Hill Fort (35) | `Σ (AI Value upgraded − AI Value now) × count` over the stacks the player can afford to upgrade |
@@ -251,7 +271,7 @@ Ballistics and Logistics come out on top for a hero with a real army, and army-s
 - it already has the per-difficulty maximum: **Easy 2, Normal 3, Hard 4, Expert 5, Impossible 6** (table `0x660518`);
 - it has at least one hero and all computer players together have reached **Easy 8, Normal 11, Hard 14, Expert 17, Impossible 20** heroes (table `0x66052c`).
 
-Which hero it picks in the tavern is not decoded yet.
+**Which of the two tavern heroes:** for each, the routine adds up the value of every artifact the hero carries or wears, valuing each artifact by how useful it would be to the best-suited hero the player already has (at least 10 each). It hires the one with the larger total; if the totals are equal, the one with the higher sum of primary skills. Class, specialty and starting army are not compared. **[code `0x431360`]**
 
 ## Not decoded yet
 

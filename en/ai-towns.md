@@ -133,4 +133,4 @@ drop the gift if it is less than 5 × what the ally already has
 - Upgraded dwelling and horde values in detail.
 - Which creatures are bought first when money is short, and how armies are split between the town garrison and heroes.
 - War machines, Mage Guild use, Artifact Merchants, and the order in which spare resources are sold at the Marketplace.
-- How and when a town's threat mark is set. The mark is **[inferred]** from its uses: it adds a large value for the owner's heroes to return (see [towns as targets](../ai-adventure/#its-own-towns)), switches off dwelling, horde and silo values, and switches on the defensive specials.
+- The threat mark is described under [how a town gets its threat mark](../ai-adventure/#how-a-town-gets-its-threat-mark); the same pass buys emergency garrison troops before any building is chosen.
