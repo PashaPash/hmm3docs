@@ -17,7 +17,8 @@ Only differences that could be confirmed from files. Everything else on this sit
 
 - **Compared:** the text tables in `HotA_lng.lod` against the same tables in `H3ab_bmp.lod`. That archive is a normal LOD and reads with `tools/lod.py`; the numbers below are a mechanical diff of the two sets. **[data]**
 - **Not compared:** code. HotA runs its own executable (`h3hota.exe`, a different build from the GOG `Heroes3.exe` analysed here, so addresses on this site do not carry over) and patches it in memory from `HotA.dll`. None of the AI, combat or map rules on the other pages has been checked against HotA.
-- **Not read:** `HotA.lod` (its directory is obfuscated) and `HotA.dat`, which hold the new towns' creatures and objects. So nothing here covers Cove, Factory or Bulwark units.
+- **Read in part:** `HotA.dat`. Its creature records give the stats of the 50 new creatures, see [New creatures](#new-creatures). Its other record types (heroes, objects, banks, classes) are not decoded.
+- **Not read:** `HotA.lod`, whose directory is obfuscated.
 - Whether `HotA.dll` overrides any of these table values at run time is **[unverified]**. The values match changes HotA is known for, which suggests the tables are the ones in use.
 
 ## Creatures
@@ -42,6 +43,16 @@ Only values that differ. SoD → HotA.
 AI Value only (changes how the computer weighs these units, not how they fight): Monk 485 → 582, Naga 2016 → 1814, Efreet Sultan 1848 → 2343 (and Fight Value 1584 → 1802), Ghost Dragon 4696 → 4919 (Fight Value 3228 → 3346), Scorpicore 1589 → 1685, Red Dragon 4702 → 5003, Cyclops King 1443 → 1544, Faerie Dragon 19580 → 30501.
 
 Size of random wandering stacks changed for: Gorgon and Mighty Gorgon (smaller), Serpent Fly and Dragon Fly (larger), Basilisk and Greater Basilisk (larger), Fire, Energy, Psychic and Magic Elementals (smaller), Phoenix (smaller), Sharpshooter (larger).
+
+## New creatures
+
+Read from `HotA.dat` with `tools/hota_dat.py` **[data]**. The file is a list of named records; the 50 records named `monst150` to `monst199` each carry a 116-byte image of the engine's own creature structure, so the fields are the same ones as in the [SoD creature table](../creatures/). Town numbers 9, 10 and 11 are Cove, Factory and Bulwark.
+
+- These are the values stored in the file. Special abilities are code in `HotA.dll` and are not described here.
+- Factory has two level 7 lines (Couatl and Dreadnought), so it has 16 creatures where other towns have 14.
+- Ids 150 and 152 are the Cannon and an "Electric Tower", the war machine and tower used by the new towns.
+
+{% include hota_creatures.html lang="en" %}
 
 ## Spells
 

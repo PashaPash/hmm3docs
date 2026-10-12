@@ -1,0 +1,12 @@
+{% assign ru = false %}{% if include.lang == 'ru' %}{% assign ru = true %}{% endif %}
+{% assign groups = "9,10,11,-1" | split: "," %}
+{% for g in groups %}
+<h3>{% if g == "9" %}Cove{% elsif g == "10" %}Factory{% elsif g == "11" %}Bulwark{% else %}{% if ru %}Нейтральные и машины{% else %}Neutral and machines{% endif %}{% endif %}</h3>
+<div class="table-wrapper"><table>
+<thead><tr><th>ID</th><th>{% if ru %}Существо{% else %}Creature{% endif %}</th><th>Lv</th><th>Atk</th><th>Def</th><th>Dmg</th><th>HP</th><th>Spd</th><th>{% if ru %}Выстр.{% else %}Shots{% endif %}</th><th>{% if ru %}Прирост{% else %}Growth{% endif %}</th><th>{% if ru %}Цена{% else %}Cost{% endif %}</th><th>Fight Value</th><th>AI Value</th></tr></thead>
+<tbody>
+{% for c in site.data.hota_creatures %}{% assign t = c.town | append: "" %}{% if t == g %}
+<tr><td>{{ c.id }}</td><td>{{ c.name }}</td><td>{{ c.level }}</td><td>{{ c.attack }}</td><td>{{ c.defense }}</td><td>{{ c.dmg_min }}–{{ c.dmg_max }}</td><td>{{ c.hp }}</td><td>{{ c.speed }}</td><td>{% if c.shots > 0 %}{{ c.shots }}{% endif %}</td><td>{{ c.growth }}</td><td>{% for r in c.cost %}{{ r[1] }} {{ r[0] }}{% unless forloop.last %}, {% endunless %}{% endfor %}</td><td>{{ c.fight_value }}</td><td>{{ c.ai_value }}</td></tr>
+{% endif %}{% endfor %}
+</tbody></table></div>
+{% endfor %}
