@@ -16,7 +16,7 @@ lang: en
 - Each building gets a **direct value**. Only income, dwellings, fortifications, hordes and a few town specials have one.
 - A building is scored by `value × 1000 / cost`, where the cost includes **every prerequisite still missing** and is measured with the [resource weights](../ai-adventure/#what-resources-are-worth).
 - The score of a goal is credited to every building on its prerequisite chain, and the best building that can be built today wins.
-- Mage Guilds, Marketplace, Tavern and Blacksmith have no direct value; in this routine they are built only as prerequisites.
+- Mage Guilds, Marketplace, Tavern and Blacksmith have no direct value; in this routine they are built only as prerequisites. Mage Guilds and the Blacksmith are also built [when a hero visits](#when-a-hero-visits-its-own-town).
 - On Easy and Normal a computer player's town builds at most **every other day**.
 
 ## The economy phase of a turn
@@ -152,6 +152,14 @@ drop the gift if it is less than 5 × what the ally already has
 
 - If the hero carries the Grail and the town has none, the Grail building is built.
 - Creatures are recruited into the hero's army (`0x525200`, `0x42ba60`). On Hard and above, and if the town has not built today, the routine may also build the one dwelling (buildings 30–43) that adds the most to this hero's army right now.
+- A **Mage Guild level** is built for the visiting hero (`0x42beb0`). The next level is built when all of these hold:
+  - the guild is below level 5 and below `the hero's Wisdom level + 2`, so a hero without Wisdom gets a guild up to level 2, Basic up to 3, Advanced up to 4, Expert up to 5;
+  - the hero has more than 2 Spell Power and more than 2 Knowledge; this is waived for the first level if the hero lacks two particular basic spells;
+  - no other town of the player already has a higher guild that this hero could still use and that could be built up instead;
+  - the player can pay and the town has not built today.
+
+  This is how Mage Guilds get built beyond their role as prerequisites: they follow heroes who can use them.
+- If the scenario is won by holding a particular town, and this hero is not the player's strongest, it stops there and **leaves its army in that town's garrison** (`0x525200`). Above Easy, with at least two heroes, and only when the town is not marked as threatened.
 - A Spell Book is bought for 500 gold if the town has a Mage Guild and the hero has none.
 - Creatures in the hero's army are upgraded where the upgraded dwelling exists and the player can pay.
 - A stat building is built on the spot when it is worth more to this hero than it costs at the resource weights:
@@ -171,6 +179,6 @@ drop the gift if it is less than 5 × what the ally already has
 ## Not decoded yet
 
 - Upgraded dwelling and horde values in detail.
-- How armies are split between the town garrison and heroes.
-- Mage Guild use, Artifact Merchants, and the order in which spare resources are sold at the Marketplace.
+- The general split of armies between a town garrison and heroes; only the victory-town case above was read.
+- Artifact Merchants, and the order in which spare resources are sold at the Marketplace.
 - The threat mark is described under [how a town gets its threat mark](../ai-adventure/#how-a-town-gets-its-threat-mark); the same pass buys emergency garrison troops before any building is chosen.
