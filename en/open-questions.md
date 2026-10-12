@@ -31,7 +31,7 @@ See the list at the end of [AI: adventure map](../ai-adventure/#not-decoded-yet)
 
 ## Everything else
 
-Chapters 2, 7 and 14 are not started; chapter 5 has only the damage formula. Town AI gaps are listed at the end of [AI: towns](../ai-towns/#not-decoded-yet). See the progress table on the [home page]({{ '/' | relative_url }}).
+Chapters 2, 7 and 14 are not started; chapter 5 lacks siege details and the Offence, Archery and Armorer terms. Town AI gaps are listed at the end of [AI: towns](../ai-towns/#not-decoded-yet). See the progress table on the [home page]({{ '/' | relative_url }}).
 
 ## Build note
 

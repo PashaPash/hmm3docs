@@ -1,0 +1,8 @@
+{% assign ru = false %}{% if include.lang == 'ru' %}{% assign ru = true %}{% endif %}
+<div class="table-wrapper"><table>
+<thead><tr><th>{% if ru %}Баллистика{% else %}Ballistics{% endif %}</th><th>{% if ru %}Выстрелов{% else %}Shots{% endif %}</th><th>{% if ru %}Попасть: цитадель{% else %}Hit: keep{% endif %}</th><th>{% if ru %}башня{% else %}tower{% endif %}</th><th>{% if ru %}ворота{% else %}gate{% endif %}</th><th>{% if ru %}стена{% else %}wall{% endif %}</th><th>{% if ru %}Урон 0 / 1 / 2{% else %}Damage 0 / 1 / 2{% endif %}</th></tr></thead>
+<tbody>
+{% for b in site.data.ballistics %}
+<tr><td>{{ b.level }}</td><td>{{ b.shots }}</td><td>{{ b.keep }}%</td><td>{{ b.tower }}%</td><td>{{ b.gate }}%</td><td>{{ b.wall }}%</td><td>{{ b.dmg0 }}% / {{ b.dmg1 }}% / {{ b.dmg2 }}%</td></tr>
+{% endfor %}
+</tbody></table></div>

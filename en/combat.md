@@ -8,7 +8,7 @@ lang: en
 # Combat rules
 {: .no_toc }
 
-Damage, morale and luck so far. Turn order, retaliation and siege rules are not written yet.
+Damage, morale, luck, turn order and retaliation. Siege rules are only partly covered.
 
 1. TOC
 {:toc}
@@ -50,7 +50,7 @@ damage = (base + bonus) × reduction × defending hero's factor        at least 
 | A shooter fighting in melee, unless it has the "no melee penalty" flag | 0.5 |
 | Psychic Elemental attacking a creature immune to mind spells | 0.5 |
 | Magic Elemental attacking a Magic Elemental or a Black Dragon | 0.5 |
-| Two more factors tied to spell effects on the attacker | not decoded |
+| The attacker is retaliating while blinded or paralysed | the factor stored by that spell (see [Retaliation](#retaliation)) |
 
 The defending hero's factor (`0x4e4310`, Armorer) is applied last; its exact form is not read yet. Shield and Air Shield are applied as stored per-stack factors.
 
@@ -87,4 +87,65 @@ Two things are not symmetrical:
 - Negative luck does nothing in this executable.
 
 **[code]**
+
+
+## Turn order
+
+`0x465080` picks the next stack; `0x464f50` compares two candidates.
+
+A round has two passes. In the first, every stack that has not acted and has not chosen Wait is eligible. When none is left, the second pass runs over the stacks that waited.
+
+Between two eligible stacks, the one that goes first is decided in this order:
+
+1. A stack holding a good-morale extra action goes before any other.
+2. Arrow Towers go before everything else, then the Catapult, then ordinary stacks.
+3. **Speed**: higher first in the normal pass, **lower first in the waiting pass**.
+4. Equal speed, different sides: the side that did **not** move last goes first, so ties alternate between the armies.
+5. Equal speed, same side: the stack in the lower army slot.
+
+Speed is the current value, so Haste and Slow change the order within the round. Ammo Carts never act.
+
+When a stack is picked:
+
+- If it is blinded, petrified or paralysed it is passed over.
+- In the normal pass, [bad morale](#morale) is rolled; in the waiting pass and the tactics phase it is not.
+- **Fear**: if the enemy army contains Azure Dragons, the stack loses its action with a 1 in 10 chance. Stacks with the "no morale" flag and Azure Dragons themselves are immune. `0x464d40`
+
+**[code]**
+
+## Retaliation
+
+Each stack has a counter of retaliations, refilled at the start of the round:
+
+| Stack | Retaliations per round |
+|---|---|
+| Most creatures | 1 |
+| Griffin | 2 |
+| Royal Griffin | unlimited (the counter is set to 5000) |
+| Under Counterstrike | plus the number stored by the spell |
+| War machines | 0 |
+
+After a melee hit the target strikes back when all of these hold:
+
+- it still has units alive;
+- the attacker does not have the "no retaliation" flag;
+- the target is not petrified;
+- its counter is above 0.
+
+The counter then drops by one. After the retaliation, a creature with the double-attack flag that is not shooting strikes a second time if the target still stands.
+
+A **blinded or paralysed** target does retaliate, but its damage is multiplied by the factor the spell stored on it. These are the two spell-related entries in the [reduction](#reduction) table. **[code; the address of the melee routine is not pinned down yet]**
+
+## Siege, partial
+
+Only the pieces that came up while reading other code:
+
+- Arrow Towers act first each round and the attacker's Catapult right after them (see turn order).
+- A stack standing in the moat has 3 less Defence, and takes moat damage that depends on the town type: Castle 70, Rampart 70, Tower 150, Inferno 90, Necropolis 70, Dungeon 90, Stronghold 70, Fortress 90, Conflux 70 (table `0x63bd18`).
+- Shooting through walls halves damage (see reduction).
+- Catapult accuracy by the hero's Ballistics level, from `BALLIST.TXT` **[data]**:
+
+{% include ballistics.html lang="en" %}
+
+Not decoded: Arrow Tower damage, which wall section the Catapult aims at, gate and drawbridge rules.
 
