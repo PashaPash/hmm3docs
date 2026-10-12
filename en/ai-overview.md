@@ -54,7 +54,7 @@ What the computer player decides, and where it is described. "Partly" means the 
 | Hero: Town Portal, Castle Gate, Water Walk in path planning | covered | [AI: adventure map](../ai-adventure/#adventure-spells-in-path-planning) |
 | Hero: casting Fly and Dimension Door | no code found that does it; unverified | [AI: adventure map](../ai-adventure/#fly-and-water-walk) |
 | Hero: obelisks and digging for the Grail | covered; how the dig position is determined **not read** | [AI: adventure map](../ai-adventure/#obelisks-and-the-grail) |
-| Hero: boats | **not read** | |
+| Hero: boarding boats | covered; building ships and Summon Boat not found | [AI: adventure map](../ai-adventure/#boats) |
 | Hero: level-up skill choice | covered for most skills; the new-versus-upgrade test **not read** | [AI: adventure map](../ai-adventure/#level-up-choices) |
 | Hero: artifact exchange between two heroes in a town | covered; equipping from the backpack on pickup **not read** | [AI: towns](../ai-towns/#when-a-hero-visits-its-own-town) |
 | Player: hiring heroes | covered: limits, which tavern hero, which town | [AI: adventure map](../ai-adventure/#hiring-heroes) |
@@ -65,7 +65,8 @@ What the computer player decides, and where it is described. "Partly" means the 
 | Economy: gifts to allies | covered | [AI: towns](../ai-towns/#gifts-to-allies) |
 | Economy: war machines | covered | [AI: towns](../ai-towns/#when-a-hero-visits-its-own-town) |
 | Economy: Mage Guild levels | covered | [AI: towns](../ai-towns/#when-a-hero-visits-its-own-town) |
-| Economy: Artifact Merchants | **not read** | |
+| Economy: Black Market, Magic University | covered | [AI: adventure map](../ai-adventure/#object-values-that-are-readable) |
+| Economy: Artifact Merchants in towns | **not read** | |
 
 ## Two value columns
 

@@ -111,6 +111,15 @@ The edge costs **300 movement points, or 200 at Expert**, matching what the spel
 
 A missing gate does not rule the route out: if the Castle Gate can be built today and the player can afford it, the edge is still offered, with the building's cost at the [resource weights](#what-resources-are-worth) counted against the destination's value. The routine allows for building up to two gates (one at each end) this way.
 
+### Boats
+
+In the same routine that handles objects along a path (`0x56ab40`), a **boat on the map** is a switch between walking and sailing rather than a destination with a value of its own:
+
+- it is used only in the full planning mode and at most once per path;
+- stepping onto it ends the land leg, and what the hero can still spend is replaced by its sea allowance (see [movement at sea](../adventure/#at-sea)).
+
+So a computer hero will board a boat that lies on the way to something valuable across water. A Shipyard or Lighthouse not owned by its side is worth a flat 1000 as a target. Building a ship at a Shipyard and casting Summon Boat were not found in the routines read. **[code for the boat case; the reading of the movement swap is inferred]**
+
 ### Fly and Water Walk
 
 The pathfinder lets a hero cross water or obstacles when the effect is available: artifact 72 (Angel Wings) or 90 (Boots of Levitation), an already active spell, or, for Water Walk, knowing the spell. Step costs are the ones in [cost of a step](../adventure/#cost-of-a-step). **Fly and Dimension Door are probably never cast by the computer.** The pathfinder tests "knows Water Walk" and "knows Town Portal" by reading fixed fields of the hero record. A search of the whole decompiled executable finds no such test for the Fly field at all, and none for the Dimension Door field in any hero or pathfinding routine. **[unverified: this is the absence of a match in a search, and a spell reached through a computed index would not show up]**
@@ -182,6 +191,7 @@ From the switch in `0x528040`. Object type numbers are the map format's.
 |---|---|
 | Artifact (5) | The artifact's own value, at least 10. Only if the backpack has room. Variants: needs 2000 gold; needs Wisdom; needs Leadership; needs 2500 gold and 3 of a resource; needs 3000 gold and 5 of a resource; guarded, where the fight value is added. A requirement the hero cannot meet makes the value 0 |
 | Pandora's Box (6) | Fight value of its guards, plus its experience, skills, spells the hero can learn, resources and `AI Value × count` of its creatures |
+| Black Market (7) | Only if the backpack has room. Sum over its seven artifacts of `artifact value − price at the resource weights`, counting only artifacts the player can pay for and only positive differences |
 | Keymaster's Tent (10) | 5000 if this player has not visited that colour, otherwise 0 |
 | Campfire (12) | Proportional to the amount it holds |
 | Creature Bank (16), Derelict Ship (24), Dragon Utopia (25) | If not already cleared: fight value against the stored guards, plus the stored resources, plus `AI Value × count` of reward creatures, plus the artifacts. See [creature banks](../ai-neutral/#creature-banks) |
@@ -317,5 +327,5 @@ How the dig position gets into the player record (presumably once enough of the 
 - Most object values, and the numeric weights inside the ones listed (experience, resources, spells).
 - The fight simulator `0x426bc0` itself.
 - Hero roles (main hero, scouts, gatherers), army transfers between heroes and towns, when a hero returns to defend a town.
-- Boats, and how the Grail dig position is determined.
+- Building ships, and how the Grail dig position is determined.
 - Danger flags on paths.
