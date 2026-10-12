@@ -75,6 +75,18 @@ Then, over all the player's towns that may still build today, the buildable buil
 
 A cheap building that unlocks several valuable ones collects all their scores, which is how Mage Guild level 1, Blacksmith or Marketplace get built despite having no value of their own.
 
+## Which creatures are bought first
+
+`0x42d690` and `0x42d420`, used whenever the AI recruits: for a visiting hero, for the garrison, and for the emergency purchase when a town is in danger.
+
+1. Stacks of the same creature in the receiving army are merged first, to free slots.
+2. For every creature on offer, work out how many can be afforded: the smaller of the number available and what each resource allows.
+3. Compute the **gain** of adding that many to this army (`0x42c830`, which takes free slots and the stacks it would have to displace into account).
+4. When the purchase is charged against the player's plans, subtract the cost at the [resource weights](../ai-adventure/#what-resources-are-worth), but never more than three quarters of the gain.
+5. Buy the option with the largest result, then start again from step 2 until nothing has a positive result.
+
+So the order is not "highest level first": it is whichever purchase adds the most army value for its weighted cost at that moment, bought to the limit of the purse, then re-evaluated. A resource the player is short of makes creatures that need it less attractive, but can never cancel more than 75% of their value. **[code; the gain function itself was not read]**
+
 ## Trading at the Marketplace
 
 The computer player does not trade to make a profit or to balance its stock. It trades only **to complete a specific purchase**, from inside the scoring routine `0x42a150`.
@@ -131,6 +143,6 @@ drop the gift if it is less than 5 × what the ally already has
 ## Not decoded yet
 
 - Upgraded dwelling and horde values in detail.
-- Which creatures are bought first when money is short, and how armies are split between the town garrison and heroes.
+- The army-gain function `0x42c830`, and how armies are split between the town garrison and heroes.
 - War machines, Mage Guild use, Artifact Merchants, and the order in which spare resources are sold at the Marketplace.
 - The threat mark is described under [how a town gets its threat mark](../ai-adventure/#how-a-town-gets-its-threat-mark); the same pass buys emergency garrison troops before any building is chosen.
