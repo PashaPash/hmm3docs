@@ -168,7 +168,43 @@ From the switch in `0x528040`. Object type numbers are the map format's.
 | Lighthouse (42), Shipyard (87) | 1000 if not owned by the AI's side, otherwise 0 |
 | Unexplored tile | 100 |
 
-Not read yet: dwellings, towns, enemy heroes, shrines, wells, teleporters and most of the remaining cases, which sit in their own routines.
+Towns and heroes are covered in the next section. Not read yet: dwellings, shrines, wells, teleporters and most of the remaining cases, which sit in their own routines.
+
+## Towns and heroes as targets
+
+### Capturing a town
+
+`0x529cb0`, for a town that belongs to nobody or to an enemy.
+
+```
+value = fight value against the garrison
+      + ( 3 × the town's daily gold × gold weight
+        + its Resource Silo output at the resource weights
+        + the creatures waiting in its dwellings, at their purchase cost in resource weights
+          (next week's growth too, if the hero would arrive after day 7)
+        ) × (1 + owner factor)
+      + 5,000,000 / number of towns on the map
+```
+
+- If the computer player owns **no town at all**, the last term is the full 5,000,000, and an unwinnable garrison no longer rules the target out: it only subtracts 2,500,000.
+- If losing that town is the opponent's loss condition, another 5,000,000 is added.
+
+Ordinary objects are worth hundreds or thousands, so a reachable, winnable town outranks almost anything else on the map; what holds the AI back is the fight estimate and the distance divisor.
+
+### Its own towns
+
+`0x52ab80`. Visiting a town of its own is worth what the hero would gain there: recruits (`0x52b090`) and the visit itself (`0x52b1e0`), plus the Grail's value if the hero carries it and the town can take it.
+
+A town carries a **threat mark** (a byte in the town record, **[inferred]** from how it is used). When it is set, the town is worth an extra `5,000,000 / number of towns` to its owner's heroes, or the full 5,000,000 if holding it is a victory condition. This is what pulls heroes home to defend. Above Easy, and when the player has more than one hero, the same bonus is applied only to a hero that is not clearly weaker than the one already inside.
+
+### Enemy heroes
+
+| Situation | Value |
+|---|---|
+| Enemy hero | The fight value. If it can be reached this turn, a term for the hero itself is added, scaled by the owner factor |
+| Enemy hero standing in a town | The above plus the capture value of the town. With no town of its own, the AI still considers an unwinnable fight, at −1,250,000 |
+| Hero of the same player, above Easy | The hero with the lower primary skill total hands its army to the stronger one; the value is the gain from merging (`0x42c4a0`), halved when the evaluating hero is the stronger of the two and the other is not within reach this turn |
+| Hill Fort (35) | `Σ (AI Value upgraded − AI Value now) × count` over the stacks the player can afford to upgrade |
 
 ## Hiring heroes
 

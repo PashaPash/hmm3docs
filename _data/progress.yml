@@ -14,7 +14,7 @@ chapters:
   - {n: 4, file: creatures, state: data, en: "Creatures", ru: "Существа",
      note_en: "stats, Fight Value, AI Value from CRTRAITS", note_ru: "параметры, Fight Value, AI Value из CRTRAITS"}
   - {n: 5, file: combat, state: wip, en: "Combat rules", ru: "Правила боя",
-     note_en: "damage formula; turn order, morale, luck, siege not written", note_ru: "формула урона; порядок ходов, мораль, удача, осада не написаны"}
+     note_en: "damage formula, morale, luck; turn order, retaliation, siege not written", note_ru: "формула урона, мораль, удача; порядок ходов, ответный удар, осада не написаны"}
   - {n: 6, file: spells, state: data, en: "Magic", ru: "Магия",
      note_en: "numbers from SPTRAITS, including per-spell AI values", note_ru: "числа из SPTRAITS, включая ценность заклинаний для ИИ"}
   - {n: 7, state: todo, en: "Adventure map", ru: "Карта приключений", note_en: "", note_ru: ""}
@@ -25,7 +25,7 @@ chapters:
   - {n: 10, file: ai-towns, state: wip, en: "AI: town building and recruitment", ru: "ИИ: строительство и найм",
      note_en: "building values, prerequisite-chain scoring, build cooldown by difficulty, hero visits; recruitment order open", note_ru: "ценности построек, оценка по цепочкам предпосылок, пауза между постройками по сложности, визит героя; порядок найма открыт"}
   - {n: 11, file: ai-adventure, state: wip, en: "AI: adventure map decisions", ru: "ИИ: решения на карте",
-     note_en: "target choice rule, resource weights, owner factor by difficulty, fight valuation, hero hiring limits, a dozen object values; towns, dwellings and enemy heroes as targets still open", note_ru: "правило выбора цели, веса ресурсов, коэффициент владельца по сложности, оценка боя, лимиты найма героев, дюжина ценностей объектов; города, жилища и вражеские герои как цели ещё открыты"}
+     note_en: "target choice rule, resource weights, owner factor by difficulty, fight valuation, hero hiring limits, towns and heroes as targets, a dozen object values; dwellings and most minor objects still open", note_ru: "правило выбора цели, веса ресурсов, коэффициент владельца по сложности, оценка боя, лимиты найма героев, города и герои как цели, дюжина ценностей объектов; жилища и большинство мелких объектов ещё открыты"}
   - {n: 12, file: ai-battle, state: done, en: "AI: battle", ru: "ИИ: бой",
      note_en: "stack valuation, melee and shooter target choice, creature casters, retreat, difficulty switches; hero spell selection (candidates, scoring, timing, main evaluators)", note_ru: "оценка отрядов, выбор цели в ближнем бою и у стрелков, существа-заклинатели, бегство, переключатели сложности; выбор заклинаний героя (кандидаты, оценка, момент, основные оценщики)"}
   - {n: 13, file: ai-neutral, state: done, en: "AI: neutral monsters (armies without a hero)", ru: "ИИ: нейтральные монстры (армии без героя)",

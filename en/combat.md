@@ -8,7 +8,7 @@ lang: en
 # Combat rules
 {: .no_toc }
 
-First section only: the damage formula. Turn order, morale, luck rolls, retaliation and siege rules are not written yet.
+Damage, morale and luck so far. Turn order, retaliation and siege rules are not written yet.
 
 1. TOC
 {:toc}
@@ -28,7 +28,7 @@ damage = (base + bonus) × reduction × defending hero's factor        at least 
 | Source | Bonus |
 |---|---|
 | Attack above the target's Defence | +5% per point, at most +300% |
-| Lucky strike (stack flag set for this attack) | +100% **[flag meaning inferred]** |
+| Lucky strike (see [Luck](#luck)) | +100% |
 | Cavalier, Champion charging | +5% per hex travelled; none against Pikemen and Halberdiers |
 | Opposed elementals: Air or Storm against Earth or Magma and the reverse; Fire or Energy against Water or Ice and the reverse | +100% |
 | Hated enemy: Angels and Devils, Genies and Efreet, Titans and Black Dragons, each way, including upgrades | +50% |
@@ -60,3 +60,31 @@ The defending hero's factor (`0x4e4310`, Armorer) is applied last; its exact for
 - The attack bonus is capped at +300% (60 points of difference), the defence reduction at −70% (28 points).
 
 **[code; constants at `0x63ac58`, `0x63ac28`, `0x63b8c0`, `0x63b8b8`, `0x63ac70`]**
+
+## Morale
+
+Checked when a stack's turn comes up. Morale is clamped to the range −3…+3 first.
+
+| Roll | Function | Rule |
+|---|---|---|
+| Good morale | `0x464920` | After the stack has acted: `rand(1,24) <= morale` gives it another action. That is about 4.2% per point, 12.5% at +3. Not in the tactics phase, and not for a stack that is defending or already had its morale action |
+| Bad morale | `0x464b40` | Before the stack acts: `rand(1,12) <= −morale` makes it lose the action. That is about 8.3% per point, 25% at −3 |
+
+Two things are not symmetrical:
+
+- A point of negative morale is twice as likely to trigger as a point of positive morale.
+- When the stack's side is **not controlled by a human**, a triggered bad-morale roll is cancelled with a further 1 in 4 chance (`rand(1,4) == 1`). Computer and neutral stacks therefore freeze at three quarters of the human rate: 6.25% per point.
+
+**[code]**
+
+## Luck
+
+`0x43f900` (melee) and `0x441610` (shooting), rolled for each attack.
+
+- Luck is used only when it is positive and is capped at 3: `rand(1,24) <= luck`, about 4.2% per point, 12.5% at +3.
+- A lucky strike adds +100% of base damage, as one more term in the bonus sum above.
+- The roll is made **only if the stack's side has a hero**. A hero-less army, such as wandering monsters or bank guards, never gets a lucky strike.
+- Negative luck does nothing in this executable.
+
+**[code]**
+

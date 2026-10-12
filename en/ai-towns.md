@@ -46,17 +46,17 @@ lang: en
 | Building | Direct value | Routine |
 |---|---|---|
 | Town Hall line (10–13) | Extra weekly gold × gold weight: Village Hall 3500, Town Hall 3500, City Hall 7000, Capitol 14000 | `0x42b8b0` |
-| Dwellings (30–36) | `AI Value × weekly growth` of the creature. From day 5 of the week the growth is doubled and what is already waiting is added. The cost of then buying those creatures is added to the cost side | `0x42b520` |
+| Dwellings (30–36) | Only when the town is not marked as threatened. `AI Value × weekly growth` of the creature. From day 5 of the week the growth is doubled and what is already waiting is added. The cost of then buying those creatures is added to the cost side | `0x42b520` |
 | Upgraded dwellings (37–43) | Own routine, same idea | `0x42b5b0` |
 | Citadel, Castle (8, 9) | From day 5: sum of the AI Values of the town's creatures that will grow, with their purchase cost on the cost side | `0x42b670` |
 | Horde buildings (18, 19, 24, 25) | Own routines | `0x42b790`, `0x42b800` |
-| Resource Silo (15) | Seven days of its output at the resource weights | |
+| Resource Silo (15) | Seven days of its output at the resource weights; not when the town is marked as threatened | |
 | Rampart Treasury (22) | Only on day 7; proportional to the gold the player holds | |
 | Tower: special 21 | 100 | |
 | Necropolis: special 17 | 10 | |
 | Necropolis: special 21 | Grows with the number of the player's heroes of one particular class | |
-| Stronghold: special 17 | 5000, only when a hero is in the town | |
-| Fortress: specials 21, 22 | Garrison's `AI Value` total / 20, only under the same town condition | |
+| Stronghold: special 17 | 5000, only when the town is marked as threatened and has a visiting hero | |
+| Fortress: specials 21, 22 | Garrison's `AI Value` total / 20, only when the town is marked as threatened | |
 | Grail (26) | Never chosen here; built when a hero carrying the Grail visits (see below) | |
 | Everything else | 0 | |
 
@@ -101,4 +101,4 @@ A cheap building that unlocks several valuable ones collects all their scores, w
 - Upgraded dwelling and horde values in detail.
 - Which creatures are bought first when money is short, and how armies are split between the town garrison and heroes.
 - War machines, Mage Guild use, Artifact Merchants, the Marketplace trade logic.
-- The condition flag on a town that switches off some values (read as "a hero is in the town" above; **[inferred]**).
+- How and when a town's threat mark is set. The mark is **[inferred]** from its uses: it adds a large value for the owner's heroes to return (see [towns as targets](../ai-adventure/#its-own-towns)), switches off dwelling, horde and silo values, and switches on the defensive specials.
