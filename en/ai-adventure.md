@@ -288,6 +288,14 @@ The same routine tags the **enemy hero**: it stores `5,000,000 / number of the c
 
 Ballistics and Logistics come out on top for a hero with a real army, and army-scaled skills in general beat magic skills unless the hero already has Wisdom and Spell Power. **[code; Intelligence, Sorcery, Resistance and First Aid were not read]**
 
+## Obelisks and the Grail
+
+- **Obelisk (57).** Worth `value of the Grail to this player's heroes / number of obelisks on the map` (`0x52a2b0`). It is worth 0 if this player has already visited that obelisk, if the map has no Grail, or if the player already knows where the Grail is.
+- **Digging.** Each player record holds a dig position. When it is set, the target builder (`0x42edd0`) adds that tile as a destination like any other, as long as the tile is free and reachable. Its value is the Grail's value to the player's heroes, or 5,000,000 when the scenario's victory condition is to build the Grail. The path cost is raised to at least the hero's full daily movement, which matches the rule that digging takes a whole day.
+- A hero carrying the Grail then values a town that can take it accordingly, see [its own towns](#its-own-towns).
+
+How the dig position gets into the player record (presumably once enough of the puzzle is uncovered) was not read. **[code]**
+
 ## Hiring heroes
 
 `0x431360`. A computer player does not hire when any of these holds:
@@ -303,5 +311,5 @@ Ballistics and Logistics come out on top for a hero with a real army, and army-s
 - Most object values, and the numeric weights inside the ones listed (experience, resources, spells).
 - The fight simulator `0x426bc0` itself.
 - Hero roles (main hero, scouts, gatherers), army transfers between heroes and towns, when a hero returns to defend a town.
-- Boats and digging for the Grail.
+- Boats, and how the Grail dig position is determined.
 - Danger flags on paths.
