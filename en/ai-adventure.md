@@ -88,6 +88,27 @@ The factor is used when valuing mines, in the fight valuation when the opponent 
 - On **Easy** taking something from a human is worth less than taking the same thing unowned, and computer players prefer each other's property.
 - As difficulty rises the preference turns around. On **Expert** another computer player's ownership adds nothing; on **Impossible** it subtracts, so computer players leave each other alone and concentrate on humans.
 
+## Adventure spells in path planning
+
+The computer does not decide "now I cast Town Portal" as a separate step. The spell is an extra **edge in the hero's pathfinding graph** (`0x56b050`, called from the pathfinder `0x56b440`), so a destination reached through a portal is scored like any other, by value over path cost.
+
+### Town Portal
+
+Considered when the hero knows the spell, has not already used a portal earlier on the same path, and has **mana for the spell plus 20 to spare**.
+
+| School level | Destinations offered |
+|---|---|
+| none, Basic | only the nearest of the player's towns on the same map level (straight-line distance), and only if no hero is visiting it |
+| Advanced, Expert | every town of the player that has no visiting hero |
+
+The edge costs **300 movement points, or 200 at Expert**, matching what the spell charges, plus a distance-based term the pathfinder uses to order its search.
+
+### Fly and Water Walk
+
+The pathfinder lets a hero cross water or obstacles when the effect is available: artifact 72 (Angel Wings) or 90 (Boots of Levitation), an already active spell, or, for Water Walk, knowing the spell. Step costs are the ones in [cost of a step](../adventure/#cost-of-a-step). Whether and when the computer casts Fly or Dimension Door by itself was not found in this routine and is **not read**.
+
+**[code]**
+
 ## Valuing a fight
 
 `0x427330` is used for guards, wandering stacks, banks, garrisons and enemy heroes.
@@ -280,5 +301,5 @@ Ballistics and Logistics come out on top for a hero with a real army, and army-s
 - Most object values, and the numeric weights inside the ones listed (experience, resources, spells).
 - The fight simulator `0x426bc0` itself.
 - Hero roles (main hero, scouts, gatherers), army transfers between heroes and towns, when a hero returns to defend a town.
-- Adventure spells (Town Portal, Dimension Door, Fly, Water Walk) and boats.
+- Casting Fly and Dimension Door, and boats.
 - Danger flags on paths.
