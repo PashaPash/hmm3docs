@@ -21,7 +21,7 @@ Wandering stacks, and any other army that fights with no hero on its side.
 
 | Symbol | Meaning | Source |
 |---|---|---|
-| `A` | Aggression of this stack, a small signed number stored with the stack on the map (bits 12–16 of its data word; the stack size is bits 0–11) | **[code]** |
+| `A` | Aggression of this stack, a small signed number stored with the stack on the map (bits 12–16 of its data word; the stack size is bits 0–11). [Where it comes from](#where-the-aggression-number-comes-from) | **[code]** |
 | `R` | `hero army strength / (AI Value of the creature × stack size)` | **[code]** |
 | `C` | Sympathy, 0 to 2 | `0x4a75c0` |
 | `D` | Hero's Diplomacy level, 0 to 3 | hero skill byte |
@@ -71,7 +71,35 @@ if nobody joined:
 - Each Diplomacy level raises the free-join limit by 1 and the paid-join limit by 2.
 - If the player declines an offer, the stack then flees or fights by the same last rule.
 
-How the map's disposition setting (compliant … savage) turns into `A` when the map is loaded is not traced yet.
+### Where the aggression number comes from
+
+It is set once and never changes afterwards. Only two places in the executable write it:
+
+| When | Aggression `A` | Code |
+|---|---|---|
+| Map load, disposition **Compliant** | −4 | `0x5013b0` |
+| Map load, **Friendly** | random 1–7 | `rand(1,7)` |
+| Map load, **Aggressive** | random 1–10 | `rand(1,10)` |
+| Map load, **Hostile** | random 4–10 | `rand(4,10)` |
+| Map load, **Savage** | 10 | |
+| A stack spawned in a "month of the creature" | random 1–10 | `0x4c8f40` |
+
+The weekly growth routine keeps these bits untouched, so a stack has the same `A` on day 1 and on day 200. What does change over time is the other side of the comparison: your army (which moves `P`), the share of matching creatures in it (`C`), and your Diplomacy (`D`).
+
+### What this means in practice
+
+Putting the table together with the decision rule above:
+
+- **Joining does not depend on strength at all.** The free-join test is `C + D + 1 >= A` and the paid one is `A <= C + 2×D + 1`. A weak stack is no more willing to join than a strong one. Strength (`P`) only decides between fighting and fleeing.
+- **Compliant stacks always offer to join for free.** With `A = −4`, both `total >= A` and `C + D + 1 >= A` hold for any hero, even a far weaker one.
+- **Without Diplomacy and without matching creatures** (`C = D = 0`), a stack joins for free only if `A <= 1`. That is one Friendly stack in seven and one Aggressive stack in ten; Hostile and Savage never.
+- **Savage stacks never join.** The best possible hero has `C = 2`, `D = 3`, giving 6 for the free test and 9 for the paid one, both below 10.
+- **The ceiling for anything else:** free join up to `A = 6`, paid join up to `A = 9`, both needing Expert Diplomacy and an army that is more than half the same creature.
+- **A stack that will not join flees or fights by strength.** It fights when `P + C + D < A`. Overwhelming strength gives `P = 11`, above any `A`, so a hopelessly outmatched stack that is not flagged "never flees" runs away rather than fights; it still does not join unless the tests above pass.
+- **Reloading or coming back later does not re-roll it.** The roll happened at map start. Coming back with more matching creatures or a higher Diplomacy level can change the answer; coming back with a bigger army cannot.
+
+**[code]**
+
 
 ## How the stack is split for battle
 
