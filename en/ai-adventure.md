@@ -19,7 +19,7 @@ How a computer player's hero picks where to go. First version: the structure and
 - Values are spread onto nearby tiles, so a cluster of small pickups can outweigh one larger object.
 - The score of a destination is its value divided by the path cost, but anything worthwhile **within about a fifth of a day's movement is taken first, nearest first**.
 - A hero keeps its previous target unless something clearly better appears.
-- Difficulty changes how many heroes the AI hires and how strong it thinks a human army is.
+- Difficulty changes how many heroes the AI hires, how strong it thinks a human army is, and whether it prefers to take from humans or from other computer players.
 
 ## Step 1: list the targets
 
@@ -67,6 +67,25 @@ A candidate is **near** when its path cost is at most 21% of the hero's full dai
 
 So an AI hero sweeps up everything close before it sets off for a distant, more valuable target. **[code]**
 
+## Who the AI goes after
+
+`0x527960` sets two numbers each turn from the game difficulty, and `0x428710` returns one of them for the owner of whatever is being valued:
+
+| Difficulty | Owner is a human player | Owner is another computer player | Unowned |
+|---|---|---|---|
+| Easy | **−0.4** | 1.0 | 0 |
+| Normal | 0.5 | 0.5 | 0 |
+| Hard | 0.75 | 0.25 | 0 |
+| Expert | 1.0 | 0 | 0 |
+| Impossible | 1.25 | **−0.25** | 0 |
+
+Formula above Easy: human `(difficulty + 1) × 0.25`, computer `0.75 − difficulty × 0.25`, with difficulty 1 to 4. **[code]**
+
+The factor is used when valuing mines, in the fight valuation when the opponent belongs to a player, and in two more places in the object switch that were not read (`0x528040`, `0x529cb0`).
+
+- On **Easy** taking something from a human is worth less than taking the same thing unowned, and computer players prefer each other's property.
+- As difficulty rises the preference turns around. On **Expert** another computer player's ownership adds nothing; on **Impossible** it subtracts, so computer players leave each other alone and concentrate on humans.
+
 ## Valuing a fight
 
 `0x427330` is used for guards, wandering stacks, banks, garrisons and enemy heroes.
@@ -113,6 +132,17 @@ Nominal prices (table `0x68c482`): wood 250, ore 250, mercury 500, sulfur 500, c
 
 **[code; the "have < need" branch divides only when `have > 1`]**
 
+## Per-hero and per-player figures
+
+`0x527760` and `0x527960`, recomputed each turn:
+
+| Figure | Formula |
+|---|---|
+| Hero's value of one experience point | `(2500 + AI Value of the hero's army) / (40 × experience needed for the next level)`. A whole level is therefore worth one fortieth of "price of a hero plus its army" |
+| Hero's value of a Spell Power point | Gain in the hero's total spell value (`0x5275b0`) from +1 Spell Power, at least 10 |
+| Hero's value of a Knowledge point | One third of the gain in total spell value from 30 more spell points, at least 10 |
+| Player's artifact-worth figure | Average value, for this player's heroes, of all artifacts that are enabled on the map |
+
 ## Object values that are readable
 
 From the switch in `0x528040`. Object type numbers are the map format's.
@@ -131,11 +161,14 @@ From the switch in `0x528040`. Object type numbers are the map format's.
 | Flotsam (29) | 175 gold + 5 wood at the current weights (its average contents) |
 | Mystical Garden (55) | If it has something this week: `(500 gold + 5 gems) / 2` at the current weights |
 | Learning Stone (100) | Not visited by this hero: `1000 ×` the hero's value of one experience point |
+| Mine (53) | Not if it already belongs to the AI's team. `2 × daily output × resource weight × (1 + owner factor)`, plus the fight value for its guards. Daily outputs in the executable: wood 2, ore 2, the four rare resources 1, gold 1000. If the victory condition is to flag all mines, 5,000,000 divided by the number of mines is added |
+| Resource pile (79) | `amount × resource weight`, plus the fight value for its guards |
+| Wandering monsters (54) | The fight value alone; +5,000,000 if this stack is the scenario's target |
+| Treasure Chest (101) | Sum over the three chest sizes of the better option, weighted by their odds: `max(160 × exp value, 320 × gold weight) + max(320 × exp value, 480 × gold weight) + max(465 × exp value, 620 × gold weight)`, plus one twentieth of the artifact-worth figure. The constants are 32%, 32% and 31% of 500/1000, 1000/1500 and 1500/2000 |
+| Lighthouse (42), Shipyard (87) | 1000 if not owned by the AI's side, otherwise 0 |
 | Unexplored tile | 100 |
 
-Each hero record carries its own "value of one experience point" and "value of one primary skill point", and each player a gold weight; where these are set is not traced yet.
-
-Not read yet: mines, dwellings, towns, enemy heroes, resource piles, shrines, wells, teleporters and the rest of the 100-odd cases.
+Not read yet: dwellings, towns, enemy heroes, shrines, wells, teleporters and most of the remaining cases, which sit in their own routines.
 
 ## Hiring heroes
 

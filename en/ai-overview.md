@@ -25,7 +25,7 @@ Two tables in the executable are indexed by difficulty, seven resources each. **
 
 ### Adventure map
 
-Difficulty sets how many heroes a computer player hires (2 / 3 / 4 / 5 / 6 per player) and how strong it assumes a human army to be (×0.5 on Easy and Normal, ×1.0 on Hard, ×1.25 above). See [AI: adventure map](../ai-adventure/).
+Difficulty sets how many heroes a computer player hires (2 / 3 / 4 / 5 / 6 per player) and how strong it assumes a human army to be (×0.5 on Easy and Normal, ×1.0 on Hard, ×1.25 above). It also sets an owner factor: on Easy the AI prefers other computer players' property to a human's, on Expert and Impossible the reverse. See [AI: adventure map](../ai-adventure/#who-the-ai-goes-after).
 
 ### Towns
 
