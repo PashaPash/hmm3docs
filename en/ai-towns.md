@@ -1,0 +1,104 @@
+---
+title: "AI: towns"
+parent: English
+nav_order: 10
+lang: en
+---
+
+# AI: town building and recruitment
+{: .no_toc }
+
+1. TOC
+{:toc}
+
+## Summary
+
+- Each building gets a **direct value**. Only income, dwellings, fortifications, hordes and a few town specials have one.
+- A building is scored by `value × 1000 / cost`, where the cost includes **every prerequisite still missing** and is measured with the [resource weights](../ai-adventure/#what-resources-are-worth).
+- The score of a goal is credited to every building on its prerequisite chain, and the best building that can be built today wins.
+- Mage Guilds, Marketplace, Tavern and Blacksmith have no direct value; in this routine they are built only as prerequisites.
+- On Easy and Normal a computer player's town builds at most **every other day**.
+
+## The economy phase of a turn
+
+`0x428dd0`, once per computer player per turn:
+
+1. Repeat `0x42ae00` until it finds nothing to buy. Each call builds one building.
+2. Decide whether to hire a hero (`0x431360`, see [hiring heroes](../ai-adventure/#hiring-heroes)).
+3. Recompute the resource weights (`0x428740`).
+4. If the player has a town with the right building, pass resources to allied computer players (`0x429110`, not detailed yet).
+
+## One build per town per day, or per two days
+
+`0x5bede0` marks a town when something is built in it; `0x4c7fe0` clears the mark at the start of each day.
+
+| Difficulty | Mark set by a build | Effect |
+|---|---|---|
+| Hard, Expert, Impossible | cleared every day | one building per town per day |
+| Easy, Normal | set to 2 and reduced by 1 each day for a computer player's town | **one building per town every two days** |
+
+**[code; the test that separates computer-owned towns from human-allied ones is a helper that was not read]**
+
+## Direct value of a building
+
+`0x42ae00`. Building numbers are the engine's (0–43).
+
+| Building | Direct value | Routine |
+|---|---|---|
+| Town Hall line (10–13) | Extra weekly gold × gold weight: Village Hall 3500, Town Hall 3500, City Hall 7000, Capitol 14000 | `0x42b8b0` |
+| Dwellings (30–36) | `AI Value × weekly growth` of the creature. From day 5 of the week the growth is doubled and what is already waiting is added. The cost of then buying those creatures is added to the cost side | `0x42b520` |
+| Upgraded dwellings (37–43) | Own routine, same idea | `0x42b5b0` |
+| Citadel, Castle (8, 9) | From day 5: sum of the AI Values of the town's creatures that will grow, with their purchase cost on the cost side | `0x42b670` |
+| Horde buildings (18, 19, 24, 25) | Own routines | `0x42b790`, `0x42b800` |
+| Resource Silo (15) | Seven days of its output at the resource weights | |
+| Rampart Treasury (22) | Only on day 7; proportional to the gold the player holds | |
+| Tower: special 21 | 100 | |
+| Necropolis: special 17 | 10 | |
+| Necropolis: special 21 | Grows with the number of the player's heroes of one particular class | |
+| Stronghold: special 17 | 5000, only when a hero is in the town | |
+| Fortress: specials 21, 22 | Garrison's `AI Value` total / 20, only under the same town condition | |
+| Grail (26) | Never chosen here; built when a hero carrying the Grail visits (see below) | |
+| Everything else | 0 | |
+
+If the scenario's victory condition is to build a given Town Hall or Fort level in this town, the matching buildings get +5,000,000.
+
+## Score and choice
+
+For every building with a positive direct value:
+
+1. Collect its missing prerequisites from the per-town dependency table (`0x697798`).
+2. Add up the costs of the whole chain.
+3. `score = value × 1000 / Σ (cost[r] × weight[r])` (`0x42a150`). If a needed resource cannot be paid and the player has no income of it, the routine checks whether it can be obtained by trading; if not, the goal is dropped.
+4. Add the score to **every building in the chain**.
+
+Then, over all the player's towns that may still build today, the buildable building with the highest accumulated score is built, provided the player keeps a reserve the routine holds back for planned purchases. The reserve check is skipped for the Town Hall line, Marketplace and Resource Silo. **[code]**
+
+A cheap building that unlocks several valuable ones collects all their scores, which is how Mage Guild level 1, Blacksmith or Marketplace get built despite having no value of their own.
+
+## When a hero visits its own town
+
+`0x5253d0` runs when an AI hero enters a town of its own player:
+
+- If the hero carries the Grail and the town has none, the Grail building is built.
+- Creatures are recruited into the hero's army (`0x525200`, `0x42ba60`). On Hard and above, and if the town has not built today, the routine may also build the one dwelling (buildings 30–43) that adds the most to this hero's army right now.
+- A Spell Book is bought for 500 gold if the town has a Mage Guild and the hero has none.
+- Creatures in the hero's army are upgraded where the upgraded dwelling exists and the player can pay.
+- A stat building is built on the spot when it is worth more to this hero than it costs at the resource weights:
+
+  | Town | Building | Compared with |
+  |---|---|---|
+  | Tower | special 23 (+1 Knowledge) | the hero's value of a Knowledge point |
+  | Inferno | special 23 (+1 Spell Power) | the hero's value of a Spell Power point |
+  | Dungeon | special 23 (+1000 experience) | `1000 ×` the hero's value of one experience point |
+  | Stronghold | special 23 (+1 Attack) | experience for the hero's next level × value of one experience point |
+  | Fortress | special 17 (+1 Defence) | the same |
+  | Conflux | special 21 (Magic University) | a skill-value routine |
+
+- Above Easy, further routines run for the garrison and visiting hero (`0x433fe0`, `0x525ca0`); not detailed yet.
+
+## Not decoded yet
+
+- Upgraded dwelling and horde values in detail.
+- Which creatures are bought first when money is short, and how armies are split between the town garrison and heroes.
+- War machines, Mage Guild use, Artifact Merchants, the Marketplace trade logic.
+- The condition flag on a town that switches off some values (read as "a hero is in the town" above; **[inferred]**).

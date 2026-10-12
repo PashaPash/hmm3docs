@@ -85,6 +85,34 @@ So an AI hero sweeps up everything close before it sets off for a distant, more 
 
 On Easy and Normal the AI treats a human army as **half** as strong as it is, so it attacks players it cannot beat. On Expert and Impossible it is as cautious with humans as with anyone else. **[code]**
 
+## What resources are worth
+
+`0x428740` recomputes, every turn, a value for one unit of each of the seven resources for each computer player. Every object value and every purchase decision below is expressed through these weights, so they are the AI's exchange rate between gold, materials and army.
+
+```
+have[r] = stock + 2 × daily income
+need[r] = largest cost of any single building the player's towns can build now
+        + cost of buying everything available of its three best creature types
+          (ranked by AI Value × number available; from day 5 the coming week's growth is counted too)
+
+base = market factor, by the number of the player's towns with a Marketplace:
+       0 or 1 → 0.10, 2 → 0.15, 3 → 0.20, 4 → 0.25, … 9 or more → 0.50      (table 0x678344)
+
+w = base                                         if need = 0
+  = min(need / have, 1 / base)                   if have < need
+  = ((have − need) × base + need) / have         otherwise
+
+weight[r] = nominal price[r] × w
+```
+
+Nominal prices (table `0x68c482`): wood 250, ore 250, mercury 500, sulfur 500, crystal 500, gems 500, gold 1.
+
+- A resource the player has in surplus is worth only 10–50% of its nominal price. More Marketplaces raise that floor.
+- A resource the player is short of is worth up to `1 / base` times nominal, so up to ten times with one Marketplace.
+- Gold follows the same rule. An AI that cannot afford its next building values gold above 1 per coin.
+
+**[code; the "have < need" branch divides only when `have > 1`]**
+
 ## Object values that are readable
 
 From the switch in `0x528040`. Object type numbers are the map format's.
@@ -97,9 +125,17 @@ From the switch in `0x528040`. Object type numbers are the map format's.
 | Campfire (12) | Proportional to the amount it holds |
 | Creature Bank (16), Derelict Ship (24), Dragon Utopia (25) | If not already cleared: fight value against the stored guards, plus the stored resources, plus `AI Value × count` of reward creatures, plus the artifacts. See [creature banks](../ai-neutral/#creature-banks) |
 | Garden of Revelation (32) | A per-hero "value of one primary skill point" kept in the hero record, if not visited |
+| Corpse (22) | Not yet searched by this player: one fifth of a per-player "artifact worth" figure; if the backpack is full, 200 gold at the gold weight |
+| Marletto Tower (23) | Not visited by this hero: experience needed for the hero's next level × the hero's value of one experience point |
+| Arena (4) | Not visited: twice that |
+| Flotsam (29) | 175 gold + 5 wood at the current weights (its average contents) |
+| Mystical Garden (55) | If it has something this week: `(500 gold + 5 gems) / 2` at the current weights |
+| Learning Stone (100) | Not visited by this hero: `1000 ×` the hero's value of one experience point |
 | Unexplored tile | 100 |
 
-Not readable yet: mines, dwellings, towns, enemy heroes, resources, shrines, stat boosters, wells, teleporters and the rest of the 100-odd cases.
+Each hero record carries its own "value of one experience point" and "value of one primary skill point", and each player a gold weight; where these are set is not traced yet.
+
+Not read yet: mines, dwellings, towns, enemy heroes, resource piles, shrines, wells, teleporters and the rest of the 100-odd cases.
 
 ## Hiring heroes
 

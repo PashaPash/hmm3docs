@@ -27,6 +27,10 @@ Two tables in the executable are indexed by difficulty, seven resources each. **
 
 Difficulty sets how many heroes a computer player hires (2 / 3 / 4 / 5 / 6 per player) and how strong it assumes a human army to be (×0.5 on Easy and Normal, ×1.0 on Hard, ×1.25 above). See [AI: adventure map](../ai-adventure/).
 
+### Towns
+
+On Easy and Normal a computer player's town builds at most once every two days; from Hard up, once a day. See [AI: towns](../ai-towns/).
+
 ### Battle behaviour
 
 Difficulty switches parts of the battle logic on and off for every non-human side, including neutral monsters. See [AI: battle](../ai-battle/#what-difficulty-changes).
