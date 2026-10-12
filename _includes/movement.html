@@ -1,0 +1,5 @@
+{% assign ru = false %}{% if include.lang == 'ru' %}{% assign ru = true %}{% endif %}
+<div class="table-wrapper"><table>
+<thead><tr><th>{% if ru %}Скорость самого медленного существа{% else %}Speed of the slowest creature{% endif %}</th>{% for m in site.data.movement.land_by_slowest_speed %}{% if forloop.index0 > 2 and forloop.index0 < 12 %}<th>{{ forloop.index0 }}{% if forloop.index0 == 11 %}+{% endif %}</th>{% endif %}{% endfor %}</tr></thead>
+<tbody><tr><td>{% if ru %}Очки движения{% else %}Movement points{% endif %}</td>{% for m in site.data.movement.land_by_slowest_speed %}{% if forloop.index0 > 2 and forloop.index0 < 12 %}<td>{{ m }}</td>{% endif %}{% endfor %}</tr></tbody>
+</table></div>
