@@ -45,10 +45,10 @@ What the computer player decides, and where it is described. "Partly" means the 
 | Battle: hero spell | covered for candidates, scoring and timing; about half of the per-spell evaluators only listed | [AI: battle](../ai-battle/#hero-spells) |
 | Battle: creature spells, retreat, surrender | covered | [AI: battle](../ai-battle/) |
 | Battle: tactics-phase placement | partly (shooters only) | [AI: battle](../ai-battle/#shooters) |
-| Battle: quick combat (no battlefield) | **not read** | |
+| Battle: resolution without a battlefield (no human side) | structure covered; per-round arithmetic **not read** | [AI: battle](../ai-battle/#battles-without-a-battlefield) |
 | Neutral stacks: join, flee, fight, split, growth | covered | [AI: neutral monsters](../ai-neutral/) |
 | Hero: where to go | covered for the choice rule; object values partly | [AI: adventure map](../ai-adventure/) |
-| Hero: whether a fight is worth it | covered for multipliers and outcome use; the simulator itself **not read** | [AI: adventure map](../ai-adventure/#valuing-a-fight) |
+| Hero: whether a fight is worth it | covered for multipliers and outcome use; simulator structure covered, its arithmetic **not read** | [AI: adventure map](../ai-adventure/#valuing-a-fight) |
 | Hero: returning to defend a town | partly; how the threat mark is set **not read** | [AI: adventure map](../ai-adventure/#its-own-towns) |
 | Hero: merging armies with another hero | partly | [AI: adventure map](../ai-adventure/#enemy-heroes) |
 | Hero: adventure spells, boats, digging for the Grail | **not read** | |

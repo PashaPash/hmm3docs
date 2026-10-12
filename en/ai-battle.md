@@ -8,7 +8,7 @@ lang: en
 # AI: battle
 {: .no_toc }
 
-How a computer-controlled side picks an action for each stack. The same code drives AI heroes, hero-less armies (see [neutral monsters](../ai-neutral/)) and a human player's auto-combat.
+How a computer-controlled side picks an action for each stack. The same code drives AI heroes, hero-less armies (see [neutral monsters](../ai-neutral/)) and a human player's auto-combat. It runs only when a human is in the battle; battles between computer players and neutrals are [resolved by a simulator](#battles-without-a-battlefield).
 
 1. TOC
 {:toc}
@@ -242,6 +242,34 @@ For spells that hit one stack, the evaluator runs on every legal stack and keeps
 ### Parting shot
 
 When the retreat check has already decided to flee, the chooser runs in a special mode: only spells with spell flag `0x200` are candidates, the timing test is ignored, and damage is valued at a flat 1000 per unit killed. The spell is chosen at the start of the stack's turn (`0x4782d0`), the retreat itself comes from the turn driver afterwards. **[code `0x422da0`, `0x43c800`; order inferred]**
+
+## Battles without a battlefield
+
+When no human-controlled side takes part, the game does not run the battle on the hex field at all. The battle start routine (`0x4ad470`) calls a simulator (`0x4270c0` → `0x426bc0`) and applies its result. **[code; that the two flags tested mean "this side is played by a human" is inferred]**
+
+This is the same simulator the adventure-map AI uses to decide whether a fight is worth taking ([valuing a fight](../ai-adventure/#valuing-a-fight)). The two uses differ only in the strength multiplier given to each side:
+
+| Use | Multiplier on each side's strength |
+|---|---|
+| AI planning | fixed: the hero's own factor, 1.25 for neutrals and computer opponents, a difficulty value for human opponents |
+| Actual resolution | random: `rand(75,125) / 100` for the attacker, and a second independent roll for the defender **[range of the second roll inferred to be the same]** |
+
+So the outcome the AI predicted and the outcome it gets are drawn from the same model, but the real one has up to ±25% luck on each side. A computer hero that attacked on a narrow predicted margin can lose.
+
+### What the simulator does
+
+`0x423ee0` and `0x424120` turn each army into a list of per-stack records and a pooled hit point total; `0x426bc0` then runs **at most three rounds**:
+
+1. Decide for each side whether it shoots this round (`0x4267c0`).
+2. Hero spells are applied by `0x425bd0`, first for the side whose fastest stack is faster.
+3. Each side's damage for the round is computed (`0x426390`) and subtracted from the other side's pool; losses are then taken off the stacks in order (`0x426170`), rounding up the number of survivors.
+4. Stop early if a pool reaches zero.
+
+After the third round `0x4264d0` settles what is left. Hero Attack and Defence enter as 5% per point of difference between the two heroes, the same step as in the real [damage formula](../combat/#damage).
+
+The attacker wins if its pool is still above zero. `0x426ee0` then writes the surviving counts back to the real armies.
+
+Not read: the per-round damage arithmetic, how spells are chosen and valued inside the simulator, and the final settlement.
 
 ## What difficulty changes
 
