@@ -7,8 +7,8 @@ states:
 chapters:
   - {n: 1, file: method, state: done, en: "Method and evidence", ru: "Метод и источники",
      note_en: "", note_ru: ""}
-  - {n: 2, state: todo, en: "Factions and towns", ru: "Фракции и города",
-     note_en: "building costs extracted; prerequisites live in the exe", note_ru: "стоимости построек извлечены; зависимости лежат в exe"}
+  - {n: 2, file: towns, state: data, en: "Factions and towns", ru: "Фракции и города",
+     note_en: "building costs and prerequisites for all nine towns", note_ru: "стоимости и предпосылки построек для всех девяти городов"}
   - {n: 3, file: heroes, state: data, en: "Heroes and hero classes", ru: "Герои и классы героев",
      note_en: "class table from HCTRAITS", note_ru: "таблица классов из HCTRAITS"}
   - {n: 4, file: creatures, state: data, en: "Creatures", ru: "Существа",

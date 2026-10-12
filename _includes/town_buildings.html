@@ -1,0 +1,13 @@
+{% assign ru = false %}{% if include.lang == 'ru' %}{% assign ru = true %}{% endif %}
+{% assign towns = "castle,rampart,tower,inferno,necropolis,dungeon,stronghold,fortress,conflux" | split: "," %}
+{% for t in towns %}
+<h3 id="{{ t }}">{{ t | capitalize }}</h3>
+<div class="table-wrapper"><table>
+<thead><tr><th>ID</th><th>{% if ru %}Постройка{% else %}Building{% endif %}</th><th>{% if ru %}Стоимость{% else %}Cost{% endif %}</th><th>{% if ru %}Требует{% else %}Requires{% endif %}</th></tr></thead>
+<tbody>
+{% assign list = site.data.town_buildings[t] %}
+{% for b in list %}
+<tr><td>{{ b.id }}</td><td>{{ b.name }}</td><td>{% for c in b.cost %}{{ c[1] }} {{ c[0] }}{% unless forloop.last %}, {% endunless %}{% endfor %}</td><td>{% for r in b.requires %}{% for x in list %}{% if x.id == r %}{{ x.name }}{% endif %}{% endfor %}{% unless forloop.last %}, {% endunless %}{% endfor %}</td></tr>
+{% endfor %}
+</tbody></table></div>
+{% endfor %}

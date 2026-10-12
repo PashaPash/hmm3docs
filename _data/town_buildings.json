@@ -1,0 +1,3743 @@
+{
+ "castle": [
+  {
+   "id": 0,
+   "name": "Mage Guild 1",
+   "cost": {
+    "wood": 5,
+    "ore": 5,
+    "gold": 2000
+   },
+   "requires": []
+  },
+  {
+   "id": 1,
+   "name": "Mage Guild 2",
+   "cost": {
+    "wood": 5,
+    "mercury": 4,
+    "ore": 5,
+    "sulfur": 4,
+    "crystal": 4,
+    "gems": 4,
+    "gold": 1000
+   },
+   "requires": [
+    0
+   ]
+  },
+  {
+   "id": 2,
+   "name": "Mage Guild 3",
+   "cost": {
+    "wood": 5,
+    "mercury": 6,
+    "ore": 5,
+    "sulfur": 6,
+    "crystal": 6,
+    "gems": 6,
+    "gold": 1000
+   },
+   "requires": [
+    1
+   ]
+  },
+  {
+   "id": 3,
+   "name": "Mage Guild 4",
+   "cost": {
+    "wood": 5,
+    "mercury": 8,
+    "ore": 5,
+    "sulfur": 8,
+    "crystal": 8,
+    "gems": 8,
+    "gold": 1000
+   },
+   "requires": [
+    2
+   ]
+  },
+  {
+   "id": 5,
+   "name": "Tavern",
+   "cost": {
+    "wood": 5,
+    "gold": 500
+   },
+   "requires": []
+  },
+  {
+   "id": 6,
+   "name": "Shipyard",
+   "cost": {
+    "wood": 20,
+    "gold": 2000
+   },
+   "requires": []
+  },
+  {
+   "id": 7,
+   "name": "Fort",
+   "cost": {
+    "wood": 20,
+    "ore": 20,
+    "gold": 5000
+   },
+   "requires": []
+  },
+  {
+   "id": 8,
+   "name": "Citadel",
+   "cost": {
+    "ore": 5,
+    "gold": 2500
+   },
+   "requires": [
+    7
+   ]
+  },
+  {
+   "id": 9,
+   "name": "Castle",
+   "cost": {
+    "wood": 10,
+    "ore": 10,
+    "gold": 5000
+   },
+   "requires": [
+    8
+   ]
+  },
+  {
+   "id": 11,
+   "name": "Town Hall",
+   "cost": {
+    "gold": 2500
+   },
+   "requires": [
+    5
+   ]
+  },
+  {
+   "id": 12,
+   "name": "City Hall",
+   "cost": {
+    "gold": 5000
+   },
+   "requires": [
+    11,
+    16,
+    0,
+    14
+   ]
+  },
+  {
+   "id": 13,
+   "name": "Capitol",
+   "cost": {
+    "gold": 10000
+   },
+   "requires": [
+    12,
+    9
+   ]
+  },
+  {
+   "id": 14,
+   "name": "Marketplace",
+   "cost": {
+    "wood": 5,
+    "gold": 500
+   },
+   "requires": []
+  },
+  {
+   "id": 15,
+   "name": "Resource Silo",
+   "cost": {
+    "ore": 5,
+    "gold": 5000
+   },
+   "requires": [
+    14
+   ]
+  },
+  {
+   "id": 16,
+   "name": "Blacksmith",
+   "cost": {
+    "wood": 5,
+    "gold": 1000
+   },
+   "requires": []
+  },
+  {
+   "id": 17,
+   "name": "Lighthouse",
+   "cost": {
+    "ore": 10,
+    "gold": 2000
+   },
+   "requires": [
+    6
+   ]
+  },
+  {
+   "id": 18,
+   "name": "Griffin Horde",
+   "cost": {
+    "gold": 1000
+   },
+   "requires": [
+    32
+   ]
+  },
+  {
+   "id": 19,
+   "name": "Royal Griffin Horde",
+   "cost": {
+    "gold": 1000
+   },
+   "requires": [
+    39
+   ]
+  },
+  {
+   "id": 21,
+   "name": "Stables",
+   "cost": {
+    "wood": 10,
+    "gold": 2000
+   },
+   "requires": [
+    33
+   ]
+  },
+  {
+   "id": 22,
+   "name": "Tavern Upgrade",
+   "cost": {
+    "wood": 5,
+    "gold": 500
+   },
+   "requires": [
+    5
+   ]
+  },
+  {
+   "id": 26,
+   "name": "Grail",
+   "cost": {},
+   "requires": []
+  },
+  {
+   "id": 30,
+   "name": "pikeman",
+   "cost": {
+    "ore": 10,
+    "gold": 500
+   },
+   "requires": [
+    7
+   ]
+  },
+  {
+   "id": 31,
+   "name": "archer",
+   "cost": {
+    "wood": 5,
+    "ore": 5,
+    "gold": 1000
+   },
+   "requires": [
+    30
+   ]
+  },
+  {
+   "id": 32,
+   "name": "griffin",
+   "cost": {
+    "ore": 5,
+    "gold": 1000
+   },
+   "requires": [
+    33
+   ]
+  },
+  {
+   "id": 33,
+   "name": "swordsman",
+   "cost": {
+    "ore": 5,
+    "gold": 2000
+   },
+   "requires": [
+    30,
+    16
+   ]
+  },
+  {
+   "id": 34,
+   "name": "monk",
+   "cost": {
+    "wood": 5,
+    "mercury": 2,
+    "ore": 5,
+    "sulfur": 2,
+    "crystal": 2,
+    "gems": 2,
+    "gold": 3000
+   },
+   "requires": [
+    33,
+    0
+   ]
+  },
+  {
+   "id": 35,
+   "name": "cavalier",
+   "cost": {
+    "wood": 20,
+    "gold": 5000
+   },
+   "requires": [
+    21
+   ]
+  },
+  {
+   "id": 36,
+   "name": "angel",
+   "cost": {
+    "mercury": 10,
+    "sulfur": 10,
+    "crystal": 10,
+    "gems": 10,
+    "gold": 20000
+   },
+   "requires": [
+    34
+   ]
+  },
+  {
+   "id": 37,
+   "name": "halberdier",
+   "cost": {
+    "ore": 5,
+    "gold": 1000
+   },
+   "requires": [
+    30
+   ]
+  },
+  {
+   "id": 38,
+   "name": "marksman",
+   "cost": {
+    "wood": 5,
+    "ore": 5,
+    "gold": 1000
+   },
+   "requires": [
+    31
+   ]
+  },
+  {
+   "id": 39,
+   "name": "royal griffin",
+   "cost": {
+    "ore": 5,
+    "gold": 1000
+   },
+   "requires": [
+    32
+   ]
+  },
+  {
+   "id": 40,
+   "name": "crusader",
+   "cost": {
+    "ore": 5,
+    "crystal": 5,
+    "gold": 2000
+   },
+   "requires": [
+    33
+   ]
+  },
+  {
+   "id": 41,
+   "name": "zealot",
+   "cost": {
+    "wood": 2,
+    "mercury": 2,
+    "ore": 2,
+    "sulfur": 2,
+    "crystal": 2,
+    "gems": 2,
+    "gold": 1000
+   },
+   "requires": [
+    34
+   ]
+  },
+  {
+   "id": 42,
+   "name": "champion",
+   "cost": {
+    "wood": 10,
+    "gold": 3000
+   },
+   "requires": [
+    35
+   ]
+  },
+  {
+   "id": 43,
+   "name": "arch angel",
+   "cost": {
+    "mercury": 10,
+    "sulfur": 10,
+    "crystal": 10,
+    "gems": 10,
+    "gold": 20000
+   },
+   "requires": [
+    36
+   ]
+  }
+ ],
+ "rampart": [
+  {
+   "id": 0,
+   "name": "Mage Guild 1",
+   "cost": {
+    "wood": 5,
+    "ore": 5,
+    "gold": 2000
+   },
+   "requires": []
+  },
+  {
+   "id": 1,
+   "name": "Mage Guild 2",
+   "cost": {
+    "wood": 5,
+    "mercury": 4,
+    "ore": 5,
+    "sulfur": 4,
+    "crystal": 4,
+    "gems": 4,
+    "gold": 1000
+   },
+   "requires": [
+    0
+   ]
+  },
+  {
+   "id": 2,
+   "name": "Mage Guild 3",
+   "cost": {
+    "wood": 5,
+    "mercury": 6,
+    "ore": 5,
+    "sulfur": 6,
+    "crystal": 6,
+    "gems": 6,
+    "gold": 1000
+   },
+   "requires": [
+    1
+   ]
+  },
+  {
+   "id": 3,
+   "name": "Mage Guild 4",
+   "cost": {
+    "wood": 5,
+    "mercury": 8,
+    "ore": 5,
+    "sulfur": 8,
+    "crystal": 8,
+    "gems": 8,
+    "gold": 1000
+   },
+   "requires": [
+    2
+   ]
+  },
+  {
+   "id": 4,
+   "name": "Mage Guild 5",
+   "cost": {
+    "wood": 5,
+    "mercury": 10,
+    "ore": 5,
+    "sulfur": 10,
+    "crystal": 10,
+    "gems": 10,
+    "gold": 1000
+   },
+   "requires": [
+    3
+   ]
+  },
+  {
+   "id": 5,
+   "name": "Tavern",
+   "cost": {
+    "wood": 5,
+    "gold": 500
+   },
+   "requires": []
+  },
+  {
+   "id": 7,
+   "name": "Fort",
+   "cost": {
+    "wood": 20,
+    "ore": 20,
+    "gold": 5000
+   },
+   "requires": []
+  },
+  {
+   "id": 8,
+   "name": "Citadel",
+   "cost": {
+    "ore": 5,
+    "gold": 2500
+   },
+   "requires": [
+    7
+   ]
+  },
+  {
+   "id": 9,
+   "name": "Castle",
+   "cost": {
+    "wood": 10,
+    "ore": 10,
+    "gold": 5000
+   },
+   "requires": [
+    8
+   ]
+  },
+  {
+   "id": 11,
+   "name": "Town Hall",
+   "cost": {
+    "gold": 2500
+   },
+   "requires": [
+    5
+   ]
+  },
+  {
+   "id": 12,
+   "name": "City Hall",
+   "cost": {
+    "gold": 5000
+   },
+   "requires": [
+    11,
+    0,
+    16,
+    14
+   ]
+  },
+  {
+   "id": 13,
+   "name": "Capitol",
+   "cost": {
+    "gold": 10000
+   },
+   "requires": [
+    12,
+    9
+   ]
+  },
+  {
+   "id": 14,
+   "name": "Marketplace",
+   "cost": {
+    "wood": 5,
+    "gold": 500
+   },
+   "requires": []
+  },
+  {
+   "id": 15,
+   "name": "Resource Silo",
+   "cost": {
+    "ore": 5,
+    "gold": 5000
+   },
+   "requires": [
+    14
+   ]
+  },
+  {
+   "id": 16,
+   "name": "Blacksmith",
+   "cost": {
+    "wood": 5,
+    "gold": 1000
+   },
+   "requires": []
+  },
+  {
+   "id": 17,
+   "name": "Mystic Garden",
+   "cost": {
+    "wood": 2,
+    "mercury": 2,
+    "ore": 2,
+    "sulfur": 2,
+    "crystal": 2,
+    "gems": 2,
+    "gold": 2000
+   },
+   "requires": []
+  },
+  {
+   "id": 18,
+   "name": "Dwarf Horde",
+   "cost": {
+    "gold": 1000
+   },
+   "requires": [
+    31
+   ]
+  },
+  {
+   "id": 19,
+   "name": "Battle Dwarf Horde",
+   "cost": {
+    "gold": 1000
+   },
+   "requires": [
+    38
+   ]
+  },
+  {
+   "id": 21,
+   "name": "Rainbow",
+   "cost": {
+    "crystal": 10,
+    "gold": 1500
+   },
+   "requires": [
+    17
+   ]
+  },
+  {
+   "id": 22,
+   "name": "Treasury",
+   "cost": {
+    "wood": 5,
+    "ore": 10,
+    "gold": 5000
+   },
+   "requires": [
+    18
+   ]
+  },
+  {
+   "id": 24,
+   "name": "Treefolk Horde",
+   "cost": {
+    "gold": 2000
+   },
+   "requires": [
+    34
+   ]
+  },
+  {
+   "id": 25,
+   "name": "Briar Treefolk Horde",
+   "cost": {
+    "gold": 2000
+   },
+   "requires": [
+    41
+   ]
+  },
+  {
+   "id": 26,
+   "name": "Grail",
+   "cost": {},
+   "requires": []
+  },
+  {
+   "id": 30,
+   "name": "Centaur",
+   "cost": {
+    "wood": 10,
+    "gold": 500
+   },
+   "requires": [
+    7
+   ]
+  },
+  {
+   "id": 31,
+   "name": "Dwarf",
+   "cost": {
+    "wood": 5,
+    "gold": 1000
+   },
+   "requires": [
+    30
+   ]
+  },
+  {
+   "id": 32,
+   "name": "Wood Elf",
+   "cost": {
+    "wood": 10,
+    "gold": 1500
+   },
+   "requires": [
+    30
+   ]
+  },
+  {
+   "id": 33,
+   "name": "Pegasus",
+   "cost": {
+    "crystal": 10,
+    "gold": 2000
+   },
+   "requires": [
+    32
+   ]
+  },
+  {
+   "id": 34,
+   "name": "Dendroid Guard",
+   "cost": {
+    "gold": 2500
+   },
+   "requires": [
+    32
+   ]
+  },
+  {
+   "id": 35,
+   "name": "Unicorn",
+   "cost": {
+    "wood": 5,
+    "ore": 5,
+    "gems": 10,
+    "gold": 4000
+   },
+   "requires": [
+    33,
+    34
+   ]
+  },
+  {
+   "id": 36,
+   "name": "Green Dragon",
+   "cost": {
+    "ore": 30,
+    "crystal": 20,
+    "gold": 10000
+   },
+   "requires": [
+    35,
+    1
+   ]
+  },
+  {
+   "id": 37,
+   "name": "Centaur Captain",
+   "cost": {
+    "wood": 5,
+    "gold": 1000
+   },
+   "requires": [
+    30
+   ]
+  },
+  {
+   "id": 38,
+   "name": "Battle Dwarf",
+   "cost": {
+    "wood": 5,
+    "gold": 1000
+   },
+   "requires": [
+    31
+   ]
+  },
+  {
+   "id": 39,
+   "name": "Grand Elf",
+   "cost": {
+    "wood": 10,
+    "gold": 1500
+   },
+   "requires": [
+    32
+   ]
+  },
+  {
+   "id": 40,
+   "name": "Silver Pegasus",
+   "cost": {
+    "crystal": 5,
+    "gold": 2000
+   },
+   "requires": [
+    33
+   ]
+  },
+  {
+   "id": 41,
+   "name": "Dendroid Soldier",
+   "cost": {
+    "gold": 1500
+   },
+   "requires": [
+    34
+   ]
+  },
+  {
+   "id": 42,
+   "name": "War Unicorn",
+   "cost": {
+    "gems": 5,
+    "gold": 3000
+   },
+   "requires": [
+    35
+   ]
+  },
+  {
+   "id": 43,
+   "name": "Gold Dragon",
+   "cost": {
+    "ore": 30,
+    "crystal": 20,
+    "gold": 20000
+   },
+   "requires": [
+    36,
+    2
+   ]
+  }
+ ],
+ "tower": [
+  {
+   "id": 0,
+   "name": "Mage Guild 1",
+   "cost": {
+    "wood": 5,
+    "ore": 5,
+    "gold": 2000
+   },
+   "requires": []
+  },
+  {
+   "id": 1,
+   "name": "Mage Guild 2",
+   "cost": {
+    "wood": 5,
+    "mercury": 4,
+    "ore": 5,
+    "sulfur": 4,
+    "crystal": 4,
+    "gems": 4,
+    "gold": 1000
+   },
+   "requires": [
+    0
+   ]
+  },
+  {
+   "id": 2,
+   "name": "Mage Guild 3",
+   "cost": {
+    "wood": 5,
+    "mercury": 6,
+    "ore": 5,
+    "sulfur": 6,
+    "crystal": 6,
+    "gems": 6,
+    "gold": 1000
+   },
+   "requires": [
+    1
+   ]
+  },
+  {
+   "id": 3,
+   "name": "Mage Guild 4",
+   "cost": {
+    "wood": 5,
+    "mercury": 8,
+    "ore": 5,
+    "sulfur": 8,
+    "crystal": 8,
+    "gems": 8,
+    "gold": 1000
+   },
+   "requires": [
+    2
+   ]
+  },
+  {
+   "id": 4,
+   "name": "Mage Guild 5",
+   "cost": {
+    "wood": 5,
+    "mercury": 10,
+    "ore": 5,
+    "sulfur": 10,
+    "crystal": 10,
+    "gems": 10,
+    "gold": 1000
+   },
+   "requires": [
+    3
+   ]
+  },
+  {
+   "id": 5,
+   "name": "Tavern",
+   "cost": {
+    "wood": 5,
+    "gold": 500
+   },
+   "requires": []
+  },
+  {
+   "id": 7,
+   "name": "Fort",
+   "cost": {
+    "wood": 20,
+    "ore": 20,
+    "gold": 5000
+   },
+   "requires": []
+  },
+  {
+   "id": 8,
+   "name": "Citadel",
+   "cost": {
+    "ore": 5,
+    "gold": 2500
+   },
+   "requires": [
+    7
+   ]
+  },
+  {
+   "id": 9,
+   "name": "Castle",
+   "cost": {
+    "wood": 10,
+    "ore": 10,
+    "gold": 5000
+   },
+   "requires": [
+    8
+   ]
+  },
+  {
+   "id": 11,
+   "name": "Town Hall",
+   "cost": {
+    "gold": 2500
+   },
+   "requires": [
+    5
+   ]
+  },
+  {
+   "id": 12,
+   "name": "City Hall",
+   "cost": {
+    "gold": 5000
+   },
+   "requires": [
+    11,
+    14,
+    16,
+    0
+   ]
+  },
+  {
+   "id": 13,
+   "name": "Capitol",
+   "cost": {
+    "gold": 10000
+   },
+   "requires": [
+    12,
+    9
+   ]
+  },
+  {
+   "id": 14,
+   "name": "Marketplace",
+   "cost": {
+    "wood": 5,
+    "gold": 500
+   },
+   "requires": []
+  },
+  {
+   "id": 15,
+   "name": "Resource Silo",
+   "cost": {
+    "ore": 5,
+    "gold": 5000
+   },
+   "requires": [
+    14
+   ]
+  },
+  {
+   "id": 16,
+   "name": "Blacksmith",
+   "cost": {
+    "wood": 5,
+    "gold": 1000
+   },
+   "requires": []
+  },
+  {
+   "id": 17,
+   "name": "Artifact Merchants",
+   "cost": {
+    "gold": 10000
+   },
+   "requires": [
+    14
+   ]
+  },
+  {
+   "id": 18,
+   "name": "Stone Gargoyle Horde",
+   "cost": {
+    "gold": 1000
+   },
+   "requires": [
+    31
+   ]
+  },
+  {
+   "id": 19,
+   "name": "Obsidian Gargoyle Horde",
+   "cost": {
+    "gold": 1000
+   },
+   "requires": [
+    38
+   ]
+  },
+  {
+   "id": 21,
+   "name": "Watchtower",
+   "cost": {
+    "wood": 5,
+    "gold": 1000
+   },
+   "requires": [
+    7
+   ]
+  },
+  {
+   "id": 22,
+   "name": "Library",
+   "cost": {
+    "wood": 5,
+    "mercury": 5,
+    "ore": 5,
+    "sulfur": 5,
+    "crystal": 5,
+    "gems": 5,
+    "gold": 1500
+   },
+   "requires": [
+    0
+   ]
+  },
+  {
+   "id": 23,
+   "name": "Wall of Glyphic Knowledge",
+   "cost": {
+    "ore": 5,
+    "gold": 1000
+   },
+   "requires": [
+    0
+   ]
+  },
+  {
+   "id": 26,
+   "name": "Grail",
+   "cost": {},
+   "requires": []
+  },
+  {
+   "id": 30,
+   "name": "Gremlin",
+   "cost": {
+    "wood": 5,
+    "ore": 5,
+    "gold": 300
+   },
+   "requires": [
+    7
+   ]
+  },
+  {
+   "id": 31,
+   "name": "Stone Gargoyle",
+   "cost": {
+    "ore": 10,
+    "gold": 1000
+   },
+   "requires": [
+    30
+   ]
+  },
+  {
+   "id": 32,
+   "name": "Stone Golem",
+   "cost": {
+    "wood": 5,
+    "ore": 5,
+    "gold": 2000
+   },
+   "requires": [
+    30
+   ]
+  },
+  {
+   "id": 33,
+   "name": "Mage",
+   "cost": {
+    "wood": 5,
+    "mercury": 5,
+    "ore": 5,
+    "sulfur": 5,
+    "crystal": 5,
+    "gems": 5,
+    "gold": 2500
+   },
+   "requires": [
+    31,
+    32,
+    0
+   ]
+  },
+  {
+   "id": 34,
+   "name": "Genie",
+   "cost": {
+    "wood": 5,
+    "ore": 5,
+    "crystal": 6,
+    "gems": 6,
+    "gold": 3000
+   },
+   "requires": [
+    33
+   ]
+  },
+  {
+   "id": 35,
+   "name": "Naga",
+   "cost": {
+    "wood": 5,
+    "mercury": 2,
+    "ore": 5,
+    "sulfur": 2,
+    "crystal": 2,
+    "gems": 2,
+    "gold": 4000
+   },
+   "requires": [
+    33
+   ]
+  },
+  {
+   "id": 36,
+   "name": "Giant",
+   "cost": {
+    "wood": 10,
+    "ore": 10,
+    "gems": 10,
+    "gold": 5000
+   },
+   "requires": [
+    34,
+    35
+   ]
+  },
+  {
+   "id": 37,
+   "name": "Master Gremlin",
+   "cost": {
+    "gold": 1000
+   },
+   "requires": [
+    30
+   ]
+  },
+  {
+   "id": 38,
+   "name": "Obsidian Gargoyle",
+   "cost": {
+    "ore": 5,
+    "gold": 1500
+   },
+   "requires": [
+    31
+   ]
+  },
+  {
+   "id": 39,
+   "name": "Iron Golem",
+   "cost": {
+    "wood": 5,
+    "mercury": 5,
+    "ore": 5,
+    "gold": 2000
+   },
+   "requires": [
+    32
+   ]
+  },
+  {
+   "id": 40,
+   "name": "Arch Mage",
+   "cost": {
+    "wood": 5,
+    "gold": 2000
+   },
+   "requires": [
+    33,
+    22
+   ]
+  },
+  {
+   "id": 41,
+   "name": "Master Genie",
+   "cost": {
+    "wood": 5,
+    "gold": 2000
+   },
+   "requires": [
+    34
+   ]
+  },
+  {
+   "id": 42,
+   "name": "Naga Queen",
+   "cost": {
+    "mercury": 3,
+    "sulfur": 3,
+    "crystal": 3,
+    "gems": 3,
+    "gold": 3000
+   },
+   "requires": [
+    35
+   ]
+  },
+  {
+   "id": 43,
+   "name": "Titan",
+   "cost": {
+    "wood": 5,
+    "ore": 5,
+    "gems": 30,
+    "gold": 25000
+   },
+   "requires": [
+    36
+   ]
+  }
+ ],
+ "inferno": [
+  {
+   "id": 0,
+   "name": "Mage Guild 1",
+   "cost": {
+    "wood": 5,
+    "ore": 5,
+    "gold": 2000
+   },
+   "requires": []
+  },
+  {
+   "id": 1,
+   "name": "Mage Guild 2",
+   "cost": {
+    "wood": 5,
+    "mercury": 4,
+    "ore": 5,
+    "sulfur": 4,
+    "crystal": 4,
+    "gems": 4,
+    "gold": 1000
+   },
+   "requires": [
+    0
+   ]
+  },
+  {
+   "id": 2,
+   "name": "Mage Guild 3",
+   "cost": {
+    "wood": 5,
+    "mercury": 6,
+    "ore": 5,
+    "sulfur": 6,
+    "crystal": 6,
+    "gems": 6,
+    "gold": 1000
+   },
+   "requires": [
+    1
+   ]
+  },
+  {
+   "id": 3,
+   "name": "Mage Guild 4",
+   "cost": {
+    "wood": 5,
+    "mercury": 8,
+    "ore": 5,
+    "sulfur": 8,
+    "crystal": 8,
+    "gems": 8,
+    "gold": 1000
+   },
+   "requires": [
+    2
+   ]
+  },
+  {
+   "id": 4,
+   "name": "Mage Guild 5",
+   "cost": {
+    "wood": 5,
+    "mercury": 10,
+    "ore": 5,
+    "sulfur": 10,
+    "crystal": 10,
+    "gems": 10,
+    "gold": 1000
+   },
+   "requires": [
+    3
+   ]
+  },
+  {
+   "id": 5,
+   "name": "Tavern",
+   "cost": {
+    "wood": 5,
+    "gold": 500
+   },
+   "requires": []
+  },
+  {
+   "id": 7,
+   "name": "Fort",
+   "cost": {
+    "wood": 20,
+    "ore": 20,
+    "gold": 5000
+   },
+   "requires": []
+  },
+  {
+   "id": 8,
+   "name": "Citadel",
+   "cost": {
+    "ore": 5,
+    "gold": 2500
+   },
+   "requires": [
+    7
+   ]
+  },
+  {
+   "id": 9,
+   "name": "Castle",
+   "cost": {
+    "wood": 10,
+    "ore": 10,
+    "gold": 5000
+   },
+   "requires": [
+    8
+   ]
+  },
+  {
+   "id": 11,
+   "name": "Town Hall",
+   "cost": {
+    "gold": 2500
+   },
+   "requires": [
+    5
+   ]
+  },
+  {
+   "id": 12,
+   "name": "City Hall",
+   "cost": {
+    "gold": 5000
+   },
+   "requires": [
+    11,
+    16,
+    14,
+    0
+   ]
+  },
+  {
+   "id": 13,
+   "name": "Capitol",
+   "cost": {
+    "gold": 10000
+   },
+   "requires": [
+    12,
+    9
+   ]
+  },
+  {
+   "id": 14,
+   "name": "Marketplace",
+   "cost": {
+    "wood": 5,
+    "gold": 500
+   },
+   "requires": []
+  },
+  {
+   "id": 15,
+   "name": "Resource Silo",
+   "cost": {
+    "ore": 5,
+    "gold": 5000
+   },
+   "requires": [
+    14
+   ]
+  },
+  {
+   "id": 16,
+   "name": "Blacksmith",
+   "cost": {
+    "wood": 5,
+    "gold": 1000
+   },
+   "requires": []
+  },
+  {
+   "id": 18,
+   "name": "Imp Horde",
+   "cost": {
+    "gold": 1000
+   },
+   "requires": [
+    30
+   ]
+  },
+  {
+   "id": 19,
+   "name": "Familiar Horde",
+   "cost": {
+    "gold": 1000
+   },
+   "requires": [
+    37
+   ]
+  },
+  {
+   "id": 21,
+   "name": "Brimstone Stormclouds",
+   "cost": {
+    "sulfur": 5,
+    "gold": 1000
+   },
+   "requires": [
+    7
+   ]
+  },
+  {
+   "id": 22,
+   "name": "Castle Gate",
+   "cost": {
+    "wood": 5,
+    "ore": 5,
+    "gold": 10000
+   },
+   "requires": [
+    8
+   ]
+  },
+  {
+   "id": 23,
+   "name": "Order of Fire",
+   "cost": {
+    "wood": 5,
+    "gold": 1000
+   },
+   "requires": [
+    0
+   ]
+  },
+  {
+   "id": 24,
+   "name": "Hell Hound Horde",
+   "cost": {
+    "gold": 1000
+   },
+   "requires": [
+    32
+   ]
+  },
+  {
+   "id": 25,
+   "name": "Cerberus Horde",
+   "cost": {
+    "gold": 1000
+   },
+   "requires": [
+    39
+   ]
+  },
+  {
+   "id": 26,
+   "name": "Grail",
+   "cost": {},
+   "requires": []
+  },
+  {
+   "id": 30,
+   "name": "Imp",
+   "cost": {
+    "wood": 5,
+    "ore": 5,
+    "gold": 300
+   },
+   "requires": [
+    7
+   ]
+  },
+  {
+   "id": 31,
+   "name": "Gog",
+   "cost": {
+    "ore": 5,
+    "gold": 1000
+   },
+   "requires": [
+    30
+   ]
+  },
+  {
+   "id": 32,
+   "name": "Hell Hound",
+   "cost": {
+    "wood": 10,
+    "gold": 1500
+   },
+   "requires": [
+    30
+   ]
+  },
+  {
+   "id": 33,
+   "name": "Demon",
+   "cost": {
+    "wood": 5,
+    "ore": 5,
+    "gold": 2000
+   },
+   "requires": [
+    31
+   ]
+  },
+  {
+   "id": 34,
+   "name": "Pit Fiend",
+   "cost": {
+    "gold": 3000
+   },
+   "requires": [
+    33
+   ]
+  },
+  {
+   "id": 35,
+   "name": "Efreet",
+   "cost": {
+    "mercury": 3,
+    "ore": 10,
+    "sulfur": 3,
+    "gems": 3,
+    "gold": 4000
+   },
+   "requires": [
+    33,
+    0
+   ]
+  },
+  {
+   "id": 36,
+   "name": "Devil",
+   "cost": {
+    "wood": 10,
+    "mercury": 20,
+    "ore": 10,
+    "gold": 15000
+   },
+   "requires": [
+    34,
+    35
+   ]
+  },
+  {
+   "id": 37,
+   "name": "Familiar",
+   "cost": {
+    "gold": 1000
+   },
+   "requires": [
+    30
+   ]
+  },
+  {
+   "id": 38,
+   "name": "Magog",
+   "cost": {
+    "mercury": 5,
+    "gold": 1000
+   },
+   "requires": [
+    31
+   ]
+  },
+  {
+   "id": 39,
+   "name": "Cerberus",
+   "cost": {
+    "sulfur": 5,
+    "gold": 1500
+   },
+   "requires": [
+    32
+   ]
+  },
+  {
+   "id": 40,
+   "name": "Horned Demon",
+   "cost": {
+    "wood": 5,
+    "ore": 5,
+    "gold": 2000
+   },
+   "requires": [
+    33
+   ]
+  },
+  {
+   "id": 41,
+   "name": "Pit Lord",
+   "cost": {
+    "mercury": 5,
+    "sulfur": 5,
+    "gold": 3000
+   },
+   "requires": [
+    34,
+    1
+   ]
+  },
+  {
+   "id": 42,
+   "name": "Efreet Sultan",
+   "cost": {
+    "mercury": 5,
+    "ore": 5,
+    "sulfur": 5,
+    "gems": 5,
+    "gold": 3000
+   },
+   "requires": [
+    35
+   ]
+  },
+  {
+   "id": 43,
+   "name": "Arch Devil",
+   "cost": {
+    "wood": 5,
+    "mercury": 20,
+    "ore": 5,
+    "gold": 20000
+   },
+   "requires": [
+    36
+   ]
+  }
+ ],
+ "necropolis": [
+  {
+   "id": 0,
+   "name": "Mage Guild 1",
+   "cost": {
+    "wood": 5,
+    "ore": 5,
+    "gold": 2000
+   },
+   "requires": []
+  },
+  {
+   "id": 1,
+   "name": "Mage Guild 2",
+   "cost": {
+    "wood": 5,
+    "mercury": 4,
+    "ore": 5,
+    "sulfur": 4,
+    "crystal": 4,
+    "gems": 4,
+    "gold": 1000
+   },
+   "requires": [
+    0
+   ]
+  },
+  {
+   "id": 2,
+   "name": "Mage Guild 3",
+   "cost": {
+    "wood": 5,
+    "mercury": 6,
+    "ore": 5,
+    "sulfur": 6,
+    "crystal": 6,
+    "gems": 6,
+    "gold": 1000
+   },
+   "requires": [
+    1
+   ]
+  },
+  {
+   "id": 3,
+   "name": "Mage Guild 4",
+   "cost": {
+    "wood": 5,
+    "mercury": 8,
+    "ore": 5,
+    "sulfur": 8,
+    "crystal": 8,
+    "gems": 8,
+    "gold": 1000
+   },
+   "requires": [
+    2
+   ]
+  },
+  {
+   "id": 4,
+   "name": "Mage Guild 5",
+   "cost": {
+    "wood": 5,
+    "mercury": 10,
+    "ore": 5,
+    "sulfur": 10,
+    "crystal": 10,
+    "gems": 10,
+    "gold": 1000
+   },
+   "requires": [
+    3
+   ]
+  },
+  {
+   "id": 5,
+   "name": "Tavern",
+   "cost": {
+    "wood": 5,
+    "gold": 500
+   },
+   "requires": []
+  },
+  {
+   "id": 6,
+   "name": "Shipyard",
+   "cost": {
+    "wood": 20,
+    "gold": 2000
+   },
+   "requires": []
+  },
+  {
+   "id": 7,
+   "name": "Fort",
+   "cost": {
+    "wood": 20,
+    "ore": 20,
+    "gold": 5000
+   },
+   "requires": []
+  },
+  {
+   "id": 8,
+   "name": "Citadel",
+   "cost": {
+    "ore": 5,
+    "gold": 2500
+   },
+   "requires": [
+    7
+   ]
+  },
+  {
+   "id": 9,
+   "name": "Castle",
+   "cost": {
+    "wood": 10,
+    "ore": 10,
+    "gold": 5000
+   },
+   "requires": [
+    8
+   ]
+  },
+  {
+   "id": 11,
+   "name": "Town Hall",
+   "cost": {
+    "gold": 2500
+   },
+   "requires": [
+    5
+   ]
+  },
+  {
+   "id": 12,
+   "name": "City Hall",
+   "cost": {
+    "gold": 5000
+   },
+   "requires": [
+    11,
+    14,
+    16,
+    0
+   ]
+  },
+  {
+   "id": 13,
+   "name": "Capitol",
+   "cost": {
+    "gold": 10000
+   },
+   "requires": [
+    12,
+    9
+   ]
+  },
+  {
+   "id": 14,
+   "name": "Marketplace",
+   "cost": {
+    "wood": 5,
+    "gold": 500
+   },
+   "requires": []
+  },
+  {
+   "id": 15,
+   "name": "Resource Silo",
+   "cost": {
+    "ore": 5,
+    "gold": 5000
+   },
+   "requires": [
+    14
+   ]
+  },
+  {
+   "id": 16,
+   "name": "Blacksmith",
+   "cost": {
+    "wood": 5,
+    "gold": 1000
+   },
+   "requires": []
+  },
+  {
+   "id": 17,
+   "name": "Cover of Darkness",
+   "cost": {
+    "gold": 1000
+   },
+   "requires": [
+    7
+   ]
+  },
+  {
+   "id": 18,
+   "name": "Skeleton Horde",
+   "cost": {
+    "gold": 1000
+   },
+   "requires": [
+    22
+   ]
+  },
+  {
+   "id": 19,
+   "name": "Skeleton Warrior Horde",
+   "cost": {
+    "gold": 1000
+   },
+   "requires": [
+    37,
+    22
+   ]
+  },
+  {
+   "id": 21,
+   "name": "Necromancy Amplifier",
+   "cost": {
+    "gold": 1000
+   },
+   "requires": [
+    0
+   ]
+  },
+  {
+   "id": 22,
+   "name": "Skeleton Transformer",
+   "cost": {
+    "gold": 1000
+   },
+   "requires": [
+    30
+   ]
+  },
+  {
+   "id": 26,
+   "name": "Grail",
+   "cost": {},
+   "requires": []
+  },
+  {
+   "id": 30,
+   "name": "Skeleton",
+   "cost": {
+    "wood": 5,
+    "ore": 5,
+    "gold": 400
+   },
+   "requires": [
+    7
+   ]
+  },
+  {
+   "id": 31,
+   "name": "Walking Dead",
+   "cost": {
+    "ore": 5,
+    "gold": 1000
+   },
+   "requires": [
+    30
+   ]
+  },
+  {
+   "id": 32,
+   "name": "Wight",
+   "cost": {
+    "wood": 5,
+    "ore": 5,
+    "gold": 1500
+   },
+   "requires": [
+    30
+   ]
+  },
+  {
+   "id": 33,
+   "name": "Vampire",
+   "cost": {
+    "wood": 5,
+    "ore": 5,
+    "gold": 2000
+   },
+   "requires": [
+    31
+   ]
+  },
+  {
+   "id": 34,
+   "name": "Lich",
+   "cost": {
+    "ore": 10,
+    "sulfur": 10,
+    "gold": 2000
+   },
+   "requires": [
+    31,
+    0
+   ]
+  },
+  {
+   "id": 35,
+   "name": "Black Knight",
+   "cost": {
+    "wood": 10,
+    "ore": 10,
+    "gold": 6000
+   },
+   "requires": [
+    33,
+    34
+   ]
+  },
+  {
+   "id": 36,
+   "name": "Bone Dragon",
+   "cost": {
+    "wood": 5,
+    "mercury": 5,
+    "ore": 5,
+    "sulfur": 5,
+    "crystal": 5,
+    "gems": 5,
+    "gold": 10000
+   },
+   "requires": [
+    35
+   ]
+  },
+  {
+   "id": 37,
+   "name": "Skeleton Warrior",
+   "cost": {
+    "wood": 5,
+    "ore": 5,
+    "gold": 1000
+   },
+   "requires": [
+    30
+   ]
+  },
+  {
+   "id": 38,
+   "name": "Zombie",
+   "cost": {
+    "wood": 5,
+    "ore": 5,
+    "gold": 1000
+   },
+   "requires": [
+    31
+   ]
+  },
+  {
+   "id": 39,
+   "name": "Wraith",
+   "cost": {
+    "mercury": 5,
+    "gold": 1500
+   },
+   "requires": [
+    32
+   ]
+  },
+  {
+   "id": 40,
+   "name": "Vampire Lord",
+   "cost": {
+    "wood": 5,
+    "crystal": 10,
+    "gems": 10,
+    "gold": 2000
+   },
+   "requires": [
+    33,
+    21
+   ]
+  },
+  {
+   "id": 41,
+   "name": "Power Lich",
+   "cost": {
+    "ore": 5,
+    "sulfur": 5,
+    "gold": 2000
+   },
+   "requires": [
+    34
+   ]
+  },
+  {
+   "id": 42,
+   "name": "Black Lord",
+   "cost": {
+    "wood": 5,
+    "mercury": 2,
+    "ore": 5,
+    "sulfur": 2,
+    "crystal": 2,
+    "gems": 2,
+    "gold": 3000
+   },
+   "requires": [
+    35
+   ]
+  },
+  {
+   "id": 43,
+   "name": "Ghost Dragon",
+   "cost": {
+    "wood": 5,
+    "mercury": 20,
+    "ore": 5,
+    "gold": 15000
+   },
+   "requires": [
+    36
+   ]
+  }
+ ],
+ "dungeon": [
+  {
+   "id": 0,
+   "name": "Mage Guild 1",
+   "cost": {
+    "wood": 5,
+    "ore": 5,
+    "gold": 2000
+   },
+   "requires": []
+  },
+  {
+   "id": 1,
+   "name": "Mage Guild 2",
+   "cost": {
+    "wood": 5,
+    "mercury": 4,
+    "ore": 5,
+    "sulfur": 4,
+    "crystal": 4,
+    "gems": 4,
+    "gold": 1000
+   },
+   "requires": [
+    0
+   ]
+  },
+  {
+   "id": 2,
+   "name": "Mage Guild 3",
+   "cost": {
+    "wood": 5,
+    "mercury": 6,
+    "ore": 5,
+    "sulfur": 6,
+    "crystal": 6,
+    "gems": 6,
+    "gold": 1000
+   },
+   "requires": [
+    1
+   ]
+  },
+  {
+   "id": 3,
+   "name": "Mage Guild 4",
+   "cost": {
+    "wood": 5,
+    "mercury": 8,
+    "ore": 5,
+    "sulfur": 8,
+    "crystal": 8,
+    "gems": 8,
+    "gold": 1000
+   },
+   "requires": [
+    2
+   ]
+  },
+  {
+   "id": 4,
+   "name": "Mage Guild 5",
+   "cost": {
+    "wood": 5,
+    "mercury": 10,
+    "ore": 5,
+    "sulfur": 10,
+    "crystal": 10,
+    "gems": 10,
+    "gold": 1000
+   },
+   "requires": [
+    3
+   ]
+  },
+  {
+   "id": 5,
+   "name": "Tavern",
+   "cost": {
+    "wood": 5,
+    "gold": 500
+   },
+   "requires": []
+  },
+  {
+   "id": 7,
+   "name": "Fort",
+   "cost": {
+    "wood": 20,
+    "ore": 20,
+    "gold": 5000
+   },
+   "requires": []
+  },
+  {
+   "id": 8,
+   "name": "Citadel",
+   "cost": {
+    "ore": 5,
+    "gold": 2500
+   },
+   "requires": [
+    7
+   ]
+  },
+  {
+   "id": 9,
+   "name": "Castle",
+   "cost": {
+    "wood": 10,
+    "ore": 10,
+    "gold": 5000
+   },
+   "requires": [
+    8
+   ]
+  },
+  {
+   "id": 11,
+   "name": "Town Hall",
+   "cost": {
+    "gold": 2500
+   },
+   "requires": [
+    5
+   ]
+  },
+  {
+   "id": 12,
+   "name": "City Hall",
+   "cost": {
+    "gold": 5000
+   },
+   "requires": [
+    11,
+    16,
+    14,
+    0
+   ]
+  },
+  {
+   "id": 13,
+   "name": "Capitol",
+   "cost": {
+    "gold": 10000
+   },
+   "requires": [
+    12,
+    9
+   ]
+  },
+  {
+   "id": 14,
+   "name": "Marketplace",
+   "cost": {
+    "wood": 5,
+    "gold": 500
+   },
+   "requires": []
+  },
+  {
+   "id": 15,
+   "name": "Resource Silo",
+   "cost": {
+    "ore": 5,
+    "gold": 5000
+   },
+   "requires": [
+    14
+   ]
+  },
+  {
+   "id": 16,
+   "name": "Blacksmith",
+   "cost": {
+    "wood": 5,
+    "gold": 1000
+   },
+   "requires": []
+  },
+  {
+   "id": 17,
+   "name": "Artifact Merchants",
+   "cost": {
+    "gold": 10000
+   },
+   "requires": [
+    14
+   ]
+  },
+  {
+   "id": 18,
+   "name": "Troglodyte Horde",
+   "cost": {
+    "gold": 1000
+   },
+   "requires": [
+    30
+   ]
+  },
+  {
+   "id": 19,
+   "name": "Infernal Troglodyte Horde",
+   "cost": {
+    "gold": 1000
+   },
+   "requires": [
+    37
+   ]
+  },
+  {
+   "id": 21,
+   "name": "Mana Vortex",
+   "cost": {
+    "gold": 1000
+   },
+   "requires": [
+    0
+   ]
+  },
+  {
+   "id": 22,
+   "name": "Portal of Summoning",
+   "cost": {
+    "ore": 5,
+    "gold": 2500
+   },
+   "requires": []
+  },
+  {
+   "id": 23,
+   "name": "Academy of Battle Scholars",
+   "cost": {
+    "wood": 5,
+    "ore": 5,
+    "gold": 1000
+   },
+   "requires": []
+  },
+  {
+   "id": 26,
+   "name": "Grail",
+   "cost": {},
+   "requires": []
+  },
+  {
+   "id": 30,
+   "name": "Troglodyte",
+   "cost": {
+    "wood": 10,
+    "gold": 400
+   },
+   "requires": [
+    7
+   ]
+  },
+  {
+   "id": 31,
+   "name": "Harpy",
+   "cost": {
+    "gold": 1000
+   },
+   "requires": [
+    30
+   ]
+  },
+  {
+   "id": 32,
+   "name": "Beholder",
+   "cost": {
+    "wood": 1,
+    "mercury": 1,
+    "ore": 1,
+    "sulfur": 1,
+    "crystal": 1,
+    "gems": 1,
+    "gold": 1000
+   },
+   "requires": [
+    30
+   ]
+  },
+  {
+   "id": 33,
+   "name": "Medusa",
+   "cost": {
+    "wood": 5,
+    "ore": 10,
+    "gold": 2000
+   },
+   "requires": [
+    32,
+    31
+   ]
+  },
+  {
+   "id": 34,
+   "name": "Minotaur",
+   "cost": {
+    "ore": 10,
+    "gems": 10,
+    "gold": 4000
+   },
+   "requires": [
+    33
+   ]
+  },
+  {
+   "id": 35,
+   "name": "Manticore",
+   "cost": {
+    "wood": 5,
+    "mercury": 5,
+    "ore": 5,
+    "sulfur": 5,
+    "gold": 5000
+   },
+   "requires": [
+    33
+   ]
+  },
+  {
+   "id": 36,
+   "name": "Red Dragon",
+   "cost": {
+    "wood": 15,
+    "ore": 15,
+    "sulfur": 20,
+    "gold": 15000
+   },
+   "requires": [
+    34,
+    35,
+    1
+   ]
+  },
+  {
+   "id": 37,
+   "name": "Infernal Troglodyte",
+   "cost": {
+    "wood": 5,
+    "gold": 1000
+   },
+   "requires": [
+    30
+   ]
+  },
+  {
+   "id": 38,
+   "name": "Harpy Hag",
+   "cost": {
+    "sulfur": 2,
+    "crystal": 2,
+    "gold": 1000
+   },
+   "requires": [
+    31
+   ]
+  },
+  {
+   "id": 39,
+   "name": "Evil Eye",
+   "cost": {
+    "wood": 1,
+    "mercury": 1,
+    "ore": 1,
+    "sulfur": 1,
+    "crystal": 1,
+    "gems": 1,
+    "gold": 1000
+   },
+   "requires": [
+    32
+   ]
+  },
+  {
+   "id": 40,
+   "name": "Medusa Queen",
+   "cost": {
+    "wood": 5,
+    "gold": 1500
+   },
+   "requires": [
+    33
+   ]
+  },
+  {
+   "id": 41,
+   "name": "Minotaur King",
+   "cost": {
+    "ore": 5,
+    "gems": 5,
+    "gold": 3000
+   },
+   "requires": [
+    34
+   ]
+  },
+  {
+   "id": 42,
+   "name": "Scorpicore",
+   "cost": {
+    "wood": 5,
+    "mercury": 5,
+    "ore": 5,
+    "sulfur": 5,
+    "gold": 3000
+   },
+   "requires": [
+    35
+   ]
+  },
+  {
+   "id": 43,
+   "name": "Black Dragon",
+   "cost": {
+    "wood": 15,
+    "ore": 15,
+    "sulfur": 20,
+    "gold": 15000
+   },
+   "requires": [
+    36,
+    2
+   ]
+  }
+ ],
+ "stronghold": [
+  {
+   "id": 0,
+   "name": "Mage Guild 1",
+   "cost": {
+    "wood": 5,
+    "ore": 5,
+    "gold": 2000
+   },
+   "requires": []
+  },
+  {
+   "id": 1,
+   "name": "Mage Guild 2",
+   "cost": {
+    "wood": 5,
+    "mercury": 4,
+    "ore": 5,
+    "sulfur": 4,
+    "crystal": 4,
+    "gems": 4,
+    "gold": 1000
+   },
+   "requires": [
+    0
+   ]
+  },
+  {
+   "id": 2,
+   "name": "Mage Guild 3",
+   "cost": {
+    "wood": 5,
+    "mercury": 6,
+    "ore": 5,
+    "sulfur": 6,
+    "crystal": 6,
+    "gems": 6,
+    "gold": 1000
+   },
+   "requires": [
+    1
+   ]
+  },
+  {
+   "id": 5,
+   "name": "Tavern",
+   "cost": {
+    "wood": 5,
+    "gold": 500
+   },
+   "requires": []
+  },
+  {
+   "id": 7,
+   "name": "Fort",
+   "cost": {
+    "wood": 20,
+    "ore": 20,
+    "gold": 5000
+   },
+   "requires": []
+  },
+  {
+   "id": 8,
+   "name": "Citadel",
+   "cost": {
+    "ore": 5,
+    "gold": 2500
+   },
+   "requires": [
+    7
+   ]
+  },
+  {
+   "id": 9,
+   "name": "Castle",
+   "cost": {
+    "wood": 10,
+    "ore": 10,
+    "gold": 5000
+   },
+   "requires": [
+    8
+   ]
+  },
+  {
+   "id": 11,
+   "name": "Town Hall",
+   "cost": {
+    "gold": 2500
+   },
+   "requires": [
+    5
+   ]
+  },
+  {
+   "id": 12,
+   "name": "City Hall",
+   "cost": {
+    "gold": 5000
+   },
+   "requires": [
+    11,
+    0,
+    14,
+    16
+   ]
+  },
+  {
+   "id": 13,
+   "name": "Capitol",
+   "cost": {
+    "gold": 10000
+   },
+   "requires": [
+    12,
+    9
+   ]
+  },
+  {
+   "id": 14,
+   "name": "Marketplace",
+   "cost": {
+    "wood": 5,
+    "gold": 500
+   },
+   "requires": []
+  },
+  {
+   "id": 15,
+   "name": "Resource Silo",
+   "cost": {
+    "ore": 5,
+    "gold": 5000
+   },
+   "requires": [
+    14
+   ]
+  },
+  {
+   "id": 16,
+   "name": "Blacksmith",
+   "cost": {
+    "wood": 5,
+    "gold": 1000
+   },
+   "requires": []
+  },
+  {
+   "id": 17,
+   "name": "Escape Tunnel",
+   "cost": {
+    "wood": 5,
+    "ore": 5,
+    "gold": 2000
+   },
+   "requires": [
+    7
+   ]
+  },
+  {
+   "id": 18,
+   "name": "Goblin Horde",
+   "cost": {
+    "gold": 1000
+   },
+   "requires": [
+    30
+   ]
+  },
+  {
+   "id": 19,
+   "name": "Hobgoblin Horde",
+   "cost": {
+    "gold": 1000
+   },
+   "requires": [
+    37
+   ]
+  },
+  {
+   "id": 21,
+   "name": "Freelancers Guild",
+   "cost": {
+    "gold": 1000
+   },
+   "requires": [
+    14
+   ]
+  },
+  {
+   "id": 22,
+   "name": "Ballista Works",
+   "cost": {
+    "wood": 5,
+    "gold": 1000
+   },
+   "requires": [
+    16
+   ]
+  },
+  {
+   "id": 23,
+   "name": "Hall of Valhalla",
+   "cost": {
+    "gold": 1000
+   },
+   "requires": [
+    7
+   ]
+  },
+  {
+   "id": 26,
+   "name": "Grail",
+   "cost": {},
+   "requires": []
+  },
+  {
+   "id": 30,
+   "name": "Goblin",
+   "cost": {
+    "wood": 5,
+    "ore": 5,
+    "gold": 200
+   },
+   "requires": [
+    7
+   ]
+  },
+  {
+   "id": 31,
+   "name": "Wolf Rider",
+   "cost": {
+    "wood": 10,
+    "ore": 5,
+    "gold": 1000
+   },
+   "requires": [
+    30
+   ]
+  },
+  {
+   "id": 32,
+   "name": "Orc",
+   "cost": {
+    "wood": 5,
+    "ore": 5,
+    "gold": 1000
+   },
+   "requires": [
+    30
+   ]
+  },
+  {
+   "id": 33,
+   "name": "Ogre",
+   "cost": {
+    "wood": 20,
+    "gold": 2000
+   },
+   "requires": [
+    32
+   ]
+  },
+  {
+   "id": 34,
+   "name": "Roc",
+   "cost": {
+    "ore": 10,
+    "gold": 2500
+   },
+   "requires": [
+    31
+   ]
+  },
+  {
+   "id": 35,
+   "name": "Cyclops",
+   "cost": {
+    "ore": 20,
+    "crystal": 20,
+    "gold": 3500
+   },
+   "requires": [
+    33
+   ]
+  },
+  {
+   "id": 36,
+   "name": "Behemoth",
+   "cost": {
+    "wood": 10,
+    "ore": 10,
+    "crystal": 10,
+    "gold": 10000
+   },
+   "requires": [
+    34
+   ]
+  },
+  {
+   "id": 37,
+   "name": "Hobgoblin",
+   "cost": {
+    "wood": 5,
+    "ore": 5,
+    "gold": 1000
+   },
+   "requires": [
+    30
+   ]
+  },
+  {
+   "id": 38,
+   "name": "Wolf Raider",
+   "cost": {
+    "wood": 5,
+    "ore": 5,
+    "gold": 1000
+   },
+   "requires": [
+    31,
+    37
+   ]
+  },
+  {
+   "id": 39,
+   "name": "Orc Chieftain",
+   "cost": {
+    "wood": 2,
+    "ore": 2,
+    "gold": 1000
+   },
+   "requires": [
+    32,
+    16
+   ]
+  },
+  {
+   "id": 40,
+   "name": "Ogre Mage",
+   "cost": {
+    "wood": 5,
+    "ore": 5,
+    "gems": 5,
+    "gold": 2000
+   },
+   "requires": [
+    33,
+    0
+   ]
+  },
+  {
+   "id": 41,
+   "name": "Thunderbird",
+   "cost": {
+    "wood": 5,
+    "ore": 5,
+    "gold": 2000
+   },
+   "requires": [
+    34
+   ]
+  },
+  {
+   "id": 42,
+   "name": "Cyclops King",
+   "cost": {
+    "wood": 5,
+    "ore": 5,
+    "gold": 3000
+   },
+   "requires": [
+    35
+   ]
+  },
+  {
+   "id": 43,
+   "name": "Ancient Behemoth",
+   "cost": {
+    "wood": 10,
+    "ore": 10,
+    "crystal": 20,
+    "gold": 15000
+   },
+   "requires": [
+    36
+   ]
+  }
+ ],
+ "fortress": [
+  {
+   "id": 0,
+   "name": "Mage Guild 1",
+   "cost": {
+    "wood": 5,
+    "ore": 5,
+    "gold": 2000
+   },
+   "requires": []
+  },
+  {
+   "id": 1,
+   "name": "Mage Guild 2",
+   "cost": {
+    "wood": 5,
+    "mercury": 4,
+    "ore": 5,
+    "sulfur": 4,
+    "crystal": 4,
+    "gems": 4,
+    "gold": 1000
+   },
+   "requires": [
+    0
+   ]
+  },
+  {
+   "id": 2,
+   "name": "Mage Guild 3",
+   "cost": {
+    "wood": 5,
+    "mercury": 6,
+    "ore": 5,
+    "sulfur": 6,
+    "crystal": 6,
+    "gems": 6,
+    "gold": 1000
+   },
+   "requires": [
+    1
+   ]
+  },
+  {
+   "id": 5,
+   "name": "Tavern",
+   "cost": {
+    "wood": 5,
+    "gold": 500
+   },
+   "requires": []
+  },
+  {
+   "id": 6,
+   "name": "Shipyard",
+   "cost": {
+    "wood": 20,
+    "gold": 2000
+   },
+   "requires": []
+  },
+  {
+   "id": 7,
+   "name": "Fort",
+   "cost": {
+    "wood": 20,
+    "ore": 20,
+    "gold": 5000
+   },
+   "requires": []
+  },
+  {
+   "id": 8,
+   "name": "Citadel",
+   "cost": {
+    "ore": 5,
+    "gold": 2500
+   },
+   "requires": [
+    7
+   ]
+  },
+  {
+   "id": 9,
+   "name": "Castle",
+   "cost": {
+    "wood": 10,
+    "ore": 10,
+    "gold": 5000
+   },
+   "requires": [
+    8
+   ]
+  },
+  {
+   "id": 11,
+   "name": "Town Hall",
+   "cost": {
+    "gold": 2500
+   },
+   "requires": [
+    5
+   ]
+  },
+  {
+   "id": 12,
+   "name": "City Hall",
+   "cost": {
+    "gold": 5000
+   },
+   "requires": [
+    11,
+    14,
+    16,
+    0
+   ]
+  },
+  {
+   "id": 13,
+   "name": "Capitol",
+   "cost": {
+    "gold": 10000
+   },
+   "requires": [
+    12,
+    9
+   ]
+  },
+  {
+   "id": 14,
+   "name": "Marketplace",
+   "cost": {
+    "wood": 5,
+    "gold": 500
+   },
+   "requires": []
+  },
+  {
+   "id": 15,
+   "name": "Resource Silo",
+   "cost": {
+    "ore": 5,
+    "gold": 5000
+   },
+   "requires": [
+    14
+   ]
+  },
+  {
+   "id": 16,
+   "name": "Blacksmith",
+   "cost": {
+    "wood": 5,
+    "gold": 1000
+   },
+   "requires": []
+  },
+  {
+   "id": 17,
+   "name": "Defense Cage",
+   "cost": {
+    "gold": 1000
+   },
+   "requires": [
+    11,
+    21
+   ]
+  },
+  {
+   "id": 18,
+   "name": "Gnoll Horde",
+   "cost": {
+    "gold": 1000
+   },
+   "requires": [
+    30
+   ]
+  },
+  {
+   "id": 19,
+   "name": "Gnoll Marauder Horde",
+   "cost": {
+    "gold": 1000
+   },
+   "requires": [
+    37
+   ]
+  },
+  {
+   "id": 21,
+   "name": "Siege Defense",
+   "cost": {
+    "gold": 1000
+   },
+   "requires": [
+    7
+   ]
+  },
+  {
+   "id": 22,
+   "name": "Siege Attack",
+   "cost": {
+    "gold": 1000
+   },
+   "requires": [
+    21
+   ]
+  },
+  {
+   "id": 26,
+   "name": "Grail",
+   "cost": {},
+   "requires": []
+  },
+  {
+   "id": 30,
+   "name": "Gnoll",
+   "cost": {
+    "wood": 10,
+    "gold": 400
+   },
+   "requires": [
+    7
+   ]
+  },
+  {
+   "id": 31,
+   "name": "Lizardman",
+   "cost": {
+    "wood": 5,
+    "gold": 1000
+   },
+   "requires": [
+    30
+   ]
+  },
+  {
+   "id": 32,
+   "name": "Serpent Fly",
+   "cost": {
+    "wood": 5,
+    "mercury": 2,
+    "sulfur": 2,
+    "gold": 1000
+   },
+   "requires": [
+    30
+   ]
+  },
+  {
+   "id": 33,
+   "name": "Basilisk",
+   "cost": {
+    "wood": 5,
+    "ore": 10,
+    "gold": 2000
+   },
+   "requires": [
+    32
+   ]
+  },
+  {
+   "id": 34,
+   "name": "Gorgon",
+   "cost": {
+    "wood": 10,
+    "mercury": 5,
+    "ore": 10,
+    "sulfur": 5,
+    "gold": 2500
+   },
+   "requires": [
+    32,
+    31
+   ]
+  },
+  {
+   "id": 35,
+   "name": "Wyvern",
+   "cost": {
+    "wood": 15,
+    "gold": 3500
+   },
+   "requires": [
+    31
+   ]
+  },
+  {
+   "id": 36,
+   "name": "Hydra",
+   "cost": {
+    "wood": 10,
+    "ore": 10,
+    "sulfur": 10,
+    "gold": 10000
+   },
+   "requires": [
+    35,
+    33
+   ]
+  },
+  {
+   "id": 37,
+   "name": "Gnoll Marauder",
+   "cost": {
+    "wood": 10,
+    "gold": 1000
+   },
+   "requires": [
+    30,
+    5
+   ]
+  },
+  {
+   "id": 38,
+   "name": "Lizard Warrior",
+   "cost": {
+    "wood": 5,
+    "gold": 1000
+   },
+   "requires": [
+    31
+   ]
+  },
+  {
+   "id": 39,
+   "name": "Dragon Fly",
+   "cost": {
+    "mercury": 2,
+    "sulfur": 2,
+    "gold": 1000
+   },
+   "requires": [
+    32
+   ]
+  },
+  {
+   "id": 40,
+   "name": "Greater Basilisk",
+   "cost": {
+    "wood": 5,
+    "ore": 5,
+    "gold": 2000
+   },
+   "requires": [
+    33
+   ]
+  },
+  {
+   "id": 41,
+   "name": "Mighty Gorgon",
+   "cost": {
+    "wood": 5,
+    "ore": 5,
+    "gold": 2000
+   },
+   "requires": [
+    34,
+    15
+   ]
+  },
+  {
+   "id": 42,
+   "name": "Wyvern Monarch",
+   "cost": {
+    "wood": 10,
+    "mercury": 10,
+    "gold": 3000
+   },
+   "requires": [
+    35
+   ]
+  },
+  {
+   "id": 43,
+   "name": "Chaos Hydra",
+   "cost": {
+    "wood": 10,
+    "ore": 10,
+    "sulfur": 20,
+    "gold": 15000
+   },
+   "requires": [
+    36
+   ]
+  }
+ ],
+ "conflux": [
+  {
+   "id": 0,
+   "name": "Mage Guild 1",
+   "cost": {
+    "wood": 5,
+    "ore": 5,
+    "gold": 2000
+   },
+   "requires": []
+  },
+  {
+   "id": 1,
+   "name": "Mage Guild 2",
+   "cost": {
+    "wood": 5,
+    "mercury": 4,
+    "ore": 5,
+    "sulfur": 4,
+    "crystal": 4,
+    "gems": 4,
+    "gold": 1000
+   },
+   "requires": [
+    0
+   ]
+  },
+  {
+   "id": 2,
+   "name": "Mage Guild 3",
+   "cost": {
+    "wood": 5,
+    "mercury": 6,
+    "ore": 5,
+    "sulfur": 6,
+    "crystal": 6,
+    "gems": 6,
+    "gold": 1000
+   },
+   "requires": [
+    1
+   ]
+  },
+  {
+   "id": 3,
+   "name": "Mage Guild 4",
+   "cost": {
+    "wood": 5,
+    "mercury": 8,
+    "ore": 5,
+    "sulfur": 8,
+    "crystal": 8,
+    "gems": 8,
+    "gold": 1000
+   },
+   "requires": [
+    2
+   ]
+  },
+  {
+   "id": 4,
+   "name": "Mage Guild 5",
+   "cost": {
+    "wood": 5,
+    "mercury": 10,
+    "ore": 5,
+    "sulfur": 10,
+    "crystal": 10,
+    "gems": 10,
+    "gold": 1000
+   },
+   "requires": [
+    3
+   ]
+  },
+  {
+   "id": 5,
+   "name": "Tavern",
+   "cost": {
+    "wood": 5,
+    "gold": 500
+   },
+   "requires": []
+  },
+  {
+   "id": 6,
+   "name": "Shipyard",
+   "cost": {
+    "wood": 20,
+    "gold": 2000
+   },
+   "requires": []
+  },
+  {
+   "id": 7,
+   "name": "Fort",
+   "cost": {
+    "wood": 20,
+    "ore": 20,
+    "gold": 5000
+   },
+   "requires": []
+  },
+  {
+   "id": 8,
+   "name": "Citadel",
+   "cost": {
+    "ore": 5,
+    "gold": 2500
+   },
+   "requires": [
+    7
+   ]
+  },
+  {
+   "id": 9,
+   "name": "Castle",
+   "cost": {
+    "wood": 10,
+    "ore": 10,
+    "gold": 5000
+   },
+   "requires": [
+    8
+   ]
+  },
+  {
+   "id": 11,
+   "name": "Town Hall",
+   "cost": {
+    "gold": 2500
+   },
+   "requires": [
+    5
+   ]
+  },
+  {
+   "id": 12,
+   "name": "City Hall",
+   "cost": {
+    "gold": 5000
+   },
+   "requires": [
+    11,
+    14,
+    16,
+    0
+   ]
+  },
+  {
+   "id": 13,
+   "name": "Capitol",
+   "cost": {
+    "gold": 10000
+   },
+   "requires": [
+    12,
+    9
+   ]
+  },
+  {
+   "id": 14,
+   "name": "Marketplace",
+   "cost": {
+    "wood": 5,
+    "gold": 500
+   },
+   "requires": []
+  },
+  {
+   "id": 15,
+   "name": "Resource Silo",
+   "cost": {
+    "ore": 5,
+    "gold": 5000
+   },
+   "requires": [
+    14
+   ]
+  },
+  {
+   "id": 16,
+   "name": "Blacksmith",
+   "cost": {
+    "wood": 5,
+    "gold": 1000
+   },
+   "requires": []
+  },
+  {
+   "id": 17,
+   "name": "Artifact Merchants",
+   "cost": {
+    "gold": 10000
+   },
+   "requires": [
+    14
+   ]
+  },
+  {
+   "id": 18,
+   "name": "Pixie Horde",
+   "cost": {
+    "gold": 1000
+   },
+   "requires": [
+    30
+   ]
+  },
+  {
+   "id": 19,
+   "name": "Sprite Horde",
+   "cost": {
+    "gold": 1000
+   },
+   "requires": [
+    37
+   ]
+  },
+  {
+   "id": 21,
+   "name": "Magic University",
+   "cost": {
+    "wood": 10,
+    "ore": 10,
+    "gold": 5000
+   },
+   "requires": [
+    0
+   ]
+  },
+  {
+   "id": 26,
+   "name": "Grail",
+   "cost": {},
+   "requires": []
+  },
+  {
+   "id": 30,
+   "name": "Flower of Life - Pixies",
+   "cost": {
+    "wood": 5,
+    "ore": 5,
+    "gold": 300
+   },
+   "requires": [
+    7
+   ]
+  },
+  {
+   "id": 31,
+   "name": "Altar of Air - Air Elementals",
+   "cost": {
+    "ore": 5,
+    "gold": 1500
+   },
+   "requires": [
+    30,
+    0
+   ]
+  },
+  {
+   "id": 32,
+   "name": "Altar of Water - Water Elementals",
+   "cost": {
+    "ore": 5,
+    "gold": 1500
+   },
+   "requires": [
+    30,
+    0
+   ]
+  },
+  {
+   "id": 33,
+   "name": "Altar of Fire - Fire Elementals",
+   "cost": {
+    "wood": 5,
+    "ore": 5,
+    "gold": 2000
+   },
+   "requires": [
+    31
+   ]
+  },
+  {
+   "id": 34,
+   "name": "Altar of Earth - Earth Elementals",
+   "cost": {
+    "ore": 10,
+    "gold": 2000
+   },
+   "requires": [
+    32
+   ]
+  },
+  {
+   "id": 35,
+   "name": "Altar of Thought - Psychic Elementals",
+   "cost": {
+    "wood": 5,
+    "mercury": 2,
+    "ore": 5,
+    "sulfur": 2,
+    "crystal": 2,
+    "gems": 2,
+    "gold": 3000
+   },
+   "requires": [
+    33,
+    34
+   ]
+  },
+  {
+   "id": 36,
+   "name": "Pyre - Firebirds",
+   "cost": {
+    "wood": 10,
+    "mercury": 10,
+    "ore": 10,
+    "gold": 10000
+   },
+   "requires": [
+    35
+   ]
+  },
+  {
+   "id": 37,
+   "name": "Enchanted Flower - Sprites",
+   "cost": {
+    "gold": 1000
+   },
+   "requires": [
+    30
+   ]
+  },
+  {
+   "id": 38,
+   "name": "Temple of Clouds - Storm Elementals",
+   "cost": {
+    "wood": 2,
+    "mercury": 2,
+    "gems": 2,
+    "gold": 1500
+   },
+   "requires": [
+    31
+   ]
+  },
+  {
+   "id": 39,
+   "name": "Temple of Ice - Ice Elementals",
+   "cost": {
+    "mercury": 5,
+    "ore": 5,
+    "gold": 2000
+   },
+   "requires": [
+    32
+   ]
+  },
+  {
+   "id": 40,
+   "name": "Temple of Energy - Energy Elementals",
+   "cost": {
+    "mercury": 5,
+    "ore": 5,
+    "gold": 2000
+   },
+   "requires": [
+    33,
+    38
+   ]
+  },
+  {
+   "id": 41,
+   "name": "Temple of Magma - Magma Elementals",
+   "cost": {
+    "sulfur": 5,
+    "gold": 1000
+   },
+   "requires": [
+    34
+   ]
+  },
+  {
+   "id": 42,
+   "name": "Temple of Magic - Magic Elementals",
+   "cost": {
+    "mercury": 3,
+    "sulfur": 3,
+    "crystal": 3,
+    "gems": 3,
+    "gold": 3000
+   },
+   "requires": [
+    35,
+    1
+   ]
+  },
+  {
+   "id": 43,
+   "name": "Funeral Pyre - Phoenixes",
+   "cost": {
+    "wood": 10,
+    "mercury": 20,
+    "ore": 10,
+    "gold": 15000
+   },
+   "requires": [
+    36
+   ]
+  }
+ ]
+}

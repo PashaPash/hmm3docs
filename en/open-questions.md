@@ -31,7 +31,7 @@ See the list at the end of [AI: adventure map](../ai-adventure/#not-decoded-yet)
 
 ## Everything else
 
-Chapters 2 and 14 are not started; chapter 7 has only hero movement; chapter 5 lacks Catapult targeting, tower targeting and gate rules. Town AI gaps are listed at the end of [AI: towns](../ai-towns/#not-decoded-yet). See the progress table on the [home page]({{ '/' | relative_url }}).
+Chapter 14 (HotA differences) is not started; chapter 2 has building tables only; chapter 7 has only hero movement; chapter 5 lacks Catapult targeting, tower targeting and gate rules. Town AI gaps are listed at the end of [AI: towns](../ai-towns/#not-decoded-yet). See the progress table on the [home page]({{ '/' | relative_url }}).
 
 ## Build note
 
