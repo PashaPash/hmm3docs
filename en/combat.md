@@ -8,7 +8,7 @@ lang: en
 # Combat rules
 {: .no_toc }
 
-Damage, morale, luck, turn order and retaliation. Siege rules are only partly covered.
+Damage, morale, luck, turn order and retaliation. Siege rules are partly covered.
 
 1. TOC
 {:toc}
@@ -34,7 +34,7 @@ damage = (base + bonus) × reduction × defending hero's factor        at least 
 | Hated enemy: Angels and Devils, Genies and Efreet, Titans and Black Dragons, each way, including upgrades | +50% |
 | Dread Knight | 20% chance of +100% |
 | Ballista | +100% with a chance by the hero's Artillery level: none 0%, Basic 50%, Advanced 75%, Expert 100% (table `0x63b810`) |
-| Attacking hero's Offence (melee) or Archery (ranged), Bless specialist | Added here by `0x4e42b0` / `0x4e4160`; exact terms not read yet |
+| Attacking hero's Offence (melee) or Archery (ranged), Bless specialist | See [hero skills](#hero-skills-in-the-formula) |
 
 "Attack" and "Defence" are the stacks' current values: creature stats, hero primary skills and spell effects. Moat hexes lower the defender's Defence by 3 (`0x442590`).
 
@@ -52,7 +52,23 @@ damage = (base + bonus) × reduction × defending hero's factor        at least 
 | Magic Elemental attacking a Magic Elemental or a Black Dragon | 0.5 |
 | The attacker is retaliating while blinded or paralysed | the factor stored by that spell (see [Retaliation](#retaliation)) |
 
-The defending hero's factor (`0x4e4310`, Armorer) is applied last; its exact form is not read yet. Shield and Air Shield are applied as stored per-stack factors.
+The defending hero's Armorer factor is applied last. Shield and Air Shield are applied as stored per-stack factors.
+
+### Hero skills in the formula
+
+`0x4e42b0`, `0x4e4160`, `0x4e4310`, `0x4e5ff0`. Tables at `0x63e9f8`, `0x63e9e8`, `0x63ea08`.
+
+| Skill | Basic | Advanced | Expert | Where it goes |
+|---|---|---|---|---|
+| Offence (melee attacks) | 10% | 20% | 30% | added to the bonus sum |
+| Archery (ranged attacks) | 10% | 25% | 50% | added to the bonus sum |
+| Armorer (damage taken) | 5% | 10% | 15% | final multiplier `1 − value` |
+
+- A hero whose specialty is that skill multiplies the value by `1 + 0.05 × hero level`. Armorer cannot exceed 100%.
+- The three bow artifacts add 5%, 10% and 15% to the Archery value, also when they are part of an assembled combination. They are counted **only if the hero has the Archery skill**; without it they add nothing to damage.
+- A Bless specialist adds `3% × (hero level / creature level, rounded down)` of base damage to a blessed stack, where creature level is 1 to 7.
+
+Because Offence and Archery are terms of the sum, they do not multiply the attack-skill bonus: Expert Offence on top of +100% from Attack gives +130%, not +160%.
 
 ### Two asymmetries worth noticing
 
@@ -147,5 +163,19 @@ Only the pieces that came up while reading other code:
 
 {% include ballistics.html lang="en" %}
 
-Not decoded: Arrow Tower damage, which wall section the Catapult aims at, gate and drawbridge rules.
+### Arrow Towers and war machines
+
+Battle setup around `0x4521f0`; tower strength from `0x5bf4f0`.
+
+| Fortification | Towers |
+|---|---|
+| Fort | none |
+| Citadel | the central keep |
+| Castle | the keep and two side towers |
+
+- A tower is an "Arrow Tower" stack: attack 10, damage 2–4 per shooter, and it goes through the normal damage formula.
+- The keep has `4 + number of qualifying buildings built in the town` shooters. Each side tower has half of that, rounded up. Which buildings qualify is a per-town mask that was not decoded; **[inferred]** to be the town's own building set.
+- The defender in a siege does not get a Ballista on the battlefield, even if the hero owns one. First Aid Tent and Ammo Cart are placed as usual.
+
+Not decoded: which wall section the Catapult aims at, how a tower picks its target, gate and drawbridge rules.
 
