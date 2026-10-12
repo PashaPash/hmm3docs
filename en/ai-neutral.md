@@ -126,9 +126,71 @@ All from the code paths above:
 - **Outnumbered neutrals** (worth less than half of your army, Normal+) value every unit at a flat 1000 and therefore aim at the stack where they kill the most units, which favours your low hit point creatures.
 - On Hard+ a neutral stack that cannot reach anything this turn will **wait** rather than walk into the range of your melee stacks.
 
+## Creature banks
+
+### When the contents are decided
+
+Each bank's guards and reward are rolled **once, when the map is set up** (`0x47ad90`, called from the map object initialiser `0x4c0cc0`), and stored in a per-bank record. Visiting does not re-roll anything. **[code]**
+
+1. **Level.** One roll of 1–100 is compared against the cumulative `Chance` column of `CRBANKS.TXT` for levels 1 to 3; if none matches, level 4.
+2. **Reward.** Resources and reward creatures are copied from that row. Artifacts are picked at random per class, as many of each class as the row says.
+3. **Guard stacks.** The row's guards are split by how many different creature types it has:
+
+   | Guard types in the row | Stacks | Slot order | Slot that may be upgraded |
+   |---|---|---|---|
+   | 1 | 5 near-equal stacks | A A A A A | the third |
+   | 2 | first type in 3 stacks, second in 2 | A B B A A | the fourth (type A) |
+   | 3 | first and second type in 2 stacks each, third in 1 | A B C B A | the first (type A) |
+   | 4 | not split | A B C D | the first |
+
+   Splitting is by repeated integer division (`n / 5`, then the rest `/ 4`, and so on), so the stacks differ by at most one creature.
+4. **Upgrade.** One roll of 1–100; if it is not above the row's `Upgrade` percentage and the creature has an upgrade, the whole stack in the marked slot becomes the upgraded creature. So at most one of the guard stacks is upgraded.
+
+### The fight
+
+`0x4abdc0`. The battle is started with the bank flag set and a random seed computed from the bank's map coordinates, so a given bank plays out from the same seed each time. The guards have no hero, so everything in [In battle](#in-battle) applies: no retreat, no hero spells, and the difficulty switches decide how cleverly they move.
+
+A visited bank is marked per player (bits 5–12 of its data word) and marked empty (bit 25) once cleared. **[code `0x40d3f0`, `0x4a15a0`]**
+
+### Table
+
+From `CRBANKS.TXT` **[data]**.
+
+{% include banks.html lang="en" %}
+
+## Growth and new stacks
+
+### Weekly growth
+
+`0x4c8780`, the new-week routine. For every wandering stack on the map that does not have the "does not grow" flag (bit 18 of its data word):
+
+```
+v = count × 16 + fraction          fraction is 4 bits kept with the stack (bits 27–30)
+v = v + v / 10                     integer division
+if v > 64000 then v = 64000
+count = v / 16,  fraction = v mod 16
+```
+
+- Growth is 10% per week, compounded, with the remainder carried in sixteenths. A stack of 5 becomes 5 and 8/16, then 6 and 1/16, and so on; small stacks do grow, just not every week.
+- The cap is 4000 creatures.
+
+### Size of a random stack
+
+When the map is set up, a wandering stack whose count is 0 gets a random count (`0x4c0cc0`). The bounds are passed in registers and were not read; they are **[inferred]** to be the "Adv. Map Low/High" columns of `CRTRAITS.TXT`, shown as "Map stack" in the [creature table](../creatures/).
+
+### New month
+
+`0x4c8f40`. One roll of 1–10 at the start of each month:
+
+| Roll | Month |
+|---|---|
+| 1–5 | ordinary |
+| 6–9 | month of a creature: town growth of that creature doubles, and new wandering stacks of it appear |
+| 10 | plague: creatures available in towns are halved |
+
+In a creature month every free, eligible map tile has a 1 in 200 chance of getting a new stack of that creature, with a random aggression of 1–10. **[code; the lower bound of the month roll and the stack size bounds were not read]**
+
 ## Not decoded yet
 
 - Where the split stacks are placed on the battlefield.
-- Creature bank guard layouts and the choice of level (the table itself is in `CRBANKS.TXT`).
-- Weekly growth of wandering stacks.
 - Quick combat resolution for hero-less sides.
