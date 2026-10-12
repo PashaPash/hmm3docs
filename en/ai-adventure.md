@@ -192,6 +192,7 @@ From the switch in `0x528040`. Object type numbers are the map format's.
 | Artifact (5) | The artifact's own value, at least 10. Only if the backpack has room. Variants: needs 2000 gold; needs Wisdom; needs Leadership; needs 2500 gold and 3 of a resource; needs 3000 gold and 5 of a resource; guarded, where the fight value is added. A requirement the hero cannot meet makes the value 0 |
 | Pandora's Box (6) | Fight value of its guards, plus its experience, skills, spells the hero can learn, resources and `AI Value × count` of its creatures |
 | Black Market (7) | Only if the backpack has room. Sum over its seven artifacts of `artifact value − price at the resource weights`, counting only artifacts the player can pay for and only positive differences |
+| Creature dwelling (17, 20) | 0 if it belongs to an ally. Otherwise the fight value for its guards if it is not the player's own, plus the [army gain](../ai-towns/#the-gain-of-adding-a-stack) from recruiting what is waiting there with the resources the player has now. For a dwelling the player already owns, the value is dropped to 0 when the path is 400 points or longer and the gain is under a third of the hero's army value. If the victory condition is to flag all dwellings, 5,000,000 divided by the number of dwellings is added for one not yet owned (`0x529a30`) |
 | Keymaster's Tent (10) | 5000 if this player has not visited that colour, otherwise 0 |
 | Campfire (12) | Proportional to the amount it holds |
 | Creature Bank (16), Derelict Ship (24), Dragon Utopia (25) | If not already cleared: fight value against the stored guards, plus the stored resources, plus `AI Value × count` of reward creatures, plus the artifacts. See [creature banks](../ai-neutral/#creature-banks) |
@@ -209,7 +210,7 @@ From the switch in `0x528040`. Object type numbers are the map format's.
 | Lighthouse (42), Shipyard (87) | 1000 if not owned by the AI's side, otherwise 0 |
 | Unexplored tile | 100 |
 
-Towns and heroes are covered in the next section. Not read yet: dwellings, shrines, wells, teleporters and most of the remaining cases, which sit in their own routines.
+Towns and heroes are covered in the next section. Not read yet: shrines, wells, teleporters and most of the remaining minor cases, which sit in their own routines.
 
 ## Towns and heroes as targets
 
