@@ -105,6 +105,12 @@ Considered when the hero knows the spell, has not already used a portal earlier 
 
 The edge costs **300 movement points, or 200 at Expert**, matching what the spell charges, plus a distance-based term the pathfinder uses to order its search.
 
+### Castle Gate
+
+`0x56a850` adds the same kind of edge for Inferno's Castle Gate. From an Inferno town of the hero's own side, every other Inferno town of the player that has no visiting hero is a destination at **no movement cost**.
+
+A missing gate does not rule the route out: if the Castle Gate can be built today and the player can afford it, the edge is still offered, with the building's cost at the [resource weights](#what-resources-are-worth) counted against the destination's value. The routine allows for building up to two gates (one at each end) this way.
+
 ### Fly and Water Walk
 
 The pathfinder lets a hero cross water or obstacles when the effect is available: artifact 72 (Angel Wings) or 90 (Boots of Levitation), an already active spell, or, for Water Walk, knowing the spell. Step costs are the ones in [cost of a step](../adventure/#cost-of-a-step). **Fly and Dimension Door are probably never cast by the computer.** The pathfinder tests "knows Water Walk" and "knows Town Portal" by reading fixed fields of the hero record. A search of the whole decompiled executable finds no such test for the Fly field at all, and none for the Dimension Door field in any hero or pathfinding routine. **[unverified: this is the absence of a match in a search, and a spell reached through a computed index would not show up]**
