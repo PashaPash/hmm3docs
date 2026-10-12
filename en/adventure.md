@@ -45,7 +45,7 @@ points = Navigation base + specialist bonus + flat bonuses
 | Base | 1500 | 2250 | 3000 | 3750 |
 
 - A Navigation specialist adds `hero level × 1500 / 20`, that is 75 points per level.
-- Flat bonuses: +500 for each Lighthouse object the player has flagged, +500 for each Castle town of the player with the Lighthouse building, +500 for artifact 123 (Sea Captain's Hat), +1000 for artifact 71 (Necklace of Ocean Guidance).
+- Flat bonuses: +500 for each Lighthouse object the player has flagged **[inferred: the counting helper was not read]**, +500 for each Castle town of the player with the Lighthouse building, +500 for artifact 123 (Sea Captain's Hat), +1000 for artifact 71 (Necklace of Ocean Guidance).
 
 **[code]**
 
