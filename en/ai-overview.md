@@ -31,6 +31,10 @@ Difficulty sets how many heroes a computer player hires (2 / 3 / 4 / 5 / 6 per p
 
 On Easy and Normal a computer player's town builds at most once every two days; from Hard up, once a day. See [AI: towns](../ai-towns/).
 
+### The Grail
+
+The share of the puzzle a computer player needs before it goes digging depends on difficulty: never on Easy, half on Normal, a quarter on Hard, none on Expert and Impossible. See [where the computer decides to dig](../ai-adventure/#where-the-computer-decides-to-dig).
+
 ### Battle behaviour
 
 Difficulty switches parts of the battle logic on and off for every non-human side, including neutral monsters. See [AI: battle](../ai-battle/#what-difficulty-changes).
@@ -53,7 +57,7 @@ What the computer player decides, and where it is described. "Partly" means the 
 | Hero: merging armies with another hero | partly | [AI: adventure map](../ai-adventure/#enemy-heroes) |
 | Hero: Town Portal, Castle Gate, Water Walk in path planning | covered | [AI: adventure map](../ai-adventure/#adventure-spells-in-path-planning) |
 | Hero: casting Fly and Dimension Door | no code found that does it; unverified | [AI: adventure map](../ai-adventure/#fly-and-water-walk) |
-| Hero: obelisks and digging for the Grail | covered; how the dig position is determined **not read** | [AI: adventure map](../ai-adventure/#obelisks-and-the-grail) |
+| Hero: obelisks and digging for the Grail | covered, including the difficulty threshold; the choice among uncovered tiles **not read** | [AI: adventure map](../ai-adventure/#obelisks-and-the-grail) |
 | Hero: boarding boats | covered; building ships and Summon Boat not found | [AI: adventure map](../ai-adventure/#boats) |
 | Hero: level-up skill choice | covered for most skills; the new-versus-upgrade test **not read** | [AI: adventure map](../ai-adventure/#level-up-choices) |
 | Hero: artifact exchange between two heroes in a town | covered; equipping from the backpack on pickup **not read** | [AI: towns](../ai-towns/#when-a-hero-visits-its-own-town) |

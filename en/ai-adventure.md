@@ -310,7 +310,25 @@ Ballistics and Logistics come out on top for a hero with a real army, and army-s
 - **Digging.** Each player record holds a dig position. When it is set, the target builder (`0x42edd0`) adds that tile as a destination like any other, as long as the tile is free and reachable. Its value is the Grail's value to the player's heroes, or 5,000,000 when the scenario's victory condition is to build the Grail. The path cost is raised to at least the hero's full daily movement, which matches the rule that digging takes a whole day.
 - A hero carrying the Grail then values a town that can take it accordingly, see [its own towns](#its-own-towns).
 
-How the dig position gets into the player record (presumably once enough of the puzzle is uncovered) was not read. **[code]**
+**[code]**
+
+### Where the computer decides to dig
+
+`0x52c9b0`, called for a computer player after it visits an obelisk and from its periodic planning (`0x4bae50`, `0x4baed0`).
+
+1. Count the player's revealed puzzle pieces out of 48 (`0x4baf00`): all 48 if every obelisk is visited, otherwise in proportion to obelisks visited, plus any extra pieces the player record holds.
+2. Compare the revealed share with a **difficulty threshold** (table `0x6822c8`):
+
+   | Difficulty | Share of the puzzle needed before the computer picks a dig spot |
+   |---|---|
+   | Easy | more than 100%: it never does |
+   | Normal | 50% |
+   | Hard | 25% |
+   | Expert, Impossible | 0%: from the start |
+
+3. If the share is enough and the map has a Grail, the routine rebuilds the same puzzle picture a human sees, with the unrevealed pieces masking their part of the map, and picks a dig position from the tiles left uncovered around the Grail's place.
+
+The dig action itself (`0x40ec90`) clears the stored position when the attempt cannot be made: the hero has already moved that day, its backpack is full, or the tile cannot be dug. **[code; how the spot is chosen among the uncovered tiles, and so how accurate an Expert computer's first guess is, was not read]**
 
 ## Hiring heroes
 
@@ -327,5 +345,5 @@ How the dig position gets into the player record (presumably once enough of the 
 - Most object values, and the numeric weights inside the ones listed (experience, resources, spells).
 - The fight simulator `0x426bc0` itself.
 - Hero roles (main hero, scouts, gatherers), army transfers between heroes and towns, when a hero returns to defend a town.
-- Building ships, and how the Grail dig position is determined.
+- Building ships.
 - Danger flags on paths.
