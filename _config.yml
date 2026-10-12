@@ -13,3 +13,4 @@ aux_links:
 exclude:
   - tools
   - README.md
+permalink: pretty
