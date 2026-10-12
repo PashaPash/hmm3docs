@@ -1,11 +1,11 @@
 {% assign ru = include.lang == 'ru' %}
-{% assign towns = "castle,rampart,tower,inferno,necropolis,dungeon,stronghold,fortress,conflux," | split: "," %}
+{% assign towns = "castle,rampart,tower,inferno,necropolis,dungeon,stronghold,fortress,conflux,neutral" | split: "," %}
 {% for t in towns %}
-<h3>{% if t == "" %}{% if ru %}Нейтральные и боевые машины{% else %}Neutral and war machines{% endif %}{% else %}{{ t | capitalize }}{% endif %}</h3>
+<h3>{% if t == "neutral" %}{% if ru %}Нейтральные и боевые машины{% else %}Neutral and war machines{% endif %}{% else %}{{ t | capitalize }}{% endif %}</h3>
 <div class="table-wrapper"><table>
 <thead><tr><th>ID</th><th>{% if ru %}Существо{% else %}Creature{% endif %}</th><th>Lv</th><th>Atk</th><th>Def</th><th>Dmg</th><th>HP</th><th>Spd</th><th>{% if ru %}Выстр.{% else %}Shots{% endif %}</th><th>{% if ru %}Прирост{% else %}Growth{% endif %}</th><th>{% if ru %}Золото{% else %}Gold{% endif %}</th><th>Fight Value</th><th>AI Value</th><th>{% if ru %}На карте{% else %}Map stack{% endif %}</th></tr></thead>
 <tbody>
-{% for c in site.data.creatures %}{% assign ct = c.town | default: "" %}{% if ct == t %}{% unless c.name contains "NOT USED" %}
+{% for c in site.data.creatures %}{% assign ct = c.town | default: "neutral" %}{% if ct == t %}{% unless c.name contains "NOT USED" %}
 <tr><td>{{ c.id }}</td><td>{{ c.name }}</td><td>{{ c.level }}</td><td>{{ c.attack }}</td><td>{{ c.defense }}</td><td>{{ c.dmg_min }}–{{ c.dmg_max }}</td><td>{{ c.hp }}</td><td>{{ c.speed }}</td><td>{% if c.shots > 0 %}{{ c.shots }}{% endif %}</td><td>{{ c.growth }}</td><td>{{ c.cost.gold }}</td><td>{{ c.fight_value }}</td><td>{{ c.ai_value }}</td><td>{{ c.map_min }}–{{ c.map_max }}</td></tr>
 {% endunless %}{% endif %}{% endfor %}
 </tbody></table></div>
