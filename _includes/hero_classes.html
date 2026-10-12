@@ -11,6 +11,6 @@
 <thead><tr><th>{% if ru %}Навык{% else %}Skill{% endif %}</th>{% for h in site.data.hero_classes %}<th>{{ h.name | slice: 0, 4 }}</th>{% endfor %}</tr></thead>
 <tbody>
 {% for s in site.data.hero_classes[0].skill_weights %}
-<tr><td>{{ s[0] }}</td>{% for h in site.data.hero_classes %}<td>{{ h.skill_weights[s[0]] }}</td>{% endfor %}</tr>
+{% assign skill = s[0] %}<tr><td>{{ skill }}</td>{% for h in site.data.hero_classes %}<td>{{ h.skill_weights[skill] }}</td>{% endfor %}</tr>
 {% endfor %}
 </tbody></table></div>
