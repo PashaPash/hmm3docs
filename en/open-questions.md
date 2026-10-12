@@ -11,8 +11,7 @@ Things referenced in the chapters but not decoded or not confirmed yet.
 
 ## Battle AI
 
-- Hero spell selection: `0x43c800` and the evaluator class with vtable `0x63b7d8` (about 4,000 lines of decompiled code in `0x435e00`–`0x43d000`).
-- The random factor applied to melee target scores in `0x421680`: its range.
+- Hero spells: the evaluators not detailed in the battle chapter (most buffs and curses, Chain Lightning, Dispel, Resurrection, Sacrifice, Teleport), the meaning of spell flags `0x200` and `0x4000`, and battlefield type 2.
 - Exact strength terms in the retreat check (`0x41e570`): a multiplier for stacks that have not acted, the defender's bonus inside a town, and the role of the gold comparison.
 - The per-hero defence factor `0x4e4310` used in unit valuation.
 - The meaning of the per-game field at `+0x1f698` that enables moat awareness and changes sympathy for elementals. It looks like the map's expansion level. **[inferred]**
@@ -22,7 +21,7 @@ Things referenced in the chapters but not decoded or not confirmed yet.
 ## Neutral monsters
 
 - Translation of the map's disposition setting into the aggression number.
-- Splitting of a map stack into battlefield stacks.
+- Stack splitting: the two extra hero-side calls before the strength ratio in `0x4ac580`, and battlefield placement.
 - Creature banks: level roll, guard placement.
 - Weekly growth.
 

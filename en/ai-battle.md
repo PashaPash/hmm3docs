@@ -19,6 +19,7 @@ How a computer-controlled side picks an action for each stack. The same code dri
 - The **game difficulty** switches whole parts of the logic on and off. Easy uses the bare scoring. Normal adds threat awareness. Hard and above add waiting, anti-clumping and escaping. There is no further change between Hard, Expert and Impossible in these routines, apart from the retreat threshold.
 - A human player's auto-combat always runs with everything enabled, regardless of difficulty.
 - The AI never surrenders. It only retreats, and only with a hero.
+- An AI hero never casts Quicksand, Land Mine, Force Field, Fire Wall or Remove Obstacle.
 
 ## Turn flow
 
@@ -93,7 +94,7 @@ For each living enemy stack except Arrow Towers:
 
 1. Find the best hex to attack from (`0x436840`, `0x436300`). Fewer turns to get there wins, then the higher hex score, then the shorter path. On Normal+ a hex also gains value for extra enemies hit by a breath or all-around attack and loses value for exposure to the same from the target. Cavaliers and Champions (ids 10, 11) prefer the **longer** path on Normal+, which is the jousting bonus.
 2. `score = attack value + hex score`. On Hard+ a bonus is added when other friendly stacks are already going to hit the same target and absorb its retaliation (`0x41f3b0`).
-3. The score is multiplied by a random percentage and divided by the number of turns needed to reach the target. The range of the random factor is not recovered yet.
+3. The score is multiplied by a random 75 to 100 percent and divided by the number of turns needed to reach the target. **[code: `rand(75,100)` at `0x421b02`]**
 4. On Normal+ an attack with a negative score is dropped. Harpies and Harpy Hags (72, 73) ignore the hex penalty because they fly back.
 
 The best target is chosen in this order: a target that is not blinded, petrified or paralysed beats one that is; fewer turns to reach; higher score. **[code `0x421680`]**
@@ -140,7 +141,7 @@ So an AI shooter prefers the enemy stack that will hit its army soonest, and mos
 | Creature | Routine | Choice |
 |---|---|---|
 | Archangel (13), Pit Lord (51) | `0x421000` | Resurrection / raising demons from a dead stack |
-| Master Genie (37), Ogre Mage (91) | `0x420d20` | The friendly stack with the highest benefit score (`0x43c4a0` for genies, `0x43c330` for ogre magi); war machines excluded |
+| Master Genie (37), Ogre Mage (91) | `0x420d20` | The friendly stack with the highest benefit score (`0x43c4a0` for genies, `0x43c330` for ogre magi); war machines excluded. When the stack also has an attack available, it skips casting 30% of the time |
 | Faerie Dragon (134) | `0x420f00` | The hex with the highest score from `0x43c620`, over all hexes except the two edge columns |
 
 ## Berserk and similar states
@@ -154,7 +155,7 @@ So an AI shooter prefers the enemy stack that will hit its army soonest, and mos
 Never considered when:
 
 - the side has no hero;
-- difficulty is Easy; on Normal a random roll skips the check part of the time **[inferred: about half]**;
+- difficulty is Easy; on Normal the check is skipped half of the time (`rand(1,100) < 51`);
 - either hero wears artifact 125 (Shackles of War);
 - the hero is the one named in a "lose this hero" condition;
 - the player has no suitable town left to return to **[inferred from a building-mask test on the player's towns]**.
@@ -182,7 +183,65 @@ The check also compares the player's gold with a surrender-style cost plus 2500;
 
 ## Hero spells
 
-Entry `0x422da0`: the hero has not cast this round, it is not the tactics phase, magic is not blocked, the hero has a spell book, and nobody wears the Orb of Inhibition. The spell choice itself (`0x43c800` and the evaluator class at vtable `0x63b7d8`) is not decoded yet.
+Entry `0x422da0`, chooser `0x43c800`. The AI hero casts at most one spell per round, before the active stack's action is chosen.
+
+### Preconditions
+
+The hero has not cast this round, it is not the tactics phase, magic is not blocked on this battlefield, the hero has a spell book, and neither hero wears artifact 126 (Orb of Inhibition). **[code `0x422da0`]**
+
+### Candidate spells
+
+Each of the 70 hero spells is a candidate when:
+
+- the hero knows it and it is flagged as a combat spell;
+- the hero has the mana for it (cost at the hero's school level, after battlefield and enemy modifiers);
+- on battlefield type 2 only level 1 spells pass **[the type is not identified yet]**;
+- if either hero wears artifact 83 (Recanter's Cloak), only level 1 and 2 spells pass.
+
+### Scoring
+
+```
+score = evaluator value × mana factor × random(75…100)%
+
+casts = floor(mana / cost)
+mana factor = 2.5            if casts >= 7
+            = sqrt(casts)    otherwise
+```
+
+A hero short on mana therefore needs a much better spell before spending it. The highest score wins. **[code `0x43c800`; square root inferred]**
+
+The winning spell is cast only if its evaluator also marked it as **worth casting now** (see timing below).
+
+### Evaluators
+
+All values use the same currency as stack actions, [unit value](#what-a-unit-is-worth) of what is gained or destroyed.
+
+| Spells | Routine | Value |
+|---|---|---|
+| Magic Arrow, Ice Bolt, Lightning Bolt, Implosion (15–18), Titan's Lightning Bolt (57) | `0x436f60` → `0x436e30` | Value of the damage on the best target. Damage comes from the real spell routine, so immunities and resistances count, and is capped at the stack's remaining hit points. If the target is blinded, petrified or paralysed and would survive, the value becomes `2 × value − full stack value`, normally negative, so the AI does not wake a disabled stack |
+| Frost Ring, Fireball, Inferno, Meteor Shower (20–23) | `0x437040` | Tries every hex except the two edge columns. `E` = value destroyed on the enemy side, `O` = on its own side. Score `E − O`, but only if `E > O`, `E / enemy total > O / own total` and `O < own total` |
+| Death Ripple, Destroy Undead, Armageddon (24–26) | `0x436fb0` | Same `E − O` rule over the whole field |
+| Summon elementals (66–69) | `0x43bb20` | `AI Value of the elemental × number summoned` |
+| Haste (53) | `0x439550` | Only for a stack that already has a victim. Gain = value of the exchange it gets if Haste lets it arrive this turn, plus `stack value × turns saved / planning horizon` |
+| Slow (54) | `0x439270` | Only for an enemy stack that has a victim. Gain = the exchange it is prevented from making this turn, plus `stack value × extra turns / planning horizon`, scaled by the chance the spell takes effect |
+| Blind (62), Paralyze-type (74) | `0x439100` | Only for enemy stacks that threaten the AI's army this turn; derived from the stack's full value |
+| Bless (41) | `0x437430` | Only for a stack whose victim is reachable this turn; value of the extra kills from maximum damage |
+| Shield (27), Air Shield (28) | `0x438c60`, `0x438bc0` | Uses the melee or ranged damage each friendly stack is expected to take this round (`0x43c040`) |
+| Age (75) | `0x4373f0` | One third of the target's value |
+| Chain Lightning (19), Earthquake (14), Dispel (35), Resurrection (38), Animate Dead (39), Sacrifice (40), Teleport (63) | `0x437310`, `0x43b8f0`, `0x43a910`, `0x43aca0`, `0x43b1e0`, `0x43aa60` | Own routines, not detailed yet |
+| Other buffs and curses (29–34, 36, 37, 42–52, 55, 56, 58–61, 65, 71, 73) | table in `0x43b690` | Own routines, not detailed yet |
+| **Quicksand (10), Land Mine (11), Force Field (12), Fire Wall (13), Remove Obstacle (64)** | default `0x43b680` | Always 0. **The AI never casts these** |
+
+For spells that hit one stack, the evaluator runs on every legal stack and keeps the best. When the hero's school level makes the spell a mass spell, the values of all affected stacks are added (`0x43a910`, `0x43a670`). Stacks already under the spell, disabled stacks, First Aid Tents and Ammo Carts are skipped. Against a target with Magic Mirror the value is multiplied by `(50 − mirror chance) × 2 / 100`.
+
+### Timing
+
+- A buff aimed at a friendly stack other than the active one is postponed while some other friendly stack still has to act this round, unless the spell carries spell flag `0x4000`. In practice the AI buffs the stack that is about to move. **[code `0x43a670`]**
+- A spell on an enemy stack is cast at once when no other friendly stack is left to act, or when the active stack is about to attack that very target in melee this turn. Otherwise it is cast only if the target threatens the AI's army and no friendly stack that is still to act is faster than it. **[code `0x436c60`; reading of the last condition is inferred]**
+
+### Parting shot
+
+When the retreat check has already decided to flee, the chooser runs in a special mode: only spells with spell flag `0x200` are candidates, the timing test is ignored, and damage is valued at a flat 1000 per unit killed. The spell is chosen at the start of the stack's turn (`0x4782d0`), the retreat itself comes from the turn driver afterwards. **[code `0x422da0`, `0x43c800`; order inferred]**
 
 ## What difficulty changes
 

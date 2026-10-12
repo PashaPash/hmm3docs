@@ -23,8 +23,8 @@ chapters:
   - {n: 10, state: todo, en: "AI: town building and recruitment", ru: "ИИ: строительство и найм", note_en: "", note_ru: ""}
   - {n: 11, state: todo, en: "AI: adventure map decisions", ru: "ИИ: решения на карте", note_en: "", note_ru: ""}
   - {n: 12, file: ai-battle, state: done, en: "AI: battle", ru: "ИИ: бой",
-     note_en: "stack valuation, melee and shooter target choice, creature casters, retreat, difficulty switches; hero spell choice still open", note_ru: "оценка отрядов, выбор цели в ближнем бою и у стрелков, существа-заклинатели, бегство, переключатели сложности; выбор заклинаний героя ещё открыт"}
+     note_en: "stack valuation, melee and shooter target choice, creature casters, retreat, difficulty switches; hero spell selection (candidates, scoring, timing, main evaluators)", note_ru: "оценка отрядов, выбор цели в ближнем бою и у стрелков, существа-заклинатели, бегство, переключатели сложности; выбор заклинаний героя (кандидаты, оценка, момент, основные оценщики)"}
   - {n: 13, file: ai-neutral, state: wip, en: "AI: neutral monsters (armies without a hero)", ru: "ИИ: нейтральные монстры (армии без героя)",
-     note_en: "join / flee / fight formula and in-battle behaviour done; stack splitting, banks, growth open", note_ru: "формула «присоединиться / сбежать / драться» и поведение в бою готовы; деление отрядов, банки, прирост открыты"}
+     note_en: "join / flee / fight formula, stack splitting and in-battle behaviour done; banks, growth open", note_ru: "формула «присоединиться / сбежать / драться», деление отрядов и поведение в бою готовы; банки, прирост открыты"}
   - {n: 14, state: todo, en: "HotA 1.8.1 differences", ru: "Отличия HotA 1.8.1", note_en: "", note_ru: ""}
   - {n: 15, file: open-questions, state: wip, en: "Open questions", ru: "Открытые вопросы", note_en: "kept up to date with the chapters", note_ru: "обновляется вместе с главами"}

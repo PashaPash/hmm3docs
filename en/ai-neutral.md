@@ -73,6 +73,31 @@ if nobody joined:
 
 How the map's disposition setting (compliant … savage) turns into `A` when the map is loaded is not traced yet.
 
+## How the stack is split for battle
+
+`0x4ac580` builds the defending army when a fight starts.
+
+1. The random generator is **seeded from the stack's map coordinates** before anything is rolled. The same stack on the same tile therefore splits the same way every time; reloading does not change it. **[code; the seeding call `0x50c5f0` is inferred to be `srand`]**
+2. `ratio = AI Value of the hero's army / AI Value of the monster stack` (plain `Σ AI Value × count`). **[code; two more calls on the hero precede the division and their effect on the ratio is not confirmed]**
+3. Base number of stacks from the ratio (thresholds at `0x6776e0`):
+
+   | ratio | stacks |
+   |---|---|
+   | below 0.5 | 7 |
+   | 0.5 to 0.67 | 6 |
+   | 0.67 to 1.0 | 5 |
+   | 1.0 to 1.5 | 4 |
+   | 1.5 to 2.0 | 3 |
+   | 2.0 and above | 2 |
+
+   The table also holds 3.0, but the loop stops before comparing it.
+4. One roll of 1–100: on 1–20 one stack fewer, on 80–100 one stack more (never above 7).
+5. The result is limited to at least 1 and at most the number of creatures.
+6. Creatures are divided evenly; the remainder goes one each to the first stacks.
+7. **Upgraded stack**: if the creature has an upgrade and there are at least 2 stacks, a second roll of 1–100 below 51 (50%) turns the **middle** stack (index `stacks / 2`) into the upgraded creature. The four basic elementals are excluded in games where the field at `+0x1f698` is 0.
+
+The stronger the visiting army, the fewer and larger the neutral stacks. A weak hero meets up to seven small stacks.
+
 ## In battle
 
 A hero-less side runs exactly the same stack routines as an AI hero's army, described in [AI: battle](../ai-battle/). What differs follows from the missing hero:
@@ -103,7 +128,7 @@ All from the code paths above:
 
 ## Not decoded yet
 
-- How one map stack is split into several battlefield stacks, and where the upgraded stack comes from.
+- Where the split stacks are placed on the battlefield.
 - Creature bank guard layouts and the choice of level (the table itself is in `CRBANKS.TXT`).
 - Weekly growth of wandering stacks.
 - Quick combat resolution for hero-less sides.
