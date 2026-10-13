@@ -101,35 +101,26 @@ The best target is chosen in this order: a target that is not blinded, petrified
 
 ### Bonus for drawing the retaliation
 
-`0x41f3b0`, added to a target's score in step 2. It is not a reward for joining an attack others have started. It is the reverse: the active stack `A` is credited with what **its attack lets the rest of the army do**, because `A` takes the target's retaliation and the stacks that follow strike for free.
+`0x41f3b0`, added to a target's score in step 2. The active stack `A` gets credit for the attacks other friendly stacks can make on target `T` after `A` has taken its retaliation.
 
-When it applies:
+Conditions:
 
 - Hard difficulty and above (or a per-side flag that was not identified);
-- `A` can reach the target `T` this turn and is not blinded, petrified or paralysed;
-- `T` is not petrified and has **exactly one** retaliation left. A target that has already retaliated gives no bonus, and neither does one with unlimited retaliations;
-- `A`'s own attack does not kill `T`. If it does, the bonus is 0.
+- `A` can reach `T` this turn and is not blinded, petrified or paralysed;
+- `T` is not petrified and has exactly one retaliation left;
+- `A`'s attack does not kill `T`.
 
-How it is computed. Let `R` be the hit points `T` has left after `A`'s attack. For every friendly stack `S` that can reach `T` this turn (arrow towers excluded):
+Let `R` be the hit points `T` has left after `A`'s attack. For every friendly stack `S` that can reach `T` this turn (arrow towers excluded):
 
 ```
 follow-up(S) = value of the damage S would do to T, capped at R
 gain(S)      = follow-up(S) − the value of the attack S has planned already
+
+bonus = sum of positive gain(S) over stacks whose planned victim is T
+      + the largest positive gain among the other stacks
 ```
 
-```
-bonus = sum of gain(S) over stacks whose planned victim is already T and whose gain is positive
-      + the largest gain among all the other stacks, if positive
-```
-
-So stacks that already aim at `T` all count, and of the stacks that aim elsewhere only the best one counts, as the one that might switch.
-
-What the routine does **not** look at:
-
-- who attacked whom earlier in the battle. There is no memory of past attacks anywhere in it;
-- the order of turns. It does not check that `S` acts after `A`, nor whether `S` has already acted this round. The planned victim and planned attack value of `S` are whatever `S` stored the last time it chose a target.
-
-One visible consequence: when two strong stacks stand near one enemy stack that still has its retaliation, each of them sees a bonus for hitting it first, so they tend to converge on the same stack. Hitting a stack of theirs does not cause that; standing next to them with an unspent retaliation does. **[code and assembly `0x41f3b0`, call site in `0x421680`; "can reach this turn" is the reading of a per-stack bit mask and is inferred]**
+The routine reads only the current state. It does not use which stack attacked which earlier, the order of turns, or whether `S` has already acted this round. The planned victim and planned attack value of `S` are the ones stored when `S` last chose a target. **[code and assembly `0x41f3b0`, call site in `0x421680`; "can reach this turn" is the reading of a per-stack bit mask and is inferred]**
 
 > **HotA 1.8.1:** the same code, with one change found: every "out of action" test also counts a fourth, HotA-only effect, and Couatls have a special branch. See [HotA: battle AI code](../hota/#battle-ai-code).
 
@@ -152,7 +143,7 @@ A stack under Bind, or with speed 0, does not move.
 - **Shooters** (and stacks the routine treats like them) reposition as described under [Shooters](#shooters).
 - **Everything else** runs the normal target choice above, but the attack branch and creature spells are switched off. The stack picks the target it would want and then **walks towards it** (`0x41f580`) as far as the tactics zone allows: hexes outside the zone are rejected, and the walk is not limited to one turn of movement. A stack with nothing to walk to stays where it is.
 
-So the AI uses Tactics only to close the distance to the stacks it intends to hit; it does not form a line or protect shooters at this stage. **[code; how the AI ends the phase was not read]**
+**[code; how the AI ends the phase was not read]**
 
 ## Shooters
 
@@ -253,7 +244,7 @@ mana factor = 2.5            if casts >= 7
             = sqrt(casts)    otherwise
 ```
 
-A hero short on mana therefore needs a much better spell before spending it. The highest score wins. **[code `0x43c800`; square root inferred]**
+The highest score wins. **[code `0x43c800`; square root inferred]**
 
 The winning spell is cast only if its evaluator also marked it as **worth casting now** (see timing below).
 
@@ -298,13 +289,13 @@ All values use the same currency as stack actions, [unit value](#what-a-unit-is-
 
 For spells that hit one stack, the evaluator runs on every legal stack and keeps the best. When the hero's school level makes the spell a mass spell, the values of all affected stacks are added (`0x43a910`, `0x43a670`). Stacks already under the spell, disabled stacks, First Aid Tents and Ammo Carts are skipped. Against a target with Magic Mirror the value is multiplied by `(50 − mirror chance) × 2 / 100`.
 
-Two things recur in these routines. A buff on a stack that attacks is worth something **only if that stack's victim can be reached this turn**; otherwise the value is 0 and the spell waits. And curses are considered only for enemy stacks **that threaten the AI's army this turn**, so the computer does not curse a stack that is still far away. The creature-only effects Poison (71) and Disease (73) have entries too but no hero can cast them.
+A buff on a stack that attacks has a value only if that stack's victim can be reached this turn; otherwise it is 0. Curses are considered only for enemy stacks that threaten the AI's army this turn. Poison (71) and Disease (73) have entries but no hero can cast them.
 
 Spell flag `0x200` is tested wherever the code needs "a spell that deals damage": here for the protections, in the parting shot, and in the [Orb artifacts](../ai-adventure/#artifact-effect-terms). **[inferred from use]**
 
 ### Timing
 
-- A buff aimed at a friendly stack other than the active one is postponed while some other friendly stack still has to act this round, unless the spell carries spell flag `0x4000`. In practice the AI buffs the stack that is about to move. **[code `0x43a670`]**
+- A buff aimed at a friendly stack other than the active one is postponed while some other friendly stack still has to act this round, unless the spell carries spell flag `0x4000`. **[code `0x43a670`]**
 - A spell on an enemy stack is cast at once when no other friendly stack is left to act, or when the active stack is about to attack that very target in melee this turn. Otherwise it is cast only if the target threatens the AI's army and no friendly stack that is still to act is faster than it. **[code `0x436c60`; reading of the last condition is inferred]**
 
 ### Parting shot
@@ -322,7 +313,7 @@ This is the same simulator the adventure-map AI uses to decide whether a fight i
 | AI planning | fixed: the hero's own factor, 1.25 for neutrals and computer opponents, a difficulty value for human opponents |
 | Actual resolution | random: `rand(75,125) / 100` for the attacker, and a second independent roll for the defender **[range of the second roll inferred to be the same]** |
 
-So the outcome the AI predicted and the outcome it gets are drawn from the same model, but the real one has up to ±25% luck on each side. A computer hero that attacked on a narrow predicted margin can lose.
+The predicted outcome and the real one come from the same model; the real one has a random ±25% on each side.
 
 ### What the simulator does
 
@@ -363,8 +354,6 @@ Losses are then taken off the stacks in list order (`0x426170`): a stack loses w
 
 **Settlement after round three** (`0x4264d0`). The routine adds up each side's remaining fighting power. If both are above zero, the **weaker side is wiped out completely**, and the stronger side's pool is reduced by a final loss and its casualties distributed the same way. If that final loss empties the stronger pool too, both armies are destroyed.
 
-So the model is: up to three rounds in which speed and shooting decide who gets free hits, then a winner-takes-all comparison of what is left.
-
 **The final loss.** With `W` the winner's remaining fighting power and `L` the loser's (`L ≤ W`):
 
 ```
@@ -389,7 +378,7 @@ Candidates are the hero's combat spells that it can pay for, with two filters: o
 
 The spell with the highest value is cast and its cost is taken from the hero's mana. If the enemy army contains Familiars, the enemy hero gains a fifth of that cost. Damage is then removed from the pools exactly like combat damage; a whole-field spell is applied to the caster's own stacks as well.
 
-There is no mana factor and no random factor here, unlike the [real spell chooser](#scoring): the simulator simply takes the largest immediate effect each round. Summoning spells and Teleport are not in any of the classes, so they are never cast in a simulated battle. **[code; which spells carry `0x10000` was not listed]**
+No mana factor and no random factor are applied here; the spell with the largest value is taken each round. Summoning spells and Teleport are in none of the classes and are never cast in a simulated battle. **[code; which spells carry `0x10000` was not listed]**
 
 
 ## What difficulty changes
