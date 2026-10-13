@@ -286,8 +286,8 @@ From the switch in `0x528040`. Object type numbers are the map format's.
 | Library of Enlightenment (41) | 0 if visited or if `hero level + 2 × Diplomacy level` is below 10. Otherwise `army strength × 4 / 40 + 2 × (value of a Spell Power point + value of a Knowledge point)` |
 | Mercenary Camp (51), Scholar (81) | Priced through experience: experience to the hero's next level × the hero's value of one experience point. The camp is 0 once visited |
 | Redwood Observatory (58), Pillar of Fire (60) | Exploration value `0x432220`, the routine used for unexplored map |
-| Hut of the Magi (37) | A per-player figure stored with the planning data |
-| Lean To (39), Windmill (112) | 3 and 4.5 times a per-player figure stored next to the resource weights (not identified; presumably the value of one random resource). The Lean To only if this player has not taken it, the Windmill only if it is not already its own and empty |
+| Hut of the Magi (37) | A value kept per player and set to 0 when that player visits a hut; where it is first set was not found |
+| Lean To (39), Windmill (112) | 3 and 4.5 times the player's **average resource value**: the sum of the weights of the non-gold resources divided by 5, computed at the end of the [resource weight](#what-resources-are-worth) routine. The multipliers match the average yield (1–5 and 3–6 units). The Lean To only if this player has not taken it, the Windmill only if it is not already its own and empty **[the summed terms are inferred]** |
 | Water Wheel (109) | A flat value for a wheel of another player or unowned, otherwise by the weeks it has been accumulating, 500 a step |
 | Shipwreck Survivor (86), Warrior's Tomb (108) | A flat value, and only while the hero carries fewer than 64 artifacts. The tomb is 0 once this player has visited it |
 | Garrison (33) | Own garrison with removable troops: the [army gain](../ai-towns/#army-exchange-with-the-garrison) from it, and only from week 2 on some maps. Another player's that is not an ally: the [fight value](#valuing-a-fight) |

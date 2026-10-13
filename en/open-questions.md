@@ -11,7 +11,7 @@ Things referenced in the chapters but not decoded or not confirmed yet.
 
 ## Battle AI
 
-- Hero spells: the evaluators are described from decompiled code without the exact floating-point expressions; the meaning of spell flag `0x4000` is not identified, and the buff and curse values inside the battle simulator (`0x425510`) are only outlined.
+- Hero spells: the evaluators are described from decompiled code without the exact floating-point expressions; the meaning of spell flag `0x4000` is not identified.
 - Exact strength terms in the retreat check (`0x41e570`): a multiplier for stacks that have not acted, the defender's bonus inside a town, and the role of the gold comparison.
 - The per-hero defence factor `0x4e4310` used in unit valuation.
 - The meaning of the per-game field at `+0x1f698` that enables moat awareness and changes sympathy for elementals. It looks like the map's expansion level. **[inferred]**

@@ -79,4 +79,4 @@ What the computer player decides, and where it is described. "Partly" means the 
 - **Fight Value** is used inside battles to weigh damage dealt and taken.
 - **AI Value** is used on the adventure map: army strength for the join/flee decision of wandering monsters is `Σ AI Value × count`, scaled by the hero's Attack and Defence. See [neutral monsters](../ai-neutral/).
 
-Per-class `Aggression` from `HCTRAITS.TXT` and the per-spell AI values from `SPTRAITS.TXT` are read by adventure-map and spell-selection code that is not decoded yet.
+The per-spell AI values from `SPTRAITS.TXT` are used by the [battle simulator](../ai-battle/#spells-inside-the-simulator) for buffs and curses. The reader of the per-class `Aggression` from `HCTRAITS.TXT` was not located.
