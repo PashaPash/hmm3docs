@@ -271,7 +271,36 @@ After the third round `0x4264d0` settles what is left. Hero Attack and Defence e
 
 The attacker wins if its pool is still above zero. `0x426ee0` then writes the surviving counts back to the real armies.
 
-Not read: the per-round damage arithmetic, how spells are chosen and valued inside the simulator, and the final settlement.
+### The arithmetic
+
+**Strength points.** `0x424120` gives every stack a per-unit strength built from the creature's **Fight Value**, scaled by the hero terms (5% per point of Attack and Defence difference, and a square-root factor for bonus hit points from the hero) and by the side's multiplier from the table above. A stack's strength is `per-unit strength × count`, and a side's **pool** is the sum over its stacks. The pool plays the role of hit points: it is what the other side's damage is taken from.
+
+**When a stack starts dealing damage.**
+
+| Stack | First round it acts |
+|---|---|
+| Shooter | from the start, at range |
+| Walker or flyer | round `(speed + 2 × (7 − Tactics advantage)) / speed`, integer division, at most 4 |
+| Walker when attacking a town with walls | not before the wall delay stored for the siege; flyers ignore it |
+
+"Tactics advantage" is the hero's Tactics level minus the opposing hero's, not below 0. A speed 5 walker with no Tactics arrives in round 3, a speed 9 one in round 2, a speed 15 one in round 1. Because the simulation is cut after three rounds, **slow walkers deal no damage before the settlement**.
+
+**Damage per round** (`0x426390`). Every stack that is already acting removes from the enemy pool a fixed share of its own current strength:
+
+| Situation | Share of the stack's strength per round |
+|---|---|
+| Melee | 20% |
+| Shooter fighting in melee, without the "no melee penalty" flag | 10% |
+| Shooter at range | 20%, or with a hero a value from the hero's ranged bonus divided by 5; doubled for double-shot creatures; halved when shooting at a walled town, except for Arch Magi |
+
+Losses are then taken off the stacks in list order (`0x426170`): a stack loses whole units worth of the damage, and the survivor count is rounded up.
+
+**Settlement after round three** (`0x4264d0`). The routine adds up each side's remaining fighting power. If both are above zero, the **weaker side is wiped out completely**, and the stronger side's pool is reduced by a final loss and its casualties distributed the same way. If that final loss empties the stronger pool too, both armies are destroyed.
+
+So the model is: up to three rounds in which speed and shooting decide who gets free hits, then a winner-takes-all comparison of what is left.
+
+Not read: the exact final-loss expression, the per-stack terms summed in the settlement, and how hero spells are picked and valued inside the simulator (`0x425bd0`). **[code]**
+
 
 ## What difficulty changes
 
