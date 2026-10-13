@@ -185,7 +185,7 @@ Nominal prices (table `0x68c482`): wood 250, ore 250, mercury 500, sulfur 500, c
 
 ### What an artifact is worth
 
-`0x4336c0` and `0x4339e0`. Each artifact carries a list of effect evaluators; the artifact's value **for a given hero** is the sum of what those evaluators return for that hero, so the same artifact is worth different amounts to a might hero and a caster. Parts of a combination add the combination's evaluators as well. An artifact named in the scenario's victory condition gets a large bonus. War machines have their own formulas; the Ballista's uses the hero's Attack and Artillery.
+`0x4336c0` and `0x4339e0`. The artifacts themselves are listed under [Artifacts](../artifacts/). Each artifact carries a list of effect evaluators; the artifact's value **for a given hero** is the sum of what those evaluators return for that hero, so the same artifact is worth different amounts to a might hero and a caster. Parts of a combination add the combination's evaluators as well. An artifact named in the scenario's victory condition gets a large bonus. War machines have their own formulas; the Ballista's uses the hero's Attack and Artillery.
 
 Wherever a routine needs a value "for the player" rather than for one hero, it takes the best value over the player's heroes, with a floor of 10 (`0x433aa0`). This is the number used for artifacts on the map, in chests, at merchants, in the [tavern choice](#hiring-heroes) and in the [exchange between two heroes](../ai-towns/#when-a-hero-visits-its-own-town). The individual effect evaluators were not read. **[code]**
 

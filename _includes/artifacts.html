@@ -1,0 +1,12 @@
+{% assign ru = false %}{% if include.lang == 'ru' %}{% assign ru = true %}{% endif %}
+{% assign classes = "S,T,N,J,R" | split: "," %}
+{% for k in classes %}
+<h3>{% if k == "S" %}{% if ru %}Особые{% else %}Special{% endif %}{% elsif k == "T" %}{% if ru %}Сокровища (класс T){% else %}Treasure (class T){% endif %}{% elsif k == "N" %}{% if ru %}Малые (класс N){% else %}Minor (class N){% endif %}{% elsif k == "J" %}{% if ru %}Великие (класс J){% else %}Major (class J){% endif %}{% else %}{% if ru %}Реликты (класс R){% else %}Relic (class R){% endif %}{% endif %}</h3>
+<div class="table-wrapper"><table>
+<thead><tr><th>ID</th><th>{% if ru %}Артефакт{% else %}Artifact{% endif %}</th><th>{% if ru %}Слот{% else %}Slot{% endif %}</th><th>{% if ru %}Цена{% else %}Price{% endif %}</th></tr></thead>
+<tbody>
+{% for a in site.data.artifacts %}{% if a.class == k %}
+<tr><td>{{ a.id }}</td><td>{{ a.name }}</td><td>{{ a.slots | join: ", " }}</td><td>{{ a.cost }}</td></tr>
+{% endif %}{% endfor %}
+</tbody></table></div>
+{% endfor %}

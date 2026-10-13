@@ -4,7 +4,7 @@ Heroes of Might and Magic III mechanics and AI behaviour, reverse engineered fro
 
 Site: https://pashapash.github.io/hmm3docs/ (progress table on the home page)
 
-- `en/`, `ru/`: pages, mirrored file names
+- `en/`, `ru/`: pages, mirrored file names (chapters, data tables, AI chapters, HotA differences)
 - `_data/`: tables generated from the game's text tables, numbers only
 - `tools/lod.py`: list or dump entries of a `.lod` archive
 - `tools/extract_tables.py`: dumped tables to `_data/*.json`
