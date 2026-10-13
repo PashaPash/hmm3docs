@@ -196,7 +196,29 @@ For each shot of the firing:
 
 Example: a Catapult with no Ballistics aimed at the keep hits it 5% of the time; the misses go to wall sections. **[code and assembly; "nearest" is by index in the section list]**
 
-Where the first aim comes from: a human picks the target. For a computer-controlled Cyclops, `0x41eea0` aims at a wall only for the attacker, only while enough of its army has no victim it can reach, and then picks the standing wall section with the **fewest structure points left**, at random among equals. The automatic aim of the Catapult itself (`0x473c00`, `0x476bd0`) was not read.
+### Who controls war machines and towers
 
-Not decoded: how an Arrow Tower picks its target, and the gate and drawbridge rules.
+`0x474bf0`. A machine acts on its own, without an order from the player, in these cases:
+
+| Stack | Automatic when |
+|---|---|
+| Catapult | the hero has no Ballistics |
+| Ballista, Arrow Tower | there is no hero, or the hero has no Artillery |
+| First Aid Tent | the hero has no First Aid |
+
+Every stack of a computer-controlled side is automatic, and so is everything in auto-combat. Nothing is automatic during the tactics phase.
+
+### Automatic Catapult aim
+
+`0x473c00`. If there is no siege or nothing left to shoot at, the Catapult skips its turn. Otherwise:
+
+1. A hero **with Ballistics** aims at the **gate** while it stands.
+2. Otherwise the four wall sections are looked at. With no Ballistics, or while all four still stand, the aim is the wall section with the **fewest structure points left**, at random among equals.
+3. When no wall section stands, or the hero has Ballistics and at least one wall section is already down, the aim is the first target still standing in the order **gate, keep, upper tower, lower tower**, and after those any target left.
+
+A computer-controlled Cyclops (`0x41eea0`) aims at a wall only for the attacker and only while enough of its army has no victim it can reach; it also picks the standing wall section with the fewest structure points.
+
+An automatic Arrow Tower is a shooter stack and goes through the same [shooter target choice](../ai-battle/#shooters) as any other; no tower-specific branch was seen in the stack turn routine (`0x4221f0`). **[code; the tower statement is inferred from the absence of a special case]**
+
+Not decoded: the gate and drawbridge rules.
 
