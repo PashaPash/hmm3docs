@@ -161,7 +161,7 @@ On Easy the largest shot value wins. On Normal+ it is divided first:
 | Able to act and already has a victim picked in the threat pass | turns it needs to reach that victim, if fewer than 6 **[inferred from `0x448bd0`]** |
 | Anything else | 5 |
 
-So an AI shooter prefers the enemy stack that will hit its army soonest, and mostly ignores disabled stacks. Among equal candidates an active target beats a disabled one.
+Among equal candidates an active target beats a disabled one.
 
 - Magogs (45), Liches (64) and Power Liches (65) score an aim hex by area effect instead (`0x41eda0`).
 - Creatures with the wall-breaking flag may shoot walls during a siege (`0x41eea0`).

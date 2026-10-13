@@ -87,7 +87,7 @@ A cheap building that unlocks several valuable ones collects all their scores, w
 4. When the purchase is charged against the player's plans, subtract the cost at the [resource weights](../ai-adventure/#what-resources-are-worth), but never more than three quarters of the gain.
 5. Buy the option with the largest result, then start again from step 2 until nothing has a positive result.
 
-So the order is not "highest level first": it is whichever purchase adds the most army value for its weighted cost at that moment, bought to the limit of the purse, then re-evaluated. A resource the player is short of makes creatures that need it less attractive, but can never cancel more than 75% of their value. **[code]**
+The purchase with the largest gain per weighted cost is bought to the limit of the purse, then everything is re-evaluated. A resource the player is short of lowers the value of creatures that need it, by at most 75%. **[code]**
 
 ### The gain of adding a stack
 
@@ -123,7 +123,7 @@ The computer player does not trade to make a profit or to balance its stock. It 
 3. **Where** (`0x42a580`). The player needs at least one Marketplace. The number of Marketplaces, up to 10, sets the exchange rate as it does for a human. A Marketplace the player could build today also counts if it has gold income.
 4. If there is something short and something spare, the routine sells spare resources to cover the shortage. If the shortage cannot be covered, the purchase goal is dropped for this turn.
 
-There is no selling order to speak of. `0x42a580` adds up the spare amounts through a per-resource price table (`0x68c482`), prices the shortage the same way for each quantity of the purchase it is considering, and keeps the largest quantity whose shortage is covered by the total spare value. So the test is "is everything spare, taken together, worth enough", not a choice of which resource to give up first. **[code; the exchange itself, when the purchase is made, was not traced]**
+`0x42a580` adds up the spare amounts through a per-resource price table (`0x68c482`), prices the shortage the same way for each quantity of the purchase it is considering, and keeps the largest quantity whose shortage is covered by the total spare value. No order among the spare resources is chosen here. **[code; the exchange itself, when the purchase is made, was not traced]**
 
 ## Gifts to allies
 
@@ -158,7 +158,6 @@ drop the gift if it is less than 5 × what the ally already has
   - no other town of the player already has a higher guild that this hero could still use and that could be built up instead;
   - the player can pay and the town has not built today.
 
-  This is how Mage Guilds get built beyond their role as prerequisites: they follow heroes who can use them.
 - If the scenario is won by holding a particular town, and this hero is not the player's strongest, it stops there and **leaves its army in that town's garrison** (`0x525200`). Above Easy, with at least two heroes, and only when the town is not marked as threatened.
 - In a Conflux with the **Magic University**, the hero learns the skills on offer that are worth it (`0x524ed0`): it needs fewer than eight skills and the player at least 2000 gold, and each skill is judged by the same value as in [level-up choices](../ai-adventure/#level-up-choices).
 - **Artifact Merchants** (`0x5259e0`, `0x524400`). The routine runs only in Tower and Dungeon towns; Conflux, which has the same building, is not in the test. It prices the seven artifacts currently on offer the same way as the [Black Market](../ai-adventure/#object-values-that-are-readable): `artifact value − price at the resource weights`, counting only artifacts the player can afford and only positive results. The exchange rate depends on the player's number of Marketplaces, up to 10. If the town has no Artifact Merchants yet, the building is put up on the spot when it can be built and paid for and the summed net value of the artifacts is at least the building's own cost at the resource weights. The hero then buys.
@@ -183,15 +182,15 @@ drop the gift if it is less than 5 × what the ally already has
 `0x42c3b0`, run at the start of the recruiting step (`0x42ba60`) whenever a hero with movement points left enters its own town. The hero is the taker; the garrison (or the army of a hero standing in the garrison) is the other side.
 
 1. Stacks of the same creature in the hero's army are merged.
-2. **Dropping dead weight.** If the hero has between two and six stacks, each stack in turn is taken out and the [gain of adding it back](#the-gain-of-adding-a-stack) is computed. A stack whose gain is below 1 stays in the garrison. In practice this is a small or slow stack that costs the army more in speed than it adds.
+2. **Dropping.** If the hero has between two and six stacks, each stack in turn is taken out and the [gain of adding it back](#the-gain-of-adding-a-stack) is computed. A stack whose gain is below 1 stays in the garrison.
 3. **Taking.** For every garrison stack the routine computes the gain of adding it to the hero. The stack with the largest gain is moved, and the step repeats until nothing has a positive gain. If the hero has no free slot, the stack it gives up ([which one](#which-stack-is-pushed-out)) goes to the garrison: into a matching or free slot, or in place of the garrison's weakest stack if that one is worth less.
 4. When the garrison is down to a single stack, the routine also tries taking **all but one creature** of it and uses that if it scores higher.
 5. The hero's stacks are re-ordered by a routine keyed on creature speed (`0x42d8e0`, not read in detail).
 
-Two consequences:
+Two more rules:
 
-- The gain is multiplied by `(sum of the visitor's four primary skills − the same sum for the hero in the garrison) / 40`, with the difference not below 0. So **a visitor that is not better in primary skills than the garrison hero takes nothing**. With no hero in the garrison the multiplier is just the visitor's own sum, which is always positive.
-- There is no rule that keeps a share of the army at home. Everything that makes the hero's army stronger leaves with the hero; the town keeps the leftovers, plus whatever the [emergency purchase](../ai-adventure/#how-a-town-gets-its-threat-mark) buys when the town is threatened. The only deliberate garrisoning is the victory-town case below.
+- The gain is multiplied by `(sum of the visitor's four primary skills − the same sum for the hero in the garrison) / 40`, with the difference not below 0. A visitor whose sum is not higher than the garrison hero's takes nothing. With no hero in the garrison the multiplier is the visitor's own sum.
+- No rule keeps a share of the army in the town. The town keeps what the hero did not take, plus whatever the [emergency purchase](../ai-adventure/#how-a-town-gets-its-threat-mark) buys when the town is threatened. The victory-town case below is the only one where a hero leaves its army.
 
 **[code]**
 

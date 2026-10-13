@@ -28,7 +28,7 @@ Path costs below are in the movement points described in [Adventure map](../adve
 `0x42edd0` walks the hero's pathfinding result and asks `0x528040` for the value of each tile that holds an object.
 
 - A value of zero or less drops the target.
-- A tile the player **has not explored** is not evaluated; it gets a flat value of 100. Exploration is therefore a weak default pull that any real object beats. **[code]**
+- A tile the player **has not explored** is not evaluated; it gets a flat value of 100. **[code]**
 - If the hero stands in a town with a garrison hero slot conflict, or the destination belongs to an ally, the target is skipped.
 
 ## Step 2: spread the values
@@ -67,7 +67,7 @@ A candidate is **near** when its path cost is at most 21% of the hero's full dai
 2. Among near candidates the smaller path cost wins; equal cost falls back to the higher score.
 3. Among the rest the higher score wins.
 
-So an AI hero sweeps up everything close before it sets off for a distant, more valuable target. **[code]**
+**[code]**
 
 ## Who the AI goes after
 
@@ -86,13 +86,13 @@ Formula above Easy: human `(difficulty + 1) × 0.25`, computer `0.75 − difficu
 The factor is used when valuing mines, in the fight valuation when the opponent belongs to a player, and in two more places in the object switch that were not read (`0x528040`, `0x529cb0`).
 
 - On **Easy** taking something from a human is worth less than taking the same thing unowned, and computer players prefer each other's property.
-- As difficulty rises the preference turns around. On **Expert** another computer player's ownership adds nothing; on **Impossible** it subtracts, so computer players leave each other alone and concentrate on humans.
+- On **Expert** another computer player's ownership adds nothing; on **Impossible** it subtracts.
 
 **Where the hero is hired** (`0x431800`). The new hero's immediate worth is the value of its artifacts plus its starting army priced at the resource weights. If that is below a threshold tied to the 2500 gold price and the player does not hold at least `2500 × its number of heroes`, nothing is hired. Otherwise every town of the player with no visiting hero is tried: a town needs a Tavern, or one that can be built that day, in which case the Tavern's cost at the resource weights is subtracted. To this is added what the new hero could reach from that town (`0x431bd0`, the same target evaluation as for any hero). The town with the best total gets the hero. **[code; the exact threshold expression was not read]**
 
 ## Adventure spells in path planning
 
-The computer does not decide "now I cast Town Portal" as a separate step. The spell is an extra **edge in the hero's pathfinding graph** (`0x56b050`, called from the pathfinder `0x56b440`), so a destination reached through a portal is scored like any other, by value over path cost.
+The spell is an extra **edge in the hero's pathfinding graph** (`0x56b050`, called from the pathfinder `0x56b440`). A destination reached through a portal is scored like any other, by value over path cost.
 
 ### Town Portal
 
@@ -113,7 +113,7 @@ A missing gate does not rule the route out: if the Castle Gate can be built toda
 
 ### Monoliths, gates and whirlpools
 
-These objects have no value of their own in the object switch. In the pathfinder (`0x56ab40`) they are edges, like Town Portal and Castle Gate, so the computer uses them whenever they shorten the way to something it wants:
+These objects have no value of their own in the object switch. In the pathfinder (`0x56ab40`) they are edges, like Town Portal and Castle Gate:
 
 | Object | Edge |
 |---|---|
@@ -131,7 +131,7 @@ In the same routine that handles objects along a path (`0x56ab40`), a **boat on 
 - it is used only in the full planning mode and at most once per path;
 - stepping onto it ends the land leg, and what the hero can still spend is replaced by its sea allowance (see [movement at sea](../adventure/#at-sea)).
 
-So a computer hero will board a boat that lies on the way to something valuable across water. A Shipyard or Lighthouse not owned by its side is worth a flat 1000 as a target. Building a ship at a Shipyard and casting Summon Boat were not found in the routines read. **[code for the boat case; the reading of the movement swap is inferred]**
+A Shipyard or Lighthouse not owned by its side is worth a flat 1000 as a target. Building a ship at a Shipyard and casting Summon Boat were not found in the routines read. **[code for the boat case; the reading of the movement swap is inferred]**
 
 ### Fly and Water Walk
 
@@ -155,11 +155,11 @@ The pathfinder lets a hero cross water or obstacles when the effect is available
 3. Otherwise `value = gain − AI Value of the units expected to die`. A small negative result is rounded up to 0 when the expected losses are under a quarter of the army.
 4. Killing a hero that is a victory or loss condition adds 5,000,000.
 
-On Easy and Normal the AI treats a human army as **half** as strong as it is, so it attacks players it cannot beat. On Expert and Impossible it is as cautious with humans as with anyone else. **[code]**
+On Easy and Normal the AI counts a human army at **half** its strength. On Expert and Impossible the human multiplier equals the one for computer opponents. **[code]**
 
 ## What resources are worth
 
-`0x428740` recomputes, every turn, a value for one unit of each of the seven resources for each computer player. Every object value and every purchase decision below is expressed through these weights, so they are the AI's exchange rate between gold, materials and army.
+`0x428740` recomputes, every turn, a value for one unit of each of the seven resources for each computer player. Every object value and every purchase decision below is expressed through these weights.
 
 ```
 have[r] = stock + 2 × daily income
@@ -191,7 +191,7 @@ Nominal prices (table `0x68c482`): wood 250, ore 250, mercury 500, sulfur 500, c
 
 | Figure | Formula |
 |---|---|
-| Hero's value of one experience point | `(2500 + AI Value of the hero's army) / (40 × experience needed for the next level)`. A whole level is therefore worth one fortieth of "price of a hero plus its army" |
+| Hero's value of one experience point | `(2500 + AI Value of the hero's army) / (40 × experience needed for the next level)` |
 | Hero's value of a Spell Power point | Gain in the hero's total spell value (`0x5275b0`) from +1 Spell Power, at least 10 |
 | Hero's value of a Knowledge point | One third of the gain in total spell value from 30 more spell points, at least 10 |
 | Player's artifact-worth figure | Average value, for this player's heroes, of all artifacts that are enabled on the map |
@@ -230,12 +230,12 @@ The evaluator lists are data: a table at `0x63ac7c`, loaded by `0x4340e0`, gives
 | `alliance` | 5% of the AI value of the eligible creatures in all the player's heroes and towns, plus `T/5` |
 | `ballista`, `tent` | own formulas: the Ballista from Attack and Artillery, the First Aid Tent from the most valuable creature in the army |
 
-Things that follow from the table:
+Notes on the table:
 
 - One-stat weapons and shields are entered one point low: Centaur's Axe (+2 Attack) has `n = 1`, Sword of Hellfire (+6) has `n = 5`. Mixed items are entered at their net sum, for example Titan's Gladius (+12, −3) has `n = 9`.
 - Thunder Helmet and Titan's Cuirass are entered as `+12, −3` although the items give `+10, −2`.
 - An artifact with no entry is worth 0 by this table and gets only the floor of 10: the Spell Book, the Catapult, and anything not listed.
-- Attack and defence are valued through the army, Spell Power and Knowledge through the hero's own spell values, so a might hero and a caster rank the same two artifacts differently.
+- Attack and defence are valued through the army, Spell Power and Knowledge through the hero's own spell values.
 
 Combination artifacts have entries of their own; a part also receives the terms of its combination, as said above.
 
@@ -261,7 +261,7 @@ Combination artifacts have entries of their own; a part also receives the terms 
 - If the hero has a free slot the artifact fits, the gain is the artifact's full value, not below 0.
 - If every fitting slot is taken, the gain is the new artifact's value minus the value of the artifact now worn there, not below 0. Worn artifacts are valued with a flag that keeps what the hero would lose by taking them off (see Recanter's Cloak above).
 
-So a second sword is worth only the difference to a hero that already has one, and is worth its full value to a hero with an empty hand. This is why artifacts drift to the hero that lacks them in the [exchange between two heroes](../ai-towns/#when-a-hero-visits-its-own-town). When a hero's total worth is summed (`0x433c60`), the terms for primary skill points are skipped, because the skills are already counted. **[code]**
+When a hero's total worth is summed (`0x433c60`), the terms for primary skill points are skipped, because the skills are already counted. **[code]**
 
 ## Object values that are readable
 
@@ -343,8 +343,6 @@ value = fight value against the garrison
 - If the computer player owns **no town at all**, the last term is the full 5,000,000, and an unwinnable garrison no longer rules the target out: it only subtracts 2,500,000.
 - If losing that town is the opponent's loss condition, another 5,000,000 is added.
 
-Ordinary objects are worth hundreds or thousands, so a reachable, winnable town outranks almost anything else on the map; what holds the AI back is the fight estimate and the distance divisor.
-
 ### Its own towns
 
 `0x52ab80`. Visiting a town of its own is worth what the hero would gain there: recruits (`0x52b090`) and the visit itself (`0x52b1e0`), plus the Grail's value if the hero carries it and the town can take it.
@@ -367,9 +365,9 @@ The two passes do different things with a town in danger:
 | First | Buy the creatures available in that town straight into its garrison (`0x428580`) |
 | Second | Clear every town's mark, then add 1 to the mark of each town still in danger after those purchases (`0x428570`) |
 
-So the mark is a count of enemy heroes that can reach the town within about a day and a half and are expected to take it. A town whose garrison was saved by the emergency purchase is not marked.
+A town whose garrison was saved by the emergency purchase is not marked.
 
-The same routine tags the **enemy hero**: it stores `5,000,000 / number of the computer player's towns` in that hero's record. This is the "term for the hero itself" below, so a hero threatening a town becomes a very valuable target as well. **[code]**
+The same routine tags the **enemy hero**: it stores `5,000,000 / number of the computer player's towns` in that hero's record. This is the "term for the hero itself" below. **[code]**
 
 ### Enemy heroes
 
@@ -394,7 +392,7 @@ The same routine tags the **enemy hero**: it stores `5,000,000 / number of the c
 ### How the computer chooses
 
 - If both offers are the same kind (two new skills, or two upgrades), it takes the one with the higher value from `0x524690`; a tie goes to the first.
-- If one is an upgrade and the other is new, the new skill has to earn its slot (`0x524dd0`). The routine ranks, by the same value, every skill the hero does not have and its class can learn, together with the one on offer. The hero has `8 − skills known` free slots; the new skill is taken only if it ranks within that many places from the top. Otherwise the hero takes the upgrade. So a hero with many free slots accepts almost any new skill, and one with a single slot left holds out for the best skill its class can still get.
+- If one is an upgrade and the other is new (`0x524dd0`): the routine ranks, by the same value, every skill the hero does not have and its class can learn, together with the one on offer. The hero has `8 − skills known` free slots; the new skill is taken only if it ranks within that many places from the top. Otherwise the hero takes the upgrade.
 
 `0x524690` returns 0 for a skill already at Expert, and for a new skill when the hero already has eight. Otherwise, with `T = 1000 + AI Value of the hero's army` and `S = 500 + AI Value of its shooters`:
 

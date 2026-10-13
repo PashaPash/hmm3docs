@@ -71,7 +71,7 @@ Table `0x63e510`.
 - **Native terrain**: if the tile's terrain is native to every creature in the army, the step costs 100 whatever the terrain, except on one special ground type.
 - **Nomads** in the army make sand cost the same as dirt.
 - **Diagonal** steps cost ×1.414.
-- **Last-step rule**: if the hero has enough points left for the straight cost of the tile but not for the diagonal cost, the diagonal step is charged only the straight cost. A hero can therefore always finish a diagonal move it could have made straight.
+- **Last-step rule**: if the hero has enough points left for the straight cost of the tile but not for the diagonal cost, the diagonal step is charged only the straight cost.
 - **Fly** and **Water Walk** charge a fixed cost per step by spell level, 140 / 140 / 120 / 100 for none / Basic / Advanced / Expert (table `0x6778ac`). Artifact 72 (Angel Wings) and artifact 90 (Boots of Levitation) act as the Expert spell. Flying over ordinary passable land charges the smaller of the terrain cost and the flying cost.
 - On water, one special ground type cuts the cost to two thirds.
 

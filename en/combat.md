@@ -91,7 +91,7 @@ Checked when a stack's turn comes up. Morale is clamped to the range −3…+3 f
 Two things are not symmetrical:
 
 - A point of negative morale is twice as likely to trigger as a point of positive morale.
-- When the stack's side is **not controlled by a human**, a triggered bad-morale roll is cancelled with a further 1 in 4 chance (`rand(1,4) == 1`). Computer and neutral stacks therefore freeze at three quarters of the human rate: 6.25% per point.
+- When the stack's side is **not controlled by a human**, a triggered bad-morale roll is cancelled with a further 1 in 4 chance (`rand(1,4) == 1`), which gives 6.25% per point for computer and neutral stacks.
 
 **[code]**
 
@@ -194,7 +194,7 @@ For each shot of the firing:
 3. **A miss is not wasted.** It lands on another **wall section** that is still standing: the one nearest in order along the wall to the aimed target, a coin flip between two equally near ones. Only if no wall section stands is the shot lost.
 4. If more shots remain and the aimed target has just been destroyed, the aim moves to the nearest target still standing, again with a coin flip for ties. When nothing is left to shoot at, the firing ends.
 
-So a Catapult aimed at the keep with no Ballistics hits it 5% of the time, and nearly all the other shots chip at the walls instead. **[code and assembly; "nearest" is by index in the section list]**
+Example: a Catapult with no Ballistics aimed at the keep hits it 5% of the time; the misses go to wall sections. **[code and assembly; "nearest" is by index in the section list]**
 
 Where the first aim comes from: a human picks the target. For a computer-controlled Cyclops, `0x41eea0` aims at a wall only for the attacker, only while enough of its army has no victim it can reach, and then picks the standing wall section with the **fewest structure points left**, at random among equals. The automatic aim of the Catapult itself (`0x473c00`, `0x476bd0`) was not read.
 
