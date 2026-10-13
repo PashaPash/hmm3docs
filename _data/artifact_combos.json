@@ -1,0 +1,282 @@
+[
+ {
+  "id": 129,
+  "name": "Angelic Alliance",
+  "parts": [
+   {
+    "id": 36,
+    "name": "Helm of Heavenly Enlightenment"
+   },
+   {
+    "id": 33,
+    "name": "Celestial Necklace of Bliss"
+   },
+   {
+    "id": 35,
+    "name": "Sword of Judgement"
+   },
+   {
+    "id": 31,
+    "name": "Armor of Wonder"
+   },
+   {
+    "id": 32,
+    "name": "Sandals of the Saint"
+   },
+   {
+    "id": 34,
+    "name": "Lion's Shield of Courage"
+   }
+  ],
+  "ai": "alliance"
+ },
+ {
+  "id": 130,
+  "name": "Cloak of the Undead King",
+  "parts": [
+   {
+    "id": 54,
+    "name": "Amulet of the Undertaker"
+   },
+   {
+    "id": 55,
+    "name": "Vampire's Cowl"
+   },
+   {
+    "id": 56,
+    "name": "Dead Man's Boots"
+   }
+  ],
+  "ai": "necro 30"
+ },
+ {
+  "id": 131,
+  "name": "Elixir of Life",
+  "parts": [
+   {
+    "id": 95,
+    "name": "Ring of Life"
+   },
+   {
+    "id": 96,
+    "name": "Vial of Lifeblood"
+   },
+   {
+    "id": 94,
+    "name": "Ring of Vitality"
+   }
+  ],
+  "ai": "living/8"
+ },
+ {
+  "id": 132,
+  "name": "Armor of the Damned",
+  "parts": [
+   {
+    "id": 20,
+    "name": "Skull Helmet"
+   },
+   {
+    "id": 8,
+    "name": "Blackshard of the Dead Knight"
+   },
+   {
+    "id": 26,
+    "name": "Rib Cage"
+   },
+   {
+    "id": 14,
+    "name": "Shield of the Yawning Dead"
+   }
+  ],
+  "ai": "T\u00d715% + T\u00d76/40 + Sh\u00d710%"
+ },
+ {
+  "id": 133,
+  "name": "Statue of Legion",
+  "parts": [
+   {
+    "id": 118,
+    "name": "Legs of Legion"
+   },
+   {
+    "id": 119,
+    "name": "Loins of Legion"
+   },
+   {
+    "id": 120,
+    "name": "Torso of Legion"
+   },
+   {
+    "id": 121,
+    "name": "Arms of Legion"
+   },
+   {
+    "id": 122,
+    "name": "Head of Legion"
+   }
+  ],
+  "ai": "growth/2"
+ },
+ {
+  "id": 134,
+  "name": "Power of the Dragon Father",
+  "parts": [
+   {
+    "id": 44,
+    "name": "Crown of Dragontooth"
+   },
+   {
+    "id": 43,
+    "name": "Necklace of Dragonteeth"
+   },
+   {
+    "id": 42,
+    "name": "Dragon Wing Tabard"
+   },
+   {
+    "id": 38,
+    "name": "Red Dragon Flame Tongue"
+   },
+   {
+    "id": 39,
+    "name": "Dragon Scale Shield"
+   },
+   {
+    "id": 37,
+    "name": "Quiet Eye of the Dragon"
+   },
+   {
+    "id": 45,
+    "name": "Still Eye of the Dragon"
+   },
+   {
+    "id": 41,
+    "name": "Dragonbone Greaves"
+   },
+   {
+    "id": 40,
+    "name": "Dragon Scale Armor"
+   }
+  ],
+  "ai": "T\u00d712/40 + 6\u00d7SP + 6\u00d7K + T\u00d710%"
+ },
+ {
+  "id": 135,
+  "name": "Titan's Thunder",
+  "parts": [
+   {
+    "id": 24,
+    "name": "Thunder Helmet"
+   },
+   {
+    "id": 12,
+    "name": "Titan's Gladius"
+   },
+   {
+    "id": 30,
+    "name": "Titan's Cuirass"
+   },
+   {
+    "id": 18,
+    "name": "Sentinel's Shield"
+   }
+  ],
+  "ai": "spell 57"
+ },
+ {
+  "id": 136,
+  "name": "Admiral's Hat",
+  "parts": [
+   {
+    "id": 123,
+    "name": "Sea Captain's Hat"
+   },
+   {
+    "id": 71,
+    "name": "Necklace of Ocean Guidance"
+   }
+  ],
+  "ai": "(T+2500)\u00d712%"
+ },
+ {
+  "id": 137,
+  "name": "Bow of the Sharpshooter",
+  "parts": [
+   {
+    "id": 60,
+    "name": "Bow of Elven Cherrywood"
+   },
+   {
+    "id": 61,
+    "name": "Bowstring of the Unicorn's Mane"
+   },
+   {
+    "id": 62,
+    "name": "Angel Feather Arrows"
+   }
+  ],
+  "ai": "Sh\u00d77%"
+ },
+ {
+  "id": 138,
+  "name": "Wizard's Well",
+  "parts": [
+   {
+    "id": 73,
+    "name": "Charm of Mana"
+   },
+   {
+    "id": 74,
+    "name": "Talisman of Mana"
+   },
+   {
+    "id": 75,
+    "name": "Mystic Orb of Mana"
+   }
+  ],
+  "ai": "T\u00d710% [W]"
+ },
+ {
+  "id": 139,
+  "name": "Ring of the Magi",
+  "parts": [
+   {
+    "id": 76,
+    "name": "Collar of Conjuring"
+   },
+   {
+    "id": 78,
+    "name": "Cape of Conjuring"
+   },
+   {
+    "id": 77,
+    "name": "Ring of Conjuring"
+   }
+  ],
+  "ai": "50\u00d7D"
+ },
+ {
+  "id": 140,
+  "name": "Cornucopia",
+  "parts": [
+   {
+    "id": 111,
+    "name": "Everpouring Vial of Mercury"
+   },
+   {
+    "id": 109,
+    "name": "Everflowing Crystal Cloak"
+   },
+   {
+    "id": 110,
+    "name": "Ring of Infinite Gems"
+   },
+   {
+    "id": 113,
+    "name": "Eversmoking Ring of Sulfur"
+   }
+  ],
+  "ai": "3\u00d74\u00d7w(crystal) + 3\u00d74\u00d7w(gems) + 3\u00d74\u00d7w(mercury) + 3\u00d74\u00d7w(sulfur)"
+ }
+]

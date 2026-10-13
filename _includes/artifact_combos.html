@@ -1,0 +1,8 @@
+{% assign ru = false %}{% if include.lang == 'ru' %}{% assign ru = true %}{% endif %}
+<div class="table-wrapper"><table>
+<thead><tr><th>ID</th><th>{% if ru %}Сборный артефакт{% else %}Combination{% endif %}</th><th>{% if ru %}Части{% else %}Parts{% endif %}</th><th>{% if ru %}Ценность для ИИ{% else %}AI value{% endif %}</th></tr></thead>
+<tbody>
+{% for c in site.data.artifact_combos %}
+<tr><td>{{ c.id }}</td><td>{{ c.name }}</td><td>{% for p in c.parts %}{{ p.name }} ({{ p.id }}){% unless forloop.last %}, {% endunless %}{% endfor %}</td><td><code>{{ c.ai }}</code></td></tr>
+{% endfor %}
+</tbody></table></div>

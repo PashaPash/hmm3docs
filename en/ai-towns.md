@@ -43,7 +43,7 @@ Building numbers, costs and prerequisites are in [Factions and towns](../towns/)
 
 ## Direct value of a building
 
-`0x42ae00`. Building numbers are the engine's (0–43).
+`0x42ae00`. Building numbers are the engine's (0–43); every number and its name per town is in the [town tables](../towns/#buildings-by-town).
 
 | Building | Direct value | Routine |
 |---|---|---|
@@ -51,14 +51,14 @@ Building numbers, costs and prerequisites are in [Factions and towns](../towns/)
 | Dwellings (30–36) | Only when the town is not marked as threatened. `AI Value × weekly growth` of the creature. From day 5 of the week the growth is doubled and what is already waiting is added. The cost of then buying those creatures is added to the cost side | `0x42b520` |
 | Upgraded dwellings (37–43) | `(AI Value upgraded − AI Value base) × number of base creatures on hand` (from day 5, with the coming growth). The price difference for upgrading that many is added to the cost side | `0x42b5b0` |
 | Citadel, Castle (8, 9) | From day 5: sum of the AI Values of the town's creatures that will grow, with their purchase cost on the cost side | `0x42b670` |
-| Horde buildings (18, 19, 24, 25) | `AI Value × the extra weekly growth` the building gives, with the price of those extra creatures on the cost side. The upgraded-creature horde is skipped when its building is already in place | `0x42b790`, `0x42b800` |
+| Horde buildings (18, 19, 24, 25; for example Griffin Bastion, Miners' Guild, Dendroid Saplings) | `AI Value × the extra weekly growth` the building gives, with the price of those extra creatures on the cost side. The upgraded-creature horde is skipped when its building is already in place | `0x42b790`, `0x42b800` |
 | Resource Silo (15) | Seven days of its output at the resource weights; not when the town is marked as threatened | |
-| Rampart Treasury (22) | Only on day 7; proportional to the gold the player holds | |
-| Tower: special 21 | 100 | |
-| Necropolis: special 17 | 10 | |
-| Necropolis: special 21 | Grows with the number of the player's heroes of one particular class | |
-| Stronghold: special 17 | 5000, only when the town is marked as threatened and has a visiting hero | |
-| Fortress: specials 21, 22 | Garrison's `AI Value` total / 20, only when the town is marked as threatened | |
+| Rampart: Treasury (22) | Only on day 7; proportional to the gold the player holds | |
+| Tower: Lookout Tower (21) | 100 | |
+| Necropolis: Cover of Darkness (17) | 10 | |
+| Necropolis: Necromancy Amplifier (21) | Grows with the number of the player's heroes of one particular class | |
+| Stronghold: Escape Tunnel (17) | 5000, only when the town is marked as threatened and has a visiting hero | |
+| Fortress: Glyphs of Fear (21), Blood Obelisk (22) | Garrison's `AI Value` total / 20, only when the town is marked as threatened | |
 | Grail (26) | Never chosen here; built when a hero carrying the Grail visits (see below) | |
 | Everything else | 0 | |
 
@@ -168,12 +168,12 @@ drop the gift if it is less than 5 × what the ally already has
 
   | Town | Building | Compared with |
   |---|---|---|
-  | Tower | special 23 (+1 Knowledge) | the hero's value of a Knowledge point |
-  | Inferno | special 23 (+1 Spell Power) | the hero's value of a Spell Power point |
-  | Dungeon | special 23 (+1000 experience) | `1000 ×` the hero's value of one experience point |
-  | Stronghold | special 23 (+1 Attack) | experience for the hero's next level × value of one experience point |
-  | Fortress | special 17 (+1 Defence) | the same |
-  | Conflux | special 21 (Magic University) | a skill-value routine |
+  | Tower | Wall of Knowledge (23, +1 Knowledge) | the hero's value of a Knowledge point |
+  | Inferno | Order of Fire (23, +1 Spell Power) | the hero's value of a Spell Power point |
+  | Dungeon | Battle Scholar Academy (23, +1000 experience) | `1000 ×` the hero's value of one experience point |
+  | Stronghold | Hall of Valhalla (23, +1 Attack) | experience for the hero's next level × value of one experience point |
+  | Fortress | Cage of Warlords (17, +1 Defence) | the same |
+  | Conflux | Magic University (21) | a skill-value routine |
 
 - Above Easy, the hero buys the town's **war machine** if it does not have one (`0x525ca0`): the machine sold by that town's Blacksmith, and in a Stronghold also the Ballista from the Ballista Yard. The machine must be usable by the hero and affordable in full. If the Blacksmith itself is missing and can be built today, the routine builds it first and then buys.
 - Above Easy, the garrison hero and the visiting hero **exchange artifacts** (`0x433fe0`, run once in each direction). For each equipped artifact the routine takes it off, checks whether the other hero's total artifact value would rise by more than this hero's falls (`0x433e20`, `0x433bb0`), and either hands it over or puts it back. Backpack artifacts are passed on when the other hero can make use of them.

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Town buildings: costs from BUILDING.TXT, prerequisites from the executable.
+"""Town buildings: costs from BUILDING.TXT, names from BLDGSPEC.TXT and DWELLING.TXT,
+prerequisites from the executable.
 
 Usage: extract_buildings.py <dir with BUILDING.TXT> <Heroes3.exe> <_data dir>
 
@@ -41,6 +42,11 @@ def sections(src):
         cost = {k: int(v) for k, v in zip(RES, row[:7]) if v.strip() not in ("", "0")}
         cur.append((row[7].strip(), cost))
     return out
+
+
+def names(src, fname):
+    text = (src / fname).read_bytes().decode("cp1252")
+    return [l.split("\t")[0].strip() for l in text.replace("\r\n", "\n").replace("\r", "\n").split("\n")]
 
 
 def dep_lists(exe):
@@ -86,11 +92,24 @@ def main():
             rows[17 + i] = (name, cost)
         for i, (name, cost) in enumerate(sec[special[ti]][9:23]):
             rows[30 + i] = (name, cost)
+        # In-game names: BLDGSPEC.TXT has 11 rows per town (ids 17..26, then the
+        # Resource Silo), DWELLING.TXT has 14 rows per town (ids 30..43).
+        for i, name in enumerate(names(src, "BLDGSPEC.TXT")[ti * 11:ti * 11 + 10]):
+            if name and 17 + i in rows:
+                up = " (upgraded creature)" if 17 + i in (19, 25) else ""
+                rows[17 + i] = (name + up, rows[17 + i][1])
+            elif name and 17 + i == 26:
+                rows[26] = (name + " (Grail)", {})
+        for i, name in enumerate(names(src, "DWELLING.TXT")[ti * 14:ti * 14 + 14]):
+            if name and 30 + i in rows:
+                rows[30 + i] = (name, rows[30 + i][1])
+        common = dict(COMMON)
+        common.pop(26)
         out[town] = [
-            {"id": b, "name": COMMON.get(b) or rows.get(b, ("", {}))[0],
+            {"id": b, "name": common.get(b) or rows.get(b, ("", {}))[0],
              "cost": rows.get(b, ("", {}))[1], "requires": deps[ti].get(b, [])}
             for b in sorted(set(rows) | set(deps[ti]))
-            if (COMMON.get(b) or rows.get(b, ("", {}))[0]) and b in deps[ti]
+            if (common.get(b) or rows.get(b, ("", {}))[0]) and b in deps[ti]
         ]
     (dst / "town_buildings.json").write_text(json.dumps(out, indent=1) + "\n")
     for town in ("castle", "conflux"):

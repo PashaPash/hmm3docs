@@ -185,7 +185,7 @@
   },
   {
    "id": 18,
-   "name": "Griffin Horde",
+   "name": "Griffin Bastion",
    "cost": {
     "gold": 1000
    },
@@ -195,7 +195,7 @@
   },
   {
    "id": 19,
-   "name": "Royal Griffin Horde",
+   "name": "Griffin Bastion (upgraded creature)",
    "cost": {
     "gold": 1000
    },
@@ -216,7 +216,7 @@
   },
   {
    "id": 22,
-   "name": "Tavern Upgrade",
+   "name": "Brotherhood of the Sword",
    "cost": {
     "wood": 5,
     "gold": 500
@@ -227,13 +227,13 @@
   },
   {
    "id": 26,
-   "name": "Grail",
+   "name": "Colossus (Grail)",
    "cost": {},
    "requires": []
   },
   {
    "id": 30,
-   "name": "pikeman",
+   "name": "Guardhouse",
    "cost": {
     "ore": 10,
     "gold": 500
@@ -244,7 +244,7 @@
   },
   {
    "id": 31,
-   "name": "archer",
+   "name": "Archers' Tower",
    "cost": {
     "wood": 5,
     "ore": 5,
@@ -256,7 +256,7 @@
   },
   {
    "id": 32,
-   "name": "griffin",
+   "name": "Griffin Tower",
    "cost": {
     "ore": 5,
     "gold": 1000
@@ -267,7 +267,7 @@
   },
   {
    "id": 33,
-   "name": "swordsman",
+   "name": "Barracks",
    "cost": {
     "ore": 5,
     "gold": 2000
@@ -279,7 +279,7 @@
   },
   {
    "id": 34,
-   "name": "monk",
+   "name": "Monastery",
    "cost": {
     "wood": 5,
     "mercury": 2,
@@ -296,7 +296,7 @@
   },
   {
    "id": 35,
-   "name": "cavalier",
+   "name": "Training Grounds",
    "cost": {
     "wood": 20,
     "gold": 5000
@@ -307,7 +307,7 @@
   },
   {
    "id": 36,
-   "name": "angel",
+   "name": "Portal of Glory",
    "cost": {
     "mercury": 10,
     "sulfur": 10,
@@ -321,7 +321,7 @@
   },
   {
    "id": 37,
-   "name": "halberdier",
+   "name": "Upg. Guardhouse",
    "cost": {
     "ore": 5,
     "gold": 1000
@@ -332,7 +332,7 @@
   },
   {
    "id": 38,
-   "name": "marksman",
+   "name": "Upg. Archers' Tower",
    "cost": {
     "wood": 5,
     "ore": 5,
@@ -344,7 +344,7 @@
   },
   {
    "id": 39,
-   "name": "royal griffin",
+   "name": "Upg. Griffin Tower",
    "cost": {
     "ore": 5,
     "gold": 1000
@@ -355,7 +355,7 @@
   },
   {
    "id": 40,
-   "name": "crusader",
+   "name": "Upg. Barracks",
    "cost": {
     "ore": 5,
     "crystal": 5,
@@ -367,7 +367,7 @@
   },
   {
    "id": 41,
-   "name": "zealot",
+   "name": "Upg. Monastery",
    "cost": {
     "wood": 2,
     "mercury": 2,
@@ -383,7 +383,7 @@
   },
   {
    "id": 42,
-   "name": "champion",
+   "name": "Upg. Training Grounds",
    "cost": {
     "wood": 10,
     "gold": 3000
@@ -394,7 +394,7 @@
   },
   {
    "id": 43,
-   "name": "arch angel",
+   "name": "Upg. Portal of Glory",
    "cost": {
     "mercury": 10,
     "sulfur": 10,
@@ -589,7 +589,7 @@
   },
   {
    "id": 17,
-   "name": "Mystic Garden",
+   "name": "Mystic Pond",
    "cost": {
     "wood": 2,
     "mercury": 2,
@@ -603,7 +603,7 @@
   },
   {
    "id": 18,
-   "name": "Dwarf Horde",
+   "name": "Miners' Guild",
    "cost": {
     "gold": 1000
    },
@@ -613,7 +613,7 @@
   },
   {
    "id": 19,
-   "name": "Battle Dwarf Horde",
+   "name": "Miners' Guild (upgraded creature)",
    "cost": {
     "gold": 1000
    },
@@ -623,7 +623,7 @@
   },
   {
    "id": 21,
-   "name": "Rainbow",
+   "name": "Fountain of Fortune",
    "cost": {
     "crystal": 10,
     "gold": 1500
@@ -646,7 +646,7 @@
   },
   {
    "id": 24,
-   "name": "Treefolk Horde",
+   "name": "Dendroid Saplings",
    "cost": {
     "gold": 2000
    },
@@ -656,7 +656,7 @@
   },
   {
    "id": 25,
-   "name": "Briar Treefolk Horde",
+   "name": "Dendroid Saplings (upgraded creature)",
    "cost": {
     "gold": 2000
    },
@@ -666,13 +666,13 @@
   },
   {
    "id": 26,
-   "name": "Grail",
+   "name": "Spirit Guardian (Grail)",
    "cost": {},
    "requires": []
   },
   {
    "id": 30,
-   "name": "Centaur",
+   "name": "Centaur Stables",
    "cost": {
     "wood": 10,
     "gold": 500
@@ -683,7 +683,7 @@
   },
   {
    "id": 31,
-   "name": "Dwarf",
+   "name": "Dwarf Cottage",
    "cost": {
     "wood": 5,
     "gold": 1000
@@ -694,7 +694,7 @@
   },
   {
    "id": 32,
-   "name": "Wood Elf",
+   "name": "Homestead",
    "cost": {
     "wood": 10,
     "gold": 1500
@@ -705,7 +705,7 @@
   },
   {
    "id": 33,
-   "name": "Pegasus",
+   "name": "Enchanted Spring",
    "cost": {
     "crystal": 10,
     "gold": 2000
@@ -716,7 +716,7 @@
   },
   {
    "id": 34,
-   "name": "Dendroid Guard",
+   "name": "Dendroid Arches",
    "cost": {
     "gold": 2500
    },
@@ -726,7 +726,7 @@
   },
   {
    "id": 35,
-   "name": "Unicorn",
+   "name": "Unicorn Glade",
    "cost": {
     "wood": 5,
     "ore": 5,
@@ -740,7 +740,7 @@
   },
   {
    "id": 36,
-   "name": "Green Dragon",
+   "name": "Dragon Cliffs",
    "cost": {
     "ore": 30,
     "crystal": 20,
@@ -753,7 +753,7 @@
   },
   {
    "id": 37,
-   "name": "Centaur Captain",
+   "name": "Upg. Centaur Stables",
    "cost": {
     "wood": 5,
     "gold": 1000
@@ -764,7 +764,7 @@
   },
   {
    "id": 38,
-   "name": "Battle Dwarf",
+   "name": "Upg. Dwarf Cottage",
    "cost": {
     "wood": 5,
     "gold": 1000
@@ -775,7 +775,7 @@
   },
   {
    "id": 39,
-   "name": "Grand Elf",
+   "name": "Upg. Homestead",
    "cost": {
     "wood": 10,
     "gold": 1500
@@ -786,7 +786,7 @@
   },
   {
    "id": 40,
-   "name": "Silver Pegasus",
+   "name": "Upg. Enchanted Spring",
    "cost": {
     "crystal": 5,
     "gold": 2000
@@ -797,7 +797,7 @@
   },
   {
    "id": 41,
-   "name": "Dendroid Soldier",
+   "name": "Upg. Dendroid Arches",
    "cost": {
     "gold": 1500
    },
@@ -807,7 +807,7 @@
   },
   {
    "id": 42,
-   "name": "War Unicorn",
+   "name": "Upg. Unicorn Glade",
    "cost": {
     "gems": 5,
     "gold": 3000
@@ -818,7 +818,7 @@
   },
   {
    "id": 43,
-   "name": "Gold Dragon",
+   "name": "Upg. Dragon Cliffs",
    "cost": {
     "ore": 30,
     "crystal": 20,
@@ -1022,7 +1022,7 @@
   },
   {
    "id": 18,
-   "name": "Stone Gargoyle Horde",
+   "name": "Sculptor's Wings",
    "cost": {
     "gold": 1000
    },
@@ -1032,7 +1032,7 @@
   },
   {
    "id": 19,
-   "name": "Obsidian Gargoyle Horde",
+   "name": "Sculptor's Wings (upgraded creature)",
    "cost": {
     "gold": 1000
    },
@@ -1042,7 +1042,7 @@
   },
   {
    "id": 21,
-   "name": "Watchtower",
+   "name": "Lookout Tower",
    "cost": {
     "wood": 5,
     "gold": 1000
@@ -1069,7 +1069,7 @@
   },
   {
    "id": 23,
-   "name": "Wall of Glyphic Knowledge",
+   "name": "Wall of Knowledge",
    "cost": {
     "ore": 5,
     "gold": 1000
@@ -1080,13 +1080,13 @@
   },
   {
    "id": 26,
-   "name": "Grail",
+   "name": "Skyship (Grail)",
    "cost": {},
    "requires": []
   },
   {
    "id": 30,
-   "name": "Gremlin",
+   "name": "Workshop",
    "cost": {
     "wood": 5,
     "ore": 5,
@@ -1098,7 +1098,7 @@
   },
   {
    "id": 31,
-   "name": "Stone Gargoyle",
+   "name": "Parapet",
    "cost": {
     "ore": 10,
     "gold": 1000
@@ -1109,7 +1109,7 @@
   },
   {
    "id": 32,
-   "name": "Stone Golem",
+   "name": "Golem Factory",
    "cost": {
     "wood": 5,
     "ore": 5,
@@ -1121,7 +1121,7 @@
   },
   {
    "id": 33,
-   "name": "Mage",
+   "name": "Mage Tower",
    "cost": {
     "wood": 5,
     "mercury": 5,
@@ -1139,7 +1139,7 @@
   },
   {
    "id": 34,
-   "name": "Genie",
+   "name": "Altar of Wishes",
    "cost": {
     "wood": 5,
     "ore": 5,
@@ -1153,7 +1153,7 @@
   },
   {
    "id": 35,
-   "name": "Naga",
+   "name": "Golden Pavilion",
    "cost": {
     "wood": 5,
     "mercury": 2,
@@ -1169,7 +1169,7 @@
   },
   {
    "id": 36,
-   "name": "Giant",
+   "name": "Cloud Temple",
    "cost": {
     "wood": 10,
     "ore": 10,
@@ -1183,7 +1183,7 @@
   },
   {
    "id": 37,
-   "name": "Master Gremlin",
+   "name": "Upg. Workshop",
    "cost": {
     "gold": 1000
    },
@@ -1193,7 +1193,7 @@
   },
   {
    "id": 38,
-   "name": "Obsidian Gargoyle",
+   "name": "Upg. Parapet",
    "cost": {
     "ore": 5,
     "gold": 1500
@@ -1204,7 +1204,7 @@
   },
   {
    "id": 39,
-   "name": "Iron Golem",
+   "name": "Upg. Golem Factory",
    "cost": {
     "wood": 5,
     "mercury": 5,
@@ -1217,7 +1217,7 @@
   },
   {
    "id": 40,
-   "name": "Arch Mage",
+   "name": "Upg. Mage Tower",
    "cost": {
     "wood": 5,
     "gold": 2000
@@ -1229,7 +1229,7 @@
   },
   {
    "id": 41,
-   "name": "Master Genie",
+   "name": "Upg. Altar of Wishes",
    "cost": {
     "wood": 5,
     "gold": 2000
@@ -1240,7 +1240,7 @@
   },
   {
    "id": 42,
-   "name": "Naga Queen",
+   "name": "Upg. Golden Pavilion",
    "cost": {
     "mercury": 3,
     "sulfur": 3,
@@ -1254,7 +1254,7 @@
   },
   {
    "id": 43,
-   "name": "Titan",
+   "name": "Upg. Cloud Temple",
    "cost": {
     "wood": 5,
     "ore": 5,
@@ -1448,7 +1448,7 @@
   },
   {
    "id": 18,
-   "name": "Imp Horde",
+   "name": "Birthing Pools",
    "cost": {
     "gold": 1000
    },
@@ -1458,7 +1458,7 @@
   },
   {
    "id": 19,
-   "name": "Familiar Horde",
+   "name": "Birthing Pools (upgraded creature)",
    "cost": {
     "gold": 1000
    },
@@ -1502,7 +1502,7 @@
   },
   {
    "id": 24,
-   "name": "Hell Hound Horde",
+   "name": "Cages",
    "cost": {
     "gold": 1000
    },
@@ -1512,7 +1512,7 @@
   },
   {
    "id": 25,
-   "name": "Cerberus Horde",
+   "name": "Cages (upgraded creature)",
    "cost": {
     "gold": 1000
    },
@@ -1522,13 +1522,13 @@
   },
   {
    "id": 26,
-   "name": "Grail",
+   "name": "Deity of Fire (Grail)",
    "cost": {},
    "requires": []
   },
   {
    "id": 30,
-   "name": "Imp",
+   "name": "Imp Crucible",
    "cost": {
     "wood": 5,
     "ore": 5,
@@ -1540,7 +1540,7 @@
   },
   {
    "id": 31,
-   "name": "Gog",
+   "name": "Hall of Sins",
    "cost": {
     "ore": 5,
     "gold": 1000
@@ -1551,7 +1551,7 @@
   },
   {
    "id": 32,
-   "name": "Hell Hound",
+   "name": "Kennels",
    "cost": {
     "wood": 10,
     "gold": 1500
@@ -1562,7 +1562,7 @@
   },
   {
    "id": 33,
-   "name": "Demon",
+   "name": "Demon Gate",
    "cost": {
     "wood": 5,
     "ore": 5,
@@ -1574,7 +1574,7 @@
   },
   {
    "id": 34,
-   "name": "Pit Fiend",
+   "name": "Hell Hole",
    "cost": {
     "gold": 3000
    },
@@ -1584,7 +1584,7 @@
   },
   {
    "id": 35,
-   "name": "Efreet",
+   "name": "Fire Lake",
    "cost": {
     "mercury": 3,
     "ore": 10,
@@ -1599,7 +1599,7 @@
   },
   {
    "id": 36,
-   "name": "Devil",
+   "name": "Forsaken Palace",
    "cost": {
     "wood": 10,
     "mercury": 20,
@@ -1613,7 +1613,7 @@
   },
   {
    "id": 37,
-   "name": "Familiar",
+   "name": "Upg. Imp Crucible",
    "cost": {
     "gold": 1000
    },
@@ -1623,7 +1623,7 @@
   },
   {
    "id": 38,
-   "name": "Magog",
+   "name": "Upg. Hall of Sins",
    "cost": {
     "mercury": 5,
     "gold": 1000
@@ -1634,7 +1634,7 @@
   },
   {
    "id": 39,
-   "name": "Cerberus",
+   "name": "Upg. Kennels",
    "cost": {
     "sulfur": 5,
     "gold": 1500
@@ -1645,7 +1645,7 @@
   },
   {
    "id": 40,
-   "name": "Horned Demon",
+   "name": "Upg. Demon Gate",
    "cost": {
     "wood": 5,
     "ore": 5,
@@ -1657,7 +1657,7 @@
   },
   {
    "id": 41,
-   "name": "Pit Lord",
+   "name": "Upg. Hell Hole",
    "cost": {
     "mercury": 5,
     "sulfur": 5,
@@ -1670,7 +1670,7 @@
   },
   {
    "id": 42,
-   "name": "Efreet Sultan",
+   "name": "Upg. Fire Lake",
    "cost": {
     "mercury": 5,
     "ore": 5,
@@ -1684,7 +1684,7 @@
   },
   {
    "id": 43,
-   "name": "Arch Devil",
+   "name": "Upg. Forsaken Palace",
    "cost": {
     "wood": 5,
     "mercury": 20,
@@ -1897,7 +1897,7 @@
   },
   {
    "id": 18,
-   "name": "Skeleton Horde",
+   "name": "Unearthed Graves",
    "cost": {
     "gold": 1000
    },
@@ -1907,7 +1907,7 @@
   },
   {
    "id": 19,
-   "name": "Skeleton Warrior Horde",
+   "name": "Unearthed Graves (upgraded creature)",
    "cost": {
     "gold": 1000
    },
@@ -1938,13 +1938,13 @@
   },
   {
    "id": 26,
-   "name": "Grail",
+   "name": "Soul Prison (Grail)",
    "cost": {},
    "requires": []
   },
   {
    "id": 30,
-   "name": "Skeleton",
+   "name": "Cursed Temple",
    "cost": {
     "wood": 5,
     "ore": 5,
@@ -1956,7 +1956,7 @@
   },
   {
    "id": 31,
-   "name": "Walking Dead",
+   "name": "Graveyard",
    "cost": {
     "ore": 5,
     "gold": 1000
@@ -1967,7 +1967,7 @@
   },
   {
    "id": 32,
-   "name": "Wight",
+   "name": "Tomb of Souls",
    "cost": {
     "wood": 5,
     "ore": 5,
@@ -1979,7 +1979,7 @@
   },
   {
    "id": 33,
-   "name": "Vampire",
+   "name": "Estate",
    "cost": {
     "wood": 5,
     "ore": 5,
@@ -1991,7 +1991,7 @@
   },
   {
    "id": 34,
-   "name": "Lich",
+   "name": "Mausoleum",
    "cost": {
     "ore": 10,
     "sulfur": 10,
@@ -2004,7 +2004,7 @@
   },
   {
    "id": 35,
-   "name": "Black Knight",
+   "name": "Hall of Darkness",
    "cost": {
     "wood": 10,
     "ore": 10,
@@ -2017,7 +2017,7 @@
   },
   {
    "id": 36,
-   "name": "Bone Dragon",
+   "name": "Dragon Vault",
    "cost": {
     "wood": 5,
     "mercury": 5,
@@ -2033,7 +2033,7 @@
   },
   {
    "id": 37,
-   "name": "Skeleton Warrior",
+   "name": "Upg. Cursed Temple",
    "cost": {
     "wood": 5,
     "ore": 5,
@@ -2045,7 +2045,7 @@
   },
   {
    "id": 38,
-   "name": "Zombie",
+   "name": "Upg. Graveyard",
    "cost": {
     "wood": 5,
     "ore": 5,
@@ -2057,7 +2057,7 @@
   },
   {
    "id": 39,
-   "name": "Wraith",
+   "name": "Upg. Tomb of Souls",
    "cost": {
     "mercury": 5,
     "gold": 1500
@@ -2068,7 +2068,7 @@
   },
   {
    "id": 40,
-   "name": "Vampire Lord",
+   "name": "Upg. Estate",
    "cost": {
     "wood": 5,
     "crystal": 10,
@@ -2082,7 +2082,7 @@
   },
   {
    "id": 41,
-   "name": "Power Lich",
+   "name": "Upg. Mausoleum",
    "cost": {
     "ore": 5,
     "sulfur": 5,
@@ -2094,7 +2094,7 @@
   },
   {
    "id": 42,
-   "name": "Black Lord",
+   "name": "Upg. Hall of Darkness",
    "cost": {
     "wood": 5,
     "mercury": 2,
@@ -2110,7 +2110,7 @@
   },
   {
    "id": 43,
-   "name": "Ghost Dragon",
+   "name": "Upg. Dragon Vault",
    "cost": {
     "wood": 5,
     "mercury": 20,
@@ -2314,7 +2314,7 @@
   },
   {
    "id": 18,
-   "name": "Troglodyte Horde",
+   "name": "Mushroom Rings",
    "cost": {
     "gold": 1000
    },
@@ -2324,7 +2324,7 @@
   },
   {
    "id": 19,
-   "name": "Infernal Troglodyte Horde",
+   "name": "Mushroom Rings (upgraded creature)",
    "cost": {
     "gold": 1000
    },
@@ -2353,7 +2353,7 @@
   },
   {
    "id": 23,
-   "name": "Academy of Battle Scholars",
+   "name": "Battle Scholar Academy",
    "cost": {
     "wood": 5,
     "ore": 5,
@@ -2363,13 +2363,13 @@
   },
   {
    "id": 26,
-   "name": "Grail",
+   "name": "Guardian of Earth (Grail)",
    "cost": {},
    "requires": []
   },
   {
    "id": 30,
-   "name": "Troglodyte",
+   "name": "Warren",
    "cost": {
     "wood": 10,
     "gold": 400
@@ -2380,7 +2380,7 @@
   },
   {
    "id": 31,
-   "name": "Harpy",
+   "name": "Harpy Loft",
    "cost": {
     "gold": 1000
    },
@@ -2390,7 +2390,7 @@
   },
   {
    "id": 32,
-   "name": "Beholder",
+   "name": "Pillar of Eyes",
    "cost": {
     "wood": 1,
     "mercury": 1,
@@ -2406,7 +2406,7 @@
   },
   {
    "id": 33,
-   "name": "Medusa",
+   "name": "Chapel of Stilled Voices",
    "cost": {
     "wood": 5,
     "ore": 10,
@@ -2419,7 +2419,7 @@
   },
   {
    "id": 34,
-   "name": "Minotaur",
+   "name": "Labyrinth",
    "cost": {
     "ore": 10,
     "gems": 10,
@@ -2431,7 +2431,7 @@
   },
   {
    "id": 35,
-   "name": "Manticore",
+   "name": "Manticore Lair",
    "cost": {
     "wood": 5,
     "mercury": 5,
@@ -2445,7 +2445,7 @@
   },
   {
    "id": 36,
-   "name": "Red Dragon",
+   "name": "Dragon Cave",
    "cost": {
     "wood": 15,
     "ore": 15,
@@ -2460,7 +2460,7 @@
   },
   {
    "id": 37,
-   "name": "Infernal Troglodyte",
+   "name": "Upg. Warren",
    "cost": {
     "wood": 5,
     "gold": 1000
@@ -2471,7 +2471,7 @@
   },
   {
    "id": 38,
-   "name": "Harpy Hag",
+   "name": "Upg. Harpy Loft",
    "cost": {
     "sulfur": 2,
     "crystal": 2,
@@ -2483,7 +2483,7 @@
   },
   {
    "id": 39,
-   "name": "Evil Eye",
+   "name": "Upg. Pillar of Eyes",
    "cost": {
     "wood": 1,
     "mercury": 1,
@@ -2499,7 +2499,7 @@
   },
   {
    "id": 40,
-   "name": "Medusa Queen",
+   "name": "Upg. Stilled Voices",
    "cost": {
     "wood": 5,
     "gold": 1500
@@ -2510,7 +2510,7 @@
   },
   {
    "id": 41,
-   "name": "Minotaur King",
+   "name": "Upg. Labyrinth",
    "cost": {
     "ore": 5,
     "gems": 5,
@@ -2522,7 +2522,7 @@
   },
   {
    "id": 42,
-   "name": "Scorpicore",
+   "name": "Upg. Manticore Lair",
    "cost": {
     "wood": 5,
     "mercury": 5,
@@ -2536,7 +2536,7 @@
   },
   {
    "id": 43,
-   "name": "Black Dragon",
+   "name": "Upg. Dragon Cave",
    "cost": {
     "wood": 15,
     "ore": 15,
@@ -2711,7 +2711,7 @@
   },
   {
    "id": 18,
-   "name": "Goblin Horde",
+   "name": "Mess Hall",
    "cost": {
     "gold": 1000
    },
@@ -2721,7 +2721,7 @@
   },
   {
    "id": 19,
-   "name": "Hobgoblin Horde",
+   "name": "Mess Hall (upgraded creature)",
    "cost": {
     "gold": 1000
    },
@@ -2731,7 +2731,7 @@
   },
   {
    "id": 21,
-   "name": "Freelancers Guild",
+   "name": "Freelancer's Guild",
    "cost": {
     "gold": 1000
    },
@@ -2741,7 +2741,7 @@
   },
   {
    "id": 22,
-   "name": "Ballista Works",
+   "name": "Ballista Yard",
    "cost": {
     "wood": 5,
     "gold": 1000
@@ -2762,13 +2762,13 @@
   },
   {
    "id": 26,
-   "name": "Grail",
+   "name": "Warlords' Monument (Grail)",
    "cost": {},
    "requires": []
   },
   {
    "id": 30,
-   "name": "Goblin",
+   "name": "Goblin Barracks",
    "cost": {
     "wood": 5,
     "ore": 5,
@@ -2780,7 +2780,7 @@
   },
   {
    "id": 31,
-   "name": "Wolf Rider",
+   "name": "Wolf Pen",
    "cost": {
     "wood": 10,
     "ore": 5,
@@ -2792,7 +2792,7 @@
   },
   {
    "id": 32,
-   "name": "Orc",
+   "name": "Orc Tower",
    "cost": {
     "wood": 5,
     "ore": 5,
@@ -2804,7 +2804,7 @@
   },
   {
    "id": 33,
-   "name": "Ogre",
+   "name": "Ogre Fort",
    "cost": {
     "wood": 20,
     "gold": 2000
@@ -2815,7 +2815,7 @@
   },
   {
    "id": 34,
-   "name": "Roc",
+   "name": "Cliff Nest",
    "cost": {
     "ore": 10,
     "gold": 2500
@@ -2826,7 +2826,7 @@
   },
   {
    "id": 35,
-   "name": "Cyclops",
+   "name": "Cyclops Cave",
    "cost": {
     "ore": 20,
     "crystal": 20,
@@ -2838,7 +2838,7 @@
   },
   {
    "id": 36,
-   "name": "Behemoth",
+   "name": "Behemoth Lair",
    "cost": {
     "wood": 10,
     "ore": 10,
@@ -2851,7 +2851,7 @@
   },
   {
    "id": 37,
-   "name": "Hobgoblin",
+   "name": "Upg. Goblin Barracks",
    "cost": {
     "wood": 5,
     "ore": 5,
@@ -2863,7 +2863,7 @@
   },
   {
    "id": 38,
-   "name": "Wolf Raider",
+   "name": "Upg. Wolf Pen",
    "cost": {
     "wood": 5,
     "ore": 5,
@@ -2876,7 +2876,7 @@
   },
   {
    "id": 39,
-   "name": "Orc Chieftain",
+   "name": "Upg. Orc Tower",
    "cost": {
     "wood": 2,
     "ore": 2,
@@ -2889,7 +2889,7 @@
   },
   {
    "id": 40,
-   "name": "Ogre Mage",
+   "name": "Upg. Ogre Fort",
    "cost": {
     "wood": 5,
     "ore": 5,
@@ -2903,7 +2903,7 @@
   },
   {
    "id": 41,
-   "name": "Thunderbird",
+   "name": "Upg. Cliff Nest",
    "cost": {
     "wood": 5,
     "ore": 5,
@@ -2915,7 +2915,7 @@
   },
   {
    "id": 42,
-   "name": "Cyclops King",
+   "name": "Upg. Cyclops Cave",
    "cost": {
     "wood": 5,
     "ore": 5,
@@ -2927,7 +2927,7 @@
   },
   {
    "id": 43,
-   "name": "Ancient Behemoth",
+   "name": "Upg. Behemoth Lair",
    "cost": {
     "wood": 10,
     "ore": 10,
@@ -3098,7 +3098,7 @@
   },
   {
    "id": 17,
-   "name": "Defense Cage",
+   "name": "Cage of Warlords",
    "cost": {
     "gold": 1000
    },
@@ -3109,7 +3109,7 @@
   },
   {
    "id": 18,
-   "name": "Gnoll Horde",
+   "name": "Captain's Quarters",
    "cost": {
     "gold": 1000
    },
@@ -3119,7 +3119,7 @@
   },
   {
    "id": 19,
-   "name": "Gnoll Marauder Horde",
+   "name": "Captain's Quarters (upgraded creature)",
    "cost": {
     "gold": 1000
    },
@@ -3129,7 +3129,7 @@
   },
   {
    "id": 21,
-   "name": "Siege Defense",
+   "name": "Glyphs of Fear",
    "cost": {
     "gold": 1000
    },
@@ -3139,7 +3139,7 @@
   },
   {
    "id": 22,
-   "name": "Siege Attack",
+   "name": "Blood Obelisk",
    "cost": {
     "gold": 1000
    },
@@ -3149,13 +3149,13 @@
   },
   {
    "id": 26,
-   "name": "Grail",
+   "name": "Carnivorous Plant (Grail)",
    "cost": {},
    "requires": []
   },
   {
    "id": 30,
-   "name": "Gnoll",
+   "name": "Gnoll Hut",
    "cost": {
     "wood": 10,
     "gold": 400
@@ -3166,7 +3166,7 @@
   },
   {
    "id": 31,
-   "name": "Lizardman",
+   "name": "Lizard Den",
    "cost": {
     "wood": 5,
     "gold": 1000
@@ -3177,7 +3177,7 @@
   },
   {
    "id": 32,
-   "name": "Serpent Fly",
+   "name": "Serpent Fly Hive",
    "cost": {
     "wood": 5,
     "mercury": 2,
@@ -3190,7 +3190,7 @@
   },
   {
    "id": 33,
-   "name": "Basilisk",
+   "name": "Basilisk Pit",
    "cost": {
     "wood": 5,
     "ore": 10,
@@ -3202,7 +3202,7 @@
   },
   {
    "id": 34,
-   "name": "Gorgon",
+   "name": "Gorgon Lair",
    "cost": {
     "wood": 10,
     "mercury": 5,
@@ -3217,7 +3217,7 @@
   },
   {
    "id": 35,
-   "name": "Wyvern",
+   "name": "Wyvern Nest",
    "cost": {
     "wood": 15,
     "gold": 3500
@@ -3228,7 +3228,7 @@
   },
   {
    "id": 36,
-   "name": "Hydra",
+   "name": "Hydra Pond",
    "cost": {
     "wood": 10,
     "ore": 10,
@@ -3242,7 +3242,7 @@
   },
   {
    "id": 37,
-   "name": "Gnoll Marauder",
+   "name": "Upg. Gnoll Hut",
    "cost": {
     "wood": 10,
     "gold": 1000
@@ -3254,7 +3254,7 @@
   },
   {
    "id": 38,
-   "name": "Lizard Warrior",
+   "name": "Upg. Lizard Den",
    "cost": {
     "wood": 5,
     "gold": 1000
@@ -3265,7 +3265,7 @@
   },
   {
    "id": 39,
-   "name": "Dragon Fly",
+   "name": "Upg. Serpent Fly Hive",
    "cost": {
     "mercury": 2,
     "sulfur": 2,
@@ -3277,7 +3277,7 @@
   },
   {
    "id": 40,
-   "name": "Greater Basilisk",
+   "name": "Upg. Basilisk Pit",
    "cost": {
     "wood": 5,
     "ore": 5,
@@ -3289,7 +3289,7 @@
   },
   {
    "id": 41,
-   "name": "Mighty Gorgon",
+   "name": "Upg. Gorgon Lair",
    "cost": {
     "wood": 5,
     "ore": 5,
@@ -3302,7 +3302,7 @@
   },
   {
    "id": 42,
-   "name": "Wyvern Monarch",
+   "name": "Upg. Wyvern Nest",
    "cost": {
     "wood": 10,
     "mercury": 10,
@@ -3314,7 +3314,7 @@
   },
   {
    "id": 43,
-   "name": "Chaos Hydra",
+   "name": "Upg. Hydra Pond",
    "cost": {
     "wood": 10,
     "ore": 10,
@@ -3527,7 +3527,7 @@
   },
   {
    "id": 18,
-   "name": "Pixie Horde",
+   "name": "Garden of Life",
    "cost": {
     "gold": 1000
    },
@@ -3537,7 +3537,7 @@
   },
   {
    "id": 19,
-   "name": "Sprite Horde",
+   "name": "Garden of Life (upgraded creature)",
    "cost": {
     "gold": 1000
    },
@@ -3559,13 +3559,13 @@
   },
   {
    "id": 26,
-   "name": "Grail",
+   "name": "Aurora Borealias (Grail)",
    "cost": {},
    "requires": []
   },
   {
    "id": 30,
-   "name": "Flower of Life - Pixies",
+   "name": "Magic Lantern",
    "cost": {
     "wood": 5,
     "ore": 5,
@@ -3577,7 +3577,7 @@
   },
   {
    "id": 31,
-   "name": "Altar of Air - Air Elementals",
+   "name": "Altar of Air",
    "cost": {
     "ore": 5,
     "gold": 1500
@@ -3589,7 +3589,7 @@
   },
   {
    "id": 32,
-   "name": "Altar of Water - Water Elementals",
+   "name": "Altar of Water",
    "cost": {
     "ore": 5,
     "gold": 1500
@@ -3601,7 +3601,7 @@
   },
   {
    "id": 33,
-   "name": "Altar of Fire - Fire Elementals",
+   "name": "Altar of Fire",
    "cost": {
     "wood": 5,
     "ore": 5,
@@ -3613,7 +3613,7 @@
   },
   {
    "id": 34,
-   "name": "Altar of Earth - Earth Elementals",
+   "name": "Altar of Earth",
    "cost": {
     "ore": 10,
     "gold": 2000
@@ -3624,7 +3624,7 @@
   },
   {
    "id": 35,
-   "name": "Altar of Thought - Psychic Elementals",
+   "name": "Altar of Thought",
    "cost": {
     "wood": 5,
     "mercury": 2,
@@ -3641,7 +3641,7 @@
   },
   {
    "id": 36,
-   "name": "Pyre - Firebirds",
+   "name": "Pyre",
    "cost": {
     "wood": 10,
     "mercury": 10,
@@ -3654,7 +3654,7 @@
   },
   {
    "id": 37,
-   "name": "Enchanted Flower - Sprites",
+   "name": "Upg. Magic Lantern",
    "cost": {
     "gold": 1000
    },
@@ -3664,7 +3664,7 @@
   },
   {
    "id": 38,
-   "name": "Temple of Clouds - Storm Elementals",
+   "name": "Upg. Altar of Air",
    "cost": {
     "wood": 2,
     "mercury": 2,
@@ -3677,7 +3677,7 @@
   },
   {
    "id": 39,
-   "name": "Temple of Ice - Ice Elementals",
+   "name": "Upg. Altar of Water",
    "cost": {
     "mercury": 5,
     "ore": 5,
@@ -3689,7 +3689,7 @@
   },
   {
    "id": 40,
-   "name": "Temple of Energy - Energy Elementals",
+   "name": "Upg. Altar of Fire",
    "cost": {
     "mercury": 5,
     "ore": 5,
@@ -3702,7 +3702,7 @@
   },
   {
    "id": 41,
-   "name": "Temple of Magma - Magma Elementals",
+   "name": "Upg. Altar of Earth",
    "cost": {
     "sulfur": 5,
     "gold": 1000
@@ -3713,7 +3713,7 @@
   },
   {
    "id": 42,
-   "name": "Temple of Magic - Magic Elementals",
+   "name": "Upg. Altar of Thought",
    "cost": {
     "mercury": 3,
     "sulfur": 3,
@@ -3728,7 +3728,7 @@
   },
   {
    "id": 43,
-   "name": "Funeral Pyre - Phoenixes",
+   "name": "Upg. Pyre",
    "cost": {
     "wood": 10,
     "mercury": 20,

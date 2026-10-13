@@ -22,6 +22,8 @@ Related: [what the computer builds and in what order](../ai-towns/), [Arrow Towe
 - **Costs** are from `BUILDING.TXT` **[data]**.
 - **Prerequisites** are not in any text file. They are static lists inside `Heroes3.exe`, one per town type, starting at `0x63ec80` and running to `0x63fbc4`. At start-up `0x4eb730` expands them into bit masks, adding each prerequisite's own prerequisites, which is the table the town screen and the [town AI](../ai-towns/#score-and-choice) use. **[data, executable]**
 
+Names are the in-game ones from `BLDGSPEC.TXT` and `DWELLING.TXT` **[data]**. The two horde buildings of a creature share one name, so the second is marked "(upgraded creature)"; the Grail building has its own name in every town.
+
 The tables below show the direct prerequisites as stored. A building is available when everything it requires, directly and indirectly, is built, the town's map settings allow it, and nothing else was built in the town that day.
 
 Building numbers are the engine's: 0–4 Mage Guild, 5 Tavern, 6 Shipyard, 7–9 Fort line, 10–13 Town Hall line, 14 Marketplace, 15 Resource Silo, 16 Blacksmith, 17 and 21–23 town specials, 18–19 and 24–25 horde buildings, 26 Grail, 30–36 dwellings, 37–43 upgraded dwellings. Dwellings are labelled as the game's table labels them.
