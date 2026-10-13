@@ -99,6 +99,12 @@ Churchyard has a single state (chance 100%, the other three 0%).
 
 {% include banks.html lang="en" rows=site.data.hota_banks %}
 
+## Player personality
+
+In the original game the map's "AI tactic" (Random, Warrior, Builder, Explorer) is stored but never read, and each computer player's [personality](../ai-overview/#player-personality-warrior-builder-explorer) is rolled at random.
+
+`HotA.dll` has a hook handler (`0x100f25b0`) at the roll in the new-game routine (`h3hota.exe` `0x4bfee0`, `Heroes3.exe` `0x4c0220`). It reads the map value for the player: if it is above 0, the personality becomes `map value − 1` (Warrior 0, Builder 1, Explorer 2); if it is 0 (Random), the original random roll is kept. What reads the personality in HotA beyond the two places found in the original was not checked. **[code `HotA.dll`]**
+
 ## Battle AI code
 
 What was checked, for the routines that choose a melee target and for the [bonus for drawing the retaliation](../ai-battle/#bonus-for-drawing-the-retaliation):

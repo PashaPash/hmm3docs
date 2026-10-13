@@ -39,6 +39,30 @@ The share of the puzzle a computer player needs before it goes digging depends o
 
 Difficulty switches parts of the battle logic on and off for every non-human side, including neutral monsters. See [AI: battle](../ai-battle/#what-difficulty-changes).
 
+## Player personality: Warrior, Builder, Explorer
+
+The map editor lets the author set an "AI tactic" for each player: Random, Warrior, Builder or Explorer.
+
+**Where the value goes.** The map header parser (`0x4c5630`) reads it and stores it in the player's map attributes (offset +4 of a 0x44-byte record, game object `+0x1f90c + player × 0x44`). In `Heroes3.exe` no code reads that field afterwards: its address does not occur anywhere in the executable, and none of the 27 routines that touch the attribute records reads offset +4. All of those are setup and scenario-screen routines.
+
+**What the game uses instead.** At the start of a game (`0x4bfe70`) every player gets a personality number in its own record (player `+0x34`):
+
+| Player | Personality |
+|---|---|
+| Human | 3 |
+| Computer | `rand(0,2)`: 0 Warrior, 1 Builder, 2 Explorer |
+
+So in the unmodified game a computer player's personality is random and the map's setting has no effect.
+
+**What the personality changes.** Two readers of the number were found:
+
+- **Hero movement** (`0x4e4990`). A hero of a computer player gets extra movement points each day on Expert and Impossible difficulty: **+75**, and **+125 if the player is an Explorer**. This applies to the first six player colours only (Red to Purple); Teal and Pink do not get it. See [hero movement](../adventure/#on-land).
+- **Thieves' Guild** (`0x5dda10`): the personality name shown for each player.
+
+No routine in the adventure-map, town or battle AI was found to read it. Warrior and Builder therefore differ only by the name shown in the Thieves' Guild. **[code and assembly; the names for 0, 1 and 2 are taken from the HotA mapping below and the Thieves' Guild order]**
+
+> **HotA 1.8.1:** `HotA.dll` hooks the roll in the new-game routine. If the map's value is Warrior, Builder or Explorer, the personality is set to it; only "Random" keeps the roll. See [HotA differences](../hota/#player-personality).
+
 ## Coverage of AI decisions
 
 What the computer player decides, and where it is described. "Partly" means the structure is described but some values or branches were not read.

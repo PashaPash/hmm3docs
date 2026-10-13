@@ -32,6 +32,7 @@ From `MOVEMENT.TXT` **[data]**. Speeds below 3 continue the same table downwards
 - The speed used is the creature's **base** speed from the creature table. If the hero is a specialist in that creature, or in the creature it upgrades to, that stack counts as 1 faster.
 - Logistics: 10% / 20% / 30% (table `0x63ea68`). A Logistics specialist multiplies the percentage by `1 + 0.05 × hero level`.
 - Flat bonuses, added after the multiplication, so Logistics does not scale them: artifact 98 (Boots of Speed) +600, artifact 70 (Equestrian's Gloves) +300, a visit to Stables +400. The amounts are the bonus column of `MOVEMENT.TXT`.
+- Computer players on Expert and Impossible: +75, or +125 when the player's [personality](../ai-overview/#player-personality-warrior-builder-explorer) is Explorer. First six player colours only (`0x4e4990`).
 - An empty army uses the top of the table.
 
 ### At sea
