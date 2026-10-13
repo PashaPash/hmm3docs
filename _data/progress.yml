@@ -18,7 +18,7 @@ chapters:
   - {n: 6, file: spells, state: data, en: "Magic", ru: "Магия",
      note_en: "numbers from SPTRAITS, including per-spell AI values", note_ru: "числа из SPTRAITS, включая ценность заклинаний для ИИ"}
   - {n: "6a", file: artifacts, state: data, en: "Artifacts", ru: "Артефакты",
-     note_en: "list with slot, class and price; effects are code and not listed", note_ru: "список со слотом, классом и ценой; эффекты заданы кодом и не перечислены"}
+     note_en: "list with slot, class, price and the computer's valuation terms; effects themselves are code and not listed", note_ru: "список со слотом, классом, ценой и слагаемыми оценки ИИ; сами эффекты заданы кодом и не перечислены"}
   - {n: 7, file: adventure, state: wip, en: "Adventure map", ru: "Карта приключений",
      note_en: "hero movement points and step costs; objects and economy not written", note_ru: "очки движения героя и стоимость шага; объекты и экономика не написаны"}
   - {n: 8, file: ai-overview, state: wip, en: "AI: overview", ru: "ИИ: обзор",

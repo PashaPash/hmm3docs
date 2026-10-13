@@ -200,7 +200,68 @@ Nominal prices (table `0x68c482`): wood 250, ore 250, mercury 500, sulfur 500, c
 
 `0x4336c0` and `0x4339e0`. The artifacts themselves are listed under [Artifacts](../artifacts/). Each artifact carries a list of effect evaluators; the artifact's value **for a given hero** is the sum of what those evaluators return for that hero, so the same artifact is worth different amounts to a might hero and a caster. Parts of a combination add the combination's evaluators as well. An artifact named in the scenario's victory condition gets a large bonus. War machines have their own formulas; the Ballista's uses the hero's Attack and Artillery.
 
-Wherever a routine needs a value "for the player" rather than for one hero, it takes the best value over the player's heroes, with a floor of 10 (`0x433aa0`). This is the number used for artifacts on the map, in chests, at merchants, in the [tavern choice](#hiring-heroes) and in the [exchange between two heroes](../ai-towns/#when-a-hero-visits-its-own-town). The individual effect evaluators were not read. **[code]**
+Wherever a routine needs a value "for the player" rather than for one hero, it takes the best value over the player's heroes, with a floor of 10 (`0x433aa0`). This is the number used for artifacts on the map, in chests, at merchants, in the [tavern choice](#hiring-heroes) and in the [exchange between two heroes](../ai-towns/#when-a-hero-visits-its-own-town). The terms themselves are listed [below](#artifact-effect-terms). **[code]**
+
+### Artifact effect terms
+
+The evaluator lists are data: a table at `0x63ac7c`, loaded by `0x4340e0`, gives each artifact one or more terms out of 24 kinds. The [Artifacts](../artifacts/) page shows the terms of every artifact in the "AI value" column. Symbols:
+
+| Symbol | Meaning |
+|---|---|
+| `T` | strength of the hero's army (sum of AI values, the same `T` as in the [skill values](#level-up-choices)) |
+| `T×n/40` | attack and defence points: 2.5% of the army per unit of `n` |
+| `n×SP`, `n×K`, `n×D` | `n` times the hero's stored value of a Spell Power point, a Knowledge point, a round of spell duration |
+| `M+n`, `L+n` | morale or luck: `T × 1.73%` for every step gained, counting only steps up to +3. A step that lifts the hero out of negative morale is worth `T × 8.33%` instead, out of negative luck `T × 1.22%` |
+| `M−enemy`, `L−enemy` | Spirit of Oppression, Hourglass of the Evil Hour: `T × 3.46%`, minus `T × 1.73%` for every point of positive morale (luck) the hero itself has and would lose |
+| `T×n%` | a flat share of the army; used for every effect the authors did not model separately |
+| `(T+2500)×n%` | movement artifacts; the constant makes them worth something to a hero with almost no army |
+| `Mv×n%` | share of the hero's maximum movement points |
+| `T×n% [W]` | mana artifacts; 0 unless the hero has Wisdom and a non-zero Spell Power value |
+| `Sh×n%`, `Sh/40` | `Sh` is the summed AI value of the hero's shooters |
+| `necro n` | 0 without the Necromancy skill; otherwise `T × p / 250`, where `p` is at most the artifact's `n` percent |
+| `orb(school)` | the largest increase in spell value among the damage spells of that school the hero knows, recomputed with Spell Power raised by the table's 100% (the items themselves give +50% damage) **[inferred]** |
+| `tome(school)` | the best spell value among the spells of that school the hero does not have |
+| `spell n`, `scroll` | the value of that spell to the hero, 0 if the hero already knows it |
+| `T/8 [−25×P]`, `T/5 [−50×P]` | Recanter's Cloak and Orb of Inhibition; the bracketed part, Spell Power times 25 or 50, is subtracted when the hero already wears the artifact |
+| `3×n×w(res)` | `n` units a day at three times the player's [resource weight](#what-resources-are-worth) |
+| `n×AI(Lk)` | `n` creatures of dwelling level `k`: the best AI value among the player's towns that have that dwelling |
+| `living/8` | an eighth of the AI value of the living creatures in the army |
+| `growth/2` | over all the player's towns and built dwellings: AI value times half the weekly growth |
+| `alliance` | 5% of the AI value of the eligible creatures in all the player's heroes and towns, plus `T/5` |
+| `ballista`, `tent` | own formulas: the Ballista from Attack and Artillery, the First Aid Tent from the most valuable creature in the army |
+
+Things that follow from the table:
+
+- One-stat weapons and shields are entered one point low: Centaur's Axe (+2 Attack) has `n = 1`, Sword of Hellfire (+6) has `n = 5`. Mixed items are entered at their net sum, for example Titan's Gladius (+12, −3) has `n = 9`.
+- Thunder Helmet and Titan's Cuirass are entered as `+12, −3` although the items give `+10, −2`.
+- An artifact with no entry is worth 0 by this table and gets only the floor of 10: the Spell Book, the Catapult, and anything not listed.
+- Attack and defence are valued through the army, Spell Power and Knowledge through the hero's own spell values, so a might hero and a caster rank the same two artifacts differently.
+
+Combination artifacts have entries of their own; a part also receives the terms of its combination, as said above.
+
+| ID | Combination | Terms |
+|---|---|---|
+| 129 | Angelic Alliance | `alliance` |
+| 130 | Cloak of the Undead King | `necro 30` |
+| 131 | Elixir of Life | `living/8` |
+| 132 | Armor of the Damned | `T×15% + T×6/40 + Sh×10%` |
+| 133 | Statue of Legion | `growth/2` |
+| 134 | Power of the Dragon Father | `T×12/40 + 6×SP + 6×K + T×10%` |
+| 135 | Titan's Thunder | `spell 57` |
+| 136 | Admiral's Hat | `(T+2500)×12%` |
+| 137 | Bow of the Sharpshooter | `Sh×7%` |
+| 138 | Wizard's Well | `T×10% [W]` |
+| 139 | Ring of the Magi | `50×D` |
+| 140 | Cornucopia | `3×4×w(crystal) + 3×4×w(gems) + 3×4×w(mercury) + 3×4×w(sulfur)` |
+
+### Wearing and replacing
+
+`0x4339e0` is the value of **gaining** an artifact, and it is what every comparison uses:
+
+- If the hero has a free slot the artifact fits, the gain is the artifact's full value, not below 0.
+- If every fitting slot is taken, the gain is the new artifact's value minus the value of the artifact now worn there, not below 0. Worn artifacts are valued with a flag that keeps what the hero would lose by taking them off (see Recanter's Cloak above).
+
+So a second sword is worth only the difference to a hero that already has one, and is worth its full value to a hero with an empty hand. This is why artifacts drift to the hero that lacks them in the [exchange between two heroes](../ai-towns/#when-a-hero-visits-its-own-town). When a hero's total worth is summed (`0x433c60`), the terms for primary skill points are skipped, because the skills are already counted. **[code]**
 
 ## Object values that are readable
 
