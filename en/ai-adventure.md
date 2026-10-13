@@ -147,7 +147,7 @@ The pathfinder lets a hero cross water or obstacles when the effect is available
 
    | Side | Multiplier |
    |---|---|
-   | The AI's own army | a per-hero factor stored in the hero record, **[inferred]** to be the class `Aggression` from [the hero class table](../heroes/) (1.0 for might classes, lower for most magic classes); halved when the scenario is lost if this hero dies |
+   | The AI's own army | the [hero's own factor](#the-heros-own-factor), from the class `Aggression`; halved when the scenario is lost if this hero dies |
    | Opponent: neutral or another computer player | 1.25 |
    | Opponent: a human player's army or hero | by difficulty: Easy 0.5, Normal 0.5, Hard 1.0, Expert 1.25, Impossible 1.25 (table `0x6604d0`) |
 
@@ -156,6 +156,24 @@ The pathfinder lets a hero cross water or obstacles when the effect is available
 4. Killing a hero that is a victory or loss condition adds 5,000,000.
 
 On Easy and Normal the AI counts a human army at **half** its strength. On Expert and Impossible the human multiplier equals the one for computer opponents. **[code]**
+
+### The hero's own factor
+
+Every hero carries a personal multiplier that the computer applies to **its own army** in this estimate. It is the only place the per-class `Aggression` column of [the hero class table](../heroes/) is used.
+
+The factor is rolled once, when the hero record is initialised at the start of the game (`0x4d8720`):
+
+```
+hero factor = Aggression of the class × rand(75,100) / rand(100,125)
+```
+
+The two rolls are independent, so the factor lies between `0.6 × Aggression` and `1.0 × Aggression`. It is stored in the hero record and saved with the game. No other routine that writes it was found; whether the record is initialised again when a defeated hero returns to the tavern pool was not checked.
+
+{% include hero_boldness.html lang="en" %}
+
+Use: in `0x427330` the hero's army strength is multiplied by this factor before the [simulator](../ai-battle/#battles-without-a-battlefield) runs, while the opponent's is multiplied by the values in the table above. A hero with a low factor needs a larger real advantage before a fight is predicted as won. The factor is halved when the scenario is lost if this hero dies.
+
+The factor is read only by this routine. It is not used for human players, in battle, or in any other valuation on this page. **[code and assembly `0x4d8720`, `0x427330`]**
 
 ## What resources are worth
 

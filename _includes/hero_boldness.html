@@ -1,0 +1,9 @@
+{% assign ru = false %}{% if include.lang == 'ru' %}{% assign ru = true %}{% endif %}
+<div class="table-wrapper"><table>
+<thead><tr><th>{% if ru %}Класс{% else %}Class{% endif %}</th><th>Aggression</th><th>{% if ru %}Множитель героя, от{% else %}Hero factor, from{% endif %}</th><th>{% if ru %}до{% else %}to{% endif %}</th></tr></thead>
+<tbody>
+{% assign rows = site.data.hero_classes | sort: "aggression" | reverse %}
+{% for h in rows %}
+<tr><td>{{ h.name }}</td><td>{{ h.aggression }}</td><td>{{ h.aggression | times: 0.6 | round: 2 }}</td><td>{{ h.aggression | times: 1.0 | round: 2 }}</td></tr>
+{% endfor %}
+</tbody></table></div>

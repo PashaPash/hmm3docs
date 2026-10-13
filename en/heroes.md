@@ -7,7 +7,7 @@ lang: en
 
 # Heroes and hero classes
 
-From `HCTRAITS.TXT` **[data]**. `Aggression` is a per-class multiplier read by the AI. Primary skill gain percentages apply on level-up; the first set is used up to level 9, the second from level 10.
+From `HCTRAITS.TXT` **[data]**. `Aggression` is a per-class multiplier that sets each [hero's own factor](../ai-adventure/#the-heros-own-factor) in the computer's fight estimate. Primary skill gain percentages apply on level-up; the first set is used up to level 9, the second from level 10.
 
 > **HotA 1.8.1:** the 18 classes below are unchanged; six classes are added, see [HotA differences: hero classes](../hota/#hero-classes).
 
