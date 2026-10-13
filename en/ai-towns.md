@@ -161,6 +161,7 @@ drop the gift if it is less than 5 × what the ally already has
   This is how Mage Guilds get built beyond their role as prerequisites: they follow heroes who can use them.
 - If the scenario is won by holding a particular town, and this hero is not the player's strongest, it stops there and **leaves its army in that town's garrison** (`0x525200`). Above Easy, with at least two heroes, and only when the town is not marked as threatened.
 - In a Conflux with the **Magic University**, the hero learns the skills on offer that are worth it (`0x524ed0`): it needs fewer than eight skills and the player at least 2000 gold, and each skill is judged by the same value as in [level-up choices](../ai-adventure/#level-up-choices).
+- **Artifact Merchants** (`0x5259e0`, `0x524400`). The routine runs only in Tower and Dungeon towns; Conflux, which has the same building, is not in the test. It prices the seven artifacts currently on offer the same way as the [Black Market](../ai-adventure/#object-values-that-are-readable): `artifact value − price at the resource weights`, counting only artifacts the player can afford and only positive results. The exchange rate depends on the player's number of Marketplaces, up to 10. If the town has no Artifact Merchants yet, the building is put up on the spot when it can be built and paid for and the summed net value of the artifacts is at least the building's own cost at the resource weights. The hero then buys.
 - A Spell Book is bought for 500 gold if the town has a Mage Guild and the hero has none.
 - Creatures in the hero's army are upgraded where the upgraded dwelling exists and the player can pay.
 - A stat building is built on the spot when it is worth more to this hero than it costs at the resource weights:
@@ -180,5 +181,5 @@ drop the gift if it is less than 5 × what the ally already has
 ## Not decoded yet
 
 - The general split of armies between a town garrison and heroes; only the victory-town case above was read.
-- Artifact Merchants in towns (the Black Market object is covered under [object values](../ai-adventure/#object-values-that-are-readable)), and the order in which spare resources are sold at the Marketplace.
+- The order in which spare resources are sold at the Marketplace.
 - The threat mark is described under [how a town gets its threat mark](../ai-adventure/#how-a-town-gets-its-threat-mark); the same pass buys emergency garrison troops before any building is chosen.

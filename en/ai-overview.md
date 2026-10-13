@@ -70,7 +70,7 @@ What the computer player decides, and where it is described. "Partly" means the 
 | Economy: war machines | covered | [AI: towns](../ai-towns/#when-a-hero-visits-its-own-town) |
 | Economy: Mage Guild levels | covered | [AI: towns](../ai-towns/#when-a-hero-visits-its-own-town) |
 | Economy: Black Market, Magic University | covered | [AI: adventure map](../ai-adventure/#object-values-that-are-readable) |
-| Economy: Artifact Merchants in towns | **not read** | |
+| Economy: Artifact Merchants in towns | covered | [AI: towns](../ai-towns/#when-a-hero-visits-its-own-town) |
 
 ## Two value columns
 
