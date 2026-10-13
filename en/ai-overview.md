@@ -63,7 +63,7 @@ What the computer player decides, and where it is described. "Partly" means the 
 | Hero: artifact exchange between two heroes in a town | covered, with the [gain rule](../ai-adventure/#wearing-and-replacing) for worn artifacts | [AI: towns](../ai-towns/#when-a-hero-visits-its-own-town) |
 | Player: hiring heroes | covered: limits, which tavern hero, which town | [AI: adventure map](../ai-adventure/#hiring-heroes) |
 | Town: what to build | covered | [AI: towns](../ai-towns/) |
-| Town: recruiting | purchase order, army gain and displaced stack covered; the garrison versus hero split only for the victory-town case | [AI: towns](../ai-towns/#which-creatures-are-bought-first) |
+| Town: recruiting | purchase order, army gain, displaced stack and the [exchange with the garrison](../ai-towns/#army-exchange-with-the-garrison) covered | [AI: towns](../ai-towns/#which-creatures-are-bought-first) |
 | Economy: resource valuation | covered | [AI: adventure map](../ai-adventure/#what-resources-are-worth) |
 | Economy: Marketplace trades | covered except the selling order | [AI: towns](../ai-towns/#trading-at-the-marketplace) |
 | Economy: gifts to allies | covered | [AI: towns](../ai-towns/#gifts-to-allies) |

@@ -151,7 +151,7 @@ drop the gift if it is less than 5 × what the ally already has
 `0x5253d0` runs when an AI hero enters a town of its own player:
 
 - If the hero carries the Grail and the town has none, the Grail building is built.
-- Creatures are recruited into the hero's army (`0x525200`, `0x42ba60`). On Hard and above, and if the town has not built today, the routine may also build the one dwelling (buildings 30–43) that adds the most to this hero's army right now.
+- The hero first [exchanges armies with the garrison](#army-exchange-with-the-garrison), then creatures are recruited into the hero's army (`0x525200`, `0x42ba60`). On Hard and above, and if the town has not built today, the routine may also build the one dwelling (buildings 30–43) that adds the most to this hero's army right now.
 - A **Mage Guild level** is built for the visiting hero (`0x42beb0`). The next level is built when all of these hold:
   - the guild is below level 5 and below `the hero's Wisdom level + 2`, so a hero without Wisdom gets a guild up to level 2, Basic up to 3, Advanced up to 4, Expert up to 5;
   - the hero has more than 2 Spell Power and more than 2 Knowledge; this is waived for the first level if the hero lacks two particular basic spells;
@@ -178,8 +178,24 @@ drop the gift if it is less than 5 × what the ally already has
 - Above Easy, the hero buys the town's **war machine** if it does not have one (`0x525ca0`): the machine sold by that town's Blacksmith, and in a Stronghold also the Ballista from the Ballista Yard. The machine must be usable by the hero and affordable in full. If the Blacksmith itself is missing and can be built today, the routine builds it first and then buys.
 - Above Easy, the garrison hero and the visiting hero **exchange artifacts** (`0x433fe0`, run once in each direction). For each equipped artifact the routine takes it off, checks whether the other hero's total artifact value would rise by more than this hero's falls (`0x433e20`, `0x433bb0`), and either hands it over or puts it back. Backpack artifacts are passed on when the other hero can make use of them.
 
+## Army exchange with the garrison
+
+`0x42c3b0`, run at the start of the recruiting step (`0x42ba60`) whenever a hero with movement points left enters its own town. The hero is the taker; the garrison (or the army of a hero standing in the garrison) is the other side.
+
+1. Stacks of the same creature in the hero's army are merged.
+2. **Dropping dead weight.** If the hero has between two and six stacks, each stack in turn is taken out and the [gain of adding it back](#the-gain-of-adding-a-stack) is computed. A stack whose gain is below 1 stays in the garrison. In practice this is a small or slow stack that costs the army more in speed than it adds.
+3. **Taking.** For every garrison stack the routine computes the gain of adding it to the hero. The stack with the largest gain is moved, and the step repeats until nothing has a positive gain. If the hero has no free slot, the stack it gives up ([which one](#which-stack-is-pushed-out)) goes to the garrison: into a matching or free slot, or in place of the garrison's weakest stack if that one is worth less.
+4. When the garrison is down to a single stack, the routine also tries taking **all but one creature** of it and uses that if it scores higher.
+5. The hero's stacks are re-ordered by a routine keyed on creature speed (`0x42d8e0`, not read in detail).
+
+Two consequences:
+
+- The gain is multiplied by `(sum of the visitor's four primary skills − the same sum for the hero in the garrison) / 40`, with the difference not below 0. So **a visitor that is not better in primary skills than the garrison hero takes nothing**. With no hero in the garrison the multiplier is just the visitor's own sum, which is always positive.
+- There is no rule that keeps a share of the army at home. Everything that makes the hero's army stronger leaves with the hero; the town keeps the leftovers, plus whatever the [emergency purchase](../ai-adventure/#how-a-town-gets-its-threat-mark) buys when the town is threatened. The only deliberate garrisoning is the victory-town case below.
+
+**[code]**
+
 ## Not decoded yet
 
-- The general split of armies between a town garrison and heroes; only the victory-town case above was read.
 - The order in which spare resources are sold at the Marketplace.
 - The threat mark is described under [how a town gets its threat mark](../ai-adventure/#how-a-town-gets-its-threat-mark); the same pass buys emergency garrison troops before any building is chosen.
