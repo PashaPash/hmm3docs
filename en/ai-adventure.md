@@ -111,6 +111,19 @@ The edge costs **300 movement points, or 200 at Expert**, matching what the spel
 
 A missing gate does not rule the route out: if the Castle Gate can be built today and the player can afford it, the edge is still offered, with the building's cost at the [resource weights](#what-resources-are-worth) counted against the destination's value. The routine allows for building up to two gates (one at each end) this way.
 
+### Monoliths, gates and whirlpools
+
+These objects have no value of their own in the object switch. In the pathfinder (`0x56ab40`) they are edges, like Town Portal and Castle Gate, so the computer uses them whenever they shorten the way to something it wants:
+
+| Object | Edge |
+|---|---|
+| One-way Monolith entrance (43) | to the exits (44) of the same kind |
+| Two-way Monolith (45) | to the other two-way monoliths of the same kind |
+| Subterranean Gate (103) | to its paired gate on the other level |
+| Whirlpool (111) | to the other whirlpools |
+
+Whether the pathfinder charges anything for the army a Whirlpool takes was not read. **[code]**
+
 ### Boats
 
 In the same routine that handles objects along a path (`0x56ab40`), a **boat on the map** is a switch between walking and sailing rather than a destination with a value of its own:
@@ -221,7 +234,7 @@ From the switch in `0x528040`. Object type numbers are the map format's.
 | Lighthouse (42), Shipyard (87) | 1000 if not owned by the AI's side, otherwise 0 |
 | Unexplored tile | 100 |
 
-Towns and heroes are covered in the next section. Not read yet: teleporters, stat boosters other than those listed, and the remaining minor cases, which sit in their own routines.
+Towns and heroes are covered in the next section. Teleporters are path edges, see [monoliths, gates and whirlpools](#monoliths-gates-and-whirlpools). Not read yet: stat boosters other than those listed and the remaining minor cases, which sit in their own routines.
 
 ## Towns and heroes as targets
 

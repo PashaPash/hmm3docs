@@ -55,7 +55,7 @@ What the computer player decides, and where it is described. "Partly" means the 
 | Hero: whether a fight is worth it | covered for multipliers and outcome use; simulator covered apart from its spell handling | [AI: adventure map](../ai-adventure/#valuing-a-fight) |
 | Hero: returning to defend a town, emergency garrison purchase | covered | [AI: adventure map](../ai-adventure/#its-own-towns) |
 | Hero: merging armies with another hero | partly | [AI: adventure map](../ai-adventure/#enemy-heroes) |
-| Hero: Town Portal, Castle Gate, Water Walk in path planning | covered | [AI: adventure map](../ai-adventure/#adventure-spells-in-path-planning) |
+| Hero: Town Portal, Castle Gate, monoliths, gates, whirlpools, Water Walk in path planning | covered | [AI: adventure map](../ai-adventure/#adventure-spells-in-path-planning) |
 | Hero: casting Fly and Dimension Door | no code found that does it; unverified | [AI: adventure map](../ai-adventure/#fly-and-water-walk) |
 | Hero: obelisks and digging for the Grail | covered, including the difficulty threshold; the choice among uncovered tiles **not read** | [AI: adventure map](../ai-adventure/#obelisks-and-the-grail) |
 | Hero: boarding boats | covered; building ships and Summon Boat not found | [AI: adventure map](../ai-adventure/#boats) |
