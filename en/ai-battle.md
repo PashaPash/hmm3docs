@@ -93,11 +93,43 @@ Penalties are capped at the full value of the stack itself.
 For each living enemy stack except Arrow Towers:
 
 1. Find the best hex to attack from (`0x436840`, `0x436300`). Fewer turns to get there wins, then the higher hex score, then the shorter path. On Normal+ a hex also gains value for extra enemies hit by a breath or all-around attack and loses value for exposure to the same from the target. Cavaliers and Champions (ids 10, 11) prefer the **longer** path on Normal+, which is the jousting bonus.
-2. `score = attack value + hex score`. On Hard+ a bonus is added when other friendly stacks are already going to hit the same target and absorb its retaliation (`0x41f3b0`).
+2. `score = attack value + hex score`. On Hard+ a [bonus for drawing the retaliation](#bonus-for-drawing-the-retaliation) is added (`0x41f3b0`).
 3. The score is multiplied by a random 75 to 100 percent and divided by the number of turns needed to reach the target. **[code: `rand(75,100)` at `0x421b02`]**
 4. On Normal+ an attack with a negative score is dropped. Harpies and Harpy Hags (72, 73) ignore the hex penalty because they fly back.
 
 The best target is chosen in this order: a target that is not blinded, petrified or paralysed beats one that is; fewer turns to reach; higher score. **[code `0x421680`]**
+
+### Bonus for drawing the retaliation
+
+`0x41f3b0`, added to a target's score in step 2. It is not a reward for joining an attack others have started. It is the reverse: the active stack `A` is credited with what **its attack lets the rest of the army do**, because `A` takes the target's retaliation and the stacks that follow strike for free.
+
+When it applies:
+
+- Hard difficulty and above (or a per-side flag that was not identified);
+- `A` can reach the target `T` this turn and is not blinded, petrified or paralysed;
+- `T` is not petrified and has **exactly one** retaliation left. A target that has already retaliated gives no bonus, and neither does one with unlimited retaliations;
+- `A`'s own attack does not kill `T`. If it does, the bonus is 0.
+
+How it is computed. Let `R` be the hit points `T` has left after `A`'s attack. For every friendly stack `S` that can reach `T` this turn (arrow towers excluded):
+
+```
+follow-up(S) = value of the damage S would do to T, capped at R
+gain(S)      = follow-up(S) − the value of the attack S has planned already
+```
+
+```
+bonus = sum of gain(S) over stacks whose planned victim is already T and whose gain is positive
+      + the largest gain among all the other stacks, if positive
+```
+
+So stacks that already aim at `T` all count, and of the stacks that aim elsewhere only the best one counts, as the one that might switch.
+
+What the routine does **not** look at:
+
+- who attacked whom earlier in the battle. There is no memory of past attacks anywhere in it;
+- the order of turns. It does not check that `S` acts after `A`, nor whether `S` has already acted this round. The planned victim and planned attack value of `S` are whatever `S` stored the last time it chose a target.
+
+One visible consequence: when two strong stacks stand near one enemy stack that still has its retaliation, each of them sees a bonus for hitting it first, so they tend to converge on the same stack. Hitting a stack of theirs does not cause that; standing next to them with an unspent retaliation does. **[code and assembly `0x41f3b0`, call site in `0x421680`; "can reach this turn" is the reading of a per-stack bit mask and is inferred]**
 
 ### What the stack then does
 
