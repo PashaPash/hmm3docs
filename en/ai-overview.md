@@ -46,7 +46,7 @@ What the computer player decides, and where it is described. "Partly" means the 
 | Decision | Status | Where |
 |---|---|---|
 | Battle: action of each stack, melee and ranged | covered | [AI: battle](../ai-battle/) |
-| Battle: hero spell | covered for candidates, scoring and timing; about half of the per-spell evaluators only listed | [AI: battle](../ai-battle/#hero-spells) |
+| Battle: hero spell | covered: candidates, scoring, timing and the per-spell evaluators | [AI: battle](../ai-battle/#hero-spells) |
 | Battle: creature spells, retreat, surrender | covered | [AI: battle](../ai-battle/) |
 | Battle: tactics-phase placement | partly (shooters only) | [AI: battle](../ai-battle/#shooters) |
 | Battle: resolution without a battlefield (no human side) | covered; spells inside the simulator and the final-loss expression **not read** | [AI: battle](../ai-battle/#battles-without-a-battlefield) |

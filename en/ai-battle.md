@@ -230,11 +230,34 @@ All values use the same currency as stack actions, [unit value](#what-a-unit-is-
 | Bless (41) | `0x437430` | Only for a stack whose victim is reachable this turn; value of the extra kills from maximum damage |
 | Shield (27), Air Shield (28) | `0x438c60`, `0x438bc0` | Uses the melee or ranged damage each friendly stack is expected to take this round (`0x43c040`) |
 | Age (75) | `0x4373f0` | One third of the target's value |
-| Chain Lightning (19), Earthquake (14), Dispel (35), Resurrection (38), Animate Dead (39), Sacrifice (40), Teleport (63) | `0x437310`, `0x43b8f0`, `0x43a910`, `0x43aca0`, `0x43b1e0`, `0x43aa60` | Own routines, not detailed yet |
-| Other buffs and curses (29–34, 36, 37, 42–52, 55, 56, 58–61, 65, 71, 73) | table in `0x43b690` | Own routines, not detailed yet |
+| Chain Lightning (19) | `0x437310`, `0x437190` | Tries every legal enemy stack as the first target and follows the real chain: the number of jumps for the school level, damage halved at each jump, own stacks included. Then the same `E − O` rule as the area spells |
+| Earthquake (14) | `0x43b8f0` | Attacker only, while walls still stand. Each own stack that has no victim yet adds its full value; each own shooter whose shot is blocked by the wall adds `value × wall sections the spell can break / (3 × sections standing)` |
+| Resurrection (38), Animate Dead (39) | `0x43aca0` | For each own stack the spell is legal on: `unit value × creatures raised`, the number raised capped by the stack's losses. Considered only when the spell would not be wasted (it raises no more than was lost) or the stack has lost at least three quarters of its hit points |
+| Sacrifice (40) | `0x43b1e0`, `0x43af50` | Every pair of a stack to raise and another own stack to give up. Value raised minus the full value of the stack given up, and only if that is positive |
+| Teleport (63) | `0x43aa60` | Own non-shooters only: the stack's best attack score with a teleport minus its best score on foot, using the same [move scoring](#melee-stacks) |
+| Dispel (35) | `0x43a910`, `0x439a80` | Runs over both sides. Every spell on a stack is re-valued with its own evaluator: removing a curse from an own stack or a buff from an enemy stack adds its value, removing an own buff or an enemy's curse subtracts it. Poison is left out |
+| Cure (37) | `0x439c30` | The same sum over the harmful spells on the stack, plus the value of the hit points healed |
+| Protection from Air, Fire, Water, Earth (30–33) | `0x4396e0` | Only when the enemy has a hero. Looks at the damage spells of that school the **enemy hero knows and can afford**, computes each one's damage on this stack, and values the protection at the damage it would prevent from the worst of them |
+| Anti-Magic (34), Magic Mirror (36) | `0x439d40`, `0x439de0` | The same over all four schools. Anti-Magic counts spells up to the level it blocks and adds the Dispel value for the stack; Magic Mirror counts the share of damage its reflection chance removes |
+| Fire Shield (29) | `0x43a110` | Only for a stack an enemy is expected to attack: value of the damage reflected back. Efreet Sultans, which have it already, count 20 points less |
+| Bloodlust (43), Precision (44) | `0x438100`, `0x438b50` → `0x437800` | Bloodlust for melee stacks, Precision for shooters, and only when the stack's victim is reachable this turn: value of the extra kills from the attack bonus |
+| Slayer (55) | `0x438d00` | The same, and only when the victim is one of the creature types the spell works against at the hero's level |
+| Stone Skin (46) | `0x438910` | Value of the losses the defence bonus prevents this round |
+| Prayer (48) | `0x438ac0` | Sum of the Stone Skin, Haste and (victim reachable this turn) Bloodlust values at Prayer's bonus |
+| Frenzy (56) | `0x4375d0` | Victim reachable this turn: value of the extra kills from the attack gained |
+| Counterstrike (58) | `0x439e80` | Only for a stack expected to be attacked more often than it can retaliate (Griffins count two retaliations, Royal Griffins are skipped): value of the extra retaliation damage |
+| Clone (65) | `0x43b2e0` | Victim reachable this turn and the stack is not itself a clone: value of the damage the copy would deal |
+| Mirth (49), Fortune (51) | `0x438170`, `0x438490` | Mirth: stack value times the morale step value of [0x435850](../ai-adventure/#artifact-effect-terms), 0 for creatures morale does not affect. Fortune: victim reachable this turn; extra damage times luck steps gained, divided by 24 |
+| Curse (42), Weakness (45), Disrupting Ray (47), Sorrow (50), Misfortune (52) | `0x43b370`, `0x438ed0`, `0x438dc0`, `0x4382c0`, `0x438f60` | Only on enemy stacks that threaten the AI's army this turn. Value of the damage the stack loses (Curse, Weakness), of the defence it loses at 5% per point (Disrupting Ray), or the morale or luck step value (Sorrow, Misfortune), each scaled by the chance the spell takes effect |
+| Forgetfulness (61) | `0x43b500` | Enemy shooters only: the difference between the stack's ranged and melee value |
+| Berserk (59), Hypnotize (60) | `0x43a400`, `0x43a500` → `0x43a340` | Value of the damage the affected stack would do to another enemy stack: the average over the stacks hit for Berserk, the best victim for Hypnotize. Hypnotize skips stacks that are already blinded, paralysed or petrified |
 | **Quicksand (10), Land Mine (11), Force Field (12), Fire Wall (13), Remove Obstacle (64)** | default `0x43b680` | Always 0. **The AI never casts these** |
 
 For spells that hit one stack, the evaluator runs on every legal stack and keeps the best. When the hero's school level makes the spell a mass spell, the values of all affected stacks are added (`0x43a910`, `0x43a670`). Stacks already under the spell, disabled stacks, First Aid Tents and Ammo Carts are skipped. Against a target with Magic Mirror the value is multiplied by `(50 − mirror chance) × 2 / 100`.
+
+Two things recur in these routines. A buff on a stack that attacks is worth something **only if that stack's victim can be reached this turn**; otherwise the value is 0 and the spell waits. And curses are considered only for enemy stacks **that threaten the AI's army this turn**, so the computer does not curse a stack that is still far away. The creature-only effects Poison (71) and Disease (73) have entries too but no hero can cast them.
+
+Spell flag `0x200` is tested wherever the code needs "a spell that deals damage": here for the protections, in the parting shot, and in the [Orb artifacts](../ai-adventure/#artifact-effect-terms). **[inferred from use]**
 
 ### Timing
 
