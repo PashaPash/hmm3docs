@@ -179,5 +179,24 @@ Battle setup around `0x4521f0`; tower strength from `0x5bf4f0`.
 - The keep has `4 + number of qualifying buildings built in the town` shooters. Each side tower has half of that, rounded up. Which buildings qualify is a per-town mask that was not decoded; **[inferred]** to be the town's own building set.
 - The defender in a siege does not get a Ballista on the battlefield, even if the hero owns one. First Aid Tent and Ammo Cart are placed as usual.
 
-Not decoded: which wall section the Catapult aims at, how a tower picks its target, gate and drawbridge rules.
+### Catapult shots
+
+`0x445d30` (one firing), `0x445ec0` (one shot), section table `0x63be60`.
+
+The walls are eight targets: the upper tower, two wall sections, the gate, two more wall sections, the lower tower and the keep. A target can be shot at while it still has structure points. The two side towers count only when the town has a Castle, the keep only from a Citadel up (`0x476440`).
+
+The row of the table above is chosen by the Ballistics level of the Catapult's hero. Cyclopes and Cyclops Kings throw with the Basic and Advanced rows whatever the hero knows.
+
+For each shot of the firing:
+
+1. **Damage** is rolled first, `rand(1,100)` against the three damage chances of the row: no damage, 1 point or 2 points.
+2. **Hit roll**: `rand(1,100)` against the chance for the kind of target aimed at (keep, tower, gate or wall).
+3. **A miss is not wasted.** It lands on another **wall section** that is still standing: the one nearest in order along the wall to the aimed target, a coin flip between two equally near ones. Only if no wall section stands is the shot lost.
+4. If more shots remain and the aimed target has just been destroyed, the aim moves to the nearest target still standing, again with a coin flip for ties. When nothing is left to shoot at, the firing ends.
+
+So a Catapult aimed at the keep with no Ballistics hits it 5% of the time, and nearly all the other shots chip at the walls instead. **[code and assembly; "nearest" is by index in the section list]**
+
+Where the first aim comes from: a human picks the target. For a computer-controlled Cyclops, `0x41eea0` aims at a wall only for the attacker, only while enough of its army has no victim it can reach, and then picks the standing wall section with the **fewest structure points left**, at random among equals. The automatic aim of the Catapult itself (`0x473c00`, `0x476bd0`) was not read.
+
+Not decoded: how an Arrow Tower picks its target, and the gate and drawbridge rules.
 

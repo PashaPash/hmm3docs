@@ -145,6 +145,15 @@ One visible consequence: when two strong stacks stand near one enemy stack that 
 
 A stack under Bind, or with speed 0, does not move.
 
+### Tactics phase
+
+`0x4221f0`. During the tactics phase each of the AI's stacks gets one decision:
+
+- **Shooters** (and stacks the routine treats like them) reposition as described under [Shooters](#shooters).
+- **Everything else** runs the normal target choice above, but the attack branch and creature spells are switched off. The stack picks the target it would want and then **walks towards it** (`0x41f580`) as far as the tactics zone allows: hexes outside the zone are rejected, and the walk is not limited to one turn of movement. A stack with nothing to walk to stays where it is.
+
+So the AI uses Tactics only to close the distance to the stacks it intends to hit; it does not form a line or protect shooters at this stage. **[code; how the AI ends the phase was not read]**
+
 ## Shooters
 
 `0x41f060`, `0x41eb80`, `0x435cb0`. For each enemy stack:

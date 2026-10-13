@@ -48,7 +48,7 @@ What the computer player decides, and where it is described. "Partly" means the 
 | Battle: action of each stack, melee and ranged | covered | [AI: battle](../ai-battle/) |
 | Battle: hero spell | covered: candidates, scoring, timing and the per-spell evaluators | [AI: battle](../ai-battle/#hero-spells) |
 | Battle: creature spells, retreat, surrender | covered | [AI: battle](../ai-battle/) |
-| Battle: tactics-phase placement | partly (shooters only) | [AI: battle](../ai-battle/#shooters) |
+| Battle: tactics-phase placement | covered | [AI: battle](../ai-battle/#tactics-phase) |
 | Battle: resolution without a battlefield (no human side) | covered, including the final loss and the one spell per hero per round | [AI: battle](../ai-battle/#battles-without-a-battlefield) |
 | Neutral stacks: join, flee, fight, split, growth | covered | [AI: neutral monsters](../ai-neutral/) |
 | Hero: where to go | covered for the choice rule; object values partly | [AI: adventure map](../ai-adventure/) |
