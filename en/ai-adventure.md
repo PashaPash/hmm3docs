@@ -291,6 +291,20 @@ From the switch in `0x528040`. Object type numbers are the map format's.
 | Water Wheel (109) | A flat value for a wheel of another player or unowned, otherwise by the weeks it has been accumulating, 500 a step |
 | Shipwreck Survivor (86), Warrior's Tomb (108) | A flat value, and only while the hero carries fewer than 64 artifacts. The tomb is 0 once this player has visited it |
 | Garrison (33) | Own garrison with removable troops: the [army gain](../ai-towns/#army-exchange-with-the-garrison) from it, and only from week 2 on some maps. Another player's that is not an ally: the [fight value](#valuing-a-fight) |
+| School of Magic (47), School of War (107) | 0 if visited or the player has less than 1000 gold. School of Magic: the larger of the hero's Spell Power and Knowledge point values. School of War: priced through experience like the Mercenary Camp |
+| Magic Spring (48) | Only when it has water: the hero's stored value of a double mana refill, with the same distance rule as the Magic Well |
+| Rally Flag (64) | Not if already under its effect: morale and luck step values together, and the trip is priced 200 movement points shorter for the movement it gives back |
+| Stables (94) | If not visited this week: 10000 when the Stables are nearer than half of the movement they would add over the rest of the week, otherwise 50 with the trip priced shorter by that amount. Plus, for Cavaliers in the army, `(AI Value of a Champion − AI Value of a Cavalier) × their number` for the free upgrade |
+| Refugee Camp (78) | The [army gain](../ai-towns/#the-gain-of-adding-a-stack) of what it offers that the player can pay for |
+| War Machine Factory (106) | Sum over the three machines of the same test as for the [town Blacksmith](../ai-towns/#when-a-hero-visits-its-own-town): the machine's value to the hero if it lacks it and the player can pay |
+| University (104) | 0 with eight skills or under 2000 gold. Otherwise the sum of the [level-up skill values](#level-up-choices) of the offered skills the hero lacks and would accept |
+| Witch Hut (113) | If this player has not seen what it teaches: a flat guess priced through experience. Once known: the skill's level-up value if the hero has fewer than eight skills, lacks it and would accept it; otherwise 0 |
+| Tree of Knowledge (102) | 0 if visited. Value of the level through experience. If the player does not yet know what this tree asks for, a discount of up to two thirds; if it asks for gold, only with 2000 gold; if gems, only with 10 gems |
+| Seer's Hut (83) | Not yet visited by this player: the reward value, at least 20. Visited: reward value minus the value of what must be handed over, and only if the hero can complete the quest now and the deadline has not passed; otherwise 0 |
+| Crypt (84), Shipwreck (85) | 0 once cleared. Otherwise the [fight value](#valuing-a-fight) against the guards with the reward counted at the resource weights, as for creature banks |
+| Spell Scroll (93) | 0 with 64 artifacts. Otherwise 10, plus the fight against its guards if any, plus the value of the spell if the hero does not know it |
+| Sea Chest (82), Wagon (105) | Flat values; the chest is worth less to a hero already carrying 64 artifacts, the wagon is 0 once this player has visited it |
+| Sirens (92) | Weighs the two effects against each other: the experience gained for the creatures given up, at the hero's value of an experience point, minus the strength of the 30% of each stack that is lost. A hero with no use for experience sees only the loss |
 | Keymaster's Tent (10) | 5000 if this player has not visited that colour, otherwise 0 |
 | Campfire (12) | Proportional to the amount it holds |
 | Creature Bank (16), Derelict Ship (24), Dragon Utopia (25) | If not already cleared: fight value against the stored guards, plus the stored resources, plus `AI Value × count` of reward creatures, plus the artifacts. See [creature banks](../ai-neutral/#creature-banks) |
@@ -308,7 +322,7 @@ From the switch in `0x528040`. Object type numbers are the map format's.
 | Lighthouse (42), Shipyard (87) | 1000 if not owned by the AI's side, otherwise 0 |
 | Unexplored tile | 100 |
 
-Towns and heroes are covered in the next section. Teleporters are path edges, see [monoliths, gates and whirlpools](#monoliths-gates-and-whirlpools). The remaining objects each call a routine of their own that was not read: School of Magic (47), Magic Spring (48), Rally Flag (64), Refugee Camp (78), Sea Chest (82), Seer's Hut (83), Crypt and Shipwreck (84, 85), Sirens (92), Spell Scroll (93), Stables (94), Tree of Knowledge (102), University (104), Wagon (105), War Machine Factory (106), School of War (107) and Witch Hut (113).
+Towns and heroes are covered in the next section. Teleporters are path edges, see [monoliths, gates and whirlpools](#monoliths-gates-and-whirlpools). Every case of the object switch is now listed. The flat values and the exact floating-point factors of the smaller cases were not extracted.
 
 ## Towns and heroes as targets
 
