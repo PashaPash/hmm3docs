@@ -197,7 +197,7 @@ Each of the 70 hero spells is a candidate when:
 
 - the hero knows it and it is flagged as a combat spell;
 - the hero has the mana for it (cost at the hero's school level, after battlefield and enemy modifiers);
-- on battlefield type 2 only level 1 spells pass **[the type is not identified yet]**;
+- on special terrain 2 only level 1 spells pass. This is the Cursed Ground rule **[inferred from the rule itself; the same value is passed as the terrain to the school-level routine]**;
 - if either hero wears artifact 83 (Recanter's Cloak), only level 1 and 2 spells pass.
 
 ### Scoring
@@ -322,7 +322,31 @@ Losses are then taken off the stacks in list order (`0x426170`): a stack loses w
 
 So the model is: up to three rounds in which speed and shooting decide who gets free hits, then a winner-takes-all comparison of what is left.
 
-Not read: the exact final-loss expression, the per-stack terms summed in the settlement, and how hero spells are picked and valued inside the simulator (`0x425bd0`). **[code]**
+**The final loss.** With `W` the winner's remaining fighting power and `L` the loser's (`L ≤ W`):
+
+```
+final loss = (L / W + 0.05) × L
+```
+
+It is taken from the winner's pool. Two equal armies give `1.05 × L`, more than the winner has, so both die. An army twice as strong loses `0.55 × L`, about 27% of what it had left; one five times as strong loses `0.25 × L`, about 5%. The fighting power compared here is the sum over a side's stacks of a strength number and a per-stack factor stored when the simulation was set up; those two fields were not traced further.
+
+### Spells inside the simulator
+
+`0x425bd0`, called once for each side at the start of every round, so **each hero casts one spell per round**, the side that compares higher in `0x424960` first (not read; speed is the likely key). A side casts only if it has a hero with a spell book, mana left and an army left.
+
+Candidates are the hero's combat spells that it can pay for, with two filters: on [Cursed Ground](../ai-battle/#candidates) only level 1 spells, and if either hero wears Recanter's Cloak (83) only level 1 and 2. Each candidate gets a value in pool points, by the class bits of its spell flags:
+
+| Class | Value |
+|---|---|
+| Single-target damage (`0x8000`) | Damage on the best enemy stack, capped at what that stack has left. Chain Lightning adds up to three more stacks at half damage each time; Frost Ring, Fireball, Inferno and Meteor Shower add neighbouring stacks (`0x424bf0`) |
+| A second damage class (`0x10000`) | The same, but considered **in round 1 only** |
+| Whole-field damage (`0x20000`) | `E − O`: damage to the enemy minus damage to its own stacks, and only if `O` is less than `E` and less than its own pool |
+| Buffs, curses, Dispel (`0x40000`) | Own routine (`0x425510`), scaled by the pool affected and by the spell's duration, counted for at most 5 rounds. The protections, Anti-Magic, Dispel, Magic Mirror and Cure are considered only when the enemy has a hero with a spell book. Only outlined |
+| Resurrection, Animate Dead (`0x80000`, spells 38 and 39) | On the best stack: creatures raised, capped by that stack's losses, times its points per creature |
+
+The spell with the highest value is cast and its cost is taken from the hero's mana. If the enemy army contains Familiars, the enemy hero gains a fifth of that cost. Damage is then removed from the pools exactly like combat damage; a whole-field spell is applied to the caster's own stacks as well.
+
+There is no mana factor and no random factor here, unlike the [real spell chooser](#scoring): the simulator simply takes the largest immediate effect each round. Summoning spells and Teleport are not in any of the classes, so they are never cast in a simulated battle. **[code; which spells carry `0x10000` was not listed]**
 
 
 ## What difficulty changes

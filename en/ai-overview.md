@@ -49,10 +49,10 @@ What the computer player decides, and where it is described. "Partly" means the 
 | Battle: hero spell | covered: candidates, scoring, timing and the per-spell evaluators | [AI: battle](../ai-battle/#hero-spells) |
 | Battle: creature spells, retreat, surrender | covered | [AI: battle](../ai-battle/) |
 | Battle: tactics-phase placement | partly (shooters only) | [AI: battle](../ai-battle/#shooters) |
-| Battle: resolution without a battlefield (no human side) | covered; spells inside the simulator and the final-loss expression **not read** | [AI: battle](../ai-battle/#battles-without-a-battlefield) |
+| Battle: resolution without a battlefield (no human side) | covered, including the final loss and the one spell per hero per round | [AI: battle](../ai-battle/#battles-without-a-battlefield) |
 | Neutral stacks: join, flee, fight, split, growth | covered | [AI: neutral monsters](../ai-neutral/) |
 | Hero: where to go | covered for the choice rule; object values partly | [AI: adventure map](../ai-adventure/) |
-| Hero: whether a fight is worth it | covered for multipliers and outcome use; simulator covered apart from its spell handling | [AI: adventure map](../ai-adventure/#valuing-a-fight) |
+| Hero: whether a fight is worth it | covered for multipliers and outcome use; simulator covered | [AI: adventure map](../ai-adventure/#valuing-a-fight) |
 | Hero: returning to defend a town, emergency garrison purchase | covered | [AI: adventure map](../ai-adventure/#its-own-towns) |
 | Hero: merging armies with another hero | partly | [AI: adventure map](../ai-adventure/#enemy-heroes) |
 | Hero: Town Portal, Castle Gate, monoliths, gates, whirlpools, Water Walk in path planning | covered | [AI: adventure map](../ai-adventure/#adventure-spells-in-path-planning) |
