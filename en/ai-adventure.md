@@ -193,6 +193,11 @@ From the switch in `0x528040`. Object type numbers are the map format's.
 | Pandora's Box (6) | Fight value of its guards, plus its experience, skills, spells the hero can learn, resources and `AI Value × count` of its creatures |
 | Black Market (7) | Only if the backpack has room. Sum over its seven artifacts of `artifact value − price at the resource weights`, counting only artifacts the player can pay for and only positive differences |
 | Creature dwelling (17, 20) | 0 if it belongs to an ally. Otherwise the fight value for its guards if it is not the player's own, plus the [army gain](../ai-towns/#the-gain-of-adding-a-stack) from recruiting what is waiting there with the resources the player has now. For a dwelling the player already owns, the value is dropped to 0 when the path is 400 points or longer and the gain is under a third of the hero's army value. If the victory condition is to flag all dwellings, 5,000,000 divided by the number of dwellings is added for one not yet owned (`0x529a30`) |
+| Shrine of Magic (88–90) | The value of its spell to this hero (`0x527640`), if the hero has a spell book, does not know the spell, and the spell's level is at most `Wisdom level + 2`; otherwise 0 |
+| Magic Well (49) | The hero's stored value of a full mana refill, if not already used. Dropped to 0 when the path is over 300 points, unless the hero was already heading for a well or spring |
+| Star Axis (61) | The hero's value of a Spell Power point, if not visited |
+| Pyramid (63) | 0 if this player already took it. Otherwise the fight against its guards (40 Gold Golems and 20 Diamond Golems), plus, for a hero with Expert Wisdom and a spell book, the average value of the level 5 spells it does not know |
+| Prison (62) | 0 if the player already has eight heroes; otherwise a value from the prisoner's army |
 | Keymaster's Tent (10) | 5000 if this player has not visited that colour, otherwise 0 |
 | Campfire (12) | Proportional to the amount it holds |
 | Creature Bank (16), Derelict Ship (24), Dragon Utopia (25) | If not already cleared: fight value against the stored guards, plus the stored resources, plus `AI Value × count` of reward creatures, plus the artifacts. See [creature banks](../ai-neutral/#creature-banks) |
@@ -210,7 +215,7 @@ From the switch in `0x528040`. Object type numbers are the map format's.
 | Lighthouse (42), Shipyard (87) | 1000 if not owned by the AI's side, otherwise 0 |
 | Unexplored tile | 100 |
 
-Towns and heroes are covered in the next section. Not read yet: shrines, wells, teleporters and most of the remaining minor cases, which sit in their own routines.
+Towns and heroes are covered in the next section. Not read yet: teleporters, stat boosters other than those listed, and the remaining minor cases, which sit in their own routines.
 
 ## Towns and heroes as targets
 
@@ -301,9 +306,13 @@ The same routine tags the **enemy hero**: it stores `5,000,000 / number of the c
 | Fire, Air, Water, Earth Magic | from the hero's spells (`0x524d20`); without Wisdom the simple values are 0, 25, 3 and 30 |
 | Pathfinding, Navigation | scaled by the map: the share of land tiles that cost extra to cross, and the share of water tiles, counted once per map by `0x52b9c0` |
 | Estates | a per-level table value |
+| Intelligence | `Knowledge × the hero's value of a Knowledge point / 4` |
+| Sorcery | `Spell Power × the hero's value of a Spell Power point / 20` |
+| Resistance | `T / 40` |
+| First Aid | 250, and only if the hero has a First Aid Tent |
 | Skills not listed (Scouting, Learning and others) | `T / 20` |
 
-Ballistics and Logistics come out on top for a hero with a real army, and army-scaled skills in general beat magic skills unless the hero already has Wisdom and Spell Power. The same ranking test is used when a hero is offered a skill at a Witch Hut or the Magic University. **[code; Intelligence, Sorcery, Resistance and First Aid were not read]**
+Ballistics and Logistics come out on top for a hero with a real army, and army-scaled skills in general beat magic skills unless the hero already has Wisdom and Spell Power. The same ranking test is used when a hero is offered a skill at a Witch Hut or the Magic University. **[code]**
 
 ## Obelisks and the Grail
 

@@ -59,7 +59,7 @@ What the computer player decides, and where it is described. "Partly" means the 
 | Hero: casting Fly and Dimension Door | no code found that does it; unverified | [AI: adventure map](../ai-adventure/#fly-and-water-walk) |
 | Hero: obelisks and digging for the Grail | covered, including the difficulty threshold; the choice among uncovered tiles **not read** | [AI: adventure map](../ai-adventure/#obelisks-and-the-grail) |
 | Hero: boarding boats | covered; building ships and Summon Boat not found | [AI: adventure map](../ai-adventure/#boats) |
-| Hero: level-up skill choice | covered, including the new-versus-upgrade test; four skill values **not read** | [AI: adventure map](../ai-adventure/#level-up-choices) |
+| Hero: level-up skill choice | covered | [AI: adventure map](../ai-adventure/#level-up-choices) |
 | Hero: artifact exchange between two heroes in a town | covered; equipping from the backpack on pickup **not read** | [AI: towns](../ai-towns/#when-a-hero-visits-its-own-town) |
 | Player: hiring heroes | covered: limits, which tavern hero, which town | [AI: adventure map](../ai-adventure/#hiring-heroes) |
 | Town: what to build | covered | [AI: towns](../ai-towns/) |
