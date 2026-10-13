@@ -278,6 +278,19 @@ From the switch in `0x528040`. Object type numbers are the map format's.
 | Star Axis (61) | The hero's value of a Spell Power point, if not visited |
 | Pyramid (63) | 0 if this player already took it. Otherwise the fight against its guards (40 Gold Golems and 20 Diamond Golems), plus, for a hero with Expert Wisdom and a spell book, the average value of the level 5 spells it does not know |
 | Prison (62) | 0 if the player already has eight heroes; otherwise a value from the prisoner's army |
+| Buoy (11), Temple (96): morale | Not if already under its effect, and only if reachable with today's movement. `army strength × (sum of primary skills + 40) / 40 ×` the morale step value, the same 1.73% / 8.33% table as for [artifacts](#artifact-effect-terms). The Buoy is skipped by an all-undead army |
+| Swan Pond (14), Faerie Ring (28), Fountain of Fortune (30), Mermaids (52): luck | The same with the luck step value (1.73% / 1.22%). The Swan Pond, which ends the hero's day, counts only when the hero would arrive with at most 200 movement points left, and the trip is then priced as costing all remaining movement |
+| Idol of Fortune (38) | Luck or morale by the day of the week, both on day 7, valued as above |
+| Fountain of Youth (31) | 10000 when it is less than 200 movement points away and the hero is not under its effect; otherwise a movement-bonus value with the distance shortened by 200 |
+| Oasis (56), Watering Hole (110) | Movement-bonus routine `0x52a1e0` with 400 and 200 (not read further) |
+| Library of Enlightenment (41) | 0 if visited or if `hero level + 2 × Diplomacy level` is below 10. Otherwise `army strength × 4 / 40 + 2 × (value of a Spell Power point + value of a Knowledge point)` |
+| Mercenary Camp (51), Scholar (81) | Priced through experience: experience to the hero's next level × the hero's value of one experience point. The camp is 0 once visited |
+| Redwood Observatory (58), Pillar of Fire (60) | Exploration value `0x432220`, the routine used for unexplored map |
+| Hut of the Magi (37) | A per-player figure stored with the planning data |
+| Lean To (39), Windmill (112) | 3 and 4.5 times a per-player figure stored next to the resource weights (not identified; presumably the value of one random resource). The Lean To only if this player has not taken it, the Windmill only if it is not already its own and empty |
+| Water Wheel (109) | A flat value for a wheel of another player or unowned, otherwise by the weeks it has been accumulating, 500 a step |
+| Shipwreck Survivor (86), Warrior's Tomb (108) | A flat value, and only while the hero carries fewer than 64 artifacts. The tomb is 0 once this player has visited it |
+| Garrison (33) | Own garrison with removable troops: the [army gain](../ai-towns/#army-exchange-with-the-garrison) from it, and only from week 2 on some maps. Another player's that is not an ally: the [fight value](#valuing-a-fight) |
 | Keymaster's Tent (10) | 5000 if this player has not visited that colour, otherwise 0 |
 | Campfire (12) | Proportional to the amount it holds |
 | Creature Bank (16), Derelict Ship (24), Dragon Utopia (25) | If not already cleared: fight value against the stored guards, plus the stored resources, plus `AI Value × count` of reward creatures, plus the artifacts. See [creature banks](../ai-neutral/#creature-banks) |
@@ -295,7 +308,7 @@ From the switch in `0x528040`. Object type numbers are the map format's.
 | Lighthouse (42), Shipyard (87) | 1000 if not owned by the AI's side, otherwise 0 |
 | Unexplored tile | 100 |
 
-Towns and heroes are covered in the next section. Teleporters are path edges, see [monoliths, gates and whirlpools](#monoliths-gates-and-whirlpools). Not read yet: stat boosters other than those listed and the remaining minor cases, which sit in their own routines.
+Towns and heroes are covered in the next section. Teleporters are path edges, see [monoliths, gates and whirlpools](#monoliths-gates-and-whirlpools). The remaining objects each call a routine of their own that was not read: School of Magic (47), Magic Spring (48), Rally Flag (64), Refugee Camp (78), Sea Chest (82), Seer's Hut (83), Crypt and Shipwreck (84, 85), Sirens (92), Spell Scroll (93), Stables (94), Tree of Knowledge (102), University (104), Wagon (105), War Machine Factory (106), School of War (107) and Witch Hut (113).
 
 ## Towns and heroes as targets
 

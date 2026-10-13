@@ -123,7 +123,7 @@ The computer player does not trade to make a profit or to balance its stock. It 
 3. **Where** (`0x42a580`). The player needs at least one Marketplace. The number of Marketplaces, up to 10, sets the exchange rate as it does for a human. A Marketplace the player could build today also counts if it has gold income.
 4. If there is something short and something spare, the routine sells spare resources to cover the shortage. If the shortage cannot be covered, the purchase goal is dropped for this turn.
 
-The order in which spare resources are sold was not read. **[code]**
+There is no selling order to speak of. `0x42a580` adds up the spare amounts through a per-resource price table (`0x68c482`), prices the shortage the same way for each quantity of the purchase it is considering, and keeps the largest quantity whose shortage is covered by the total spare value. So the test is "is everything spare, taken together, worth enough", not a choice of which resource to give up first. **[code; the exchange itself, when the purchase is made, was not traced]**
 
 ## Gifts to allies
 
@@ -197,5 +197,4 @@ Two consequences:
 
 ## Not decoded yet
 
-- The order in which spare resources are sold at the Marketplace.
 - The threat mark is described under [how a town gets its threat mark](../ai-adventure/#how-a-town-gets-its-threat-mark); the same pass buys emergency garrison troops before any building is chosen.

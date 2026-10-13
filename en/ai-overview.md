@@ -65,7 +65,7 @@ What the computer player decides, and where it is described. "Partly" means the 
 | Town: what to build | covered | [AI: towns](../ai-towns/) |
 | Town: recruiting | purchase order, army gain, displaced stack and the [exchange with the garrison](../ai-towns/#army-exchange-with-the-garrison) covered | [AI: towns](../ai-towns/#which-creatures-are-bought-first) |
 | Economy: resource valuation | covered | [AI: adventure map](../ai-adventure/#what-resources-are-worth) |
-| Economy: Marketplace trades | covered except the selling order | [AI: towns](../ai-towns/#trading-at-the-marketplace) |
+| Economy: Marketplace trades | covered | [AI: towns](../ai-towns/#trading-at-the-marketplace) |
 | Economy: gifts to allies | covered | [AI: towns](../ai-towns/#gifts-to-allies) |
 | Economy: war machines | covered | [AI: towns](../ai-towns/#when-a-hero-visits-its-own-town) |
 | Economy: Mage Guild levels | covered | [AI: towns](../ai-towns/#when-a-hero-visits-its-own-town) |
