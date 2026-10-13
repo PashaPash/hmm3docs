@@ -16,7 +16,7 @@ Only differences that could be confirmed from files. Everything else on this sit
 ## What was compared, and what was not
 
 - **Compared:** the text tables in `HotA_lng.lod` against the same tables in `H3ab_bmp.lod`. That archive is a normal LOD and reads with `tools/lod.py`; the numbers below are a mechanical diff of the two sets. **[data]**
-- **Not compared:** code. HotA runs its own executable (`h3hota.exe`, a different build from the GOG `Heroes3.exe` analysed here, so addresses on this site do not carry over) and patches it in memory from `HotA.dll`. None of the AI, combat or map rules on the other pages has been checked against HotA.
+- **Not compared:** code. HotA runs its own executable (`h3hota.exe`, a different build from the GOG `Heroes3.exe` analysed here, so addresses on this site do not carry over) and patches it in memory from `HotA.dll`. Apart from the [battle AI check below](#battle-ai-code), the AI, combat and map rules on the other pages have not been checked against HotA.
 - **Read in part:** `HotA.dat`. Its creature records give the stats of the 50 new creatures, see [New creatures](#new-creatures). Its bank records give the twelve new creature banks, see [New creature banks](#new-creature-banks). Its other record types (heroes, objects, classes) are not decoded.
 - **Not read:** `HotA.lod`, whose directory is obfuscated.
 - Whether `HotA.dll` overrides any of these table values at run time is **[unverified]**. The values match changes HotA is known for, which suggests the tables are the ones in use.
@@ -98,6 +98,29 @@ Two things differ from the SoD table format:
 Churchyard has a single state (chance 100%, the other three 0%).
 
 {% include banks.html lang="en" rows=site.data.hota_banks %}
+
+## Battle AI code
+
+What was checked, for the routines that choose a melee target and for the [bonus for drawing the retaliation](../ai-battle/#bonus-for-drawing-the-retaliation):
+
+- **The code in `h3hota.exe` is the same.** The functions sit at shifted addresses, and apart from the addresses of the calls and globals inside them the bytes are identical to `Heroes3.exe`:
+
+  | Routine | `Heroes3.exe` (this site) | `h3hota.exe` |
+  |---|---|---|
+  | Retreat check | `0x41e570` | `0x41e6f0` |
+  | Bonus for drawing the retaliation | `0x41f3b0` | `0x41f530` |
+  | Melee stack: target choice | `0x421680` | `0x421800` |
+  | Trial exchange, attack value | `0x4359b0`, `0x435b90` | `0x435600`, `0x4357e0` |
+  | Best hex to strike from | `0x436300` | `0x435f50` |
+  | Unit value | `0x442a50` | `0x442770` |
+
+- **`HotA.dll` hooks them, but for one purpose.** The library contains at least 36 small hook handlers that all call the same test (`HotA.dll` `0x10045990`) and then resume the original routine on one of its two existing branches. Six of them are inside the melee target routine, one is the first test of the retaliation bonus, and the rest are in the retreat check, the shooter and creature-spell routines, the hero spell evaluators and the morale code. The test is "is this stack out of action": HotA keeps its own table of effect durations for each stack and the test is true when any of **effects 62 (Blind), 70 (Stone Gaze), 74 (Paralyze) or 81** is active. Effect 81 has no row in the spell table of this build and was not identified.
+
+  So everywhere the original AI asked "blinded, petrified or paralysed?", HotA asks the same question with one more disabling effect added. The scoring arithmetic, the random 75–100% factor, the ordering of targets and the retaliation bonus itself are not replaced by these handlers.
+
+- **One special case for Couatls.** A handler in the melee target routine (`HotA.dll` `0x1004c260`) branches when the stack is a Couatl or Crimson Couatl (creatures 182, 183) with a flag set in its HotA data. What the flag means was not read.
+
+Limits of this check: the handlers above were found because they contain plain return addresses. `HotA.dll` stores the addresses it hooks in scrambled form, so the list of hooks could not be enumerated, and a hook that replaces a whole routine or changes a value without returning into these functions would not show up this way. **[code `HotA.dll`; that the hooks found are all of them is unverified]**
 
 ## How this interacts with the rest of the site
 

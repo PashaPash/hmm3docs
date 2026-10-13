@@ -131,6 +131,8 @@ What the routine does **not** look at:
 
 One visible consequence: when two strong stacks stand near one enemy stack that still has its retaliation, each of them sees a bonus for hitting it first, so they tend to converge on the same stack. Hitting a stack of theirs does not cause that; standing next to them with an unspent retaliation does. **[code and assembly `0x41f3b0`, call site in `0x421680`; "can reach this turn" is the reading of a per-stack bit mask and is inferred]**
 
+> **HotA 1.8.1:** the same code, with one change found: every "out of action" test also counts a fourth, HotA-only effect, and Couatls have a special branch. See [HotA: battle AI code](../hota/#battle-ai-code).
+
 ### What the stack then does
 
 | Situation | Action |
