@@ -8,7 +8,7 @@ lang: en
 # AI: adventure map decisions
 {: .no_toc }
 
-How a computer player's hero picks where to go. First version: the structure and the rules that survived decompilation cleanly. Much of the per-object arithmetic is floating-point code that the decompiler dropped; those parts are listed at the end.
+How a computer player's hero picks where to go. Floating-point parts of the per-object arithmetic were read from the assembly.
 
 1. TOC
 {:toc}
@@ -361,7 +361,7 @@ From the switch in `0x528040`. Object type numbers are the map format's.
 | Magic Well (49) | The hero's stored value of a full mana refill, if not already used. Dropped to 0 when the path is over 300 points, unless the hero was already heading for a well or spring |
 | Star Axis (61) | The hero's value of a Spell Power point, if not visited |
 | Pyramid (63) | 0 if this player already took it. Otherwise the fight against its guards (40 Gold Golems and 20 Diamond Golems), plus, for a hero with Expert Wisdom and a spell book, the average value of the level 5 spells it does not know |
-| Prison (62) | 0 if the player already has eight heroes; otherwise a value from the prisoner's army |
+| Prison (62) | 0 if the player already has eight heroes; otherwise the AI Value of the prisoner's army plus 2500 gold at the gold weight (`0x52a3a0`) |
 | Buoy (11), Temple (96): morale | Not if already under its effect, and only if reachable with today's movement. `army strength × (sum of primary skills + 40) / 40 ×` the morale step value, the same 1.73% / 8.33% table as for [artifacts](#artifact-effect-terms). The Buoy is skipped by an all-undead army |
 | Swan Pond (14), Faerie Ring (28), Fountain of Fortune (30), Mermaids (52): luck | The same with the luck step value (1.73% / 1.22%). The Swan Pond, which ends the hero's day, counts only when the hero would arrive with at most 200 movement points left, and the trip is then priced as costing all remaining movement |
 | Idol of Fortune (38) | Luck or morale by the day of the week, both on day 7, valued as above |
@@ -370,10 +370,10 @@ From the switch in `0x528040`. Object type numbers are the map format's.
 | Library of Enlightenment (41) | 0 if visited or if `hero level + 2 × Diplomacy level` is below 10. Otherwise `army strength × 4 / 40 + 2 × (value of a Spell Power point + value of a Knowledge point)` |
 | Mercenary Camp (51), Scholar (81) | Priced through experience: experience to the hero's next level × the hero's value of one experience point. The camp is 0 once visited |
 | Redwood Observatory (58), Pillar of Fire (60) | Exploration value `0x432220`, the routine used for unexplored map |
-| Hut of the Magi (37) | A value kept per player and set to 0 when that player visits a hut; where it is first set was not found |
+| Hut of the Magi (37) | A value kept per player (`0x692950 + player × 0x98 + 4`): the sum of the exploration value (`0x432220`) at every Eye of the Magi (27) on the map (`0x429910`). Recomputed at most once per turn, after a hero's move, above Easy and only for a player with towns; set to 0 when that player visits a hut |
 | Lean To (39), Windmill (112) | 3 and 4.5 times the player's **average resource value**: the sum of the weights of the non-gold resources divided by 5, computed at the end of the [resource weight](#what-resources-are-worth) routine. The multipliers match the average yield (1–5 and 3–6 units). The Lean To only if this player has not taken it, the Windmill only if it is not already its own and empty **[the summed terms are inferred]** |
-| Water Wheel (109) | A flat value for a wheel of another player or unowned, otherwise by the weeks it has been accumulating, 500 a step |
-| Shipwreck Survivor (86), Warrior's Tomb (108) | A flat value, and only while the hero carries fewer than 64 artifacts. The tomb is 0 once this player has visited it |
+| Water Wheel (109) | Another player's or unowned: 1000 gold at the gold weight. Own: `500 × weeks accumulated` gold at the gold weight |
+| Shipwreck Survivor (86), Warrior's Tomb (108) | The player's [artifact-worth figure](#per-hero-and-per-player-figures), only while the hero carries fewer than 64 artifacts. The tomb is 0 once this player has visited it |
 | Garrison (33) | Own garrison with removable troops: the [army gain](../ai-towns/#army-exchange-with-the-garrison) from it, and only from week 2 on some maps. Another player's that is not an ally: the [fight value](#valuing-a-fight) |
 | School of Magic (47), School of War (107) | 0 if visited or the player has less than 1000 gold. School of Magic: the larger of the hero's Spell Power and Knowledge point values. School of War: priced through experience like the Mercenary Camp |
 | Magic Spring (48) | Only when it has water: the hero's stored value of a double mana refill, with the same distance rule as the Magic Well |
@@ -382,15 +382,15 @@ From the switch in `0x528040`. Object type numbers are the map format's.
 | Refugee Camp (78) | The [army gain](../ai-towns/#the-gain-of-adding-a-stack) of what it offers that the player can pay for |
 | War Machine Factory (106) | Sum over the three machines of the same test as for the [town Blacksmith](../ai-towns/#when-a-hero-visits-its-own-town): the machine's value to the hero if it lacks it and the player can pay |
 | University (104) | 0 with eight skills or under 2000 gold. Otherwise the sum of the [level-up skill values](#level-up-choices) of the offered skills the hero lacks and would accept |
-| Witch Hut (113) | If this player has not seen what it teaches: a flat guess priced through experience. Once known: the skill's level-up value if the hero has fewer than eight skills, lacks it and would accept it; otherwise 0 |
+| Witch Hut (113) | If this player has not seen what it teaches: experience to the hero's next level × the hero's value of one experience point. Once known: the skill's level-up value if the hero has fewer than eight skills, lacks it and would accept it; otherwise 0 (`0x52b900`) |
 | Tree of Knowledge (102) | 0 if visited. Value of the level through experience. If the player does not yet know what this tree asks for, a discount of up to two thirds; if it asks for gold, only with 2000 gold; if gems, only with 10 gems |
 | Seer's Hut (83) | Not yet visited by this player: the reward value, at least 20. Visited: reward value minus the value of what must be handed over, and only if the hero can complete the quest now and the deadline has not passed; otherwise 0 |
 | Crypt (84), Shipwreck (85) | 0 once cleared. Otherwise the [fight value](#valuing-a-fight) against the guards with the reward counted at the resource weights, as for creature banks |
 | Spell Scroll (93) | 0 with 64 artifacts. Otherwise 10, plus the fight against its guards if any, plus the value of the spell if the hero does not know it |
-| Sea Chest (82), Wagon (105) | Flat values; the chest is worth less to a hero already carrying 64 artifacts, the wagon is 0 once this player has visited it |
+| Sea Chest (82), Wagon (105) | Sea Chest: 1200 gold at the gold weight plus one tenth of the artifact-worth figure; only the gold part when the hero carries 64 artifacts (`0x52a870`). Wagon: 0 once this player has visited it; otherwise `1.75 × average resource value + 0.4 × artifact-worth figure` (`0x52b710`) |
 | Sirens (92) | Weighs the two effects against each other: the experience gained for the creatures given up, at the hero's value of an experience point, minus the strength of the 30% of each stack that is lost. A hero with no use for experience sees only the loss |
 | Keymaster's Tent (10) | 5000 if this player has not visited that colour, otherwise 0 |
-| Campfire (12) | Proportional to the amount it holds |
+| Campfire (12) | For `n` units of its resource: `100 × n` gold at the gold weight plus `n` at that resource's weight |
 | Creature Bank (16), Derelict Ship (24), Dragon Utopia (25) | If not already cleared: fight value against the stored guards, plus the stored resources, plus `AI Value × count` of reward creatures, plus the artifacts. See [creature banks](../ai-neutral/#creature-banks) |
 | Garden of Revelation (32) | A per-hero "value of one primary skill point" kept in the hero record, if not visited |
 | Corpse (22) | Not yet searched by this player: one fifth of a per-player "artifact worth" figure; if the backpack is full, 200 gold at the gold weight |
@@ -406,7 +406,7 @@ From the switch in `0x528040`. Object type numbers are the map format's.
 | Lighthouse (42), Shipyard (87) | 1000 if not owned by the AI's side, otherwise 0 |
 | Unexplored tile | 100 |
 
-Towns and heroes are covered in the next section. Teleporters are path edges, see [monoliths, gates and whirlpools](#monoliths-gates-and-whirlpools). Every case of the object switch is now listed. The flat values and the exact floating-point factors of the smaller cases were not extracted.
+Towns and heroes are covered in the next section. Teleporters are path edges, see [monoliths, gates and whirlpools](#monoliths-gates-and-whirlpools). Every case of the object switch is now listed.
 
 ## Towns and heroes as targets
 
@@ -538,7 +538,3 @@ The dig action itself (`0x40ec90`) clears the stored position when the attempt c
 - it has at least one hero and all computer players together have reached **Easy 8, Normal 11, Hard 14, Expert 17, Impossible 20** heroes (table `0x66052c`).
 
 **Which of the two tavern heroes:** for each, the routine adds up the value of every artifact the hero carries or wears, valuing each artifact by how useful it would be to the best-suited hero the player already has (at least 10 each). It hires the one with the larger total; if the totals are equal, the one with the higher sum of primary skills. Class, specialty and starting army are not compared. **[code `0x431360`]**
-
-## Not decoded yet
-
-- Exact weights inside the smaller object cases listed as flat values.

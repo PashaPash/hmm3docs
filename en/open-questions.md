@@ -26,7 +26,7 @@ Things referenced in the chapters but not decoded or not confirmed yet.
 
 ## Adventure map AI
 
-See the list at the end of [AI: adventure map](../ai-adventure/#not-decoded-yet). The main obstacle is floating-point arithmetic that the decompiler drops; those functions need to be read as assembly.
+- What the turn loop does with a hero standing in one of the player's towns once no hero has movement left (`0x526a90`, `0x5be390`): the code moves a visiting hero into the garrison; the purpose was not traced.
 
 ## Everything else
 
