@@ -319,9 +319,9 @@ The predicted outcome and the real one come from the same model; the real one ha
 
 `0x423ee0` and `0x424120` turn each army into a list of per-stack records and a pooled hit point total; `0x426bc0` then runs **at most three rounds**:
 
-1. Decide for each side whether it shoots this round (`0x4267c0`).
-2. Hero spells are applied by `0x425bd0`, first for the side whose fastest stack is faster.
-3. Each side's damage for the round is computed (`0x426390`) and subtracted from the other side's pool; losses are then taken off the stacks in order (`0x426170`), rounding up the number of survivors.
+1. Decide for each side whether it **closes to melee** this round (`0x4267c0`, see [order within a round](#order-within-a-round)).
+2. Hero spells are applied by `0x425bd0`, first for the side whose fastest stack is faster; on a tie the attacker casts first.
+3. Each side's damage for the round is computed (`0x426390`), both before either is applied, and then subtracted from the other side's pool and shared among its stacks (`0x426170`), rounding up the number of survivors.
 4. Stop early if a pool reaches zero.
 
 After the third round `0x4264d0` settles what is left. Hero Attack and Defence enter as 5% per point of difference between the two heroes, the same step as in the real [damage formula](../combat/#damage).
@@ -350,7 +350,7 @@ The attacker wins if its pool is still above zero. `0x426ee0` then writes the su
 | Shooter fighting in melee, without the "no melee penalty" flag | 10% |
 | Shooter at range | 20%, or with a hero a value from the hero's ranged bonus divided by 5; doubled for double-shot creatures; halved when shooting at a walled town, except for Arch Magi |
 
-Losses are then taken off the stacks in list order (`0x426170`): a stack loses whole units worth of the damage, and the survivor count is rounded up.
+The damage a side takes is shared among the eligible stacks **in proportion to their remaining pool points** (`0x426170`): each stack loses `damage × its pool / pool of all eligible stacks`, and its survivor count is rounded up. Which stacks are eligible is given under [order within a round](#order-within-a-round).
 
 **Settlement after round three** (`0x4264d0`). The routine adds up each side's remaining fighting power. If both are above zero, the **weaker side is wiped out completely**, and the stronger side's pool is reduced by a final loss and its casualties distributed the same way. If that final loss empties the stronger pool too, both armies are destroyed.
 
@@ -361,6 +361,27 @@ final loss = (L / W + 0.05) × L
 ```
 
 It is taken from the winner's pool. Two equal armies give `1.05 × L`, more than the winner has, so both die. An army twice as strong loses `0.55 × L`, about 27% of what it had left; one five times as strong loses `0.25 × L`, about 5%. The fighting power compared here is the sum over a side's stacks of a strength number and a per-stack factor stored when the simulation was set up; those two fields were not traced further.
+
+### Order within a round
+
+`0x426bc0`, rounds 1 to 3. "Arrival round" is the round from the table above in which a walker or flyer can first strike; shooters have arrival round 0.
+
+**1. Closing decision** (`0x4267c0`), made by each side every round. A side with no living walker or flyer that has arrived by this round cannot close. Otherwise it runs the rest of the battle on copies for every possible closing round from now to "never within three rounds" and keeps the one that leaves it best off (its own remaining pool, or minus the enemy's if it is wiped out). It closes now only if "now" is strictly the best; otherwise it keeps its distance for this round.
+
+**2. Spells**, one per hero, as described [below](#spells-inside-the-simulator). The second caster chooses after the first spell has taken effect.
+
+**3. Damage.** Both sides' damage is computed first and then applied, so within a round **neither side strikes first** and a stack that dies this round still deals its damage.
+
+| Who closes | Attacker's damage | Defender's damage | Who takes the losses |
+|---|---|---|---|
+| Nobody | shooters only, at range | shooters only, at range | all stacks of each side |
+| Attacker only | walkers and flyers that have arrived, plus shooters at range | every stack, at its melee rate | attacker: first the stacks that have arrived, the remainder over all stacks. Defender: all stacks |
+| Defender only | every stack, at its melee rate | every stack, at its melee rate | all stacks of each side |
+| Both | every stack, at its melee rate | every stack, at its melee rate | all stacks of each side |
+
+"At its melee rate" means shooters fight hand to hand with their melee penalty. In the "attacker only" row the attacker's shooters are not hit until the stacks that charged are gone.
+
+**4.** If a pool reaches zero the side is wiped out and the loop ends. After round 3 the [settlement](#the-arithmetic) is applied. **[code and assembly `0x426bc0`, `0x4267c0`, `0x426390`, `0x426170`; that the first record is the attacker follows from the return value of `0x4270c0`]**
 
 ### Spells inside the simulator
 
