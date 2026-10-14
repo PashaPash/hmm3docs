@@ -218,6 +218,10 @@ Battle setup `0x4639f0`. The battlefield has 11 rows of 17 hexes, numbered from 
 
 **Moat** (`0x469dc0`). Present from a Citadel up, except in a Tower town, and in a Stronghold only in Shadow of Death scenarios ([expansion level](../ai-overview/#expansion-level) 2). Moat hexes are the line just outside the wall: 11, 28, 44, 61, 77, **95**, 111, 129, 146, 164, 181 (table `0x63bce8`). A Fortress has a second moat line one hex further out: 10, 27, 43, 60, 76, **94**, 110, 128, 145, 163, 180 (table `0x63bcf4`). Hex 95 (and 94 in a Fortress) is the **drawbridge**: it counts as moat only while the gate is closed. A stack on a moat hex has 3 less Defence (`0x442590`).
 
+**Structure points** (`WALLS.TXT`, the same for every town; `0x466290`): towers, gate, keep and the four wall sections have 2 each; with a Castle the four wall sections have 3.
+
+**Land Mines in a Tower town.** A Tower town from a Citadel up has no moat; instead a Land Mine is placed on each hex of the moat line except hex 95. The mine damage is the Land Mine damage at the defending hero's spell power and Land Mine school level (spell power 3 and no school without a hero). In Shadow of Death scenarios it is at least 150. **[code `0x466290`]**
+
 **Gate state** (battle `+0x53a4`): closed (3) at the start of every siege, open (1), or destroyed (0) once the Catapult brings its structure points to zero.
 
 **Who can stand on hexes 95 and 96** (`0x469a10`):
