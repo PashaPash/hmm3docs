@@ -21,6 +21,24 @@ How a computer player's hero picks where to go. First version: the structure and
 - A hero keeps its previous target unless something clearly better appears.
 - Difficulty changes how many heroes the AI hires, how strong it thinks a human army is, and whether it prefers to take from humans or from other computer players.
 
+## A computer player's turn
+
+`0x525e80`:
+
+1. The per-turn difficulty figures are set (`0x527960`, see [who the AI goes after](#who-the-ai-goes-after)).
+2. **Heroes move**, one at a time, each until it has no movement left or stops (`0x5261f0`).
+3. The [economy phase](../ai-towns/#the-economy-phase-of-a-turn): buildings, hiring, resource weights, gifts (`0x428dd0`).
+4. **Heroes move again**, including a hero just hired, with the same rule.
+
+**Which hero moves next** (`0x526a90`). Among the player's heroes that have movement points left and have not finished for the day:
+
+1. heroes without a patrol area go before heroes with one;
+2. then the hero with the **lowest total of primary skills** goes first. Each skill counts as at least 0 (Attack, Defence) or 1 (Spell Power, Knowledge) and at most 99.
+
+So the weakest heroes move first and the main hero last.
+
+**Patrolling heroes.** A hero placed on the map with a patrol radius keeps its patrol centre (hero record `+0x44`, `+0x45`) and radius (`+0x46`). Such a hero only considers targets on its own map level within that radius of the centre, counted as `|dx| + |dy|` (`0x4e56e0`, used when targets are listed in `0x42edd0` and `0x42f570`). **[code]**
+
 ## Step 1: list the targets
 
 Path costs below are in the movement points described in [Adventure map](../adventure/). Fights that the hero takes are settled by the rules in [battles without a battlefield](../ai-battle/#battles-without-a-battlefield) unless a human is involved.
@@ -524,4 +542,3 @@ The dig action itself (`0x40ec90`) clears the stored position when the attempt c
 ## Not decoded yet
 
 - Exact weights inside the smaller object cases listed as flat values.
-- Hero roles (main hero, scouts, gatherers).
