@@ -177,7 +177,7 @@ Each bank's guards and reward are rolled **once, when the map is set up** (`0x47
 
 ### The fight
 
-`0x4abdc0`. The battle is started with the bank flag set and a random seed computed from the bank's map coordinates, so a given bank plays out from the same seed each time. The guards have no hero, so everything in [In battle](#in-battle) applies: no retreat, no hero spells, and the difficulty switches decide how cleverly they move.
+`0x4abdc0`. The battle is started with the bank flag set and a random seed computed from the bank's map coordinates, so a given bank plays out from the same seed each time. The guards stand in the [creature-bank layout](../combat/#starting-positions). They have no hero, so everything in [In battle](#in-battle) applies: no retreat, no hero spells, and the difficulty switches decide how cleverly they move.
 
 A visited bank is marked per player (bits 5–12 of its data word) and marked empty (bit 25) once cleared. **[code `0x40d3f0`, `0x4a15a0`]**
 
@@ -226,7 +226,3 @@ In a creature month every free, eligible map tile has a 1 in 200 chance of getti
 ## Who resolves the fight
 
 A computer hero's fight with a hero-less stack is resolved by the [simulator](../ai-battle/#battles-without-a-battlefield), since no human takes part. A human's fight is played on the battlefield; with [Quick Combat](../ai-battle/#quick-combat) both sides are driven by the battle AI. **[code `0x4ad470`]**
-
-## Not decoded yet
-
-- Where the split stacks are placed on the battlefield.

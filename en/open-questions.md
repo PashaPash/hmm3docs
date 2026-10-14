@@ -15,8 +15,7 @@ Things referenced in the chapters but not decoded or not confirmed yet.
 
 ## Neutral monsters
 
-- Stack splitting: the two extra hero-side calls before the strength ratio in `0x4ac580`, and battlefield placement.
-- Creature banks: where the guard stacks stand on the battlefield; how the computer player decides whether a bank is worth attacking (`0x52bd10`).
+- Stack splitting: the two extra hero-side calls before the strength ratio in `0x4ac580`.
 - Bounds of random stack sizes at map start and in a creature month.
 
 ## Adventure map AI

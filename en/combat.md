@@ -154,6 +154,49 @@ The counter then drops by one. After the retaliation, a creature with the double
 
 A **blinded or paralysed** target does retaliate, but its damage is multiplied by the factor the spell stored on it. These are the two spell-related entries in the [reduction](#reduction) table. **[code; the address of the melee routine is not pinned down yet]**
 
+## Starting positions
+
+`0x463600`. Hexes are numbered 0–186, 17 per row, row `n / 17`.
+
+**Ordinary battles.** Each side has seven places in its outer column, in rows 0, 2, 4, 5, 6, 8, 10:
+
+| Side | Hexes |
+|---|---|
+| Attacker | 1, 35, 69, 86, 103, 137, 171 |
+| Defender | 15, 49, 83, 100, 117, 151, 185 |
+
+The army's stacks, in slot order, take the places listed for their number (places counted 0–6 from the top):
+
+| Stacks | Spread formation | Tight formation |
+|---|---|---|
+| 1 | 3 | 3 |
+| 2 | 1, 5 | 2, 4 |
+| 3 | 1, 3, 5 | 2, 3, 4 |
+| 4 | 0, 2, 4, 6 | 1, 2, 4, 5 |
+| 5 | 0, 1, 3, 5, 6 | 1, 2, 3, 4, 5 |
+| 6 | 0, 1, 2, 4, 5, 6 | 0, 1, 2, 4, 5, 6 |
+| 7 | 0–6 | 0–6 |
+
+The tight formation is used only by a human player's hero with tight formation set (hero record `+0x48`, bit 0). Computer heroes and armies without a hero always stand spread.
+
+**Creature banks** (battle started by `0x4abdc0` with the bank flag). Fixed places by slot, with no tactics phase:
+
+| Side | Hexes, slot 1 to 7 |
+|---|---|
+| Attacker (the visiting hero) | 57, 61, 90, 93, 96, 125, 129 (centre of the field) |
+| Guards | 15, 185, 172, 2, 100, 87, 8 (corners and edges) |
+
+**War machines** (only for a side with a hero, outside creature banks):
+
+| Machine | Attacker | Defender |
+|---|---|---|
+| Catapult | 119, only in a siege | — |
+| Ballista | 51 | 67, not in a siege |
+| Ammo Cart | 18 | 32 |
+| First Aid Tent | 153 | 169 |
+
+In a siege the defender also gets the keep's Arrow Tower from a Citadel, and the two side towers at half its strength (rounded up) with a Castle; they stand off the hex field. **[code; tables `0x63d0a8`, `0x63d0e0`, `0x63d118`, `0x63d1dc`]**
+
 ## Siege, partial
 
 Only the pieces that came up while reading other code:
