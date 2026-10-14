@@ -11,6 +11,10 @@ lang: en
 
 The game stores one difficulty value, 0 (Easy) to 4 (Impossible), at offset `0x1f6d8` of the main game object. It is read in 48 functions. **[code]**
 
+### Expansion level
+
+Offset `0x1f698` of the main game object holds the scenario's expansion level: 0 Restoration of Erathia, 1 Armageddon's Blade, 2 Shadow of Death. It is set when a game starts (`0x4bfe70`). In a campaign it follows the campaign number: 0–6 give 0, 7–12 give 1, the rest 2. For a single scenario it is the value the loader passes in, which is the map's format. Rules that depend on it are marked where they occur. **[code; the single-scenario source is inferred from the call]**
+
 ### Starting resources
 
 Two tables in the executable are indexed by difficulty, seven resources each. **[data, `Heroes3.exe` `0x678170` and `0x6781fc`]** Which table belongs to whom is **[inferred]** from the human values every player knows.

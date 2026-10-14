@@ -12,7 +12,6 @@ Things referenced in the chapters but not decoded or not confirmed yet.
 ## Battle AI
 
 - Hero spells: the evaluators are described from decompiled code without the exact floating-point expressions; the meaning of spell flag `0x4000` is not identified.
-- The meaning of the per-game field at `+0x1f698` that enables moat awareness and changes sympathy for elementals. It looks like the map's expansion level. **[inferred]**
 - Quick combat.
 
 ## Neutral monsters

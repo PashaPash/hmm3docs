@@ -121,7 +121,7 @@ The weekly growth routine keeps these bits untouched, so a stack has the same `A
 4. One roll of 1–100: on 1–20 one stack fewer, on 80–100 one stack more (never above 7).
 5. The result is limited to at least 1 and at most the number of creatures.
 6. Creatures are divided evenly; the remainder goes one each to the first stacks.
-7. **Upgraded stack**: if the creature has an upgrade and there are at least 2 stacks, a second roll of 1–100 below 51 (50%) turns the **middle** stack (index `stacks / 2`) into the upgraded creature. The four basic elementals are excluded in games where the field at `+0x1f698` is 0.
+7. **Upgraded stack**: if the creature has an upgrade and there are at least 2 stacks, a second roll of 1–100 below 51 (50%) turns the **middle** stack (index `stacks / 2`) into the upgraded creature. The four basic elementals are excluded in Restoration of Erathia scenarios ([expansion level](../ai-overview/#expansion-level) 0).
 
 The stronger the visiting army, the fewer and larger the neutral stacks. A weak hero meets up to seven small stacks.
 

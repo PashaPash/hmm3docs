@@ -173,7 +173,7 @@ Battle setup `0x4639f0`. The battlefield has 11 rows of 17 hexes, numbered from 
 
 **Wall line**: one hex per row, hexes 12, 29, 45, 62, 78, **96**, 112, 130, 147, 165, 182 (table `0x63bd00`). Hex 96 is the **gate**. A hex at or to the right of the wall hex of its row is inside the walls. A wall hex blocks movement while its wall section stands; when the section is destroyed the hex becomes free (`0x465990`).
 
-**Moat** (`0x469dc0`). Present from a Citadel up, except in a Tower town, and in a Stronghold only when the per-game field at `+0x1f698` is 2 or more. Moat hexes are the line just outside the wall: 11, 28, 44, 61, 77, **95**, 111, 129, 146, 164, 181 (table `0x63bce8`). A Fortress has a second moat line one hex further out: 10, 27, 43, 60, 76, **94**, 110, 128, 145, 163, 180 (table `0x63bcf4`). Hex 95 (and 94 in a Fortress) is the **drawbridge**: it counts as moat only while the gate is closed. A stack on a moat hex has 3 less Defence (`0x442590`).
+**Moat** (`0x469dc0`). Present from a Citadel up, except in a Tower town, and in a Stronghold only in Shadow of Death scenarios ([expansion level](../ai-overview/#expansion-level) 2). Moat hexes are the line just outside the wall: 11, 28, 44, 61, 77, **95**, 111, 129, 146, 164, 181 (table `0x63bce8`). A Fortress has a second moat line one hex further out: 10, 27, 43, 60, 76, **94**, 110, 128, 145, 163, 180 (table `0x63bcf4`). Hex 95 (and 94 in a Fortress) is the **drawbridge**: it counts as moat only while the gate is closed. A stack on a moat hex has 3 less Defence (`0x442590`).
 
 **Gate state** (battle `+0x53a4`): closed (3) at the start of every siege, open (1), or destroyed (0) once the Catapult brings its structure points to zero.
 

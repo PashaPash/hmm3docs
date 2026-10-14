@@ -82,7 +82,7 @@ All start at 0 and only go down.
 | Applies | Penalty | Code |
 |---|---|---|
 | always | Standing in a damaging obstacle: value of the damage it would take | `0x4214f0` |
-| always, when a per-game flag at game `+0x1f698` is above 1 | Moat hexes during a siege: value of the moat damage. Moat damage by town type, in the executable: Castle 70, Rampart 70, Tower 150, Inferno 90, Necropolis 70, Dungeon 90, Stronghold 70, Fortress 90, Conflux 70 | `0x421590`, table `0x63bd18` |
+| always, in Shadow of Death scenarios ([expansion level](../ai-overview/#expansion-level) 2) | Moat hexes during a siege: value of the moat damage. Moat damage by town type, in the executable: Castle 70, Rampart 70, Tower 150, Inferno 90, Necropolis 70, Dungeon 90, Stronghold 70, Fortress 90, Conflux 70 | `0x421590`, table `0x63bd18` |
 | Normal+ | Hexes that an enemy melee stack can reach this turn, if that stack is not already able to hit one of ours: value of the damage it would deal to this stack | `0x420260` |
 | Hard+ | Hexes next to friendly stacks, when the enemy has breath attackers, area shooters, or a hero who can afford an area spell (Frost Ring, Fireball, Inferno, Meteor Shower): value of the expected splash damage | `0x41fb60`, `0x41f920` |
 
