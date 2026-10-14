@@ -366,7 +366,7 @@ From the switch in `0x528040`. Object type numbers are the map format's.
 | Swan Pond (14), Faerie Ring (28), Fountain of Fortune (30), Mermaids (52): luck | The same with the luck step value (1.73% / 1.22%). The Swan Pond, which ends the hero's day, counts only when the hero would arrive with at most 200 movement points left, and the trip is then priced as costing all remaining movement |
 | Idol of Fortune (38) | Luck or morale by the day of the week, both on day 7, valued as above |
 | Fountain of Youth (31) | 10000 when it is less than 200 movement points away and the hero is not under its effect; otherwise a movement-bonus value with the distance shortened by 200 |
-| Oasis (56), Watering Hole (110) | Movement-bonus routine `0x52a1e0` with 400 and 200 (not read further) |
+| Oasis (56), Watering Hole (110) | Not if already under its effect. The trip is priced 400 (Oasis) or 200 (Watering Hole) movement points shorter for the movement it gives; the value is the morale step value as for the Buoy, and 0 when no creature in the army is affected by morale (`0x52a1e0`) |
 | Library of Enlightenment (41) | 0 if visited or if `hero level + 2 × Diplomacy level` is below 10. Otherwise `army strength × 4 / 40 + 2 × (value of a Spell Power point + value of a Knowledge point)` |
 | Mercenary Camp (51), Scholar (81) | Priced through experience: experience to the hero's next level × the hero's value of one experience point. The camp is 0 once visited |
 | Redwood Observatory (58), Pillar of Fire (60) | Exploration value `0x432220`, the routine used for unexplored map |
