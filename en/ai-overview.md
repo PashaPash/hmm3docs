@@ -61,6 +61,16 @@ So in the unmodified game a computer player's personality is random and the map'
 
 No routine in the adventure-map, town or battle AI was found to read it. This was checked three ways: by the field's address in the raw bytes of the executable (three sites: the roll, hero movement, Thieves' Guild); by listing every read of that offset in the decompile of all routines that handle player records; and by scanning the machine code of all 318 functions that touch player data for any access at offset 0x34, which found none in the AI code. The hero-hiring limits, which community descriptions tie to the Explorer, are indexed by difficulty (`0x431360`). Warrior and Builder therefore differ only by the name shown in the Thieves' Guild. **[code and assembly; the names for 0, 1 and 2 are taken from the HotA mapping below and the Thieves' Guild order]**
 
+**Experiment.** Run on 2026-10-13 in a recompiled build of the same `Heroes3.exe` (the Mac port; floating point in doubles, so not the original binary under Windows). One map, random seed held fixed, Expert difficulty, 28 days, one computer player with its personality forced to 0, 1 and 2 in three runs, the other computer players at 0. Sampled after every turn for every player: hero count, hero levels, maximum movement, army strength, gold, town count, buildings built, and a fingerprint of hero positions, experience, armies, town building masks and resources.
+
+| Compared runs | Result |
+|---|---|
+| Warrior, repeated | identical in every sample for 28 days |
+| Warrior and Builder | identical in every sample for 28 days, all players |
+| Warrior and Explorer | first difference after the first turn: the hero's maximum movement is 1625 instead of 1575, nothing else that day; the runs then diverge |
+
+On day 29 the tested player had 3 heroes, 2 towns and 35 buildings as Warrior or Builder, and 4 heroes, 3 towns and 45 buildings as Explorer. This is one trajectory on one map; whether all the later Explorer differences follow from the extra movement was not tested. **[experiment on a recompiled build; one map, one seed]**
+
 > **HotA 1.8.1:** `HotA.dll` hooks the roll in the new-game routine. If the map's value is Warrior, Builder or Explorer, the personality is set to it; only "Random" keeps the roll. See [HotA differences](../hota/#player-personality).
 
 ## Coverage of AI decisions
