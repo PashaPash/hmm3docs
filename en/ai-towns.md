@@ -37,9 +37,9 @@ Building numbers, costs and prerequisites are in [Factions and towns](../towns/)
 | Difficulty | Mark set by a build | Effect |
 |---|---|---|
 | Hard, Expert, Impossible | cleared every day | one building per town per day |
-| Easy, Normal | set to 2 and reduced by 1 each day for a computer player's town | **one building per town every two days** |
+| Easy, Normal | set to 2 and reduced by 1 each day for a town whose owner's team has no human player; cleared every day otherwise | **one building per town every two days** |
 
-**[code; the test that separates computer-owned towns from human-allied ones is a helper that was not read]**
+**[code; the team test is `0x42b9e0`, "some player of this team is human"]**
 
 ## Direct value of a building
 
@@ -193,7 +193,3 @@ Two more rules:
 - No rule keeps a share of the army in the town. The town keeps what the hero did not take, plus whatever the [emergency purchase](../ai-adventure/#how-a-town-gets-its-threat-mark) buys when the town is threatened. The victory-town case below is the only one where a hero leaves its army.
 
 **[code]**
-
-## Not decoded yet
-
-- The threat mark is described under [how a town gets its threat mark](../ai-adventure/#how-a-town-gets-its-threat-mark); the same pass buys emergency garrison troops before any building is chosen.
