@@ -173,6 +173,20 @@ These edges are offered only for steps that lie within the current day's movemen
 
 **[code; the cut-off values are from table `0x6604fc`]**
 
+## Danger from enemy heroes
+
+Before a computer hero plans its moves (`0x5261f0`), a **danger map** with one number per map tile is built (`0x42de50`). This happens above Easy, and on Easy only when the computer player is on a team with a human player.
+
+For every hero of every player outside the computer player's team that is still in the game:
+
+1. The [fight value](#valuing-a-fight) of the planning hero attacking that hero's army is computed (`0x427330`).
+2. If the value is 0 or more, the enemy hero adds nothing.
+3. Otherwise the pathfinder is run from the enemy hero with its movement points plus 300 (`0x56b440`, mode 3). Every tile it can reach gets:
+   - **−1,000,000,000** if the planning hero cannot win the fight;
+   - the negative fight value added otherwise, so the threats of several enemy heroes add up.
+
+**How the pathfinder uses it** (`0x4b1a70`). A step's danger counts only when the path to it costs more than the hero's movement points left today, that is on tiles the hero would reach on a later day. The danger is then added to the step's search cost, so paths through threatened tiles are taken only when nothing cheaper exists. A step onto a tile marked −1,000,000,000 beyond today's movement is dropped entirely. **[code; the planning call passes the hero's remaining movement as the cut-off (`0x42f570`)]**
+
 ## Valuing a fight
 
 `0x427330` is used for guards, wandering stacks, banks, garrisons and enemy heroes.
@@ -511,4 +525,3 @@ The dig action itself (`0x40ec90`) clears the stored position when the attempt c
 
 - Exact weights inside the smaller object cases listed as flat values.
 - Hero roles (main hero, scouts, gatherers).
-- Danger flags on paths.
