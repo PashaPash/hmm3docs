@@ -223,7 +223,10 @@ When the map is set up, a wandering stack whose count is 0 gets a random count (
 
 In a creature month every free, eligible map tile has a 1 in 200 chance of getting a new stack of that creature, with a random aggression of 1–10. **[code; the lower bound of the month roll and the stack size bounds were not read]**
 
+## Who resolves the fight
+
+A computer hero's fight with a hero-less stack is resolved by the [simulator](../ai-battle/#battles-without-a-battlefield), since no human takes part. A human's fight is played on the battlefield; with [Quick Combat](../ai-battle/#quick-combat) both sides are driven by the battle AI. **[code `0x4ad470`]**
+
 ## Not decoded yet
 
 - Where the split stacks are placed on the battlefield.
-- Quick combat resolution for hero-less sides.
