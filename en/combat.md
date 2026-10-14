@@ -239,7 +239,7 @@ Example: a Catapult with no Ballistics aimed at the keep hits it 5% of the time;
 | Ballista, Arrow Tower | there is no hero, or the hero has no Artillery |
 | First Aid Tent | the hero has no First Aid |
 
-Every stack of a computer-controlled side is automatic, and so is everything in auto-combat. Nothing is automatic during the tactics phase.
+Every stack of a computer-controlled side is automatic, and so is everything in auto-combat. During the tactics phase the Catapult, Ballista, Arrow Towers and First Aid Tent are never automatic.
 
 ### Automatic Catapult aim
 

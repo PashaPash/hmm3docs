@@ -143,7 +143,17 @@ A stack under Bind, or with speed 0, does not move.
 - **Shooters** (and stacks the routine treats like them) reposition as described under [Shooters](#shooters).
 - **Everything else** runs the normal target choice above, but the attack branch and creature spells are switched off. The stack picks the target it would want and then **walks towards it** (`0x41f580`) as far as the tactics zone allows: hexes outside the zone are rejected, and the walk is not limited to one turn of movement. A stack with nothing to walk to stays where it is.
 
-**[code; how the AI ends the phase was not read]**
+**[code]**
+
+**When there is a tactics phase** (battle setup `0x462a20`): only when the two heroes' Tactics levels differ; the side with the higher level gets it.
+
+**How the phase ends** (`0x475ed0`). The side's stacks act in turn; when all have acted, a new pass begins and they can act again. For a side under computer control (and in auto-combat) the phase ends at the end of a pass unless both hold:
+
+- some stack moved or attacked during that pass (Defend and Wait do not count);
+- fewer than three passes have been made.
+
+So a computer side gets at most three passes over its stacks, and stops earlier once a pass changes nothing. **[code `0x475ed0`, `0x478d80`; the action numbers for Defend (3) and Wait (8) follow the battle action order]**
+
 
 ## Shooters
 
