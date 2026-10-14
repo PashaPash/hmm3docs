@@ -11,7 +11,7 @@ Things referenced in the chapters but not decoded or not confirmed yet.
 
 ## Battle AI
 
-- Hero spells: the evaluators are described from decompiled code without the exact floating-point expressions; the meaning of spell flag `0x4000` is not identified.
+- Hero spells: the evaluators are described from decompiled code without the exact floating-point expressions.
 - Quick combat.
 
 ## Neutral monsters

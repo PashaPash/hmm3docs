@@ -312,7 +312,7 @@ Spell flag `0x200` is tested wherever the code needs "a spell that deals damage"
 
 ### Timing
 
-- A buff aimed at a friendly stack other than the active one is postponed while some other friendly stack still has to act this round, unless the spell carries spell flag `0x4000`. **[code `0x43a670`]**
+- A buff aimed at a friendly stack other than the active one is postponed while some other friendly stack still has to act this round, unless the spell carries spell flag `0x4000`. The flag is set, in the executable's spell table (`0x685450`, offset `+0xc`), on exactly the protective spells: Shield, Air Shield, Fire Shield, the four Protections, Anti-Magic, Magic Mirror, Stone Skin and Counterstrike. **[code `0x43a670`; data]**
 - A spell on an enemy stack is cast at once when no other friendly stack is left to act, or when the active stack is about to attack that very target in melee this turn. Otherwise it is cast only if the target threatens the AI's army and no friendly stack that is still to act is faster than it. **[code `0x436c60`; reading of the last condition is inferred]**
 
 ### Parting shot
