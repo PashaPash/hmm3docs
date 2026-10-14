@@ -383,22 +383,6 @@ It is taken from the winner's pool. Two equal armies give `1.05 × L`, more than
 
 **4.** If a pool reaches zero the side is wiped out and the loop ends. After round 3 the [settlement](#the-arithmetic) is applied. **[code and assembly `0x426bc0`, `0x4267c0`, `0x426390`, `0x426170`; that the first record is the attacker follows from the return value of `0x4270c0`]**
 
-### Armies rated by the model's own arithmetic
-
-Computed by `tools/sim_army.py` from the [creature table](../creatures/) with the rules above and nothing else: pool = Fight Value × count; a shooter deals 20% of its strength in each of the three rounds, 40% with two shots; a walker or flyer deals 20% per round from its arrival round `(speed + 14) / speed`; a stack that arrives in round 4 never strikes. No hero, no Tactics, no spells, no wall delay, gold cost only. **[derived from the formulas; not run against the game]**
-
-**One week of a town's growth**, all seven dwellings, base growth without Citadel, Castle or horde buildings:
-
-{% include sim_towns.html lang="en" %}
-
-"Share of pool" is how much of its own strength the army turns into damage before the settlement. Upgrades raise it mostly through speed: a creature that moves from speed 4 to 5 or from 7 to 8 strikes a round earlier.
-
-**The twenty creatures with the most damage per 1000 gold:**
-
-{% include sim_best.html lang="en" %}
-
-Level 7 creatures also cost a rare resource, shown in the last column, so their gold-only figures are too favourable.
-
 ### Spells inside the simulator
 
 `0x425bd0`, called once for each side at the start of every round, so **each hero casts one spell per round**, the side that compares higher in `0x424960` first (not read; speed is the likely key). A side casts only if it has a hero with a spell book, mana left and an army left.

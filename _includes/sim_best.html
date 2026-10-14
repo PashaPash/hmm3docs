@@ -1,8 +1,0 @@
-{% assign ru = false %}{% if include.lang == 'ru' %}{% assign ru = true %}{% endif %}
-<div class="table-wrapper"><table>
-<thead><tr><th>{% if ru %}Существо{% else %}Creature{% endif %}</th><th>{% if ru %}Город{% else %}Town{% endif %}</th><th>{% if ru %}Скорость{% else %}Speed{% endif %}</th><th>{% if ru %}Бьёт с раунда{% else %}Strikes from round{% endif %}</th><th>{% if ru %}Доля силы за 3 раунда{% else %}Share of strength in 3 rounds{% endif %}</th><th>{% if ru %}Запас на 1000 золота{% else %}Pool per 1000 gold{% endif %}</th><th>{% if ru %}Урон на 1000 золота{% else %}Damage per 1000 gold{% endif %}</th><th>{% if ru %}Кроме золота{% else %}Also costs{% endif %}</th></tr></thead>
-<tbody>
-{% for r in site.data.sim_army.best %}
-<tr><td>{{ r.name }}</td><td>{{ r.town | capitalize }}</td><td>{{ r.speed }}</td><td>{% if r.shooter %}1 ({% if ru %}стрелок{% else %}shooter{% endif %}){% else %}{{ r.arrival }}{% endif %}</td><td>{{ r.share | times: 100 | round }}%</td><td>{{ r.pool_per_1000 }}</td><td>{{ r.output_per_1000 }}</td><td>{{ r.extra_cost | join: ", " }}</td></tr>
-{% endfor %}
-</tbody></table></div>
