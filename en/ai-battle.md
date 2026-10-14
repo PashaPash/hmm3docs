@@ -366,6 +366,12 @@ It is taken from the winner's pool. Two equal armies give `1.05 × L`, more than
 
 `0x425bd0`, called once for each side at the start of every round, so **each hero casts one spell per round**, the side that compares higher in `0x424960` first (not read; speed is the likely key). A side casts only if it has a hero with a spell book, mana left and an army left.
 
+**When a side may cast** (`0x423ee0`). The side needs a hero with a Spell Book and mana. Casting is switched off for both sides when either hero wears the Orb of Inhibition (126), and for a battle on a Garrison object (33). On Cursed Ground only level 1 spells are allowed. The special terrain (Magic Plains, Magic Clouds, Fiery Fields, Rocklands, Lucid Pools) is passed to the school-level routine as on the battlefield.
+
+**Mana is spent.** The simulator works on a copy of each hero's mana. When the battle is resolved for real, `0x426ee0` writes the remaining mana back into both hero records, so a computer hero comes out of a simulated battle with less mana. In the planning use of the simulator nothing is written back.
+
+After a real resolution the winning hero, if it has Eagle Eye and a Spell Book, also learns one combat spell the loser knew, within its Eagle Eye and Wisdom limits (`0x426ee0`). **[code]**
+
 Candidates are the hero's combat spells that it can pay for, with two filters: on [Cursed Ground](#candidate-spells) only level 1 spells, and if either hero wears Recanter's Cloak (83) only level 1 and 2. Each candidate gets a value in pool points, by the class bits of its spell flags:
 
 | Class | Value |

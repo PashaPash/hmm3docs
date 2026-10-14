@@ -59,7 +59,7 @@ So in the unmodified game a computer player's personality is random and the map'
 - **Hero movement** (`0x4e4990`). A hero of a computer player gets extra movement points each day on Expert and Impossible difficulty: **+75**, and **+125 if the player is an Explorer**. This applies to the first six player colours only (Red to Purple); Teal and Pink do not get it. See [hero movement](../adventure/#on-land).
 - **Thieves' Guild** (`0x5dda10`): the personality name shown for each player.
 
-No routine in the adventure-map, town or battle AI was found to read it. Warrior and Builder therefore differ only by the name shown in the Thieves' Guild. **[code and assembly; the names for 0, 1 and 2 are taken from the HotA mapping below and the Thieves' Guild order]**
+No routine in the adventure-map, town or battle AI was found to read it. This was checked twice: by the field's address, and by listing every read of that offset in all routines that handle player records and every comparison of such a value with 0–3 in the whole decompile. Warrior and Builder therefore differ only by the name shown in the Thieves' Guild. **[code and assembly; the names for 0, 1 and 2 are taken from the HotA mapping below and the Thieves' Guild order]**
 
 > **HotA 1.8.1:** `HotA.dll` hooks the roll in the new-game routine. If the map's value is Warrior, Builder or Explorer, the personality is set to it; only "Random" keeps the roll. See [HotA differences](../hota/#player-personality).
 
