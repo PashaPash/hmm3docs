@@ -245,6 +245,22 @@ Battle setup `0x4639f0`. The battlefield has 11 rows of 17 hexes, numbered from 
 
 An open or destroyed gate does not count as a wall on the line. **[code and tables `0x63bd00`, `0x63bce8`, `0x63bcf4`; the field at `+0x1c` of a hex record is read as the count of dead stacks on it]**
 
+### Defending hero's bonuses in a siege
+
+`0x463c60`, at the start of a siege battle the defending hero gets, for that battle:
+
+| Town | Building | Bonus in the code |
+|---|---|---|
+| Tower | Skyship (Grail) | +150 spell points |
+| Inferno | Brimstone Stormclouds | +2 Spell Power |
+| Dungeon | Guardian of Earth (Grail) | +12 Spell Power |
+| Stronghold | Warlords' Monument (Grail) | +20 Attack |
+| Fortress | Glyphs of Fear | +2 Attack |
+| Fortress | Blood Obelisk | +2 Defence |
+| Fortress | Carnivorous Plant (Grail) | +10 Attack, +10 Defence |
+
+The building descriptions in `BLDGSPEC.TXT` give the Glyphs of Fear +2 Defence and the Blood Obelisk +2 Attack; the code applies them the other way round. The Skyship's described +15 Knowledge is applied as 150 spell points. The hero's original primary skills and spell points are saved before the bonuses are added (battle `+0x13de8`…`+0x13df4`). **[code; building numbers 21, 22, 26 from masks `0x66ce40`, `0x66ce48`, `0x66ce68`]**
+
 ### Arrow Towers and war machines
 
 Battle setup around `0x4521f0`; tower strength from `0x5bf4f0`.
