@@ -199,29 +199,36 @@ Among equal candidates an active target beats a disabled one.
 Never considered when:
 
 - the side has no hero;
-- difficulty is Easy; on Normal the check is skipped half of the time (`rand(1,100) < 51`);
+- the side is a computer player and difficulty is Easy; on Normal the check is skipped half of the time (`rand(1,100) < 51`);
 - either hero wears artifact 125 (Shackles of War);
 - the hero is the one named in a "lose this hero" condition;
-- the player has no town with a **Tavern** to rehire the hero in (the test uses the Tavern's building mask, the same one the [hiring routine](../ai-adventure/#hiring-heroes) checks).
+- the player has no town with a **Tavern** to rehire the hero in (the test uses the Tavern's building mask, the same one the [hiring routine](../ai-adventure/#hiring-heroes) checks);
+- the hero defends the player's only Tavern town;
+- the hero defends a besieged town, unless it is a Stronghold with the Escape Tunnel.
 
-Immediate retreat: the AI is attacking a castle-level fortification, has no flyers, no shooters, the walls are intact and every defender is behind them (`0x41e440`).
+Immediate retreat (`0x41e440`): the AI is attacking a castle-level fortification, has no flyers, no shooters, the walls are intact and every defender is behind them.
 
-Otherwise the hero must be worth saving: total artifact value at least 1000 or experience at least 2000. Then:
+Otherwise the hero must be worth saving. Its artifacts, worn and in the backpack, are summed, each at the larger of its [AI value](../artifacts/) (`0x433aa0`) and half its price. The sum must be at least 1000, or the hero's experience at least 2000. Then:
+
+1. If no own stack can act (all are war machines or cannot move), retreat.
+2. The check goes on only when the player has at least **the surrender cost plus 2500 gold** (`0x477a00`, the same cost the surrender branch uses).
+3. Strengths are compared:
 
 ```
-share = own strength / (own strength + enemy strength)      strength = Σ count × Fight Value
+strength   = Σ count × Fight Value, × 1.2 for each stack that has not acted this round
+             defender's strength × 1.1 in a siege
+             the opponent's strength × 1.1 (always)
+share      = own strength / (own strength + enemy strength)
 
-threshold = base + bonus − (4 − difficulty) × 0.015 − (0.06 if attacker)
+threshold  = base + bonus − (4 − difficulty) × 0.015 − (0.06 if attacker)
   base  = 0.16 with no artifact value, 0.20 up to 5000, 0.21 up to 10000, 0.22 above
-  bonus = experience / 200000, at most 0.03
+  bonus = 0.03 with at least 200,000 experience, otherwise 0
   if threshold > 0.16 then threshold = 0.16
 
 retreat when share < threshold
 ```
 
-Difficulty is 0 for Easy to 4 for Impossible. A Normal-difficulty defender with some artifacts retreats below about 15.5% of the total strength, an attacker below about 9.5%.
-
-The check also compares the player's gold with a surrender-style cost plus 2500; that part is not fully decoded.
+Difficulty is 0 for Easy to 4 for Impossible. A Normal-difficulty defender with some artifacts retreats below 15.5% of the total strength, an attacker below 9.5%. **[code and assembly; constants `0x63abf8`…`0x63ac20`]**
 
 **Surrender**: the branch that sets action 5 runs only for a human-owned side (auto-combat) after a confirmation dialog. For a computer player the same function always ends in action 4, retreat. **[code `0x477ee0`]**
 
