@@ -1,0 +1,8 @@
+{% assign ru = false %}{% if include.lang == 'ru' %}{% assign ru = true %}{% endif %}
+<div class="table-wrapper"><table>
+<thead><tr><th>{% if ru %}Город{% else %}Town{% endif %}</th><th>{% if ru %}Существа{% else %}Creatures{% endif %}</th><th>{% if ru %}Золото{% else %}Gold{% endif %}</th><th>{% if ru %}Запас{% else %}Pool{% endif %}</th><th>{% if ru %}Урон за 3 раунда{% else %}Damage in 3 rounds{% endif %}</th><th>{% if ru %}Доля запаса{% else %}Share of pool{% endif %}</th><th>{% if ru %}Запас на 1000 золота{% else %}Pool per 1000 gold{% endif %}</th><th>{% if ru %}Урон на 1000 золота{% else %}Damage per 1000 gold{% endif %}</th><th>{% if ru %}Не успевают ударить{% else %}Never strike{% endif %}</th></tr></thead>
+<tbody>
+{% for t in site.data.sim_army.towns %}
+<tr><td>{{ t.town | capitalize }}</td><td>{% if t.upgraded == 1 %}{% if ru %}улучшенные{% else %}upgraded{% endif %}{% else %}{% if ru %}базовые{% else %}basic{% endif %}{% endif %}</td><td>{{ t.gold }}</td><td>{{ t.pool }}</td><td>{{ t.output }}</td><td>{{ t.output_share }}%</td><td>{{ t.pool_per_1000 }}</td><td>{{ t.output_per_1000 }}</td><td>{{ t.idle | join: ", " }}</td></tr>
+{% endfor %}
+</tbody></table></div>
