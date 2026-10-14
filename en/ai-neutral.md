@@ -207,7 +207,7 @@ count = v / 16,  fraction = v mod 16
 
 ### Size of a random stack
 
-When the map is set up, a wandering stack whose count is 0 gets a random count (`0x4c0cc0`). The bounds are passed in registers and were not read; they are **[inferred]** to be the "Adv. Map Low/High" columns of `CRTRAITS.TXT`, shown as "Map stack" in the [creature table](../creatures/).
+When the map is set up, a wandering stack whose count is 0 gets `rand(low, high)` creatures (`0x4c0cc0`), with `low` and `high` the "Adv. Map Low/High" columns of `CRTRAITS.TXT` (creature record `+0x6c`, `+0x70`), shown as "Map stack" in the [creature table](../creatures/). **[code and assembly]**
 
 > **HotA 1.8.1:** the size ranges of random stacks differ for about a dozen creatures, and AI Value differs for some, which shifts the join/flee ratio and the stack split; see [HotA differences: creatures](../hota/#creatures).
 
@@ -221,7 +221,9 @@ When the map is set up, a wandering stack whose count is 0 gets a random count (
 | 6–9 | month of a creature: town growth of that creature doubles, and new wandering stacks of it appear |
 | 10 | plague: creatures available in towns are halved |
 
-In a creature month every free, eligible map tile has a 1 in 200 chance of getting a new stack of that creature, with a random aggression of 1–10. **[code; the lower bound of the month roll and the stack size bounds were not read]**
+The creature of the month is one of twelve, picked at random (table `0x63e678`): Serpent Fly, Griffin, Centaur, Gremlin, Hobgoblin, Gog, Troglodyte, Harpy, Lizardman, Pegasus, Wolf Rider, Wight. A game flag at `+0x1f69d` turns every month into an ordinary one.
+
+In a creature month every free land tile (not water, not rock, no object on it) has a 1 in 200 chance of getting a new stack of that creature: `2 × rand(low, high)` creatures, with the same map-stack bounds as above, and a random aggression of 1–10. **[code and assembly]**
 
 ## Who resolves the fight
 

@@ -16,7 +16,6 @@ Things referenced in the chapters but not decoded or not confirmed yet.
 ## Neutral monsters
 
 - Stack splitting: the two extra hero-side calls before the strength ratio in `0x4ac580`.
-- Bounds of random stack sizes at map start and in a creature month.
 
 ## Adventure map AI
 
