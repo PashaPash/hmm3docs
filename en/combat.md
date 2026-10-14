@@ -159,11 +159,44 @@ A **blinded or paralysed** target does retaliate, but its damage is multiplied b
 Only the pieces that came up while reading other code:
 
 - Arrow Towers act first each round and the attacker's Catapult right after them (see turn order).
-- A stack standing in the moat has 3 less Defence, and takes moat damage that depends on the town type: Castle 70, Rampart 70, Tower 150, Inferno 90, Necropolis 70, Dungeon 90, Stronghold 70, Fortress 90, Conflux 70 (table `0x63bd18`).
+- A stack standing in the [moat](#walls-moat-and-gate-on-the-battlefield) has 3 less Defence, and takes moat damage that depends on the town type: Castle 70, Rampart 70, Tower 150, Inferno 90, Necropolis 70, Dungeon 90, Stronghold 70, Fortress 90, Conflux 70 (table `0x63bd18`).
 - Shooting through walls halves damage (see reduction).
 - Catapult accuracy by the hero's Ballistics level, from `BALLIST.TXT` **[data]**:
 
 {% include ballistics.html lang="en" %}
+
+### Walls, moat and gate on the battlefield
+
+Battle setup `0x4639f0`. The battlefield has 11 rows of 17 hexes, numbered from 0; hex `n` is in row `n / 17`.
+
+**Fortification level** of the besieged town: 1 with a Fort, 2 with a Citadel, 3 with a Castle, 0 with none. Every rule below needs level 1 or more.
+
+**Wall line**: one hex per row, hexes 12, 29, 45, 62, 78, **96**, 112, 130, 147, 165, 182 (table `0x63bd00`). Hex 96 is the **gate**. A hex at or to the right of the wall hex of its row is inside the walls. A wall hex blocks movement while its wall section stands; when the section is destroyed the hex becomes free (`0x465990`).
+
+**Moat** (`0x469dc0`). Present from a Citadel up, except in a Tower town, and in a Stronghold only when the per-game field at `+0x1f698` is 2 or more. Moat hexes are the line just outside the wall: 11, 28, 44, 61, 77, **95**, 111, 129, 146, 164, 181 (table `0x63bce8`). A Fortress has a second moat line one hex further out: 10, 27, 43, 60, 76, **94**, 110, 128, 145, 163, 180 (table `0x63bcf4`). Hex 95 (and 94 in a Fortress) is the **drawbridge**: it counts as moat only while the gate is closed. A stack on a moat hex has 3 less Defence (`0x442590`).
+
+**Gate state** (battle `+0x53a4`): closed (3) at the start of every siege, open (1), or destroyed (0) once the Catapult brings its structure points to zero.
+
+**Who can stand on hexes 95 and 96** (`0x469a10`):
+
+| Gate | Attacker | Defender |
+|---|---|---|
+| closed | no | yes, unless a living or dead stack lies on hex 95 or 94 |
+| open | yes | yes |
+| destroyed | yes | yes |
+
+**Opening** (`0x467130`, `0x4671c0`). The gate opens when a stack of the defending side, while the gate is closed, moves onto hex 94, 95 or 96, or a two-hex stack's rear hex lands there. A hypnotised stack counts for the side that controls it.
+
+**Closing** (`0x4672e0`). Checked after every move and teleport and at the start of each stack's turn. An open gate closes when hexes 96 and 95 hold no living and no dead stack; in a Fortress hex 94 must also be empty. While a stack or a corpse lies there the gate stays open, and attacking stacks can walk through it.
+
+**Shooting through the walls** (`0x467510`, `0x467840`). A shot gets the 0.5 [reduction](#reduction) when all of these hold:
+
+- the shooter stands outside the walls and the target inside, by the wall line above;
+- the line from the shooter to the target passes a wall hex whose section still stands, or the gate hex while the gate is closed;
+- the shooter is not a Mage, Arch Mage, Enchanter, Sharpshooter or Arrow Tower;
+- the shooter's hero, if there is one, wears neither the Golden Bow nor the Bow of the Sharpshooter.
+
+An open or destroyed gate does not count as a wall on the line. **[code and tables `0x63bd00`, `0x63bce8`, `0x63bcf4`; the field at `+0x1c` of a hex record is read as the count of dead stacks on it]**
 
 ### Arrow Towers and war machines
 
@@ -220,5 +253,5 @@ A computer-controlled Cyclops (`0x41eea0`) aims at a wall only for the attacker 
 
 An automatic Arrow Tower is a shooter stack and goes through the same [shooter target choice](../ai-battle/#shooters) as any other; no tower-specific branch was seen in the stack turn routine (`0x4221f0`). **[code; the tower statement is inferred from the absence of a special case]**
 
-Not decoded: the gate and drawbridge rules.
+See also [walls, moat and gate](#walls-moat-and-gate-on-the-battlefield).
 

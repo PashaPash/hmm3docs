@@ -14,7 +14,7 @@ chapters:
   - {n: 4, file: creatures, state: data, en: "Creatures", ru: "Существа",
      note_en: "stats, Fight Value, AI Value from CRTRAITS", note_ru: "параметры, Fight Value, AI Value из CRTRAITS"}
   - {n: 5, file: combat, state: wip, en: "Combat rules", ru: "Правила боя",
-     note_en: "damage formula with hero skills, morale, luck, turn order, fear, retaliation, arrow towers; catapult and gate rules open", note_ru: "формула урона с навыками героя, мораль, удача, порядок ходов, страх, ответный удар, стрелковые башни; катапульта и ворота открыты"}
+     note_en: "damage formula with hero skills, morale, luck, turn order, fear, retaliation, arrow towers, catapult, walls, moat and gate", note_ru: "формула урона с навыками героя, мораль, удача, порядок ходов, страх, ответный удар, стрелковые башни, катапульта, стены, ров и ворота"}
   - {n: 6, file: spells, state: data, en: "Magic", ru: "Магия",
      note_en: "numbers from SPTRAITS, including per-spell AI values", note_ru: "числа из SPTRAITS, включая ценность заклинаний для ИИ"}
   - {n: "6a", file: artifacts, state: data, en: "Artifacts", ru: "Артефакты",
