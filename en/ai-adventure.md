@@ -37,6 +37,8 @@ How a computer player's hero picks where to go. Floating-point parts of the per-
 
 So the weakest heroes move first and the main hero last.
 
+When no hero is left to pick and the player has fewer than eight heroes, a hero in a town's **garrison** (town record `+0xc`) whose town has no visiting hero, that has an army, movement points left and has not finished, is moved out to the visiting slot (`+0x10`, `0x5be390`) and takes its turn.
+
 **Patrolling heroes.** A hero placed on the map with a patrol radius keeps its patrol centre (hero record `+0x44`, `+0x45`) and radius (`+0x46`). Such a hero only considers targets on its own map level within that radius of the centre, counted as `|dx| + |dy|` (`0x4e56e0`, used when targets are listed in `0x42edd0` and `0x42f570`). **[code]**
 
 ## Step 1: list the targets
