@@ -131,13 +131,47 @@ In the same routine that handles objects along a path (`0x56ab40`), a **boat on 
 - it is used only in the full planning mode and at most once per path;
 - stepping onto it ends the land leg, and what the hero can still spend is replaced by its sea allowance (see [movement at sea](../adventure/#at-sea)).
 
-A Shipyard or Lighthouse not owned by its side is worth a flat 1000 as a target. Building a ship at a Shipyard and casting Summon Boat were not found in the routines read. **[code for the boat case; the reading of the movement swap is inferred]**
+A Shipyard or Lighthouse not owned by its side is worth a flat 1000 as a target. **[code for the boat case; the reading of the movement swap is inferred]**
 
-### Fly and Water Walk
+**Getting a boat** (`0x56b440`, `0x4b2300`, `0x42fc50`). The pathfinder may also plan a step from the shore into water where no boat lies. It does so when the hero can cast Summon Boat (below) and no boat is already next to the hero, or when the water hex is a Shipyard's boat hex. When the hero reaches that step:
 
-The pathfinder lets a hero cross water or obstacles when the effect is available: artifact 72 (Angel Wings) or 90 (Boots of Levitation), an already active spell, or, for Water Walk, knowing the spell. Step costs are the ones in [cost of a step](../adventure/#cost-of-a-step). **Fly and Dimension Door are probably never cast by the computer.** The pathfinder tests "knows Water Walk" and "knows Town Portal" by reading fixed fields of the hero record. A search of the whole decompiled executable finds no such test for the Fly field at all, and none for the Dimension Door field in any hero or pathfinding routine. **[unverified: this is the absence of a match in a search, and a spell reached through a computed index would not show up]**
+1. If it can cast **Summon Boat**, it casts it.
+2. Otherwise, if the water hex is the boat hex of one of the player's towns that has a Shipyard, or of a Shipyard object the player owns, the computer **buys a boat** there for 1000 gold and 10 wood, if the player has them (`0x430f80`). A town without a Shipyard gets one built on the spot first when it can be built and paid for today.
 
-**[code]**
+**Can cast Summon Boat** (`0x4e5550`): the hero knows the spell; its mana is at least the spell's cost at its school level; and there is a boat to move or one can be made. A boat to move is the nearest boat by `|dx| + |dy|` that no hero occupies and that belongs to the player or to nobody. With no such boat, a new one is made only at Advanced or Expert level and only while the map has fewer than 64 boats.
+
+**Casting Summon Boat** (`0x41c8a0`) is the same routine as a human player's cast. For the first free water hex around the hero it rolls 1–100 against the spell's success chance (50, 50, 75, 100 by school level). On success it moves the nearest free boat there, or at Advanced or Expert creates a new one. **[code]**
+
+### Fly, Water Walk and Dimension Door
+
+**Planning** (`0x56b440`, edges in `0x4b2300`). When the hero record is set up for full planning, the pathfinder works out which movement spells are available. The spell-known flags are bytes of the hero record at `+0x430 + spell id`.
+
+| Effect | Available when |
+|---|---|
+| Fly | Angel Wings (72) worn, or Fly already active, or the hero knows Fly and has **mana for it plus 20** |
+| Water Walk | Boots of Levitation (90) worn, or Water Walk already active, or the hero knows it and has mana for it plus 20 |
+| Dimension Door | the hero knows it and has mana for it plus 20 |
+
+These edges are offered only for steps that lie within the current day's movement:
+
+- **Dimension Door** is the first choice when a step is blocked: an obstacle, a hex the hero cannot enter, or the edge between land and water. The edge costs 300 movement points, 200 at Expert.
+- **Fly** is used for a blocked step when Dimension Door is not available.
+- **Leaving land onto water** with no boat: a step that summons or buys a boat (see [Boats](#boats)). Otherwise, if Fly or Water Walk is available, the hero crosses the water with **Fly when its Fly level is higher than its Water Walk level, and with Water Walk otherwise**. The step costs are the ones in [cost of a step](../adventure/#cost-of-a-step).
+
+**Execution** (`0x42fee0`, walking the path step by step):
+
+1. A Town Portal step at the start of the path: the hero is moved, the spell's mana is paid, and 300 movement points are taken (200 at Expert), with the remaining points not going below 0.
+2. **Dimension Door** (`0x430ab0`), tried at every step. Conditions: the hero knows the spell; it is not standing on special ground 21 (Cursed Ground by its number); it has mana for the spell plus 20; and it has cast fewer Dimension Doors today than its school level allows (1, 2, 3, 4). With `n = (mana − 20) / cost` casts affordable, at most 6, the jump must save at least this share of the hero's maximum daily movement:
+
+   | n | 1 | 2 | 3 | 4 | 5 | 6 |
+   |---|---|---|---|---|---|---|
+   | required saving | 1000% | 150% | 100% | 75% | 50% | 25% |
+
+   On a Magic Spring or Magic Well (objects 48, 49) with `n` at least 2, the requirement is 200 points. The landing hex is a later step of today's path within 9 hexes across and 8 hexes down or up, on the same level, not holding an object, and on land or at sea as the hero is. The step with the largest saving is chosen; the spell's mana is paid and the day's count goes up by one.
+3. A **Fly** or **Water Walk** step: if the stretch of the path up to the end of today's movement costs more than the hero has left, the hero stops for the day. Otherwise the spell is cast through the same routine a human player uses (`0x4309a0` → `0x41c490`). Nothing is cast when the effect is already active, Angel Wings (or, for Water Walk, Boots of Levitation) are worn, or the hero is in a boat.
+4. A Castle Gate step: a missing Castle Gate is built at either end if possible; the move takes 100 movement points (not below 0).
+
+**[code; the cut-off values are from table `0x6604fc`]**
 
 ## Valuing a fight
 
