@@ -319,9 +319,13 @@ Spell flag `0x200` is tested wherever the code needs "a spell that deals damage"
 
 When the retreat check has already decided to flee, the chooser runs in a special mode: only spells with spell flag `0x200` are candidates, the timing test is ignored, and damage is valued at a flat 1000 per unit killed. The spell is chosen at the start of the stack's turn (`0x4782d0`), the retreat itself comes from the turn driver afterwards. **[code `0x422da0`, `0x43c800`; order inferred]**
 
+## Quick combat
+
+The **Quick Combat** option (registry value "Quick Combat", stored at `0x69877c`) does not use the simulator below. The battle is fought on the hex field as usual, but every stack of both sides is under computer control (`0x46a4a0`, `0x474bf0`), so the human's army is driven by the same [stack AI](#melee-stacks), [hero spell choice](#hero-spells) and [retreat check](#retreat) as a computer player's. In a hot-seat game between two humans it applies only when both players have it switched on. **[code]**
+
 ## Battles without a battlefield
 
-When no human-controlled side takes part, the game does not run the battle on the hex field at all. The battle start routine (`0x4ad470`) calls a simulator (`0x4270c0` → `0x426bc0`) and applies its result. **[code; that the two flags tested mean "this side is played by a human" is inferred]**
+When no human-controlled side takes part, the game does not run the battle on the hex field at all. The battle start routine (`0x4ad470`) calls a simulator (`0x4270c0` → `0x426bc0`) and applies its result. **[code; the test is the player's human flag, player record `+0xe2` (`0x4ce940`)]**
 
 This is the same simulator the adventure-map AI uses to decide whether a fight is worth taking ([valuing a fight](../ai-adventure/#valuing-a-fight)). The two uses differ only in the strength multiplier given to each side:
 
