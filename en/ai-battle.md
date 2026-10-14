@@ -51,9 +51,9 @@ defence factor = 1 + 0.05 × (defence − creature's base defence − baseline)
 - "attack" and "defence" are the stack's current values in this battle, so they include the hero's primary skills and active spells.
 - The **baseline** is the smallest such bonus found among all stacks on the field (`0x435ec0`). The side with the better hero therefore has every unit valued higher.
 - Modifiers to the attack factor: ×0.5 for a shooter that cannot shoot at the moment; ×2 for a creature with the double-shot flag when it shoots; Bless and Curse scale it by maximum or minimum damage relative to average damage; a Ballista is multiplied by 1 / 1.5 / 1.5 / 2 for the hero's Artillery level (none / basic / advanced / expert) and doubled again from Advanced. **[code; table at `0x63b7f0`]**
-- Modifiers to the defence factor: Shield (against melee) or Air Shield (against shots) by the spell's stored factor; ×0.5 when petrified; a per-hero factor from `0x4e4310` that is not decoded yet.
+- Modifiers to the defence factor: Shield (against melee) or Air Shield (against shots) by the spell's stored factor; ×0.5 when petrified; the hero's [Armorer](../combat/#hero-skills-in-the-formula) factor `1 − value` (`0x4e4310`).
 - Summoned stacks and war machines are scaled down by `HP of the rest of the army / (own HP + HP of the rest)`.
-- The square root is **[inferred]**: `0x617b94` is a C runtime math wrapper and the same expression shape is used for hero strength.
+- The square root: `0x617b94` is the C runtime `sqrt` (sign check, then `fsqrt` at `0x617bbc`). **[assembly]**
 
 `0x442fd0` converts **damage** into value: `unit value × damage / hit points per unit`, counting the wounds already on the top unit when the hit finishes it. A clone is worth `count × unit value / 5`. **[code; constants `0x63ac48`…`0x63ac70`]**
 
