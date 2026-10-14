@@ -13,10 +13,6 @@ Things referenced in the chapters but not decoded or not confirmed yet.
 
 - Hero spells: the evaluators are described from decompiled code without the exact floating-point expressions.
 
-## Neutral monsters
-
-- Stack splitting: the two extra hero-side calls before the strength ratio in `0x4ac580`.
-
 ## Adventure map AI
 
 - What the turn loop does with a hero standing in one of the player's towns once no hero has movement left (`0x526a90`, `0x5be390`): the code moves a visiting hero into the garrison; the purpose was not traced.

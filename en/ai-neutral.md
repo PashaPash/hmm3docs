@@ -104,8 +104,8 @@ The weekly growth routine keeps these bits untouched, so a stack has the same `A
 
 `0x4ac580` builds the defending army when a fight starts.
 
-1. The random generator is **seeded from the stack's map coordinates** before anything is rolled. The same stack on the same tile therefore splits the same way every time; reloading does not change it. **[code; the seeding call `0x50c5f0` is inferred to be `srand`]**
-2. `ratio = AI Value of the hero's army / AI Value of the monster stack` (plain `Σ AI Value × count`). **[code; two more calls on the hero precede the division and their effect on the ratio is not confirmed]**
+1. The random generator is **seeded from the stack's map coordinates** before anything is rolled. The same stack on the same tile therefore splits the same way every time; reloading does not change it. **[code; `0x50c5f0` stores the seed and calls the C runtime `srand` (`0x617e4f`)]**
+2. `ratio = AI Value of the hero's army / AI Value of the monster stack` (plain `Σ AI Value × count`). The hero's primary skills do not enter it: the routine computes them and the army value once more before the division, but discards both results. **[assembly `0x4ac64f`–`0x4ac66e`]**
 3. Base number of stacks from the ratio (thresholds at `0x6776e0`):
 
    | ratio | stacks |
@@ -120,6 +120,7 @@ The weekly growth routine keeps these bits untouched, so a stack has the same `A
    The table also holds 3.0, but the loop stops before comparing it.
 4. One roll of 1–100: on 1–20 one stack fewer, on 80–100 one stack more (never above 7).
 5. The result is limited to at least 1 and at most the number of creatures.
+   A guard made of two creature types (the [Pyramid](../ai-adventure/#object-values-that-are-readable): 40 Gold Golems split this way plus 20 Diamond Golems in 2 stacks, `0x4a4230`) adds the second type to the monster value, and its stacks are subtracted from the number of stacks here.
 6. Creatures are divided evenly; the remainder goes one each to the first stacks.
 7. **Upgraded stack**: if the creature has an upgrade and there are at least 2 stacks, a second roll of 1–100 below 51 (50%) turns the **middle** stack (index `stacks / 2`) into the upgraded creature. The four basic elementals are excluded in Restoration of Erathia scenarios ([expansion level](../ai-overview/#expansion-level) 0).
 
