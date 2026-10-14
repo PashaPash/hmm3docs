@@ -509,8 +509,6 @@ The dig action itself (`0x40ec90`) clears the stored position when the attempt c
 
 ## Not decoded yet
 
-- Most object values, and the numeric weights inside the ones listed (experience, resources, spells).
-- The fight simulator `0x426bc0` itself.
-- Hero roles (main hero, scouts, gatherers), army transfers between heroes and towns, when a hero returns to defend a town.
-- Building ships.
+- Exact weights inside the smaller object cases listed as flat values.
+- Hero roles (main hero, scouts, gatherers).
 - Danger flags on paths.
